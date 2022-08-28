@@ -34,7 +34,7 @@ head(ectos)
 # 3) if my ID column has different names, I change them to match with: 
   
   # colnames(Ectos)[IDcolumnNumber] <- c("IDcolumnName")
-  colnames(ectos)[4] <- c("sampleid") 
+  names(ectos)[names(ectos)=="Bat_SampleID"] <- c("sampleid") 
   
 # 4) once you have matching column names, you can use the merge function
   
