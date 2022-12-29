@@ -5,3 +5,5 @@
 #Enclosed thus far:
 #   Ectoparasite data
 #   Code investigating the seasonal drivers of Cyclopodia dubia.
+
+#   Climate data for ectoparasite collection sites
