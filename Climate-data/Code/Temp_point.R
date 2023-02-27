@@ -55,7 +55,7 @@ for (i in files) {
 ls(Temp_dat)
 
 #Write out file with all NDVI data for sampling point location to table
-write.csv(Temp_pt_extr, "C:/Users/kathe/Documents/GitHub/Mada-Ectoparasites/Climate-data/Climate_tables/Temp_point.csv")
+write.csv(Temp_dat, "C:/Users/kathe/Documents/GitHub/Mada-Ectoparasites/Climate-data/Climate_tables/Temp_point_new.csv")
 
 
 # 
