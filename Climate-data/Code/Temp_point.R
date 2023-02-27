@@ -3,6 +3,7 @@
 library(raster)
 library(rgdal)
 library(terra)
+library(tidyverse)
 
 setwd("C:/Users/kathe/Documents/GitHub/Mada-Ectoparasites/Climate-data/")
 
@@ -17,44 +18,85 @@ files <- list.files("Temperature/",
 files
 
 #Read the files listed in 'files' into a raster stack
-Temp_stk <- stack(files)
+#Temp_stk <- stack(files)
 
-#Rename the layers to shortent the file name
+#Read in the shapefile of points
+Sites <- vect("Shapefiles/Bat_sampling_locations.shp", layer = "Bat_sampling_locations")
+#plot(Sites)
 
-#original names
-names(Temp_stk)
+#Create a reference raster to use as key
+ref_rast <- rast(files[1])
 
-#rename
-names(Temp_stk) <- paste0("Temp_pt_",substr((files),63,68))
+#create a blank dataset
+rm(Temp_dat)
+Temp_dat <- tibble(ID=seq(1,14,by=1)) #create ID column for joining extracted data
 
-#new names
-names(Temp_stk)
-
-# Open bat sampling site shapefile (points to extract data)
-Sites <- readOGR(dsn = "Shapefiles/Bat_sampling_locations.shp", layer = "Bat_sampling_locations")
-plot(Sites)
-crs(Sites)
-
-Sites_table <- as.data.frame(Sites)
-
-#Ensure that raster and point file have matching CRS. TRUE = matching coordinate reference system (crs)
-compareCRS(Temp_stk,Sites)
-
-#Sanity check
-plot(Temp_stk,1)
-points(Sites)
-
-#######################################################################
-
-# Extract raster data using points
-Temp_pt <- extract(Temp_stk, Sites)
-Temp_pt <- as.data.frame(Temp_pt)
-
-#Extract Site_ID and joine to NDVI_data
+#include site names
 site_list <-as.data.frame(Sites)[1]
+Temp_dat <- cbind(Temp_dat,site_list)
 
-Temp_pt_extr <- cbind(site_list,Temp_pt)
+#loop through rasters layers and extract values at points
+for (i in files) {
+           
+     temp_rast <- rast(i)
+     names(temp_rast) <- paste0("Temp_pt_",substr(i,63,68))
+     
+     temp_rast <- resample(temp_rast, ref_rast) #needed for the new layers
+     
+     temp_rast <- mask(temp_rast,ref_rast)
+     
+     Temp_pt <- terra::extract(temp_rast, Sites, na.rm=FALSE)
+     
+     Temp_dat <- left_join(Temp_dat, Temp_pt)
+           
+}
+
+#shows list of column names 
+ls(Temp_dat)
 
 #Write out file with all NDVI data for sampling point location to table
 write.csv(Temp_pt_extr, "C:/Users/kathe/Documents/GitHub/Mada-Ectoparasites/Climate-data/Climate_tables/Temp_point.csv")
 
+
+# 
+# 
+# 
+# #Rename the layers to shortent the file name
+# 
+# #original names
+# names(Temp_stk)
+# 
+# #rename
+# names(Temp_stk) <- paste0("Temp_pt_",substr((files),63,68))
+# 
+# #new names
+# names(Temp_stk)
+# 
+# # Open bat sampling site shapefile (points to extract data)
+# Sites <- readOGR(dsn = "Shapefiles/Bat_sampling_locations.shp", layer = "Bat_sampling_locations")
+# plot(Sites)
+# crs(Sites)
+# 
+# Sites_table <- as.data.frame(Sites)
+# 
+# #Ensure that raster and point file have matching CRS. TRUE = matching coordinate reference system (crs)
+# compareCRS(Temp_stk,Sites)
+# 
+# #Sanity check
+# plot(Temp_stk,1)
+# points(Sites)
+# 
+# #######################################################################
+# 
+# # Extract raster data using points
+# Temp_pt <- extract(Temp_stk, Sites)
+# Temp_pt <- as.data.frame(Temp_pt)
+# 
+# #Extract Site_ID and joine to NDVI_data
+# site_list <-as.data.frame(Sites)[1]
+# 
+# Temp_pt_extr <- cbind(site_list,Temp_pt)
+# 
+# #Write out file with all NDVI data for sampling point location to table
+# write.csv(Temp_pt_extr, "C:/Users/kathe/Documents/GitHub/Mada-Ectoparasites/Climate-data/Climate_tables/Temp_point.csv")
+# 
