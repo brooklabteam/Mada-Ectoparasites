@@ -20,52 +20,55 @@ files <- list.files("Humidity/Raw-data/Daytime",
 
 files
 
-#Read the files listed in 'files' into a raster stack
-Humid_stk <- stack(files)
 
-#Rename the layers to shorten the file name
+#Read in the shapefile of points
+Sites <- vect("Shapefiles/Bat_sampling_locations.shp", layer = "Bat_sampling_locations")
+#plot(Sites)
 
-#original names
-names(Humid_stk)
+#Create a reference raster to use as key
+ref_rast <- rast(files[1])
 
-#rename
-names(Humid_stk) <- paste0("Humid_pt_daytime_",substr((files),97,100))
+#create a blank dataset
+#rm(Humid_dat)
+Humid_dat <- tibble(ID=seq(1,14,by=1)) #create ID column for joining extracted data
 
-#new names
-names(Humid_stk)
-
-# Open bat sampling site shapefile (points to extract data)
-Sites <- readOGR(dsn = "Shapefiles/Bat_sampling_locations.shp", layer = "Bat_sampling_locations")
-plot(Sites)
-crs(Sites)
-
-Sites_table <- as.data.frame(Sites)
-
-#Ensure that raster and point file have matching CRS. TRUE = matching coordinate reference system (crs)
-compareCRS(Humid_stk,Sites)
-
-#Sanity check
-plot(Humid_stk,1)
-points(Sites)
-
-#######################################################################
-
-# Extract raster data using points
-Humid_pt <- extract(Humid_stk, Sites)
-Humid_pt <- as.data.frame(Humid_pt)
-
-#Extract Site_ID and joine to NDVI_data
+#include site names
 site_list <-as.data.frame(Sites)[1]
+Humid_dat <- cbind(Humid_dat,site_list)
 
-Humid_pt_extr <- cbind(site_list,Humid_pt)
+#loop through rasters layers and extract values at points
+for (i in files) {
+  
+  humid_rast <- rast(i)
+  names(humid_rast) <- paste0("Humid_pt_daytime_",substr(i,97,102))
+  
+  humid_rast <- resample(humid_rast, ref_rast) #needed for the new layers
+  
+  humid_rast <- mask(humid_rast,ref_rast)
+  
+  Humid_pt <- terra::extract(humid_rast, Sites, na.rm=FALSE)
+  
+  Humid_dat <- left_join(Humid_dat, Humid_pt)
+  
+}
+
+#shows list of column names 
+ls(Humid_dat)
 
 #Write out file with all NDVI data for sampling point location to table
-write.csv(Humid_pt_extr, "C:/Users/kathe/Documents/GitHub/Mada-Ectoparasites/Climate-data/Climate_tables/Humid_point_daytime.csv")
+write.csv(Humid_dat, "C:/Users/kathe/Documents/GitHub/Mada-Ectoparasites/Climate-data/Climate_tables/Humid_point_daytime.csv")
+
+
+
 
 #######################################################################
 
 #Nighttime values
 
+#Clear vectors
+rm(Humid_dat, Humid_pt, humid_rast, ref_rast, site_list, files, i)
+
+# Get list of nighttime humidity files
 files <- list.files("Humidity/Raw-data/Nighttime",
                     recursive=TRUE, #returns all files in multiple directories/folders
                     full.names = TRUE, #returns full filepath (this will also be the layer name in the stack)
@@ -73,44 +76,35 @@ files <- list.files("Humidity/Raw-data/Nighttime",
 
 files
 
-#Read the files listed in 'files' into a raster stack
-Humid_stk <- stack(files)
+#Create a reference raster to use as key
+ref_rast <- rast(files[1])
 
-#Rename the layers to shorten the file name
+#create a blank dataset
+#rm(Humid_dat)
+Humid_dat <- tibble(ID=seq(1,14,by=1)) #create ID column for joining extracted data
 
-#original names
-names(Humid_stk)
-
-#rename
-names(Humid_stk) <- paste0("Humid_pt_nighttime_",substr((files),101,106))
-
-#new names
-names(Humid_stk)
-
-# Open bat sampling site shapefile (points to extract data)
-Sites <- readOGR(dsn = "Shapefiles/Bat_sampling_locations.shp", layer = "Bat_sampling_locations")
-plot(Sites)
-crs(Sites)
-
-Sites_table <- as.data.frame(Sites)
-
-#Ensure that raster and point file have matching CRS. TRUE = matching coordinate reference system (crs)
-compareCRS(Humid_stk,Sites)
-
-#Sanity check
-plot(Humid_stk,1)
-points(Sites)
-
-#######################################################################
-
-# Extract raster data using points
-Humid_pt <- extract(Humid_stk, Sites)
-Humid_pt <- as.data.frame(Humid_pt)
-
-#Extract Site_ID and joine to NDVI_data
+#include site names
 site_list <-as.data.frame(Sites)[1]
+Humid_dat <- cbind(Humid_dat,site_list)
 
-Humid_pt_extr <- cbind(site_list,Humid_pt)
+#loop through rasters layers and extract values at points
+for (i in files) {
+  
+  humid_rast <- rast(i)
+  names(humid_rast) <- paste0("Humid_pt_nighttime_",substr(i,101,106))
+  
+  humid_rast <- resample(humid_rast, ref_rast) #needed for the new layers
+  
+  humid_rast <- mask(humid_rast,ref_rast)
+  
+  Humid_pt <- terra::extract(humid_rast, Sites, na.rm=FALSE)
+  
+  Humid_dat <- left_join(Humid_dat, Humid_pt)
+  
+}
+
+#shows list of column names 
+ls(Humid_dat)
 
 #Write out file with all NDVI data for sampling point location to table
-write.csv(Humid_pt_extr, "C:/Users/kathe/Documents/GitHub/Mada-Ectoparasites/Climate-data/Climate_tables/Humid_point_nighttime.csv")
+write.csv(Humid_dat, "C:/Users/kathe/Documents/GitHub/Mada-Ectoparasites/Climate-data/Climate_tables/Humid_point_nighttime.csv")
