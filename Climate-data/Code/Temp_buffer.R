@@ -1,10 +1,12 @@
-#Extract raster (environmental data) from points
+#Extract raster (environmental data) from buffers
 
 library(raster)
 library(rgdal)
 library(terra)
+library(tidyverse)
 
 setwd("C:/Users/kathe/Documents/GitHub/Mada-Ectoparasites/Climate-data/")
+
 
 #return a list of the raster to stack
 
@@ -15,7 +17,12 @@ files <- list.files("Temperature/",
 
 files
 
-#must assign and projection so that we can meauser distance in meaningful units 
+#Reproject shapefile and create 30km buffer. I read shp file in with terra::vect() to use their buffer tool. 
+#The buffer function has a bug in Raster
+Sites_b <- vect("Shapefiles/Bat_sampling_locations.shp")
+
+
+#must assign and projection so that we can measure distance in meaningful units 
 #we can't do this in unprojected geographic lat/long
 #new projection will have units of 'm'
 
@@ -34,10 +41,6 @@ crs(Temp_stk_prj)
 #Reproject shapefile and create 30km buffer. I read shp file in with terra::vect() to use their buffer tool. 
 #The buffer function has a bug in Raster
 Sites_b <- vect("Shapefiles/Bat_sampling_locations.shp")
-
-# compareCRS(NDVI_stk_b,Sites_b)
-# plot(NDVI_stk_b,1)
-# points(Sites_b)
 
 
 #change crs of sites
