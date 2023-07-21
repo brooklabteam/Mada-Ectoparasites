@@ -13,6 +13,9 @@ homewd= "/Users/carabrook/Developer/Mada-Ectoparasites"
 dat <- read.csv(file = paste0(homewd, "/Data-and-Code/Eidolon_lagged_data.csv"), header = T, stringsAsFactors = F)
 head(dat)
 
+#check on those with 'NA' in mass-forearm residual
+tmp <- subset(dat, is.na(mass_forearm_residual)) 
+
 #first, load functions
 calc.one.poisson <- function(mod, dat, delta_AICc, model_num){
   
