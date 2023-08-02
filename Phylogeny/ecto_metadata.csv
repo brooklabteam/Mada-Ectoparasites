@@ -1,6 +1,6 @@
 ﻿Accession_Number,Genus,Species,Binomial,Host_Binomial,Year_Sample_Collected,Country_of_Collection
 KR997994,Eucampsipoda,sp,Eucampsipoda_sp,Rousettus_aegyptiacus,2016,South_Africa
-KR997992,,,,,,
+KR997992,Eucampsipoda,sp,Eucampsipoda_sp,Rousettus_aegyptiacus,2016,South_Africa
 KR997999,,,,,,
 KR997999,,,,,,
 KR998001,,,,,,
@@ -24,7 +24,7 @@ KF021496,,,,,,
 KF021498,,,,,,
 KF021497,,,,,,
 KF021493,,,,,,
-OM283592,,,,,,
+OM283592,Eucampsipoda,africana,Eucampsipoda_africana,Rousettus_leschenaultii,2019,Pakistan
 OM283590,,,,,,
 OM283588,,,,,,
 OM283589,,,,,,
