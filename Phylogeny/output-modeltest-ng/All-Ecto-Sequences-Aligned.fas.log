@@ -1,0 +1,351 @@
+Physical cores: 14
+Logical cores:  28
+Memory:         62.2GB
+Extensions:     AVX
+
+WARNING: Partition DATA: Sequences KEL149 CD 3FB and KEL149 CD 4MB are identical
+WARNING: Partition DATA: Sequences KEL149 CD 3FB and KEL194 CD 1MB are identical
+WARNING: Partition DATA: Sequences KEL149 CD 3FB and KEL239 CD 2FB are identical
+WARNING: Partition DATA: Sequences KEL149 CD 3FB and KEL272 CD 3MB are identical
+WARNING: Partition DATA: Sequences KEL149 CD 3FB and KEL272 CD 4MB are identical
+WARNING: Partition DATA: Sequences KEL149 CD 3FB and KEL282 CD 1FB are identical
+WARNING: Partition DATA: Sequences KEL149 CD 3FB and KEL282 CD 2F are identical
+WARNING: Partition DATA: Sequences MIZ250 EM FA and MIZ267 EM MA are identical
+WARNING: Partition DATA: Sequences MIZ250 EM FA and MIZ367 EM FA are identical
+WARNING: Partition DATA: Sequences MIZ250 EM FA and MIZ452 EM MA are identical
+WARNING: Partition DATA: Sequences MIZ250 EM FA and MIZ468 EM MA are identical
+WARNING: Partition DATA: Sequences MIZ250 EM FA and MIZ475 EM M27B are identical
+WARNING: Partition DATA: Sequences MIZ250 EM FA and MIZ476 EM F27A are identical
+WARNING: Partition DATA: Sequences MIZ250 EM FA and MIZ482 W F27A are identical
+WARNING: Partition DATA: Sequences MIZ250 EM FA and MIZ497 EM B are identical
+WARNING: Partition DATA: Sequences MIZ250 EM FA and MIZ543 EM MA are identical
+WARNING: Partition DATA: Sequences MIZ250 EM FA and ROU114 W B are identical
+WARNING: Partition DATA: Sequences MIZ250 EM FA and ROU124 EM F27A are identical
+WARNING: Partition DATA: Sequences MIZ312 EM F27A and MIZ466 EM M28 are identical
+WARNING: Partition DATA: Sequences MIZ343 EM FA and MIZ468 EM B are identical
+WARNING: Partition DATA: Sequences MIZ343 EM FA and MIZ497 EM MA are identical
+WARNING: Partition DATA: Sequences MIZ463 EM B and MIZ467 EM M28 are identical
+WARNING: Partition DATA: Sequences MIZ463 EM B and ROU120 EM M27B are identical
+WARNING: Partition DATA: Sequences MIZ463 EM B and ROU124 EM M28 are identical
+WARNING: Partition DATA: Sequences MIZ463 EM B and ROU131 EM M28B are identical
+WARNING: Partition DATA: Sequences MIZ463 EM B and ROU187 EM M27A are identical
+WARNING: Partition DATA: Sequences MIZ463 EM B and ROU187 EM M27B are identical
+WARNING: Partition DATA: Sequences MIZ463 EM B and ROU189 EM F27B are identical
+WARNING: Partition DATA: Sequences MIZ463 EM B and ROU189 EM F28 are identical
+WARNING: Partition DATA: Sequences MIZ464 EM M27B and ROU131 EM M27A are identical
+WARNING: Partition DATA: Sequences MIZ464 EM M27B and ROU176 EM NA27B are identical
+WARNING: Partition DATA: Sequences MIZ464 EM M27B and ROU184 EM NA27B are identical
+WARNING: Partition DATA: Sequences MIZ464 EM M27B and ROU192 EM NA27B are identical
+WARNING: Partition DATA: Sequences MIZ484 EM F27A and MIZ484 EM M27B are identical
+WARNING: Partition DATA: Sequences MIZ484 EM F27A and ROU192 EM M27A are identical
+WARNING: Partition DATA: Sequences ROU139 EM M27A and ROU184 EM M28 are identical
+WARNING: Partition DATA: Sequences KR997994 1 Eucampsipoda sp MD 2016 strain AA023 cytochrome oxidase subunit I COI gene partial cds mitochondrial and KR997992 1 Eucampsipoda sp MD 2016 strain AA008 cytochrome oxidase subunit I COI gene partial cds mitochondrial are identical
+WARNING: Partition DATA: Sequences KR997994 1 Eucampsipoda sp MD 2016 strain AA023 cytochrome oxidase subunit I COI gene partial cds mitochondrial and MH151059 1 Eucampsipoda africana isolate NG13 008 cytochrome oxidase subunit I COI gene partial cds mitochondrial are identical
+WARNING: Partition DATA: Sequences KR997994 1 Eucampsipoda sp MD 2016 strain AA023 cytochrome oxidase subunit I COI gene partial cds mitochondrial and MH151060 1 Eucampsipoda africana isolate NG13 099 2 cytochrome oxidase subunit I COI gene partial cds mitochondrial are identical
+WARNING: Partition DATA: Sequences KR997994 1 Eucampsipoda sp MD 2016 strain AA023 cytochrome oxidase subunit I COI gene partial cds mitochondrial and MH151062 1 Eucampsipoda africana isolate NG13 057 cytochrome oxidase subunit I COI gene partial cds mitochondrial are identical
+WARNING: Partition DATA: Sequences KR997999 1 Eucampsipoda sp MD 2016 strain AA035 cytochrome oxidase subunit I COI gene partial cds mitochondrial(2) and KR997999 1 Eucampsipoda sp MD 2016 strain AA035 cytochrome oxidase subunit I COI gene partial cds mitochondrial are identical
+WARNING: Partition DATA: Sequences KR997999 1 Eucampsipoda sp MD 2016 strain AA035 cytochrome oxidase subunit I COI gene partial cds mitochondrial(2) and KR998001 1 Eucampsipoda sp MD 2016 strain AA033 cytochrome oxidase subunit I COI gene partial cds mitochondrial are identical
+WARNING: Partition DATA: Sequences KR997996 1 Eucampsipoda sp MD 2016 strain AA024 cytochrome oxidase subunit I COI gene partial cds mitochondrial and KR997995 1 Eucampsipoda sp MD 2016 strain AA034 cytochrome oxidase subunit I COI gene partial cds mitochondrial are identical
+WARNING: Partition DATA: Sequences KF021499 1 Eucampsipoda theodori isolate 31DM cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial and KF021496 1 Eucampsipoda theodori isolate 28DM cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial are identical
+WARNING: Partition DATA: Sequences KF021498 1 Eucampsipoda theodori isolate 30DM cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial and KF021497 1 Eucampsipoda theodori isolate 29F cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial are identical
+WARNING: Partition DATA: Sequences KF021495 1 Eucampsipoda madagascarensis isolate J48 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial(2) and KF021495 1 Eucampsipoda madagascarensis isolate J48 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial are identical
+WARNING: Partition DATA: Sequences KF021494 1 Eucampsipoda madagascarensis isolate J43 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial(2) and KF021494 1 Eucampsipoda madagascarensis isolate J43 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial are identical
+WARNING: Partition DATA: Sequences KF021517 1 Nycteribia stylidiopsis isolate B cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial(2) and KF021517 1 Nycteribia stylidiopsis isolate B cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial are identical
+WARNING: Partition DATA: Sequences MF462046 1 Nycteribia stylidiopsis isolate Nstyl2 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial(2) and MF462046 1 Nycteribia stylidiopsis isolate Nstyl2 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial are identical
+WARNING: MSA has not enough sites to infer reliable results
+Creating new checkpoint file: /home/cbrook/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas.ckp
+--------------------------------------------------------------------------------
+ModelTest-NG v0.1.7
+
+Input data:
+  MSA:        /home/cbrook/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas
+  Tree:       Maximum likelihood
+    file:           -
+  #taxa:            139
+  #sites:           702
+  #patterns:        668
+  Max. thread mem:  45 MB
+
+Output:
+  Log:           /home/cbrook/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas.log
+  Starting tree: /home/cbrook/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas.tree
+  Results:       /home/cbrook/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas.out
+
+Selection options:
+  # dna schemes:      11
+  # dna models:       88
+  include model parameters:
+    Uniform:         true
+    p-inv (+I):      true
+    gamma (+G):      true
+    both (+I+G):     true
+    free rates (+R): false
+    fixed freqs:     true
+    estimated freqs: true
+    #categories:     4
+  gamma rates mode:   mean
+  asc bias:           none
+  epsilon (opt):      0.01
+  epsilon (par):      0.05
+  keep branches:      false
+
+Additional options:
+  verbosity:        very low
+  threads:          1/14
+  RNG seed:         12345
+  subtree repeats:  enabled
+--------------------------------------------------------------------------------
+modeltest-ng was called as follows: 
+>> /home/cbrook/modeltest-ng/modeltest-ng-static -i /home/cbrook/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas -t ml -p 1 
+
+
+modeltest-ng: Warning: You are using one single thread out of 14 physical cores.
+modeltest-ng:          You can set the number of threads with -p argument.
+modeltest-ng: Try 'modeltest-ng --help' or 'modeltest-ng --usage' for more information
+
+Partition 1/1
+
+ ----ID---  ----MODEL---- ---Time--- -Elapsed--- -------LnL------- -Alpha- -P-inv-
+
+Computation of likelihood scores completed. It took 0h:25:58
+
+BIC       model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  GTR                8    -27512.3775     56879.5181         0.0000    0.9995
+       2  GTR+G4             9    -27516.6721     56894.6613        15.1432    0.0005
+       3  GTR+I+G4          10    -27528.6215     56925.1139        45.5959    0.0000
+       4  GTR+I              9    -27535.9434     56933.2038        53.6857    0.0000
+       5  TVM+G4             8    -27559.4666     56973.6964        94.1783    0.0000
+       6  TVM                7    -27563.7073     56975.6238        96.1057    0.0000
+       7  TIM1               6    -27571.1572     56983.9697       104.4516    0.0000
+       8  TIM1+G4            7    -27576.1687     57000.5466       121.0285    0.0000
+       9  TPM1uf             5    -27583.9209     57002.9432       123.4251    0.0000
+      10  TVM+I+G4           9    -27573.6053     57008.5276       129.0096    0.0000
+--------------------------------------------------------------------------------
+Best model according to BIC
+---------------------------
+Model:              GTR
+lnL:                -27512.3775
+Frequencies:        0.3191 0.1427 0.1299 0.4083
+Subst. Rates:       0.0273 1.2113 2.6570 2.8873 2.7478 1.0000 
+Inv. sites prop:    -
+Gamma shape:        -
+Score:              56879.5181
+Weight:             0.9995
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              0.0000
+Gamma:              0.0005
+Gamma-Inv:          0.0000
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              0.0213
+Alpha:              94.3426
+Alpha-P.Inv:        94.3426
+P.Inv-Alpha:        0.0213
+Frequencies:        0.3191 0.1427 0.1299 0.4083 
+
+Commands:
+  > phyml  -i /home/cbrook/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas -m 012345 -f m -v 0 -a 0 -c 1 -o tlr
+  > raxmlHPC-SSE3 -s /home/cbrook/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas -c 1 -m GTRCATX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa /home/cbrook/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas --model GTR
+  > paup -s /home/cbrook/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas
+  > iqtree -s /home/cbrook/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas -m GTR
+
+AIC       model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  GTR                8    -27512.3775     55590.7549         0.0000    0.9950
+       2  GTR+G4             9    -27516.6721     55601.3442        10.5893    0.0050
+       3  GTR+I+G4          10    -27528.6215     55627.2429        36.4880    0.0000
+       4  GTR+I              9    -27535.9434     55639.8867        49.1318    0.0000
+       5  TVM+G4             8    -27559.4666     55684.9333        94.1783    0.0000
+       6  TVM                7    -27563.7073     55691.4146       100.6596    0.0000
+       7  TIM1               6    -27571.1572     55704.3144       113.5595    0.0000
+       8  TVM+I+G4           9    -27573.6053     55715.2105       124.4556    0.0000
+       9  TIM1+G4            7    -27576.1687     55716.3374       125.5824    0.0000
+      10  TVM+I              8    -27577.1096     55720.2192       129.4643    0.0000
+--------------------------------------------------------------------------------
+Best model according to AIC
+---------------------------
+Model:              GTR
+lnL:                -27512.3775
+Frequencies:        0.3191 0.1427 0.1299 0.4083
+Subst. Rates:       0.0273 1.2113 2.6570 2.8873 2.7478 1.0000 
+Inv. sites prop:    -
+Gamma shape:        -
+Score:              55590.7549
+Weight:             0.9950
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              0.0000
+Gamma:              0.0050
+Gamma-Inv:          0.0000
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              0.0213
+Alpha:              94.3426
+Alpha-P.Inv:        94.3426
+P.Inv-Alpha:        0.0213
+Frequencies:        0.3191 0.1427 0.1299 0.4083 
+
+Commands:
+  > phyml  -i /home/cbrook/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas -m 012345 -f m -v 0 -a 0 -c 1 -o tlr
+  > raxmlHPC-SSE3 -s /home/cbrook/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas -c 1 -m GTRCATX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa /home/cbrook/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas --model GTR
+  > paup -s /home/cbrook/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas
+  > iqtree -s /home/cbrook/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas -m GTR
+
+AICc      model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  GTR                8    -27512.3775     55974.7549         0.0000    0.9993
+       2  GTR+G4             9    -27516.6721     55989.3442        14.5893    0.0007
+       3  GTR+I+G4          10    -27528.6215     56018.2429        43.4880    0.0000
+       4  GTR+I              9    -27535.9434     56027.8867        53.1318    0.0000
+       5  TVM+G4             8    -27559.4666     56068.9333        94.1783    0.0000
+       6  TVM                7    -27563.7073     56071.4146        96.6596    0.0000
+       7  TIM1               6    -27571.1572     56081.3144       106.5595    0.0000
+       8  TIM1+G4            7    -27576.1687     56096.3374       121.5824    0.0000
+       9  TPM1uf             5    -27583.9209     56100.8419       126.0869    0.0000
+      10  TVM+I+G4           9    -27573.6053     56103.2105       128.4556    0.0000
+--------------------------------------------------------------------------------
+Best model according to AICc
+---------------------------
+Model:              GTR
+lnL:                -27512.3775
+Frequencies:        0.3191 0.1427 0.1299 0.4083
+Subst. Rates:       0.0273 1.2113 2.6570 2.8873 2.7478 1.0000 
+Inv. sites prop:    -
+Gamma shape:        -
+Score:              55974.7549
+Weight:             0.9993
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              0.0000
+Gamma:              0.0007
+Gamma-Inv:          0.0000
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              0.0213
+Alpha:              94.3426
+Alpha-P.Inv:        94.3426
+P.Inv-Alpha:        0.0213
+Frequencies:        0.3191 0.1427 0.1299 0.4083 
+
+Commands:
+  > phyml  -i /home/cbrook/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas -m 012345 -f m -v 0 -a 0 -c 1 -o tlr
+  > raxmlHPC-SSE3 -s /home/cbrook/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas -c 1 -m GTRCATX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa /home/cbrook/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas --model GTR
+  > paup -s /home/cbrook/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas
+  > iqtree -s /home/cbrook/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas -m GTR
+
+There are 82 different topologies
+Topologies written to /home/cbrook/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas.topos
+
+topo_id   models_count   bic_support   aic_support   aicc_support
+-----------------------------------------------------------------
+     79              1       0.99949       0.99501       0.99932
+     81              1       0.00051       0.00499       0.00068
+     82              1       0.00000       0.00000       0.00000
+     80              1       0.00000       0.00000       0.00000
+     74              2       0.00000       0.00000       0.00000
+     72              1       0.00000       0.00000       0.00000
+     64              1       0.00000       0.00000       0.00000
+     66              1       0.00000       0.00000       0.00000
+     40              1       0.00000       0.00000       0.00000
+     42              1       0.00000       0.00000       0.00000
+     73              1       0.00000       0.00000       0.00000
+     67              1       0.00000       0.00000       0.00000
+     41              1       0.00000       0.00000       0.00000
+     43              1       0.00000       0.00000       0.00000
+     65              1       0.00000       0.00000       0.00000
+     58              1       0.00000       0.00000       0.00000
+     56              1       0.00000       0.00000       0.00000
+     59              1       0.00000       0.00000       0.00000
+     57              1       0.00000       0.00000       0.00000
+     33              1       0.00000       0.00000       0.00000
+     35              1       0.00000       0.00000       0.00000
+     36              1       0.00000       0.00000       0.00000
+     34              1       0.00000       0.00000       0.00000
+     50              1       0.00000       0.00000       0.00000
+     48              1       0.00000       0.00000       0.00000
+     19              1       0.00000       0.00000       0.00000
+     21              1       0.00000       0.00000       0.00000
+     51              1       0.00000       0.00000       0.00000
+     49              1       0.00000       0.00000       0.00000
+     20              1       0.00000       0.00000       0.00000
+     22              1       0.00000       0.00000       0.00000
+     26              1       0.00000       0.00000       0.00000
+     28              1       0.00000       0.00000       0.00000
+     11              1       0.00000       0.00000       0.00000
+      4              1       0.00000       0.00000       0.00000
+     27              1       0.00000       0.00000       0.00000
+      6              1       0.00000       0.00000       0.00000
+     13              1       0.00000       0.00000       0.00000
+     29              1       0.00000       0.00000       0.00000
+      5              1       0.00000       0.00000       0.00000
+      7              1       0.00000       0.00000       0.00000
+     14              1       0.00000       0.00000       0.00000
+     12              1       0.00000       0.00000       0.00000
+     68              1       0.00000       0.00000       0.00000
+      8              1       0.00000       0.00000       0.00000
+      3              2       0.00000       0.00000       0.00000
+      9              1       0.00000       0.00000       0.00000
+     69              1       0.00000       0.00000       0.00000
+     70              1       0.00000       0.00000       0.00000
+     71              1       0.00000       0.00000       0.00000
+      2              1       0.00000       0.00000       0.00000
+     63              1       0.00000       0.00000       0.00000
+     62              1       0.00000       0.00000       0.00000
+     61              1       0.00000       0.00000       0.00000
+     60              1       0.00000       0.00000       0.00000
+     75              1       0.00000       0.00000       0.00000
+     76              1       0.00000       0.00000       0.00000
+     77              1       0.00000       0.00000       0.00000
+     78              1       0.00000       0.00000       0.00000
+     38              1       0.00000       0.00000       0.00000
+     15              1       0.00000       0.00000       0.00000
+     16              1       0.00000       0.00000       0.00000
+     17              1       0.00000       0.00000       0.00000
+     18              1       0.00000       0.00000       0.00000
+     23              1       0.00000       0.00000       0.00000
+     24              1       0.00000       0.00000       0.00000
+     25              2       0.00000       0.00000       0.00000
+     30              1       0.00000       0.00000       0.00000
+     31              1       0.00000       0.00000       0.00000
+     32              2       0.00000       0.00000       0.00000
+     37              2       0.00000       0.00000       0.00000
+     55              1       0.00000       0.00000       0.00000
+     39              1       0.00000       0.00000       0.00000
+     10              2       0.00000       0.00000       0.00000
+      1              1       0.00000       0.00000       0.00000
+     44              1       0.00000       0.00000       0.00000
+     45              1       0.00000       0.00000       0.00000
+     46              1       0.00000       0.00000       0.00000
+     47              1       0.00000       0.00000       0.00000
+     52              1       0.00000       0.00000       0.00000
+     53              1       0.00000       0.00000       0.00000
+     54              1       0.00000       0.00000       0.00000
+
+extended majority-rule consensus: (((ROU120 EM M28,(ROU131 EM M27A,MIZ464 EM M27B)[0.99949])[0.99949],(MIZ262 EM B,((ROU187 EM M27B,((ROU189 EM F27B,ROU124 EM M28)[0.99949],(MIZ463 EM B,(MIZ467 EM M28,(ROU120 EM M27B,(ROU189 EM F28,ROU187 EM M27A)[0.99949])[0.99949])[0.99949])[0.99949])[0.99949])[0.99949],(ROU131 EM M28B,(ROU192 EM M28,(ROU184 EM M28,ROU139 EM M27A)[0.99949])[0.99949])[0.99949])[0.99949])[0.99949])[0.99949],(ROU184 EM F27A,(MIZ343 W M28,(MIZ492 W 1M,(MIZ463 EM FA,((ROU132 EM B,((MIZ386 EM F A,MIZ312 EM M28)[1.00000],(OM283593 1 Eucampsipoda africana voucher EA 6 cytochrome c oxidase subunit I COX1 gene partial cds mitochondrial,((MIZ455 EM M27B,(MIZ466 EM M28,(MIZ312 EM F27A,(MIZ250 EM B,(OL847632 1 Basilia lindolphoi isolate 147 3 cytochrome c oxidase subunit I COX1 gene partial cds mitochondrial,((MIZ533 W,((ROU124 EM NA27B,(MIZ484 EM F27A,(ROU192 EM M27A,(MIZ484 EM M27B,MIZ466 EM F27A)[0.99949])[0.99949])[1.00000])[1.00000],(MIZ367 EM B,(ROU120 EM FA,(MIZ367 EM FA,(MIZ267 EM MA,(((ROU114 W B,(MIZ481 EM B,(MIZ534 EM MA,(ROU114 EM MA,((MIZ165 EM A,(MIZ475 EM F27A,(MIZ512 EM MA,MIZ312 EM F27B)[1.00000])[1.00000])[1.00000],((MH282032 1 Basilia tiptoni voucher TH PA P253 cytochrome oxidase subunit 1 COI gene partial cds mitochondrial,(((MK140160 1 Nycteribia kolenatii isolate 52fCJ914156 cytochrome oxidase subunit I COI gene partial cds mitochondrial,(MW590968 1 Nycteribia kolenatii voucher JP00384 cytochrome oxidase subunit 1 COI gene partial cds mitochondrial,(MK140156 1 Nycteribia schmidlii isolate 165CJ2614383 cytochrome oxidase subunit I COI gene partial cds mitochondrial,((MF462046 1 Nycteribia stylidiopsis isolate Nstyl2 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial,MF462046 1 Nycteribia stylidiopsis isolate Nstyl2 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial(2))[1.00000],(KF021517 1 Nycteribia stylidiopsis isolate B cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial(2),(KF021517 1 Nycteribia stylidiopsis isolate B cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial,KF021492 1 Eucampsipoda africana isolate N6 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial)[0.99949])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000],(MK140104 1 Basilia nana isolate KDS15 cytochrome oxidase subunit I COI gene partial cds mitochondrial,(LC522022 1 Nycteribia allotopa Mf51NA3 mitochondrial COI gene for cytochrome c oxidase subunit 1 partial cds,LC522026 1 Nycteribia allotopa Mf78NA5 mitochondrial COI gene for cytochrome c oxidase subunit 1 partial cds)[1.00000])[1.00000])[1.00000],(KF021501 1 Nycteribia parvula isolate N16 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial,(MF462043 1 Cyclopodia dubia isolate 9Cdu cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial,((KF021500 1 Eucampsipoda theodori isolate 8B cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial,(KF021499 1 Eucampsipoda theodori isolate 31DM cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial,(KF021496 1 Eucampsipoda theodori isolate 28DM cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial,(KF021497 1 Eucampsipoda theodori isolate 29F cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial,KF021498 1 Eucampsipoda theodori isolate 30DM cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial)[1.00000])[1.00000])[1.00000])[1.00000],((KF021493 1 Eucampsipoda inermis isolate N8 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial,((KF021494 1 Eucampsipoda madagascarensis isolate J43 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial,KF021494 1 Eucampsipoda madagascarensis isolate J43 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial(2))[1.00000],(KF021495 1 Eucampsipoda madagascarensis isolate J48 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial,KF021495 1 Eucampsipoda madagascarensis isolate J48 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial(2))[1.00000])[1.00000])[1.00000],(MH151063 1 Eucampsipoda africana isolate NG13 010 2 cytochrome oxidase subunit I COI gene partial cds mitochondrial,(KR998001 1 Eucampsipoda sp MD 2016 strain AA033 cytochrome oxidase subunit I COI gene partial cds mitochondrial,((MH151065 1 Eucampsipoda africana isolate NG13 018 cytochrome oxidase subunit I COI gene partial cds mitochondrial,(KR997999 1 Eucampsipoda sp MD 2016 strain AA035 cytochrome oxidase subunit I COI gene partial cds mitochondrial,KR997999 1 Eucampsipoda sp MD 2016 strain AA035 cytochrome oxidase subunit I COI gene partial cds mitochondrial(2))[0.99949])[1.00000],(LC536588 1 Eucampsipoda africana ZBF3 mitochondrial COI gene for cytochrome c oxidase subunit 1 partial cds,((LC536587 1 Eucampsipoda africana ZBF2 mitochondrial COI gene for cytochrome c oxidase subunit 1 partial cds,(LC536586 1 Eucampsipoda africana ZBF1 mitochondrial COI gene for cytochrome c oxidase subunit 1 partial cds,(KR997995 1 Eucampsipoda sp MD 2016 strain AA034 cytochrome oxidase subunit I COI gene partial cds mitochondrial,KR997996 1 Eucampsipoda sp MD 2016 strain AA024 cytochrome oxidase subunit I COI gene partial cds mitochondrial)[1.00000])[0.99949])[0.99949],(((KR997992 1 Eucampsipoda sp MD 2016 strain AA008 cytochrome oxidase subunit I COI gene partial cds mitochondrial,(KR997994 1 Eucampsipoda sp MD 2016 strain AA023 cytochrome oxidase subunit I COI gene partial cds mitochondrial,(KR997997 1 Eucampsipoda sp MD 2016 strain AA026 cytochrome oxidase subunit I COI gene partial cds mitochondrial,MH151066 1 Eucampsipoda africana isolate NG13 013 2 cytochrome oxidase subunit I COI gene partial cds mitochondrial)[1.00000])[0.99949])[0.99949],(KF021491 1 Eucampsipoda africana isolate N4 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial,KR997998 1 Eucampsipoda sp MD 2016 strain AA021 cytochrome oxidase subunit I COI gene partial cds mitochondrial)[0.99949])[0.99949],(MH151060 1 Eucampsipoda africana isolate NG13 099 2 cytochrome oxidase subunit I COI gene partial cds mitochondrial,(MH151062 1 Eucampsipoda africana isolate NG13 057 cytochrome oxidase subunit I COI gene partial cds mitochondrial,MH151059 1 Eucampsipoda africana isolate NG13 008 cytochrome oxidase subunit I COI gene partial cds mitochondrial)[0.99949])[0.99949])[0.99949])[1.00000])[0.99949])[0.99949])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[0.99949],((OM283591 1 Eucampsipoda africana voucher EA 4 cytochrome c oxidase subunit I COX1 gene partial cds mitochondrial,MIZ346 EM MA)[1.00000],(MIZ455 EM M28,(KF273783 1 Eucampsipoda sundaica isolate KB5 cytochrome oxidase subunit I COI gene partial cds mitochondrial,(KF273782 1 Cyclopodia horsfieldi isolate RC24 cytochrome oxidase subunit I COI gene partial cds mitochondrial,(KF273770 1 Cyclopodia horsfieldi isolate PPH12 cytochrome oxidase subunit I COI gene partial cds mitochondrial,KF273778 1 Cyclopodia horsfieldi isolate LYL1 cytochrome oxidase subunit I COI gene partial cds mitochondrial)[1.00000])[0.99949])[0.99949])[0.99949])[0.99949])[0.99949])[0.99949])[0.99949])[0.99949])[0.99949])[0.99949],(MIZ485 EM MA,(MIZ452 EM MA,MIZ250 EM FA)[0.99949])[0.99949])[0.99949],(MIZ468 EM MA,(MIZ543 EM MA,((MIZ306 EM M27A,(MIZ492 EM B,(MIZ482 W F27A,(ROU124 EM F27A,MIZ475 EM M27B)[0.99949])[0.99949])[0.99949])[0.99949],(MIZ481 EM MA,(MIZ497 EM B,MIZ476 EM F27A)[0.99949])[0.99949])[0.99949])[0.99949])[0.99949])[0.99949])[0.99949])[0.99949])[0.99949])[1.00000])[0.99949])[0.99949],(((OM283588 1 Eucampsipoda africana voucher EA 1 cytochrome c oxidase subunit I COX1 gene partial cds mitochondrial,(OM283589 1 Eucampsipoda africana voucher EA 2 cytochrome c oxidase subunit I COX1 gene partial cds mitochondrial,OM283592 1 Eucampsipoda africana voucher EA 5 cytochrome c oxidase subunit I COX1 gene partial cds mitochondrial)[1.00000])[0.99949],(OM283590 1 Eucampsipoda africana voucher EA 3 cytochrome c oxidase subunit I COX1 gene partial cds mitochondrial,(ROU132 EM MA,MIZ230 W FA)[1.00000])[0.99949])[0.99949],(MIZ485 W 1M,MIZ185 EM FA)[1.00000])[0.99949])[0.99949])[1.00000])[0.99949])[0.99949])[0.99949])[0.99949],((MIZ487 EM M27B,MIZ300 W F27A)[1.00000],(MIZ452 EM B,(MIZ207 EM MA,(MIZ543 W 1M,MIZ485 W M28)[1.00000])[0.99949])[0.99949])[0.99949])[0.99949])[0.99949])[0.99949])[1.00000],((MIZ468 EM B,(MIZ497 EM MA,MIZ343 EM FA)[0.99949])[1.00000],((KEL282 CD 1FB,(KEL272 CD 4MB,KEL194 CD 1MB)[0.99949])[0.99949],((KEL272 CD 3MB,KEL239 CD 2FB)[0.99949],(KEL149 CD 4MB,(KEL282 CD 2F,KEL149 CD 3FB)[0.99949])[0.99949])[0.99949])[1.00000])[1.00000])[0.99949])[1.00000])[1.00000])[1.00000])[0.99949],(MIZ484 EM M28,(ROU192 EM NA27B,(ROU184 EM NA27B,ROU176 EM NA27B)[0.99949])[0.99949])[0.99949]);
+strict consensus: ((KF021495 1 Eucampsipoda madagascarensis isolate J48 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial,KF021495 1 Eucampsipoda madagascarensis isolate J48 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial(2))[1.00000],(KF021493 1 Eucampsipoda inermis isolate N8 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial,(KF021501 1 Nycteribia parvula isolate N16 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial,MK140160 1 Nycteribia kolenatii isolate 52fCJ914156 cytochrome oxidase subunit I COI gene partial cds mitochondrial,MW590968 1 Nycteribia kolenatii voucher JP00384 cytochrome oxidase subunit 1 COI gene partial cds mitochondrial,MK140156 1 Nycteribia schmidlii isolate 165CJ2614383 cytochrome oxidase subunit I COI gene partial cds mitochondrial,MK140104 1 Basilia nana isolate KDS15 cytochrome oxidase subunit I COI gene partial cds mitochondrial,MH282032 1 Basilia tiptoni voucher TH PA P253 cytochrome oxidase subunit 1 COI gene partial cds mitochondrial,KF273782 1 Cyclopodia horsfieldi isolate RC24 cytochrome oxidase subunit I COI gene partial cds mitochondrial,MF462043 1 Cyclopodia dubia isolate 9Cdu cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial,KF273783 1 Eucampsipoda sundaica isolate KB5 cytochrome oxidase subunit I COI gene partial cds mitochondrial,MH151063 1 Eucampsipoda africana isolate NG13 010 2 cytochrome oxidase subunit I COI gene partial cds mitochondrial,MH151065 1 Eucampsipoda africana isolate NG13 018 cytochrome oxidase subunit I COI gene partial cds mitochondrial,KF021491 1 Eucampsipoda africana isolate N4 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial,LC536588 1 Eucampsipoda africana ZBF3 mitochondrial COI gene for cytochrome c oxidase subunit 1 partial cds,LC536586 1 Eucampsipoda africana ZBF1 mitochondrial COI gene for cytochrome c oxidase subunit 1 partial cds,LC536587 1 Eucampsipoda africana ZBF2 mitochondrial COI gene for cytochrome c oxidase subunit 1 partial cds,MH151062 1 Eucampsipoda africana isolate NG13 057 cytochrome oxidase subunit I COI gene partial cds mitochondrial,KR997998 1 Eucampsipoda sp MD 2016 strain AA021 cytochrome oxidase subunit I COI gene partial cds mitochondrial,MH151060 1 Eucampsipoda africana isolate NG13 099 2 cytochrome oxidase subunit I COI gene partial cds mitochondrial,MH151059 1 Eucampsipoda africana isolate NG13 008 cytochrome oxidase subunit I COI gene partial cds mitochondrial,KR998001 1 Eucampsipoda sp MD 2016 strain AA033 cytochrome oxidase subunit I COI gene partial cds mitochondrial,KR997999 1 Eucampsipoda sp MD 2016 strain AA035 cytochrome oxidase subunit I COI gene partial cds mitochondrial,KR997999 1 Eucampsipoda sp MD 2016 strain AA035 cytochrome oxidase subunit I COI gene partial cds mitochondrial(2),KR997992 1 Eucampsipoda sp MD 2016 strain AA008 cytochrome oxidase subunit I COI gene partial cds mitochondrial,KR997994 1 Eucampsipoda sp MD 2016 strain AA023 cytochrome oxidase subunit I COI gene partial cds mitochondrial,ROU124 EM F27A,ROU120 EM FA,ROU114 W B,ROU114 EM MA,MIZ543 EM MA,MIZ534 EM MA,MIZ497 EM B,MIZ492 EM B,MIZ485 EM MA,MIZ482 W F27A,MIZ481 EM MA,MIZ481 EM B,MIZ476 EM F27A,MIZ475 EM M27B,MIZ468 EM MA,MIZ455 EM M28,MIZ452 EM MA,MIZ367 EM FA,MIZ367 EM B,MIZ306 EM M27A,MIZ267 EM MA,MIZ250 EM FA,(KF273770 1 Cyclopodia horsfieldi isolate PPH12 cytochrome oxidase subunit I COI gene partial cds mitochondrial,KF273778 1 Cyclopodia horsfieldi isolate LYL1 cytochrome oxidase subunit I COI gene partial cds mitochondrial)[1.00000],(KF021500 1 Eucampsipoda theodori isolate 8B cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial,(KF021496 1 Eucampsipoda theodori isolate 28DM cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial,KF021499 1 Eucampsipoda theodori isolate 31DM cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial,(KF021497 1 Eucampsipoda theodori isolate 29F cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial,KF021498 1 Eucampsipoda theodori isolate 30DM cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial)[1.00000])[1.00000])[1.00000],(LC522022 1 Nycteribia allotopa Mf51NA3 mitochondrial COI gene for cytochrome c oxidase subunit 1 partial cds,LC522026 1 Nycteribia allotopa Mf78NA5 mitochondrial COI gene for cytochrome c oxidase subunit 1 partial cds)[1.00000],(KR997997 1 Eucampsipoda sp MD 2016 strain AA026 cytochrome oxidase subunit I COI gene partial cds mitochondrial,MH151066 1 Eucampsipoda africana isolate NG13 013 2 cytochrome oxidase subunit I COI gene partial cds mitochondrial)[1.00000],(KF021517 1 Nycteribia stylidiopsis isolate B cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial,KF021517 1 Nycteribia stylidiopsis isolate B cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial(2),KF021492 1 Eucampsipoda africana isolate N6 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial)[1.00000],(KR997995 1 Eucampsipoda sp MD 2016 strain AA034 cytochrome oxidase subunit I COI gene partial cds mitochondrial,KR997996 1 Eucampsipoda sp MD 2016 strain AA024 cytochrome oxidase subunit I COI gene partial cds mitochondrial)[1.00000],(MF462046 1 Nycteribia stylidiopsis isolate Nstyl2 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial,MF462046 1 Nycteribia stylidiopsis isolate Nstyl2 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial(2))[1.00000],(OL847632 1 Basilia lindolphoi isolate 147 3 cytochrome c oxidase subunit I COX1 gene partial cds mitochondrial,OM283588 1 Eucampsipoda africana voucher EA 1 cytochrome c oxidase subunit I COX1 gene partial cds mitochondrial,OM283590 1 Eucampsipoda africana voucher EA 3 cytochrome c oxidase subunit I COX1 gene partial cds mitochondrial,MIZ533 W,MIZ485 W 1M,MIZ185 EM FA,(ROU124 EM NA27B,(ROU192 EM M27A,MIZ484 EM M27B,MIZ484 EM F27A,MIZ466 EM F27A)[1.00000])[1.00000],(OM283589 1 Eucampsipoda africana voucher EA 2 cytochrome c oxidase subunit I COX1 gene partial cds mitochondrial,OM283592 1 Eucampsipoda africana voucher EA 5 cytochrome c oxidase subunit I COX1 gene partial cds mitochondrial)[1.00000],(ROU132 EM MA,MIZ230 W FA)[1.00000],(OM283593 1 Eucampsipoda africana voucher EA 6 cytochrome c oxidase subunit I COX1 gene partial cds mitochondrial,ROU132 EM B,MIZ466 EM M28,MIZ455 EM M27B,MIZ452 EM B,MIZ386 EM F A,MIZ312 EM M28,MIZ312 EM F27A,MIZ250 EM B,MIZ207 EM MA,(MIZ463 EM FA,(MIZ492 W 1M,(MIZ343 W M28,(ROU192 EM NA27B,ROU192 EM M28,ROU189 EM F28,ROU189 EM F27B,ROU187 EM M27B,ROU187 EM M27A,ROU184 EM NA27B,ROU184 EM M28,ROU184 EM F27A,ROU176 EM NA27B,ROU139 EM M27A,ROU131 EM M28B,ROU131 EM M27A,ROU124 EM M28,ROU120 EM M28,ROU120 EM M27B,MIZ484 EM M28,MIZ467 EM M28,MIZ464 EM M27B,MIZ463 EM B,MIZ262 EM B)[1.00000])[1.00000])[1.00000],((MIZ497 EM MA,MIZ468 EM B,MIZ343 EM FA)[1.00000],(KEL282 CD 2F,KEL282 CD 1FB,KEL272 CD 4MB,KEL272 CD 3MB,KEL239 CD 2FB,KEL194 CD 1MB,KEL149 CD 4MB,KEL149 CD 3FB)[1.00000])[1.00000])[1.00000],(MIZ487 EM M27B,MIZ300 W F27A)[1.00000],(MIZ543 W 1M,MIZ485 W M28)[1.00000])[1.00000])[1.00000],(MIZ165 EM A,(MIZ475 EM F27A,(MIZ512 EM MA,MIZ312 EM F27B)[1.00000])[1.00000])[1.00000],(OM283591 1 Eucampsipoda africana voucher EA 4 cytochrome c oxidase subunit I COX1 gene partial cds mitochondrial,MIZ346 EM MA)[1.00000])[1.00000])[1.00000],(KF021494 1 Eucampsipoda madagascarensis isolate J43 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial,KF021494 1 Eucampsipoda madagascarensis isolate J43 cytochrome c oxidase subunit 1 COI gene partial cds mitochondrial(2))[1.00000]);
+
+Summary:
+
+Partition 1/1:
+                         Model         Score        Weight
+----------------------------------------------------------
+       BIC                 GTR    56879.5181        0.9995
+       AIC                 GTR    55590.7549        0.9950
+      AICc                 GTR    55974.7549        0.9993
+
+Execution results written to /home/cbrook/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas.out
+Starting tree written to /home/cbrook/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas.tree
