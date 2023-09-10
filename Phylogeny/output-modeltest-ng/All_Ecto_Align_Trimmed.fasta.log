@@ -1,0 +1,401 @@
+Physical cores: 14
+Logical cores:  28
+Memory:         62.2GB
+Extensions:     AVX
+
+WARNING: Partition DATA: Sequences KEL149_CD_3FB_extraction and KEL149_CD_4MB_extraction are identical
+WARNING: Partition DATA: Sequences KEL149_CD_3FB_extraction and KEL194_CD_1MB_extraction are identical
+WARNING: Partition DATA: Sequences KEL149_CD_3FB_extraction and KEL239_CD_2FB_extraction are identical
+WARNING: Partition DATA: Sequences KEL149_CD_3FB_extraction and KEL272_CD_3MB_extraction are identical
+WARNING: Partition DATA: Sequences KEL149_CD_3FB_extraction and KEL272_CD_4MB_extraction are identical
+WARNING: Partition DATA: Sequences KEL149_CD_3FB_extraction and KEL282_CD_1FB_extraction are identical
+WARNING: Partition DATA: Sequences KEL149_CD_3FB_extraction and KEL282_CD_2F_extraction are identical
+WARNING: Partition DATA: Sequences KEL149_CD_3FB_extraction and MIZ343_W_M28_extraction are identical
+WARNING: Partition DATA: Sequences KEL149_CD_3FB_extraction and MF462043_1_Cyclopodia_dubia_isolate_9Cdu_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ463_EM_B_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ467_EM_M28_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and ROU120_EM_M27B_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and ROU124_EM_M28_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and ROU131_EM_M28B_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and ROU187_EM_M27A_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and ROU187_EM_M27B_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and ROU189_EM_F27B_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and ROU189_EM_F28_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ464_EM_M27B_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and ROU131_EM_M27A_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and ROU176_EM_NA27B_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and ROU184_EM_NA27B_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and ROU192_EM_NA27B_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ484_EM_M28_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and ROU132_EM_MA_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ455_EM_M28_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ207_EM_MA_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ300_W_F27A_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ250_EM_FA_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ267_EM_MA_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ367_EM_FA_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ452_EM_MA_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ468_EM_MA_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ475_EM_M27B_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ476_EM_F27A_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ482_W_F27A_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ497_EM_B_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ543_EM_MA_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and ROU114_W_B_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and ROU124_EM_F27A_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ306_EM_M27A_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ481_EM_MA_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ492_EM_B_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ346_EM_MA_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ466_EM_F27A_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ484_EM_F27A_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ484_EM_M27B_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and ROU192_EM_M27A_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ312_EM_F27B_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ512_EM_MA_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ463_EM_FA_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ343_EM_FA_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ468_EM_B_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ497_EM_MA_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ250_EM_B_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ312_EM_F27A_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ466_EM_M28_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ455_EM_M27B_extraction are identical
+WARNING: Partition DATA: Sequences MIZ262_EM_B_extraction and MIZ312_EM_M28_extraction are identical
+WARNING: Partition DATA: Sequences ROU184_EM_F27A_extraction and MIZ534_EM_MA_extraction are identical
+WARNING: Partition DATA: Sequences ROU139_EM_M27A_extraction and ROU184_EM_M28_extraction are identical
+WARNING: Partition DATA: Sequences ROU139_EM_M27A_extraction and ROU120_EM_FA_extraction are identical
+WARNING: Partition DATA: Sequences ROU139_EM_M27A_extraction and ROU124_EM_NA27B_extraction are identical
+WARNING: Partition DATA: Sequences ROU139_EM_M27A_extraction and MIZ475_EM_F27A_extraction are identical
+WARNING: Partition DATA: Sequences KR997994_1_Eucampsipoda_sp__MD_2016_strain_AA023_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction and KR997992_1_Eucampsipoda_sp__MD_2016_strain_AA008_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction are identical
+WARNING: Partition DATA: Sequences KR997994_1_Eucampsipoda_sp__MD_2016_strain_AA023_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction and MH151059_1_Eucampsipoda_africana_isolate_NG13_008_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction are identical
+WARNING: Partition DATA: Sequences KR997994_1_Eucampsipoda_sp__MD_2016_strain_AA023_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction and MH151060_1_Eucampsipoda_africana_isolate_NG13_099_2_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction are identical
+WARNING: Partition DATA: Sequences KR997994_1_Eucampsipoda_sp__MD_2016_strain_AA023_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction and MH151062_1_Eucampsipoda_africana_isolate_NG13_057_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction are identical
+WARNING: Partition DATA: Sequences KR997994_1_Eucampsipoda_sp__MD_2016_strain_AA023_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction and KR997999_1_Eucampsipoda_sp__MD_2016_strain_AA035_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction are identical
+WARNING: Partition DATA: Sequences KR997994_1_Eucampsipoda_sp__MD_2016_strain_AA023_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction and KR998001_1_Eucampsipoda_sp__MD_2016_strain_AA033_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction are identical
+WARNING: Partition DATA: Sequences KR997994_1_Eucampsipoda_sp__MD_2016_strain_AA023_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction and KR997996_1_Eucampsipoda_sp__MD_2016_strain_AA024_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction are identical
+WARNING: Partition DATA: Sequences KR997994_1_Eucampsipoda_sp__MD_2016_strain_AA023_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction and KR997995_1_Eucampsipoda_sp__MD_2016_strain_AA034_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction are identical
+WARNING: Partition DATA: Sequences KR997994_1_Eucampsipoda_sp__MD_2016_strain_AA023_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction and KR997993_1_Eucampsipoda_sp__MD_2016_strain_AA037_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction are identical
+WARNING: Partition DATA: Sequences KR997994_1_Eucampsipoda_sp__MD_2016_strain_AA023_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction and LC536587_1_Eucampsipoda_africana_ZBF2_mitochondrial_COI_gene_for_cytochrome_c_oxidase_subunit_1__partial_cds_extraction are identical
+WARNING: Partition DATA: Sequences KR997994_1_Eucampsipoda_sp__MD_2016_strain_AA023_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction and LC536588_1_Eucampsipoda_africana_ZBF3_mitochondrial_COI_gene_for_cytochrome_c_oxidase_subunit_1__partial_cds_extraction are identical
+WARNING: Partition DATA: Sequences MH151066_1_Eucampsipoda_africana_isolate_NG13_013_2_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction and KR997997_1_Eucampsipoda_sp__MD_2016_strain_AA026_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction are identical
+WARNING: Partition DATA: Sequences MH151065_1_Eucampsipoda_africana_isolate_NG13_018_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction and KF021491_1_Eucampsipoda_africana_isolate_N4_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction are identical
+WARNING: Partition DATA: Sequences KF021499_1_Eucampsipoda_theodori_isolate_31DM_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and KF021496_1_Eucampsipoda_theodori_isolate_28DM_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction are identical
+WARNING: Partition DATA: Sequences KF021498_1_Eucampsipoda_theodori_isolate_30DM_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and KF021497_1_Eucampsipoda_theodori_isolate_29F_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction are identical
+WARNING: Partition DATA: Sequences OM283589_1_Eucampsipoda_africana_voucher_EA_2_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction and OM283593_1_Eucampsipoda_africana_voucher_EA_6_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction are identical
+WARNING: Partition DATA: Sequences OM283589_1_Eucampsipoda_africana_voucher_EA_2_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction and OM283588_1_Eucampsipoda_africana_voucher_EA_1_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction are identical
+WARNING: Partition DATA: Sequences OM283589_1_Eucampsipoda_africana_voucher_EA_2_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction and OM283591_1_Eucampsipoda_africana_voucher_EA_4_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction are identical
+WARNING: Partition DATA: Sequences KF021517_1_Nycteribia_stylidiopsis_isolate_B_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and KF021517_1_Nycteribia_stylidiopsis_isolate_B_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_2_extraction are identical
+WARNING: Partition DATA: Sequences MF462046_1_Nycteribia_stylidiopsis_isolate_Nstyl2_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MF462046_1_Nycteribia_stylidiopsis_isolate_Nstyl2_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_2_extraction are identical
+WARNING: Partition DATA: Sequences ON704710_1_Penicillidia_fulvida_voucher_NMK182293_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction and ON704703_1_Penicillidia_fulvida_voucher_FMNH220254_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction are identical
+WARNING: Partition DATA: Sequences ON704710_1_Penicillidia_fulvida_voucher_NMK182293_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction and ON704664_1_Penicillidia_fulvida_voucher_FMNH220168_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction are identical
+WARNING: Partition DATA: Sequences MIZ165_EM_A_extraction and NC_001709_1_Drosophila_melanogaster_mitochondrion_complete_genome_extraction are identical
+WARNING: Partition DATA: Sequences MIZ165_EM_A_extraction and MIZ230_W_FA_extraction are identical
+WARNING: Partition DATA: Sequences MIZ165_EM_A_extraction and MIZ533_W_extraction are identical
+WARNING: Partition DATA: Sequences MIZ165_EM_A_extraction and MIZ386_EM_F_A_extraction are identical
+WARNING: Partition DATA: Sequences MIZ165_EM_A_extraction and MIZ543_W_1M_extraction are identical
+WARNING: Partition DATA: Sequences MIZ485_W_1M_extraction and MIZ492_W_1M_extraction are identical
+WARNING: MSA has not enough sites to infer reliable results
+Creating new checkpoint file: /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta.ckp
+--------------------------------------------------------------------------------
+ModelTest-NG v0.1.7
+
+Input data:
+  MSA:        /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta
+  Tree:       Maximum likelihood
+    file:           -
+  #taxa:            145
+  #sites:           536
+  #patterns:        221
+  Max. thread mem:  15 MB
+
+Output:
+  Log:           /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta.log
+  Starting tree: /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta.tree
+  Results:       /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta.out
+
+Selection options:
+  # dna schemes:      11
+  # dna models:       88
+  include model parameters:
+    Uniform:         true
+    p-inv (+I):      true
+    gamma (+G):      true
+    both (+I+G):     true
+    free rates (+R): false
+    fixed freqs:     true
+    estimated freqs: true
+    #categories:     4
+  gamma rates mode:   mean
+  asc bias:           none
+  epsilon (opt):      0.01
+  epsilon (par):      0.05
+  keep branches:      false
+
+Additional options:
+  verbosity:        very low
+  threads:          1/14
+  RNG seed:         12345
+  subtree repeats:  enabled
+--------------------------------------------------------------------------------
+modeltest-ng was called as follows: 
+>> /home/cbrook/modeltest-ng/modeltest-ng-static -i /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta -t ml -p 1 
+
+
+modeltest-ng: Warning: You are using one single thread out of 14 physical cores.
+modeltest-ng:          You can set the number of threads with -p argument.
+modeltest-ng: Try 'modeltest-ng --help' or 'modeltest-ng --usage' for more information
+
+Partition 1/1
+
+ ----ID---  ----MODEL---- ---Time--- -Elapsed--- -------LnL------- -Alpha- -P-inv-
+
+Computation of likelihood scores completed. It took 0h:04:54
+
+BIC       model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  GTR+G4             9     -3981.5347      9823.1730         0.0000    0.9616
+       2  GTR+I+G4          10     -3981.9697      9830.3273         7.1543    0.0269
+       3  TIM1+G4            7     -3992.2816      9832.0987         8.9256    0.0111
+       4  TIM1+I+G4          8     -3992.4999      9838.8194        15.6463    0.0004
+       5  TVM+G4             8     -3996.5593      9846.9381        23.7651    0.0000
+       6  TPM1uf+G4          6     -4006.0774      9853.4062        30.2331    0.0000
+       7  TVM+I+G4           9     -3997.2793      9854.6624        31.4894    0.0000
+       8  TPM1uf+I+G4        7     -4006.5411      9860.6176        37.4445    0.0000
+       9  TIM2+G4            7     -4010.2372      9868.0098        44.8367    0.0000
+      10  TIM2+I+G4          8     -4010.3574      9874.5344        51.3614    0.0000
+--------------------------------------------------------------------------------
+Best model according to BIC
+---------------------------
+Model:              GTR+G4
+lnL:                -3981.5347
+Frequencies:        0.3625 0.1341 0.1430 0.3603
+Subst. Rates:       0.6055 6.3274 11.4510 1.1417 20.8135 1.0000 
+Inv. sites prop:    -
+Gamma shape:        0.3865
+Score:              9823.1730
+Weight:             0.9616
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              0.0000
+Gamma:              0.9727
+Gamma-Inv:          0.0273
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              0.3127
+Alpha:              0.3864
+Alpha-P.Inv:        0.3978
+P.Inv-Alpha:        0.0221
+Frequencies:        0.3627 0.1339 0.1428 0.3605 
+
+Commands:
+  > phyml  -i /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta -m 012345 -f m -v 0 -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta -m GTRGAMMAX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta --model GTR+G4
+  > paup -s /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta
+  > iqtree -s /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta -m GTR+G4
+
+AIC       model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  GTR+G4             9     -3981.5347      8555.0693         0.0000    0.8076
+       2  GTR+I+G4          10     -3981.9697      8557.9395         2.8702    0.1923
+       3  TIM1+G4            7     -3992.2816      8572.5632        17.4939    0.0001
+       4  TIM1+I+G4          8     -3992.4999      8574.9998        19.9305    0.0000
+       5  TVM+G4             8     -3996.5593      8583.1185        28.0492    0.0000
+       6  TVM+I+G4           9     -3997.2793      8586.5587        31.4894    0.0000
+       7  TPM1uf+G4          6     -4006.0774      8598.1548        43.0855    0.0000
+       8  TPM1uf+I+G4        7     -4006.5411      8601.0821        46.0128    0.0000
+       9  TIM2+G4            7     -4010.2372      8608.4743        53.4050    0.0000
+      10  TIM2+I+G4          8     -4010.3574      8610.7148        55.6455    0.0000
+--------------------------------------------------------------------------------
+Best model according to AIC
+---------------------------
+Model:              GTR+G4
+lnL:                -3981.5347
+Frequencies:        0.3625 0.1341 0.1430 0.3603
+Subst. Rates:       0.6055 6.3274 11.4510 1.1417 20.8135 1.0000 
+Inv. sites prop:    -
+Gamma shape:        0.3865
+Score:              8555.0693
+Weight:             0.8076
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              0.0000
+Gamma:              0.8077
+Gamma-Inv:          0.1923
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              0.3127
+Alpha:              0.3865
+Alpha-P.Inv:        0.3978
+P.Inv-Alpha:        0.0221
+Frequencies:        0.3629 0.1338 0.1432 0.3601 
+
+Commands:
+  > phyml  -i /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta -m 012345 -f m -v 0 -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta -m GTRGAMMAX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta --model GTR+G4
+  > paup -s /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta
+  > iqtree -s /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta -m GTR+G4
+
+AICc      model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  GTR+G4             9     -3981.5347      9290.0693         0.0000    0.6753
+       2  TIM1+G4            7     -3992.2816      9291.5632         1.4939    0.3200
+       3  GTR+I+G4          10     -3981.9697      9300.9395        10.8702    0.0029
+       4  TIM1+I+G4          8     -3992.4999      9301.9998        11.9305    0.0017
+       5  TPM1uf+G4          6     -4006.0774      9309.1548        19.0855    0.0000
+       6  TVM+G4             8     -3996.5593      9310.1185        20.0492    0.0000
+       7  TPM1uf+I+G4        7     -4006.5411      9320.0821        30.0128    0.0000
+       8  TVM+I+G4           9     -3997.2793      9321.5587        31.4894    0.0000
+       9  TIM2+G4            7     -4010.2372      9327.4743        37.4050    0.0000
+      10  TIM2+I+G4          8     -4010.3574      9337.7148        47.6455    0.0000
+--------------------------------------------------------------------------------
+Best model according to AICc
+---------------------------
+Model:              GTR+G4
+lnL:                -3981.5347
+Frequencies:        0.3625 0.1341 0.1430 0.3603
+Subst. Rates:       0.6055 6.3274 11.4510 1.1417 20.8135 1.0000 
+Inv. sites prop:    -
+Gamma shape:        0.3865
+Score:              9290.0693
+Weight:             0.6753
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              0.0000
+Gamma:              0.9953
+Gamma-Inv:          0.0047
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              0.3127
+Alpha:              0.3853
+Alpha-P.Inv:        0.3975
+P.Inv-Alpha:        0.0220
+Frequencies:        0.3678 0.1291 0.1371 0.3660 
+
+Commands:
+  > phyml  -i /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta -m 012345 -f m -v 0 -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta -m GTRGAMMAX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta --model GTR+G4
+  > paup -s /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta
+  > iqtree -s /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta -m GTR+G4
+
+There are 88 different topologies
+Topologies written to /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta.topos
+
+topo_id   models_count   bic_support   aic_support   aicc_support
+-----------------------------------------------------------------
+     87              1       0.96164       0.80756       0.67529
+     88              1       0.02688       0.19227       0.00294
+     71              1       0.01109       0.00013       0.31996
+     72              1       0.00038       0.00004       0.00173
+     79              1       0.00001       0.00000       0.00003
+     47              1       0.00000       0.00000       0.00005
+     80              1       0.00000       0.00000       0.00000
+     48              1       0.00000       0.00000       0.00000
+     55              1       0.00000       0.00000       0.00000
+     56              1       0.00000       0.00000       0.00000
+     63              1       0.00000       0.00000       0.00000
+     39              1       0.00000       0.00000       0.00000
+     64              1       0.00000       0.00000       0.00000
+     40              1       0.00000       0.00000       0.00000
+     31              1       0.00000       0.00000       0.00000
+     32              1       0.00000       0.00000       0.00000
+     23              1       0.00000       0.00000       0.00000
+     24              1       0.00000       0.00000       0.00000
+     15              1       0.00000       0.00000       0.00000
+     16              1       0.00000       0.00000       0.00000
+     83              1       0.00000       0.00000       0.00000
+     84              1       0.00000       0.00000       0.00000
+     75              1       0.00000       0.00000       0.00000
+     76              1       0.00000       0.00000       0.00000
+      7              1       0.00000       0.00000       0.00000
+      8              1       0.00000       0.00000       0.00000
+     67              1       0.00000       0.00000       0.00000
+     68              1       0.00000       0.00000       0.00000
+     86              1       0.00000       0.00000       0.00000
+     78              1       0.00000       0.00000       0.00000
+     43              1       0.00000       0.00000       0.00000
+     44              1       0.00000       0.00000       0.00000
+     70              1       0.00000       0.00000       0.00000
+     82              1       0.00000       0.00000       0.00000
+     51              1       0.00000       0.00000       0.00000
+     54              1       0.00000       0.00000       0.00000
+     46              1       0.00000       0.00000       0.00000
+     52              1       0.00000       0.00000       0.00000
+     74              1       0.00000       0.00000       0.00000
+     59              1       0.00000       0.00000       0.00000
+     60              1       0.00000       0.00000       0.00000
+     27              1       0.00000       0.00000       0.00000
+     30              1       0.00000       0.00000       0.00000
+     28              1       0.00000       0.00000       0.00000
+     62              1       0.00000       0.00000       0.00000
+     38              1       0.00000       0.00000       0.00000
+     35              1       0.00000       0.00000       0.00000
+     36              1       0.00000       0.00000       0.00000
+     85              1       0.00000       0.00000       0.00000
+     77              1       0.00000       0.00000       0.00000
+     22              1       0.00000       0.00000       0.00000
+     66              1       0.00000       0.00000       0.00000
+     14              1       0.00000       0.00000       0.00000
+     69              1       0.00000       0.00000       0.00000
+     81              1       0.00000       0.00000       0.00000
+     42              1       0.00000       0.00000       0.00000
+      6              1       0.00000       0.00000       0.00000
+     45              1       0.00000       0.00000       0.00000
+     73              1       0.00000       0.00000       0.00000
+     50              1       0.00000       0.00000       0.00000
+     20              1       0.00000       0.00000       0.00000
+     19              1       0.00000       0.00000       0.00000
+     53              1       0.00000       0.00000       0.00000
+     61              1       0.00000       0.00000       0.00000
+     26              1       0.00000       0.00000       0.00000
+     29              1       0.00000       0.00000       0.00000
+     37              1       0.00000       0.00000       0.00000
+      3              1       0.00000       0.00000       0.00000
+     11              1       0.00000       0.00000       0.00000
+      4              1       0.00000       0.00000       0.00000
+     12              1       0.00000       0.00000       0.00000
+     58              1       0.00000       0.00000       0.00000
+     34              1       0.00000       0.00000       0.00000
+     65              1       0.00000       0.00000       0.00000
+     21              1       0.00000       0.00000       0.00000
+     13              1       0.00000       0.00000       0.00000
+     41              1       0.00000       0.00000       0.00000
+      5              1       0.00000       0.00000       0.00000
+     49              1       0.00000       0.00000       0.00000
+     25              1       0.00000       0.00000       0.00000
+     57              1       0.00000       0.00000       0.00000
+     33              1       0.00000       0.00000       0.00000
+     18              1       0.00000       0.00000       0.00000
+      2              1       0.00000       0.00000       0.00000
+     10              1       0.00000       0.00000       0.00000
+     17              1       0.00000       0.00000       0.00000
+      1              1       0.00000       0.00000       0.00000
+      9              1       0.00000       0.00000       0.00000
+
+extended majority-rule consensus: ((MIZ463_EM_B_extraction,(ROU124_EM_F27A_extraction,(MIZ306_EM_M27A_extraction,(MIZ484_EM_M27B_extraction,(ROU187_EM_M27A_extraction,(MIZ267_EM_MA_extraction,((MIZ312_EM_F27A_extraction,((MIZ464_EM_M27B_extraction,(MIZ463_EM_FA_extraction,MIZ481_EM_MA_extraction)[1.00000])[0.96203],(ROU120_EM_FA_extraction,((ROU139_EM_M27A_extraction,(MIZ475_EM_F27A_extraction,ROU192_EM_M28_extraction)[0.99961])[0.99961],(ROU124_EM_NA27B_extraction,ROU184_EM_M28_extraction)[1.00000])[0.98852])[1.00000])[0.96203])[0.96164],(MIZ343_EM_FA_extraction,MIZ312_EM_F27B_extraction)[0.96164])[0.97312])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[0.96203],MIZ250_EM_B_extraction,(MIZ485_EM_MA_extraction,(ROU192_EM_NA27B_extraction,((KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(MIZ466_EM_M28_extraction,(MIZ466_EM_F27A_extraction,(MIZ476_EM_F27A_extraction,(MIZ250_EM_FA_extraction,(ROU184_EM_NA27B_extraction,(MIZ452_EM_MA_extraction,(MIZ367_EM_B_extraction,(MIZ543_EM_MA_extraction,((MIZ312_EM_M28_extraction,ROU120_EM_M27B_extraction)[0.96164],(ROU132_EM_MA_extraction,(MIZ482_W_F27A_extraction,(MIZ185_EM_FA_extraction,(MIZ467_EM_M28_extraction,(MIZ492_EM_B_extraction,(ROU124_EM_M28_extraction,(MIZ455_EM_M27B_extraction,(MIZ346_EM_MA_extraction,(MIZ367_EM_FA_extraction,(MIZ512_EM_MA_extraction,(ROU192_EM_M27A_extraction,(MIZ484_EM_M28_extraction,(MIZ497_EM_B_extraction,(MIZ497_EM_MA_extraction,(MIZ262_EM_B_extraction,(ROU189_EM_F27B_extraction,(MIZ484_EM_F27A_extraction,(ROU131_EM_M28B_extraction,((ROU176_EM_NA27B_extraction,(ROU114_W_B_extraction,((MIZ468_EM_MA_extraction,(((KF273783_1_Eucampsipoda_sundaica_isolate_KB5_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(((MH282032_1_Basilia_tiptoni_voucher_TH_PA_P253_cytochrome_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,OL847632_1_Basilia_lindolphoi_isolate_147_3_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction)[1.00000],((ROU132_EM_B_extraction,((MIZ492_W_1M_extraction,MIZ485_W_1M_extraction)[1.00000],(MIZ533_W_extraction,((NC_001709_1_Drosophila_melanogaster_mitochondrion_complete_genome_extraction,(MIZ543_W_1M_extraction,MIZ386_EM_F_A_extraction)[0.97312])[0.97273],(MIZ230_W_FA_extraction,MIZ165_EM_A_extraction)[0.96164])[0.97312])[1.00000])[0.98891])[0.97312],((MK140181_1_Penicillidia_dufourii_isolate_185aCJ2904449_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,MW590972_1_Penicillidia_monoceros_voucher_JP00382_cytochrome_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000],(((MF462051_1_Penicillidia_leptothrinax_isolate_J27_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(ON704664_1_Penicillidia_fulvida_voucher_FMNH220168_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,(ON704703_1_Penicillidia_fulvida_voucher_FMNH220254_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,ON704710_1_Penicillidia_fulvida_voucher_NMK182293_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction)[0.99961])[1.00000])[0.97312],(MK140180_1_Penicillidia_conspicua_isolate_119bCJ1994321_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,KF021535_1_Penicillidia_oceanica_isolate_N17_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000])[1.00000],(((MK140156_1_Nycteribia_schmidlii_isolate_165CJ2614383_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,((MF462046_1_Nycteribia_stylidiopsis_isolate_Nstyl2_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_2_extraction,MF462046_1_Nycteribia_stylidiopsis_isolate_Nstyl2_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000],(KF021492_1_Eucampsipoda_africana_isolate_N6_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(KF021517_1_Nycteribia_stylidiopsis_isolate_B_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_2_extraction,KF021517_1_Nycteribia_stylidiopsis_isolate_B_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000])[1.00000])[1.00000])[1.00000],(MK140160_1_Nycteribia_kolenatii_isolate_52fCJ914156_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,MW590968_1_Nycteribia_kolenatii_voucher_JP00384_cytochrome_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000])[1.00000],(MK140104_1_Basilia_nana_isolate_KDS15_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(KF021501_1_Nycteribia_parvula_isolate_N16_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(LC522022_1_Nycteribia_allotopa_Mf51NA3_mitochondrial_COI_gene_for_cytochrome_c_oxidase_subunit_1__partial_cds_extraction,LC522026_1_Nycteribia_allotopa_Mf78NA5_mitochondrial_COI_gene_for_cytochrome_c_oxidase_subunit_1__partial_cds_extraction)[1.00000])[1.00000])[0.97312])[0.97312])[0.97312])[0.97312])[1.00000])[1.00000],((KEL282_CD_2F_extraction,(KEL282_CD_1FB_extraction,(MIZ343_W_M28_extraction,(KEL272_CD_4MB_extraction,(KEL239_CD_2FB_extraction,(KEL194_CD_1MB_extraction,(MF462043_1_Cyclopodia_dubia_isolate_9Cdu_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(KEL149_CD_4MB_extraction,(KEL272_CD_3MB_extraction,KEL149_CD_3FB_extraction)[1.00000])[1.00000])[1.00000])[0.97312])[0.97273])[0.97273])[0.96203])[0.96202])[1.00000],(KF273782_1_Cyclopodia_horsfieldi_isolate_RC24_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(KF273770_1_Cyclopodia_horsfieldi_isolate_PPH12_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,KF273778_1_Cyclopodia_horsfieldi_isolate_LYL1_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction)[1.00000])[1.00000])[1.00000])[1.00000])[1.00000],(((KF021500_1_Eucampsipoda_theodori_isolate_8B_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,((KF021496_1_Eucampsipoda_theodori_isolate_28DM_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,KF021499_1_Eucampsipoda_theodori_isolate_31DM_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000],(KF021497_1_Eucampsipoda_theodori_isolate_29F_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,KF021498_1_Eucampsipoda_theodori_isolate_30DM_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000])[1.00000])[1.00000],(MH151063_1_Eucampsipoda_africana_isolate_NG13_010_2_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,((MH151061_1_Eucampsipoda_africana_isolate_NG13_041_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,MH151064_1_Eucampsipoda_africana_isolate_NG13_051_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction)[1.00000],(MH151060_1_Eucampsipoda_africana_isolate_NG13_099_2_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,((MH151062_1_Eucampsipoda_africana_isolate_NG13_057_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(KR997998_1_Eucampsipoda_sp__MD_2016_strain_AA021_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(KR997995_1_Eucampsipoda_sp__MD_2016_strain_AA034_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(KR997993_1_Eucampsipoda_sp__MD_2016_strain_AA037_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,MH151059_1_Eucampsipoda_africana_isolate_NG13_008_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction)[0.96164])[0.96164])[0.96164])[0.96164],(KR997992_1_Eucampsipoda_sp__MD_2016_strain_AA008_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(KR997999_1_Eucampsipoda_sp__MD_2016_strain_AA035_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,((KF021491_1_Eucampsipoda_africana_isolate_N4_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,MH151065_1_Eucampsipoda_africana_isolate_NG13_018_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction)[1.00000],(LC536587_1_Eucampsipoda_africana_ZBF2_mitochondrial_COI_gene_for_cytochrome_c_oxidase_subunit_1__partial_cds_extraction,((KR997996_1_Eucampsipoda_sp__MD_2016_strain_AA024_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(LC536586_1_Eucampsipoda_africana_ZBF1_mitochondrial_COI_gene_for_cytochrome_c_oxidase_subunit_1__partial_cds_extraction,(KR998001_1_Eucampsipoda_sp__MD_2016_strain_AA033_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(LC536588_1_Eucampsipoda_africana_ZBF3_mitochondrial_COI_gene_for_cytochrome_c_oxidase_subunit_1__partial_cds_extraction,KR997994_1_Eucampsipoda_sp__MD_2016_strain_AA023_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction)[0.96164])[0.96164])[0.96164])[0.96164],(KR997997_1_Eucampsipoda_sp__MD_2016_strain_AA026_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,MH151066_1_Eucampsipoda_africana_isolate_NG13_013_2_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction)[1.00000])[0.96164])[0.96164])[0.96164])[0.96164])[0.96164])[0.96164])[0.97273])[1.00000])[1.00000])[1.00000],(KF021493_1_Eucampsipoda_inermis_isolate_N8_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(OM283592_1_Eucampsipoda_africana_voucher_EA_5_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,(OM283593_1_Eucampsipoda_africana_voucher_EA_6_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,(OM283588_1_Eucampsipoda_africana_voucher_EA_1_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,(OM283590_1_Eucampsipoda_africana_voucher_EA_3_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,(OM283591_1_Eucampsipoda_africana_voucher_EA_4_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,OM283589_1_Eucampsipoda_africana_voucher_EA_2_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction)[1.00000])[0.96202])[0.96202])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000],(KF021494_1_Eucampsipoda_madagascarensis_isolate_J43_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(MIZ534_EM_MA_extraction,ROU184_EM_F27A_extraction)[0.96203])[1.00000])[1.00000])[0.96164],((MIZ300_W_F27A_extraction,ROU131_EM_M27A_extraction)[0.96164],(MIZ481_EM_B_extraction,(MIZ455_EM_M28_extraction,ROU189_EM_F28_extraction)[0.96164])[0.96164])[0.96164])[0.96164])[0.96164])[0.96164],((ROU114_EM_MA_extraction,ROU120_EM_M28_extraction)[0.96164],(MIZ475_EM_M27B_extraction,MIZ207_EM_MA_extraction)[0.96164])[0.96164])[0.96202])[0.96202])[0.98891])[0.98891])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[0.96164])[0.96164])[0.96164])[0.96164])[0.96202])[0.96164])[0.96164])[0.96164])[0.96164])[0.96164])[1.00000])[1.00000])[1.00000])[1.00000])[0.96203],(MIZ468_EM_B_extraction,ROU187_EM_M27B_extraction)[0.98852])[0.97273])[0.96164])[0.96203]);
+strict consensus: (((MK140156_1_Nycteribia_schmidlii_isolate_165CJ2614383_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,((MF462046_1_Nycteribia_stylidiopsis_isolate_Nstyl2_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_2_extraction,MF462046_1_Nycteribia_stylidiopsis_isolate_Nstyl2_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000],(KF021492_1_Eucampsipoda_africana_isolate_N6_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(KF021517_1_Nycteribia_stylidiopsis_isolate_B_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_2_extraction,KF021517_1_Nycteribia_stylidiopsis_isolate_B_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000])[1.00000])[1.00000])[1.00000],(MK140160_1_Nycteribia_kolenatii_isolate_52fCJ914156_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,MW590968_1_Nycteribia_kolenatii_voucher_JP00384_cytochrome_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000])[1.00000],ROU132_EM_B_extraction,MK140104_1_Basilia_nana_isolate_KDS15_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(MF462051_1_Penicillidia_leptothrinax_isolate_J27_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(ON704664_1_Penicillidia_fulvida_voucher_FMNH220168_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,ON704703_1_Penicillidia_fulvida_voucher_FMNH220254_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,ON704710_1_Penicillidia_fulvida_voucher_NMK182293_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction)[1.00000],(MK140180_1_Penicillidia_conspicua_isolate_119bCJ1994321_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,KF021535_1_Penicillidia_oceanica_isolate_N17_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000])[1.00000],(MK140181_1_Penicillidia_dufourii_isolate_185aCJ2904449_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,MW590972_1_Penicillidia_monoceros_voucher_JP00382_cytochrome_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000],(KF021501_1_Nycteribia_parvula_isolate_N16_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(LC522022_1_Nycteribia_allotopa_Mf51NA3_mitochondrial_COI_gene_for_cytochrome_c_oxidase_subunit_1__partial_cds_extraction,LC522026_1_Nycteribia_allotopa_Mf78NA5_mitochondrial_COI_gene_for_cytochrome_c_oxidase_subunit_1__partial_cds_extraction)[1.00000])[1.00000],((MH282032_1_Basilia_tiptoni_voucher_TH_PA_P253_cytochrome_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,OL847632_1_Basilia_lindolphoi_isolate_147_3_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction)[1.00000],((KF273783_1_Eucampsipoda_sundaica_isolate_KB5_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,((KF021494_1_Eucampsipoda_madagascarensis_isolate_J43_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,MIZ534_EM_MA_extraction,ROU184_EM_F27A_extraction,(MIZ484_EM_F27A_extraction,MIZ481_EM_B_extraction,ROU114_EM_MA_extraction,ROU114_W_B_extraction,MIZ475_EM_M27B_extraction,MIZ468_EM_MA_extraction,MIZ300_W_F27A_extraction,MIZ207_EM_MA_extraction,MIZ455_EM_M28_extraction,ROU120_EM_M28_extraction,ROU176_EM_NA27B_extraction,ROU131_EM_M27A_extraction,ROU189_EM_F28_extraction,ROU189_EM_F27B_extraction,ROU131_EM_M28B_extraction,MIZ262_EM_B_extraction,(MIZ497_EM_MA_extraction,(MIZ497_EM_B_extraction,(MIZ484_EM_M28_extraction,(ROU192_EM_M27A_extraction,(MIZ512_EM_MA_extraction,(MIZ367_EM_FA_extraction,(MIZ346_EM_MA_extraction,(MIZ455_EM_M27B_extraction,(MIZ312_EM_M28_extraction,MIZ466_EM_F27A_extraction,MIZ492_EM_B_extraction,MIZ367_EM_B_extraction,MIZ543_EM_MA_extraction,MIZ482_W_F27A_extraction,MIZ476_EM_F27A_extraction,MIZ452_EM_MA_extraction,MIZ250_EM_FA_extraction,ROU132_EM_MA_extraction,ROU184_EM_NA27B_extraction,ROU124_EM_M28_extraction,ROU120_EM_M27B_extraction,MIZ467_EM_M28_extraction,MIZ185_EM_FA_extraction,(MIZ466_EM_M28_extraction,MIZ250_EM_B_extraction,MIZ468_EM_B_extraction,KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,MIZ485_EM_MA_extraction,ROU192_EM_NA27B_extraction,ROU187_EM_M27B_extraction,MIZ463_EM_B_extraction,(ROU124_EM_F27A_extraction,(MIZ306_EM_M27A_extraction,(MIZ484_EM_M27B_extraction,(MIZ312_EM_F27A_extraction,MIZ343_EM_FA_extraction,MIZ312_EM_F27B_extraction,MIZ267_EM_MA_extraction,MIZ464_EM_M27B_extraction,ROU187_EM_M27A_extraction,(MIZ475_EM_F27A_extraction,ROU124_EM_NA27B_extraction,ROU120_EM_FA_extraction,ROU192_EM_M28_extraction,ROU184_EM_M28_extraction,ROU139_EM_M27A_extraction)[1.00000],(MIZ463_EM_FA_extraction,MIZ481_EM_MA_extraction)[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000],(((KF021500_1_Eucampsipoda_theodori_isolate_8B_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(KF021496_1_Eucampsipoda_theodori_isolate_28DM_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,KF021499_1_Eucampsipoda_theodori_isolate_31DM_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(KF021497_1_Eucampsipoda_theodori_isolate_29F_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,KF021498_1_Eucampsipoda_theodori_isolate_30DM_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000])[1.00000])[1.00000],(MH151063_1_Eucampsipoda_africana_isolate_NG13_010_2_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(LC536588_1_Eucampsipoda_africana_ZBF3_mitochondrial_COI_gene_for_cytochrome_c_oxidase_subunit_1__partial_cds_extraction,LC536586_1_Eucampsipoda_africana_ZBF1_mitochondrial_COI_gene_for_cytochrome_c_oxidase_subunit_1__partial_cds_extraction,LC536587_1_Eucampsipoda_africana_ZBF2_mitochondrial_COI_gene_for_cytochrome_c_oxidase_subunit_1__partial_cds_extraction,KR997993_1_Eucampsipoda_sp__MD_2016_strain_AA037_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,KR997995_1_Eucampsipoda_sp__MD_2016_strain_AA034_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,KR997996_1_Eucampsipoda_sp__MD_2016_strain_AA024_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,KR997998_1_Eucampsipoda_sp__MD_2016_strain_AA021_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,KR998001_1_Eucampsipoda_sp__MD_2016_strain_AA033_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,KR997999_1_Eucampsipoda_sp__MD_2016_strain_AA035_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,MH151062_1_Eucampsipoda_africana_isolate_NG13_057_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,MH151060_1_Eucampsipoda_africana_isolate_NG13_099_2_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,MH151059_1_Eucampsipoda_africana_isolate_NG13_008_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,KR997992_1_Eucampsipoda_sp__MD_2016_strain_AA008_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,KR997994_1_Eucampsipoda_sp__MD_2016_strain_AA023_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(KR997997_1_Eucampsipoda_sp__MD_2016_strain_AA026_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,MH151066_1_Eucampsipoda_africana_isolate_NG13_013_2_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction)[1.00000],(MH151061_1_Eucampsipoda_africana_isolate_NG13_041_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,MH151064_1_Eucampsipoda_africana_isolate_NG13_051_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction)[1.00000],(KF021491_1_Eucampsipoda_africana_isolate_N4_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,MH151065_1_Eucampsipoda_africana_isolate_NG13_018_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction)[1.00000])[1.00000])[1.00000])[1.00000],(KF021493_1_Eucampsipoda_inermis_isolate_N8_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(OM283592_1_Eucampsipoda_africana_voucher_EA_5_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,(OM283590_1_Eucampsipoda_africana_voucher_EA_3_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,OM283588_1_Eucampsipoda_africana_voucher_EA_1_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,OM283593_1_Eucampsipoda_africana_voucher_EA_6_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,(OM283591_1_Eucampsipoda_africana_voucher_EA_4_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,OM283589_1_Eucampsipoda_africana_voucher_EA_2_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction)[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000],((MIZ343_W_M28_extraction,KEL282_CD_2F_extraction,KEL282_CD_1FB_extraction,KEL272_CD_4MB_extraction,KEL239_CD_2FB_extraction,KEL194_CD_1MB_extraction,(MF462043_1_Cyclopodia_dubia_isolate_9Cdu_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(KEL149_CD_4MB_extraction,(KEL272_CD_3MB_extraction,KEL149_CD_3FB_extraction)[1.00000])[1.00000])[1.00000])[1.00000],(KF273782_1_Cyclopodia_horsfieldi_isolate_RC24_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(KF273770_1_Cyclopodia_horsfieldi_isolate_PPH12_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,KF273778_1_Cyclopodia_horsfieldi_isolate_LYL1_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction)[1.00000])[1.00000])[1.00000])[1.00000])[1.00000],(MIZ492_W_1M_extraction,MIZ485_W_1M_extraction)[1.00000],(MIZ543_W_1M_extraction,MIZ386_EM_F_A_extraction,MIZ533_W_extraction,MIZ230_W_FA_extraction,NC_001709_1_Drosophila_melanogaster_mitochondrion_complete_genome_extraction,MIZ165_EM_A_extraction)[1.00000]);
+
+Summary:
+
+Partition 1/1:
+                         Model         Score        Weight
+----------------------------------------------------------
+       BIC              GTR+G4     9823.1730        0.9616
+       AIC              GTR+G4     8555.0693        0.8076
+      AICc              GTR+G4     9290.0693        0.6753
+
+Execution results written to /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta.out
+Starting tree written to /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta.tree

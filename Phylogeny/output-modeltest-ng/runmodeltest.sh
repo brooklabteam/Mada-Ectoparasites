@@ -16,4 +16,4 @@ module load emacs/26
 module load java/1.8
 
 
-~/modeltest-ng/modeltest-ng-static -i ~/modeltest-ng/madaecto/All-Ecto-Sequences-Aligned.fas -t ml -p 1
+~/modeltest-ng/modeltest-ng-static -i ~/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta -t ml -p 1
