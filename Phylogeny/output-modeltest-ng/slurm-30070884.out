@@ -1,0 +1,414 @@
+Loading openmpi/3.1.2
+  ERROR: Module cannot be loaded due to a conflict.
+    HINT: Might try "module unload openmpi" first.
+                             _      _ _            _      _   _  _____ 
+                            | |    | | |          | |    | \ | |/ ____|
+         _ __ ___   ___   __| | ___| | |_ ___  ___| |_   |  \| | |  __ 
+        | '_ ` _ \ / _ \ / _` |/ _ \ | __/ _ \/ __| __|  | . ` | | |_ |
+        | | | | | | (_) | (_| |  __/ | ||  __/\__ \ |_   | |\  | |__| |
+        |_| |_| |_|\___/ \__,_|\___|_|\__\___||___/\__|  |_| \_|\_____|
+--------------------------------------------------------------------------------
+ModelTest-NG v0.1.7 released on 17.03.2021 by The Exelixis Lab.
+Written by Diego Darriba.
+Contributors: Tomas Flouri, Alexey Kozlov, Benoit Morel, David Posada, 
+              Alexandros Stamatakis.
+Latest version: https://github.com/ddarriba/modeltest
+--------------------------------------------------------------------------------
+
+Physical cores: 14
+Logical cores:  28
+Memory:         62.2GB
+Extensions:     AVX
+
+WARNING: ... There are 53 more warnings. Check the log file for details
+WARNING: MSA has not enough sites to infer reliable results
+Creating new checkpoint file: /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta.ckp
+--------------------------------------------------------------------------------
+ModelTest-NG v0.1.7
+
+Input data:
+  MSA:        /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta
+  Tree:       Maximum likelihood
+    file:           -
+  #taxa:            145
+  #sites:           536
+  #patterns:        221
+  Max. thread mem:  15 MB
+
+Output:
+  Log:           /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta.log
+  Starting tree: /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta.tree
+  Results:       /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta.out
+
+Selection options:
+  # dna schemes:      11
+  # dna models:       88
+  include model parameters:
+    Uniform:         true
+    p-inv (+I):      true
+    gamma (+G):      true
+    both (+I+G):     true
+    free rates (+R): false
+    fixed freqs:     true
+    estimated freqs: true
+    #categories:     4
+  gamma rates mode:   mean
+  asc bias:           none
+  epsilon (opt):      0.01
+  epsilon (par):      0.05
+  keep branches:      false
+
+Additional options:
+  verbosity:        very low
+  threads:          1/14
+  RNG seed:         12345
+  subtree repeats:  enabled
+--------------------------------------------------------------------------------
+modeltest-ng was called as follows: 
+>> /home/cbrook/modeltest-ng/modeltest-ng-static -i /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta -t ml -p 1 
+
+
+modeltest-ng: Warning: You are using one single thread out of 14 physical cores.
+modeltest-ng:          You can set the number of threads with -p argument.
+modeltest-ng: Try 'modeltest-ng --help' or 'modeltest-ng --usage' for more information
+
+Partition 1/1
+
+    1/88   JC             0h:00:00   0h:00:00           -4578.8502       -       -
+    2/88   JC+I           0h:00:02   0h:00:02           -4485.4538       -  0.3081
+    3/88   JC+G4          0h:00:03   0h:00:05           -4334.1606  0.3985       -
+    4/88   JC+I+G4        0h:00:04   0h:00:09           -4334.5570  0.4114  0.0221
+    5/88   F81            0h:00:00   0h:00:10           -4412.5151       -       -
+    6/88   F81+I          0h:00:02   0h:00:12           -4294.1458       -  0.3123
+    7/88   F81+G4         0h:00:05   0h:00:17           -4100.3626  0.3549       -
+    8/88   F81+I+G4       0h:00:05   0h:00:22           -4100.8529  0.3826  0.0222
+    9/88   K80            0h:00:01   0h:00:23           -4575.7585       -       -
+   10/88   K80+I          0h:00:01   0h:00:24           -4482.4671       -  0.3086
+   11/88   K80+G4         0h:00:06   0h:00:30           -4331.4493  0.3976       -
+   12/88   K80+I+G4       0h:00:05   0h:00:35           -4331.8444  0.3951  0.0213
+   13/88   HKY            0h:00:02   0h:00:37           -4385.7663       -       -
+   14/88   HKY+I          0h:00:03   0h:00:40           -4278.2493       -  0.3096
+   15/88   HKY+G4         0h:00:05   0h:00:45           -4051.0701  0.3194       -
+   16/88   HKY+I+G4       0h:00:05   0h:00:50           -4051.7171  0.3505  0.0217
+   17/88   TrNef          0h:00:00   0h:00:50           -4558.8377       -       -
+   18/88   TrNef+I        0h:00:02   0h:00:52           -4461.3391       -  0.3089
+   19/88   TrNef+G4       0h:00:03   0h:00:55           -4314.2797  0.3822       -
+   20/88   TrNef+I+G4     0h:00:04   0h:00:59           -4308.3336  0.4140  0.0216
+   21/88   TrN            0h:00:02   0h:01:01           -4382.4721       -       -
+   22/88   TrN+I          0h:00:02   0h:01:03           -4261.9338       -  0.3117
+   23/88   TrN+G4         0h:00:05   0h:01:08           -4041.1811  0.3474       -
+   24/88   TrN+I+G4       0h:00:06   0h:01:14           -4041.6017  0.3635  0.0217
+   25/88   TPM2           0h:00:01   0h:01:15           -4436.5461       -       -
+   26/88   TPM2+I         0h:00:02   0h:01:17           -4320.7124       -  0.3013
+   27/88   TPM2+G4        0h:00:04   0h:01:21           -4207.0131  0.4105       -
+   28/88   TPM2+I+G4      0h:00:05   0h:01:26           -4207.3138  0.4147  0.0215
+   29/88   TPM2uf         0h:00:02   0h:01:28           -4315.7396       -       -
+   30/88   TPM2uf+I       0h:00:03   0h:01:31           -4199.0674       -  0.3137
+   31/88   TPM2uf+G4      0h:00:05   0h:01:36           -4034.2284  0.3530       -
+   32/88   TPM2uf+I+G4    0h:00:06   0h:01:42           -4034.6734  0.3695  0.0214
+   33/88   TPM3           0h:00:02   0h:01:44           -4461.1501       -       -
+   34/88   TPM3+I         0h:00:05   0h:01:49           -4367.1437       -  0.2963
+   35/88   TPM3+G4        0h:00:04   0h:01:53           -4231.3089  0.4052       -
+   36/88   TPM3+I+G4      0h:00:04   0h:01:57           -4231.6528  0.4297  0.0220
+   37/88   TPM3uf         0h:00:02   0h:01:59           -4317.4842       -       -
+   38/88   TPM3uf+I       0h:00:03   0h:02:02           -4217.2814       -  0.3073
+   39/88   TPM3uf+G4      0h:00:05   0h:02:07           -4023.3191  0.3549       -
+   40/88   TPM3uf+I+G4    0h:00:07   0h:02:14           -4023.7932  0.3716  0.0214
+   41/88   TPM1           0h:00:01   0h:02:15           -4394.3466       -       -
+   42/88   TPM1+I         0h:00:03   0h:02:18           -4294.6543       -  0.3089
+   43/88   TPM1+G4        0h:00:03   0h:02:21           -4153.6342  0.3756       -
+   44/88   TPM1+I+G4      0h:00:04   0h:02:25           -4153.9713  0.4161  0.0219
+   45/88   TPM1uf         0h:00:02   0h:02:27           -4291.2249       -       -
+   46/88   TPM1uf+I       0h:00:02   0h:02:29           -4184.8794       -  0.3138
+   47/88   TPM1uf+G4      0h:00:04   0h:02:33           -4006.0774  0.3597       -
+   48/88   TPM1uf+I+G4    0h:00:06   0h:02:39           -4006.5411  0.3927  0.0218
+   49/88   TIM2ef         0h:00:01   0h:02:40           -4424.0970       -       -
+   50/88   TIM2ef+I       0h:00:02   0h:02:42           -4304.5253       -  0.3102
+   51/88   TIM2ef+G4      0h:00:05   0h:02:47           -4188.7548  0.4192       -
+   52/88   TIM2ef+I+G4    0h:00:05   0h:02:52           -4188.9042  0.4419  0.0217
+   53/88   TIM2           0h:00:03   0h:02:55           -4307.2601       -       -
+   54/88   TIM2+I         0h:00:02   0h:02:57           -4180.7203       -  0.3116
+   55/88   TIM2+G4        0h:00:05   0h:03:02           -4010.2372  0.3621       -
+   56/88   TIM2+I+G4      0h:00:05   0h:03:07           -4010.3574  0.3769  0.0215
+   57/88   TIM3ef         0h:00:00   0h:03:07           -4449.3195       -       -
+   58/88   TIM3ef+I       0h:00:03   0h:03:10           -4342.0159       -  0.2927
+   59/88   TIM3ef+G4      0h:00:03   0h:03:13           -4199.2715  0.4140       -
+   60/88   TIM3ef+I+G4    0h:00:05   0h:03:18           -4199.5018  0.4263  0.0219
+   61/88   TIM3           0h:00:02   0h:03:20           -4309.2732       -       -
+   62/88   TIM3+I         0h:00:02   0h:03:22           -4202.8222       -  0.3051
+   63/88   TIM3+G4        0h:00:05   0h:03:27           -4018.4441  0.3549       -
+   64/88   TIM3+I+G4      0h:00:06   0h:03:33           -4018.8325  0.3870  0.0218
+   65/88   TIM1ef         0h:00:02   0h:03:35           -4378.4484       -       -
+   66/88   TIM1ef+I       0h:00:03   0h:03:38           -4275.4035       -  0.3098
+   67/88   TIM1ef+G4      0h:00:03   0h:03:41           -4131.3328  0.3803       -
+   68/88   TIM1ef+I+G4    0h:00:04   0h:03:45           -4131.7652  0.3967  0.0215
+   69/88   TIM1           0h:00:02   0h:03:47           -4275.5623       -       -
+   70/88   TIM1+I         0h:00:02   0h:03:49           -4162.8682       -  0.3172
+   71/88   TIM1+G4        0h:00:05   0h:03:54           -3992.2816  0.3828       -
+   72/88   TIM1+I+G4      0h:00:05   0h:03:59           -3992.4999  0.3971  0.0218
+   73/88   TVMef          0h:00:03   0h:04:02           -4301.4767       -       -
+   74/88   TVMef+I        0h:00:02   0h:04:04           -4195.7808       -  0.2933
+   75/88   TVMef+G4       0h:00:03   0h:04:07           -4085.4527  0.4090       -
+   76/88   TVMef+I+G4     0h:00:05   0h:04:12           -4085.5585  0.4555  0.0243
+   77/88   TVM            0h:00:01   0h:04:13           -4253.2806       -       -
+   78/88   TVM+I          0h:00:03   0h:04:16           -4135.8138       -  0.3075
+   79/88   TVM+G4         0h:00:05   0h:04:21           -3996.5593  0.3907       -
+   80/88   TVM+I+G4       0h:00:06   0h:04:27           -3997.2793  0.4195  0.0219
+   81/88   SYM            0h:00:03   0h:04:30           -4286.1054       -       -
+   82/88   SYM+I          0h:00:01   0h:04:31           -4177.6645       -  0.2955
+   83/88   SYM+G4         0h:00:04   0h:04:35           -4060.1379  0.4105       -
+   84/88   SYM+I+G4       0h:00:04   0h:04:39           -4059.6111  0.4562  0.0262
+   85/88   GTR            0h:00:01   0h:04:40           -4245.5466       -       -
+   86/88   GTR+I          0h:00:03   0h:04:43           -4120.3282       -  0.3127
+   87/88   GTR+G4         0h:00:05   0h:04:48           -3981.5347  0.3865       -
+   88/88   GTR+I+G4       0h:00:06   0h:04:54           -3981.9697  0.3978  0.0221
+ ----ID---  ----MODEL---- ---Time--- -Elapsed--- -------LnL------- -Alpha- -P-inv-
+
+Computation of likelihood scores completed. It took 0h:04:54
+
+BIC       model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  GTR+G4             9     -3981.5347      9823.1730         0.0000    0.9616
+       2  GTR+I+G4          10     -3981.9697      9830.3273         7.1543    0.0269
+       3  TIM1+G4            7     -3992.2816      9832.0987         8.9256    0.0111
+       4  TIM1+I+G4          8     -3992.4999      9838.8194        15.6463    0.0004
+       5  TVM+G4             8     -3996.5593      9846.9381        23.7651    0.0000
+       6  TPM1uf+G4          6     -4006.0774      9853.4062        30.2331    0.0000
+       7  TVM+I+G4           9     -3997.2793      9854.6624        31.4894    0.0000
+       8  TPM1uf+I+G4        7     -4006.5411      9860.6176        37.4445    0.0000
+       9  TIM2+G4            7     -4010.2372      9868.0098        44.8367    0.0000
+      10  TIM2+I+G4          8     -4010.3574      9874.5344        51.3614    0.0000
+--------------------------------------------------------------------------------
+Best model according to BIC
+---------------------------
+Model:              GTR+G4
+lnL:                -3981.5347
+Frequencies:        0.3625 0.1341 0.1430 0.3603
+Subst. Rates:       0.6055 6.3274 11.4510 1.1417 20.8135 1.0000 
+Inv. sites prop:    -
+Gamma shape:        0.3865
+Score:              9823.1730
+Weight:             0.9616
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              0.0000
+Gamma:              0.9727
+Gamma-Inv:          0.0273
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              0.3127
+Alpha:              0.3864
+Alpha-P.Inv:        0.3978
+P.Inv-Alpha:        0.0221
+Frequencies:        0.3627 0.1339 0.1428 0.3605 
+
+Commands:
+  > phyml  -i /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta -m 012345 -f m -v 0 -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta -m GTRGAMMAX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta --model GTR+G4
+  > paup -s /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta
+  > iqtree -s /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta -m GTR+G4
+
+AIC       model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  GTR+G4             9     -3981.5347      8555.0693         0.0000    0.8076
+       2  GTR+I+G4          10     -3981.9697      8557.9395         2.8702    0.1923
+       3  TIM1+G4            7     -3992.2816      8572.5632        17.4939    0.0001
+       4  TIM1+I+G4          8     -3992.4999      8574.9998        19.9305    0.0000
+       5  TVM+G4             8     -3996.5593      8583.1185        28.0492    0.0000
+       6  TVM+I+G4           9     -3997.2793      8586.5587        31.4894    0.0000
+       7  TPM1uf+G4          6     -4006.0774      8598.1548        43.0855    0.0000
+       8  TPM1uf+I+G4        7     -4006.5411      8601.0821        46.0128    0.0000
+       9  TIM2+G4            7     -4010.2372      8608.4743        53.4050    0.0000
+      10  TIM2+I+G4          8     -4010.3574      8610.7148        55.6455    0.0000
+--------------------------------------------------------------------------------
+Best model according to AIC
+---------------------------
+Model:              GTR+G4
+lnL:                -3981.5347
+Frequencies:        0.3625 0.1341 0.1430 0.3603
+Subst. Rates:       0.6055 6.3274 11.4510 1.1417 20.8135 1.0000 
+Inv. sites prop:    -
+Gamma shape:        0.3865
+Score:              8555.0693
+Weight:             0.8076
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              0.0000
+Gamma:              0.8077
+Gamma-Inv:          0.1923
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              0.3127
+Alpha:              0.3865
+Alpha-P.Inv:        0.3978
+P.Inv-Alpha:        0.0221
+Frequencies:        0.3629 0.1338 0.1432 0.3601 
+
+Commands:
+  > phyml  -i /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta -m 012345 -f m -v 0 -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta -m GTRGAMMAX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta --model GTR+G4
+  > paup -s /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta
+  > iqtree -s /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta -m GTR+G4
+
+AICc      model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  GTR+G4             9     -3981.5347      9290.0693         0.0000    0.6753
+       2  TIM1+G4            7     -3992.2816      9291.5632         1.4939    0.3200
+       3  GTR+I+G4          10     -3981.9697      9300.9395        10.8702    0.0029
+       4  TIM1+I+G4          8     -3992.4999      9301.9998        11.9305    0.0017
+       5  TPM1uf+G4          6     -4006.0774      9309.1548        19.0855    0.0000
+       6  TVM+G4             8     -3996.5593      9310.1185        20.0492    0.0000
+       7  TPM1uf+I+G4        7     -4006.5411      9320.0821        30.0128    0.0000
+       8  TVM+I+G4           9     -3997.2793      9321.5587        31.4894    0.0000
+       9  TIM2+G4            7     -4010.2372      9327.4743        37.4050    0.0000
+      10  TIM2+I+G4          8     -4010.3574      9337.7148        47.6455    0.0000
+--------------------------------------------------------------------------------
+Best model according to AICc
+---------------------------
+Model:              GTR+G4
+lnL:                -3981.5347
+Frequencies:        0.3625 0.1341 0.1430 0.3603
+Subst. Rates:       0.6055 6.3274 11.4510 1.1417 20.8135 1.0000 
+Inv. sites prop:    -
+Gamma shape:        0.3865
+Score:              9290.0693
+Weight:             0.6753
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              0.0000
+Gamma:              0.9953
+Gamma-Inv:          0.0047
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              0.3127
+Alpha:              0.3853
+Alpha-P.Inv:        0.3975
+P.Inv-Alpha:        0.0220
+Frequencies:        0.3678 0.1291 0.1371 0.3660 
+
+Commands:
+  > phyml  -i /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta -m 012345 -f m -v 0 -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta -m GTRGAMMAX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta --model GTR+G4
+  > paup -s /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta
+  > iqtree -s /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta -m GTR+G4
+
+There are 88 different topologies
+Topologies written to /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta.topos
+
+topo_id   models_count   bic_support   aic_support   aicc_support
+-----------------------------------------------------------------
+     87              1       0.96164       0.80756       0.67529
+     88              1       0.02688       0.19227       0.00294
+     71              1       0.01109       0.00013       0.31996
+     72              1       0.00038       0.00004       0.00173
+     79              1       0.00001       0.00000       0.00003
+     47              1       0.00000       0.00000       0.00005
+     80              1       0.00000       0.00000       0.00000
+     48              1       0.00000       0.00000       0.00000
+     55              1       0.00000       0.00000       0.00000
+     56              1       0.00000       0.00000       0.00000
+     63              1       0.00000       0.00000       0.00000
+     39              1       0.00000       0.00000       0.00000
+     64              1       0.00000       0.00000       0.00000
+     40              1       0.00000       0.00000       0.00000
+     31              1       0.00000       0.00000       0.00000
+     32              1       0.00000       0.00000       0.00000
+     23              1       0.00000       0.00000       0.00000
+     24              1       0.00000       0.00000       0.00000
+     15              1       0.00000       0.00000       0.00000
+     16              1       0.00000       0.00000       0.00000
+     83              1       0.00000       0.00000       0.00000
+     84              1       0.00000       0.00000       0.00000
+     75              1       0.00000       0.00000       0.00000
+     76              1       0.00000       0.00000       0.00000
+      7              1       0.00000       0.00000       0.00000
+      8              1       0.00000       0.00000       0.00000
+     67              1       0.00000       0.00000       0.00000
+     68              1       0.00000       0.00000       0.00000
+     86              1       0.00000       0.00000       0.00000
+     78              1       0.00000       0.00000       0.00000
+     43              1       0.00000       0.00000       0.00000
+     44              1       0.00000       0.00000       0.00000
+     70              1       0.00000       0.00000       0.00000
+     82              1       0.00000       0.00000       0.00000
+     51              1       0.00000       0.00000       0.00000
+     54              1       0.00000       0.00000       0.00000
+     46              1       0.00000       0.00000       0.00000
+     52              1       0.00000       0.00000       0.00000
+     74              1       0.00000       0.00000       0.00000
+     59              1       0.00000       0.00000       0.00000
+     60              1       0.00000       0.00000       0.00000
+     27              1       0.00000       0.00000       0.00000
+     30              1       0.00000       0.00000       0.00000
+     28              1       0.00000       0.00000       0.00000
+     62              1       0.00000       0.00000       0.00000
+     38              1       0.00000       0.00000       0.00000
+     35              1       0.00000       0.00000       0.00000
+     36              1       0.00000       0.00000       0.00000
+     85              1       0.00000       0.00000       0.00000
+     77              1       0.00000       0.00000       0.00000
+     22              1       0.00000       0.00000       0.00000
+     66              1       0.00000       0.00000       0.00000
+     14              1       0.00000       0.00000       0.00000
+     69              1       0.00000       0.00000       0.00000
+     81              1       0.00000       0.00000       0.00000
+     42              1       0.00000       0.00000       0.00000
+      6              1       0.00000       0.00000       0.00000
+     45              1       0.00000       0.00000       0.00000
+     73              1       0.00000       0.00000       0.00000
+     50              1       0.00000       0.00000       0.00000
+     20              1       0.00000       0.00000       0.00000
+     19              1       0.00000       0.00000       0.00000
+     53              1       0.00000       0.00000       0.00000
+     61              1       0.00000       0.00000       0.00000
+     26              1       0.00000       0.00000       0.00000
+     29              1       0.00000       0.00000       0.00000
+     37              1       0.00000       0.00000       0.00000
+      3              1       0.00000       0.00000       0.00000
+     11              1       0.00000       0.00000       0.00000
+      4              1       0.00000       0.00000       0.00000
+     12              1       0.00000       0.00000       0.00000
+     58              1       0.00000       0.00000       0.00000
+     34              1       0.00000       0.00000       0.00000
+     65              1       0.00000       0.00000       0.00000
+     21              1       0.00000       0.00000       0.00000
+     13              1       0.00000       0.00000       0.00000
+     41              1       0.00000       0.00000       0.00000
+      5              1       0.00000       0.00000       0.00000
+     49              1       0.00000       0.00000       0.00000
+     25              1       0.00000       0.00000       0.00000
+     57              1       0.00000       0.00000       0.00000
+     33              1       0.00000       0.00000       0.00000
+     18              1       0.00000       0.00000       0.00000
+      2              1       0.00000       0.00000       0.00000
+     10              1       0.00000       0.00000       0.00000
+     17              1       0.00000       0.00000       0.00000
+      1              1       0.00000       0.00000       0.00000
+      9              1       0.00000       0.00000       0.00000
+
+extended majority-rule consensus: ((MIZ463_EM_B_extraction,(ROU124_EM_F27A_extraction,(MIZ306_EM_M27A_extraction,(MIZ484_EM_M27B_extraction,(ROU187_EM_M27A_extraction,(MIZ267_EM_MA_extraction,((MIZ312_EM_F27A_extraction,((MIZ464_EM_M27B_extraction,(MIZ463_EM_FA_extraction,MIZ481_EM_MA_extraction)[1.00000])[0.96203],(ROU120_EM_FA_extraction,((ROU139_EM_M27A_extraction,(MIZ475_EM_F27A_extraction,ROU192_EM_M28_extraction)[0.99961])[0.99961],(ROU124_EM_NA27B_extraction,ROU184_EM_M28_extraction)[1.00000])[0.98852])[1.00000])[0.96203])[0.96164],(MIZ343_EM_FA_extraction,MIZ312_EM_F27B_extraction)[0.96164])[0.97312])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[0.96203],MIZ250_EM_B_extraction,(MIZ485_EM_MA_extraction,(ROU192_EM_NA27B_extraction,((KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(MIZ466_EM_M28_extraction,(MIZ466_EM_F27A_extraction,(MIZ476_EM_F27A_extraction,(MIZ250_EM_FA_extraction,(ROU184_EM_NA27B_extraction,(MIZ452_EM_MA_extraction,(MIZ367_EM_B_extraction,(MIZ543_EM_MA_extraction,((MIZ312_EM_M28_extraction,ROU120_EM_M27B_extraction)[0.96164],(ROU132_EM_MA_extraction,(MIZ482_W_F27A_extraction,(MIZ185_EM_FA_extraction,(MIZ467_EM_M28_extraction,(MIZ492_EM_B_extraction,(ROU124_EM_M28_extraction,(MIZ455_EM_M27B_extraction,(MIZ346_EM_MA_extraction,(MIZ367_EM_FA_extraction,(MIZ512_EM_MA_extraction,(ROU192_EM_M27A_extraction,(MIZ484_EM_M28_extraction,(MIZ497_EM_B_extraction,(MIZ497_EM_MA_extraction,(MIZ262_EM_B_extraction,(ROU189_EM_F27B_extraction,(MIZ484_EM_F27A_extraction,(ROU131_EM_M28B_extraction,((ROU176_EM_NA27B_extraction,(ROU114_W_B_extraction,((MIZ468_EM_MA_extraction,(((KF273783_1_Eucampsipoda_sundaica_isolate_KB5_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(((MH282032_1_Basilia_tiptoni_voucher_TH_PA_P253_cytochrome_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,OL847632_1_Basilia_lindolphoi_isolate_147_3_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction)[1.00000],((ROU132_EM_B_extraction,((MIZ492_W_1M_extraction,MIZ485_W_1M_extraction)[1.00000],(MIZ533_W_extraction,((NC_001709_1_Drosophila_melanogaster_mitochondrion_complete_genome_extraction,(MIZ543_W_1M_extraction,MIZ386_EM_F_A_extraction)[0.97312])[0.97273],(MIZ230_W_FA_extraction,MIZ165_EM_A_extraction)[0.96164])[0.97312])[1.00000])[0.98891])[0.97312],((MK140181_1_Penicillidia_dufourii_isolate_185aCJ2904449_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,MW590972_1_Penicillidia_monoceros_voucher_JP00382_cytochrome_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000],(((MF462051_1_Penicillidia_leptothrinax_isolate_J27_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(ON704664_1_Penicillidia_fulvida_voucher_FMNH220168_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,(ON704703_1_Penicillidia_fulvida_voucher_FMNH220254_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,ON704710_1_Penicillidia_fulvida_voucher_NMK182293_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction)[0.99961])[1.00000])[0.97312],(MK140180_1_Penicillidia_conspicua_isolate_119bCJ1994321_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,KF021535_1_Penicillidia_oceanica_isolate_N17_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000])[1.00000],(((MK140156_1_Nycteribia_schmidlii_isolate_165CJ2614383_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,((MF462046_1_Nycteribia_stylidiopsis_isolate_Nstyl2_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_2_extraction,MF462046_1_Nycteribia_stylidiopsis_isolate_Nstyl2_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000],(KF021492_1_Eucampsipoda_africana_isolate_N6_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(KF021517_1_Nycteribia_stylidiopsis_isolate_B_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_2_extraction,KF021517_1_Nycteribia_stylidiopsis_isolate_B_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000])[1.00000])[1.00000])[1.00000],(MK140160_1_Nycteribia_kolenatii_isolate_52fCJ914156_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,MW590968_1_Nycteribia_kolenatii_voucher_JP00384_cytochrome_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000])[1.00000],(MK140104_1_Basilia_nana_isolate_KDS15_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(KF021501_1_Nycteribia_parvula_isolate_N16_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(LC522022_1_Nycteribia_allotopa_Mf51NA3_mitochondrial_COI_gene_for_cytochrome_c_oxidase_subunit_1__partial_cds_extraction,LC522026_1_Nycteribia_allotopa_Mf78NA5_mitochondrial_COI_gene_for_cytochrome_c_oxidase_subunit_1__partial_cds_extraction)[1.00000])[1.00000])[0.97312])[0.97312])[0.97312])[0.97312])[1.00000])[1.00000],((KEL282_CD_2F_extraction,(KEL282_CD_1FB_extraction,(MIZ343_W_M28_extraction,(KEL272_CD_4MB_extraction,(KEL239_CD_2FB_extraction,(KEL194_CD_1MB_extraction,(MF462043_1_Cyclopodia_dubia_isolate_9Cdu_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(KEL149_CD_4MB_extraction,(KEL272_CD_3MB_extraction,KEL149_CD_3FB_extraction)[1.00000])[1.00000])[1.00000])[0.97312])[0.97273])[0.97273])[0.96203])[0.96202])[1.00000],(KF273782_1_Cyclopodia_horsfieldi_isolate_RC24_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(KF273770_1_Cyclopodia_horsfieldi_isolate_PPH12_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,KF273778_1_Cyclopodia_horsfieldi_isolate_LYL1_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction)[1.00000])[1.00000])[1.00000])[1.00000])[1.00000],(((KF021500_1_Eucampsipoda_theodori_isolate_8B_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,((KF021496_1_Eucampsipoda_theodori_isolate_28DM_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,KF021499_1_Eucampsipoda_theodori_isolate_31DM_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000],(KF021497_1_Eucampsipoda_theodori_isolate_29F_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,KF021498_1_Eucampsipoda_theodori_isolate_30DM_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000])[1.00000])[1.00000],(MH151063_1_Eucampsipoda_africana_isolate_NG13_010_2_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,((MH151061_1_Eucampsipoda_africana_isolate_NG13_041_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,MH151064_1_Eucampsipoda_africana_isolate_NG13_051_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction)[1.00000],(MH151060_1_Eucampsipoda_africana_isolate_NG13_099_2_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,((MH151062_1_Eucampsipoda_africana_isolate_NG13_057_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(KR997998_1_Eucampsipoda_sp__MD_2016_strain_AA021_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(KR997995_1_Eucampsipoda_sp__MD_2016_strain_AA034_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(KR997993_1_Eucampsipoda_sp__MD_2016_strain_AA037_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,MH151059_1_Eucampsipoda_africana_isolate_NG13_008_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction)[0.96164])[0.96164])[0.96164])[0.96164],(KR997992_1_Eucampsipoda_sp__MD_2016_strain_AA008_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(KR997999_1_Eucampsipoda_sp__MD_2016_strain_AA035_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,((KF021491_1_Eucampsipoda_africana_isolate_N4_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,MH151065_1_Eucampsipoda_africana_isolate_NG13_018_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction)[1.00000],(LC536587_1_Eucampsipoda_africana_ZBF2_mitochondrial_COI_gene_for_cytochrome_c_oxidase_subunit_1__partial_cds_extraction,((KR997996_1_Eucampsipoda_sp__MD_2016_strain_AA024_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(LC536586_1_Eucampsipoda_africana_ZBF1_mitochondrial_COI_gene_for_cytochrome_c_oxidase_subunit_1__partial_cds_extraction,(KR998001_1_Eucampsipoda_sp__MD_2016_strain_AA033_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(LC536588_1_Eucampsipoda_africana_ZBF3_mitochondrial_COI_gene_for_cytochrome_c_oxidase_subunit_1__partial_cds_extraction,KR997994_1_Eucampsipoda_sp__MD_2016_strain_AA023_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction)[0.96164])[0.96164])[0.96164])[0.96164],(KR997997_1_Eucampsipoda_sp__MD_2016_strain_AA026_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,MH151066_1_Eucampsipoda_africana_isolate_NG13_013_2_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction)[1.00000])[0.96164])[0.96164])[0.96164])[0.96164])[0.96164])[0.96164])[0.97273])[1.00000])[1.00000])[1.00000],(KF021493_1_Eucampsipoda_inermis_isolate_N8_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(OM283592_1_Eucampsipoda_africana_voucher_EA_5_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,(OM283593_1_Eucampsipoda_africana_voucher_EA_6_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,(OM283588_1_Eucampsipoda_africana_voucher_EA_1_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,(OM283590_1_Eucampsipoda_africana_voucher_EA_3_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,(OM283591_1_Eucampsipoda_africana_voucher_EA_4_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,OM283589_1_Eucampsipoda_africana_voucher_EA_2_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction)[1.00000])[0.96202])[0.96202])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000],(KF021494_1_Eucampsipoda_madagascarensis_isolate_J43_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(MIZ534_EM_MA_extraction,ROU184_EM_F27A_extraction)[0.96203])[1.00000])[1.00000])[0.96164],((MIZ300_W_F27A_extraction,ROU131_EM_M27A_extraction)[0.96164],(MIZ481_EM_B_extraction,(MIZ455_EM_M28_extraction,ROU189_EM_F28_extraction)[0.96164])[0.96164])[0.96164])[0.96164])[0.96164])[0.96164],((ROU114_EM_MA_extraction,ROU120_EM_M28_extraction)[0.96164],(MIZ475_EM_M27B_extraction,MIZ207_EM_MA_extraction)[0.96164])[0.96164])[0.96202])[0.96202])[0.98891])[0.98891])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[0.96164])[0.96164])[0.96164])[0.96164])[0.96202])[0.96164])[0.96164])[0.96164])[0.96164])[0.96164])[1.00000])[1.00000])[1.00000])[1.00000])[0.96203],(MIZ468_EM_B_extraction,ROU187_EM_M27B_extraction)[0.98852])[0.97273])[0.96164])[0.96203]);
+strict consensus: (((MK140156_1_Nycteribia_schmidlii_isolate_165CJ2614383_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,((MF462046_1_Nycteribia_stylidiopsis_isolate_Nstyl2_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_2_extraction,MF462046_1_Nycteribia_stylidiopsis_isolate_Nstyl2_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000],(KF021492_1_Eucampsipoda_africana_isolate_N6_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(KF021517_1_Nycteribia_stylidiopsis_isolate_B_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_2_extraction,KF021517_1_Nycteribia_stylidiopsis_isolate_B_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000])[1.00000])[1.00000])[1.00000],(MK140160_1_Nycteribia_kolenatii_isolate_52fCJ914156_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,MW590968_1_Nycteribia_kolenatii_voucher_JP00384_cytochrome_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000])[1.00000],ROU132_EM_B_extraction,MK140104_1_Basilia_nana_isolate_KDS15_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(MF462051_1_Penicillidia_leptothrinax_isolate_J27_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(ON704664_1_Penicillidia_fulvida_voucher_FMNH220168_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,ON704703_1_Penicillidia_fulvida_voucher_FMNH220254_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,ON704710_1_Penicillidia_fulvida_voucher_NMK182293_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction)[1.00000],(MK140180_1_Penicillidia_conspicua_isolate_119bCJ1994321_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,KF021535_1_Penicillidia_oceanica_isolate_N17_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000])[1.00000],(MK140181_1_Penicillidia_dufourii_isolate_185aCJ2904449_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,MW590972_1_Penicillidia_monoceros_voucher_JP00382_cytochrome_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000],(KF021501_1_Nycteribia_parvula_isolate_N16_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(LC522022_1_Nycteribia_allotopa_Mf51NA3_mitochondrial_COI_gene_for_cytochrome_c_oxidase_subunit_1__partial_cds_extraction,LC522026_1_Nycteribia_allotopa_Mf78NA5_mitochondrial_COI_gene_for_cytochrome_c_oxidase_subunit_1__partial_cds_extraction)[1.00000])[1.00000],((MH282032_1_Basilia_tiptoni_voucher_TH_PA_P253_cytochrome_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,OL847632_1_Basilia_lindolphoi_isolate_147_3_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction)[1.00000],((KF273783_1_Eucampsipoda_sundaica_isolate_KB5_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,((KF021494_1_Eucampsipoda_madagascarensis_isolate_J43_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,MIZ534_EM_MA_extraction,ROU184_EM_F27A_extraction,(MIZ484_EM_F27A_extraction,MIZ481_EM_B_extraction,ROU114_EM_MA_extraction,ROU114_W_B_extraction,MIZ475_EM_M27B_extraction,MIZ468_EM_MA_extraction,MIZ300_W_F27A_extraction,MIZ207_EM_MA_extraction,MIZ455_EM_M28_extraction,ROU120_EM_M28_extraction,ROU176_EM_NA27B_extraction,ROU131_EM_M27A_extraction,ROU189_EM_F28_extraction,ROU189_EM_F27B_extraction,ROU131_EM_M28B_extraction,MIZ262_EM_B_extraction,(MIZ497_EM_MA_extraction,(MIZ497_EM_B_extraction,(MIZ484_EM_M28_extraction,(ROU192_EM_M27A_extraction,(MIZ512_EM_MA_extraction,(MIZ367_EM_FA_extraction,(MIZ346_EM_MA_extraction,(MIZ455_EM_M27B_extraction,(MIZ312_EM_M28_extraction,MIZ466_EM_F27A_extraction,MIZ492_EM_B_extraction,MIZ367_EM_B_extraction,MIZ543_EM_MA_extraction,MIZ482_W_F27A_extraction,MIZ476_EM_F27A_extraction,MIZ452_EM_MA_extraction,MIZ250_EM_FA_extraction,ROU132_EM_MA_extraction,ROU184_EM_NA27B_extraction,ROU124_EM_M28_extraction,ROU120_EM_M27B_extraction,MIZ467_EM_M28_extraction,MIZ185_EM_FA_extraction,(MIZ466_EM_M28_extraction,MIZ250_EM_B_extraction,MIZ468_EM_B_extraction,KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,MIZ485_EM_MA_extraction,ROU192_EM_NA27B_extraction,ROU187_EM_M27B_extraction,MIZ463_EM_B_extraction,(ROU124_EM_F27A_extraction,(MIZ306_EM_M27A_extraction,(MIZ484_EM_M27B_extraction,(MIZ312_EM_F27A_extraction,MIZ343_EM_FA_extraction,MIZ312_EM_F27B_extraction,MIZ267_EM_MA_extraction,MIZ464_EM_M27B_extraction,ROU187_EM_M27A_extraction,(MIZ475_EM_F27A_extraction,ROU124_EM_NA27B_extraction,ROU120_EM_FA_extraction,ROU192_EM_M28_extraction,ROU184_EM_M28_extraction,ROU139_EM_M27A_extraction)[1.00000],(MIZ463_EM_FA_extraction,MIZ481_EM_MA_extraction)[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000],(((KF021500_1_Eucampsipoda_theodori_isolate_8B_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(KF021496_1_Eucampsipoda_theodori_isolate_28DM_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,KF021499_1_Eucampsipoda_theodori_isolate_31DM_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(KF021497_1_Eucampsipoda_theodori_isolate_29F_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,KF021498_1_Eucampsipoda_theodori_isolate_30DM_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction)[1.00000])[1.00000])[1.00000],(MH151063_1_Eucampsipoda_africana_isolate_NG13_010_2_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(LC536588_1_Eucampsipoda_africana_ZBF3_mitochondrial_COI_gene_for_cytochrome_c_oxidase_subunit_1__partial_cds_extraction,LC536586_1_Eucampsipoda_africana_ZBF1_mitochondrial_COI_gene_for_cytochrome_c_oxidase_subunit_1__partial_cds_extraction,LC536587_1_Eucampsipoda_africana_ZBF2_mitochondrial_COI_gene_for_cytochrome_c_oxidase_subunit_1__partial_cds_extraction,KR997993_1_Eucampsipoda_sp__MD_2016_strain_AA037_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,KR997995_1_Eucampsipoda_sp__MD_2016_strain_AA034_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,KR997996_1_Eucampsipoda_sp__MD_2016_strain_AA024_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,KR997998_1_Eucampsipoda_sp__MD_2016_strain_AA021_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,KR998001_1_Eucampsipoda_sp__MD_2016_strain_AA033_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,KR997999_1_Eucampsipoda_sp__MD_2016_strain_AA035_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,MH151062_1_Eucampsipoda_africana_isolate_NG13_057_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,MH151060_1_Eucampsipoda_africana_isolate_NG13_099_2_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,MH151059_1_Eucampsipoda_africana_isolate_NG13_008_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,KR997992_1_Eucampsipoda_sp__MD_2016_strain_AA008_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,KR997994_1_Eucampsipoda_sp__MD_2016_strain_AA023_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(KR997997_1_Eucampsipoda_sp__MD_2016_strain_AA026_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,MH151066_1_Eucampsipoda_africana_isolate_NG13_013_2_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction)[1.00000],(MH151061_1_Eucampsipoda_africana_isolate_NG13_041_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,MH151064_1_Eucampsipoda_africana_isolate_NG13_051_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction)[1.00000],(KF021491_1_Eucampsipoda_africana_isolate_N4_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,MH151065_1_Eucampsipoda_africana_isolate_NG13_018_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction)[1.00000])[1.00000])[1.00000])[1.00000],(KF021493_1_Eucampsipoda_inermis_isolate_N8_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(OM283592_1_Eucampsipoda_africana_voucher_EA_5_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,(OM283590_1_Eucampsipoda_africana_voucher_EA_3_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,OM283588_1_Eucampsipoda_africana_voucher_EA_1_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,OM283593_1_Eucampsipoda_africana_voucher_EA_6_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,(OM283591_1_Eucampsipoda_africana_voucher_EA_4_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction,OM283589_1_Eucampsipoda_africana_voucher_EA_2_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction)[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000],((MIZ343_W_M28_extraction,KEL282_CD_2F_extraction,KEL282_CD_1FB_extraction,KEL272_CD_4MB_extraction,KEL239_CD_2FB_extraction,KEL194_CD_1MB_extraction,(MF462043_1_Cyclopodia_dubia_isolate_9Cdu_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction,(KEL149_CD_4MB_extraction,(KEL272_CD_3MB_extraction,KEL149_CD_3FB_extraction)[1.00000])[1.00000])[1.00000])[1.00000],(KF273782_1_Cyclopodia_horsfieldi_isolate_RC24_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,(KF273770_1_Cyclopodia_horsfieldi_isolate_PPH12_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction,KF273778_1_Cyclopodia_horsfieldi_isolate_LYL1_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction)[1.00000])[1.00000])[1.00000])[1.00000])[1.00000],(MIZ492_W_1M_extraction,MIZ485_W_1M_extraction)[1.00000],(MIZ543_W_1M_extraction,MIZ386_EM_F_A_extraction,MIZ533_W_extraction,MIZ230_W_FA_extraction,NC_001709_1_Drosophila_melanogaster_mitochondrion_complete_genome_extraction,MIZ165_EM_A_extraction)[1.00000]);
+
+Summary:
+
+Partition 1/1:
+                         Model         Score        Weight
+----------------------------------------------------------
+       BIC              GTR+G4     9823.1730        0.9616
+       AIC              GTR+G4     8555.0693        0.8076
+      AICc              GTR+G4     9290.0693        0.6753
+
+Execution results written to /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta.out
+Starting tree written to /home/cbrook/modeltest-ng/madaecto/All_Ecto_Align_Trimmed.fasta.tree
