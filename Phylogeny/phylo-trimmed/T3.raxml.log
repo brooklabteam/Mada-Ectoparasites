@@ -1,0 +1,621 @@
+
+RAxML-NG v. 1.2.0 released on 09.05.2023 by The Exelixis Lab.
+Developed by: Alexey M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth, Julia Haag, Anastasis Togkousidis.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+System: Apple M1 Pro, 10 cores, 32 GB RAM
+
+RAxML-NG was called at 01-Nov-2023 16:10:48 as follows:
+
+/Applications/raxml-ng/raxml-ng --all --msa AllEctoAligned_Trimmed.fasta --model GTR+I+G4 --prefix T3 --seed 12 --threads 1 --bs-metric fbp,tbe --blopt nr_safe
+
+Analysis options:
+  run mode: ML tree search + bootstrapping (Felsenstein Bootstrap + Transfer Bootstrap)
+  start tree(s): random (10) + parsimony (10)
+  bootstrap replicates: parsimony (max: 1000) + bootstopping (autoMRE, cutoff: 0.030000)
+  random seed: 12
+  tip-inner: OFF
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: ON
+  logLH epsilon: general: 10.000000, brlen-triplet: 1000.000000
+  fast spr radius: AUTO
+  spr subtree cutoff: 1.000000
+  fast CLV updates: ON
+  branch lengths: proportional (ML estimate, algorithm: NR-SAFE)
+  SIMD kernels: SSE3
+  parallelization: coarse-grained (auto), NONE/sequential
+
+[00:00:00] Reading alignment from file: AllEctoAligned_Trimmed.fasta
+[00:00:00] Loaded alignment with 165 taxa and 336 sites
+
+WARNING: Sequences MK140104_1_Basilia_nana_isolate_KDS15_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction and MK140104_1_Basilia_nana_isolate_KDS15_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_2_extraction are exactly identical!
+WARNING: Sequences MF462046_1_Nycteribia_stylidiopsis_isolate_Nstyl2_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MF462046_1_Nycteribia_stylidiopsis_isolate_Nstyl2_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_2_extraction are exactly identical!
+WARNING: Sequences ON704664_1_Penicillidia_fulvida_voucher_FMNH220168_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction and ON704703_1_Penicillidia_fulvida_voucher_FMNH220254_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction are exactly identical!
+WARNING: Sequences ON704664_1_Penicillidia_fulvida_voucher_FMNH220168_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction and ON704710_1_Penicillidia_fulvida_voucher_NMK182293_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction are exactly identical!
+WARNING: Sequences KF021535_1_Penicillidia_oceanica_isolate_N17_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and KF021535_1_Penicillidia_oceanica_isolate_N17_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_2_extraction are exactly identical!
+WARNING: Sequences MK140180_1_Penicillidia_conspicua_isolate_119bCJ1994321_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction and MK140180_1_Penicillidia_conspicua_isolate_119bCJ1994321_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_2_extraction are exactly identical!
+WARNING: Sequences KF021491_1_Eucampsipoda_africana_isolate_N4_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and KR997992_1_Eucampsipoda_sp__MD_2016_strain_AA008_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction are exactly identical!
+WARNING: Sequences KF021491_1_Eucampsipoda_africana_isolate_N4_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and KR997994_1_Eucampsipoda_sp__MD_2016_strain_AA023_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction are exactly identical!
+WARNING: Sequences KF021491_1_Eucampsipoda_africana_isolate_N4_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MH151059_1_Eucampsipoda_africana_isolate_NG13_008_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction are exactly identical!
+WARNING: Sequences KF021491_1_Eucampsipoda_africana_isolate_N4_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MH151060_1_Eucampsipoda_africana_isolate_NG13_099_2_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction are exactly identical!
+WARNING: Sequences KF021491_1_Eucampsipoda_africana_isolate_N4_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MH151062_1_Eucampsipoda_africana_isolate_NG13_057_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction are exactly identical!
+WARNING: Sequences KF021491_1_Eucampsipoda_africana_isolate_N4_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and KR997995_1_Eucampsipoda_sp__MD_2016_strain_AA034_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction are exactly identical!
+WARNING: Sequences KF021491_1_Eucampsipoda_africana_isolate_N4_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and KR997996_1_Eucampsipoda_sp__MD_2016_strain_AA024_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction are exactly identical!
+WARNING: Sequences KF021491_1_Eucampsipoda_africana_isolate_N4_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and KR997999_1_Eucampsipoda_sp__MD_2016_strain_AA035_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction are exactly identical!
+WARNING: Sequences KF021491_1_Eucampsipoda_africana_isolate_N4_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and KR998001_1_Eucampsipoda_sp__MD_2016_strain_AA033_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction are exactly identical!
+WARNING: Sequences KF021491_1_Eucampsipoda_africana_isolate_N4_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MH151064_1_Eucampsipoda_africana_isolate_NG13_051_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction are exactly identical!
+WARNING: Sequences KF021491_1_Eucampsipoda_africana_isolate_N4_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MH151065_1_Eucampsipoda_africana_isolate_NG13_018_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction are exactly identical!
+WARNING: Sequences KF021491_1_Eucampsipoda_africana_isolate_N4_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and KR997993_1_Eucampsipoda_sp__MD_2016_strain_AA037_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction are exactly identical!
+WARNING: Sequences KF021491_1_Eucampsipoda_africana_isolate_N4_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and LC536587_1_Eucampsipoda_africana_ZBF2_mitochondrial_COI_gene_for_cytochrome_c_oxidase_subunit_1__partial_cds_extraction are exactly identical!
+WARNING: Sequences KF021491_1_Eucampsipoda_africana_isolate_N4_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and LC536588_1_Eucampsipoda_africana_ZBF3_mitochondrial_COI_gene_for_cytochrome_c_oxidase_subunit_1__partial_cds_extraction are exactly identical!
+WARNING: Sequences KR997997_1_Eucampsipoda_sp__MD_2016_strain_AA026_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction and MH151066_1_Eucampsipoda_africana_isolate_NG13_013_2_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction are exactly identical!
+WARNING: Sequences KF021496_1_Eucampsipoda_theodori_isolate_28DM_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and KF021499_1_Eucampsipoda_theodori_isolate_31DM_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction are exactly identical!
+WARNING: Sequences KF021497_1_Eucampsipoda_theodori_isolate_29F_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and KF021498_1_Eucampsipoda_theodori_isolate_30DM_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction are exactly identical!
+WARNING: Sequences KF021494_1_Eucampsipoda_madagascarensis_isolate_J43_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ534_EM_MA_extraction are exactly identical!
+WARNING: Sequences KF021494_1_Eucampsipoda_madagascarensis_isolate_J43_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and ROU184_EM_F27A_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ250_EM_FA_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ267_EM_MA_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ367_EM_FA_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ452_EM_MA_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ468_EM_MA_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ475_EM_M27B_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ476_EM_F27A_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ482_W_F27A_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ497_EM_B_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ543_EM_MA_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and ROU114_W_B_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and ROU124_EM_F27A_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ306_EM_M27A_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ481_EM_MA_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and ROU120_EM_FA_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ492_EM_B_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and ROU132_EM_B_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ466_EM_F27A_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ484_EM_F27A_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ484_EM_M27B_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and ROU192_EM_M27A_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and ROU124_EM_NA27B_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ312_EM_F27B_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ475_EM_F27A_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ512_EM_MA_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ463_EM_FA_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ343_EM_FA_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ468_EM_B_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ497_EM_MA_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ207_EM_MA_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ346_EM_MA_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ300_W_F27A_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ452_EM_B_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ262_EM_B_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ463_EM_B_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ467_EM_M28_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and ROU120_EM_M27B_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and ROU124_EM_M28_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and ROU131_EM_M28B_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and ROU187_EM_M27A_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and ROU187_EM_M27B_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and ROU189_EM_F27B_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and ROU189_EM_F28_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ464_EM_M27B_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and ROU131_EM_M27A_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and ROU176_EM_NA27B_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and ROU184_EM_NA27B_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and ROU192_EM_NA27B_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ484_EM_M28_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and ROU139_EM_M27A_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and ROU184_EM_M28_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and ROU132_EM_MA_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ455_EM_M28_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ250_EM_B_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ312_EM_F27A_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ466_EM_M28_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ455_EM_M27B_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ487_EM_M27B_extraction are exactly identical!
+WARNING: Sequences KF021495_1_Eucampsipoda_madagascarensis_isolate_J48_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction and MIZ312_EM_M28_extraction are exactly identical!
+WARNING: Sequences OM283588_1_Eucampsipoda_africana_voucher_EA_1_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction and OM283591_1_Eucampsipoda_africana_voucher_EA_4_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction are exactly identical!
+WARNING: Sequences OM283588_1_Eucampsipoda_africana_voucher_EA_1_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction and OM283589_1_Eucampsipoda_africana_voucher_EA_2_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction are exactly identical!
+WARNING: Sequences OM283588_1_Eucampsipoda_africana_voucher_EA_1_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction and OM283593_1_Eucampsipoda_africana_voucher_EA_6_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction are exactly identical!
+WARNING: Sequences KEL149_CD_3FB_extraction and KEL149_CD_4MB_extraction are exactly identical!
+WARNING: Sequences KEL149_CD_3FB_extraction and KEL194_CD_1MB_extraction are exactly identical!
+WARNING: Sequences KEL149_CD_3FB_extraction and KEL239_CD_2FB_extraction are exactly identical!
+WARNING: Sequences KEL149_CD_3FB_extraction and KEL272_CD_3MB_extraction are exactly identical!
+WARNING: Sequences KEL149_CD_3FB_extraction and KEL272_CD_4MB_extraction are exactly identical!
+WARNING: Sequences KEL149_CD_3FB_extraction and KEL282_CD_1FB_extraction are exactly identical!
+WARNING: Sequences KEL149_CD_3FB_extraction and KEL282_CD_2F_extraction are exactly identical!
+WARNING: Sequences KEL149_CD_3FB_extraction and MIZ343_W_M28_extraction are exactly identical!
+WARNING: Sequences KEL149_CD_3FB_extraction and MF462043_1_Cyclopodia_dubia_isolate_9Cdu_cytochrome_c_oxidase_subunit_1__COI__gene__partial_cds__mitochondrial_extraction are exactly identical!
+WARNING: Sequences KF273778_1_Cyclopodia_horsfieldi_isolate_LYL1_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction and KF273779_1_Cyclopodia_horsfieldi_isolate_PT16_cytochrome_oxidase_subunit_I__COI__gene__partial_cds__mitochondrial_extraction are exactly identical!
+WARNING: Sequences AB632571_1_Brachytarsina_kanoi_mitochondrial_gene_for_cytochrome_oxidase_subunit_I__partial_cds_extraction and AB632571_1_Brachytarsina_kanoi_mitochondrial_gene_for_cytochrome_oxidase_subunit_I__partial_cds_2_extraction are exactly identical!
+WARNING: Sequences OM327588_1_Brachytarsina_kanoi_voucher_BK_2_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction and OM327589_1_Brachytarsina_kanoi_voucher_BK_3_cytochrome_c_oxidase_subunit_I__COX1__gene__partial_cds__mitochondrial_extraction are exactly identical!
+WARNING: Sequences MIZ485_W_1M_extraction and MIZ492_W_1M_extraction are exactly identical!
+WARNING: Duplicate sequences found: 100
+
+NOTE: Reduced alignment (with duplicates and gap-only sites/taxa removed) 
+NOTE: was saved to: /Users/carabrook/Developer/Mada-Ectoparasites/Phylogeny/phylo-trimmed/T3.raxml.reduced.phy
+
+Alignment comprises 1 partitions and 167 patterns
+
+Partition 0: noname
+Model: GTR+FO+I+G4m
+Alignment sites / patterns: 336 / 167
+Gaps: 0.00 %
+Invariant sites: 50.00 %
+
+
+NOTE: Binary MSA file created: T3.raxml.rba
+
+Parallelization scheme autoconfig: 1 worker(s) x 1 thread(s)
+
+[00:00:00] Generating 10 random starting tree(s) with 165 taxa
+[00:00:00] Generating 10 parsimony starting tree(s) with 165 taxa
+Parallel reduction/worker buffer size: 1 KB  / 0 KB
+
+[00:00:00] Data distribution: max. partitions/sites/weight per thread: 1 / 167 / 2672
+[00:00:00] Data distribution: max. searches per worker: 1020
+
+Starting ML tree search with 20 distinct starting trees
+
+[00:00:10] ML tree search #1, logLikelihood: -3737.788071
+[00:00:20] ML tree search #2, logLikelihood: -3722.127931
+[00:00:31] ML tree search #3, logLikelihood: -3736.073600
+[00:00:41] ML tree search #4, logLikelihood: -3723.340206
+[00:00:51] ML tree search #5, logLikelihood: -3709.530302
+[00:01:01] ML tree search #6, logLikelihood: -3709.764821
+[00:01:11] ML tree search #7, logLikelihood: -3720.754459
+[00:01:22] ML tree search #8, logLikelihood: -3719.129604
+[00:01:32] ML tree search #9, logLikelihood: -3709.049551
+[00:01:43] ML tree search #10, logLikelihood: -3731.357278
+[00:01:48] ML tree search #11, logLikelihood: -3707.326974
+[00:01:54] ML tree search #12, logLikelihood: -3707.268458
+[00:01:59] ML tree search #13, logLikelihood: -3707.318843
+[00:02:04] ML tree search #14, logLikelihood: -3706.497062
+[00:02:09] ML tree search #15, logLikelihood: -3707.275057
+[00:02:13] ML tree search #16, logLikelihood: -3707.286178
+[00:02:18] ML tree search #17, logLikelihood: -3707.333537
+[00:02:23] ML tree search #18, logLikelihood: -3707.394562
+[00:02:29] ML tree search #19, logLikelihood: -3705.929620
+[00:02:34] ML tree search #20, logLikelihood: -3707.285635
+
+[00:02:34] ML tree search completed, best tree logLH: -3705.929620
+
+[00:02:34] Starting bootstrapping analysis with 1000 replicates.
+
+[00:02:38] Bootstrap tree #1, logLikelihood: -3500.374711
+[00:02:41] Bootstrap tree #2, logLikelihood: -3786.252439
+[00:02:45] Bootstrap tree #3, logLikelihood: -3233.309893
+[00:02:50] Bootstrap tree #4, logLikelihood: -3672.176755
+[00:02:54] Bootstrap tree #5, logLikelihood: -3752.426086
+[00:02:59] Bootstrap tree #6, logLikelihood: -3769.699084
+[00:03:04] Bootstrap tree #7, logLikelihood: -3797.494133
+[00:03:08] Bootstrap tree #8, logLikelihood: -3728.093700
+[00:03:12] Bootstrap tree #9, logLikelihood: -3653.452632
+[00:03:17] Bootstrap tree #10, logLikelihood: -3727.946546
+[00:03:20] Bootstrap tree #11, logLikelihood: -3415.409005
+[00:03:24] Bootstrap tree #12, logLikelihood: -3308.775062
+[00:03:27] Bootstrap tree #13, logLikelihood: -3636.030722
+[00:03:31] Bootstrap tree #14, logLikelihood: -3570.005119
+[00:03:34] Bootstrap tree #15, logLikelihood: -3662.746481
+[00:03:39] Bootstrap tree #16, logLikelihood: -3708.685319
+[00:03:42] Bootstrap tree #17, logLikelihood: -3968.406351
+[00:03:45] Bootstrap tree #18, logLikelihood: -3484.394317
+[00:03:48] Bootstrap tree #19, logLikelihood: -3709.362450
+[00:03:52] Bootstrap tree #20, logLikelihood: -3490.778324
+[00:03:56] Bootstrap tree #21, logLikelihood: -3389.377739
+[00:04:00] Bootstrap tree #22, logLikelihood: -3400.532493
+[00:04:04] Bootstrap tree #23, logLikelihood: -3553.760912
+[00:04:07] Bootstrap tree #24, logLikelihood: -3809.396194
+[00:04:12] Bootstrap tree #25, logLikelihood: -3845.529713
+[00:04:15] Bootstrap tree #26, logLikelihood: -3173.268218
+[00:04:18] Bootstrap tree #27, logLikelihood: -3724.919149
+[00:04:22] Bootstrap tree #28, logLikelihood: -3520.582074
+[00:04:27] Bootstrap tree #29, logLikelihood: -3287.063272
+[00:04:30] Bootstrap tree #30, logLikelihood: -3420.486539
+[00:04:35] Bootstrap tree #31, logLikelihood: -3237.486154
+[00:04:38] Bootstrap tree #32, logLikelihood: -3522.513649
+[00:04:41] Bootstrap tree #33, logLikelihood: -3918.858254
+[00:04:46] Bootstrap tree #34, logLikelihood: -3694.997430
+[00:04:49] Bootstrap tree #35, logLikelihood: -3290.305256
+[00:04:52] Bootstrap tree #36, logLikelihood: -3638.202949
+[00:04:56] Bootstrap tree #37, logLikelihood: -3554.877114
+[00:04:59] Bootstrap tree #38, logLikelihood: -3647.373211
+[00:05:03] Bootstrap tree #39, logLikelihood: -3440.273961
+[00:05:07] Bootstrap tree #40, logLikelihood: -3586.871428
+[00:05:10] Bootstrap tree #41, logLikelihood: -3365.680647
+[00:05:14] Bootstrap tree #42, logLikelihood: -3728.909153
+[00:05:18] Bootstrap tree #43, logLikelihood: -3849.401600
+[00:05:22] Bootstrap tree #44, logLikelihood: -3756.650380
+[00:05:27] Bootstrap tree #45, logLikelihood: -3763.702207
+[00:05:32] Bootstrap tree #46, logLikelihood: -3905.772315
+[00:05:37] Bootstrap tree #47, logLikelihood: -3595.743237
+[00:05:41] Bootstrap tree #48, logLikelihood: -3271.242609
+[00:05:45] Bootstrap tree #49, logLikelihood: -3749.174938
+[00:05:49] Bootstrap tree #50, logLikelihood: -3490.694743
+[00:05:54] Bootstrap tree #51, logLikelihood: -3656.166046
+[00:05:58] Bootstrap tree #52, logLikelihood: -3441.839096
+[00:06:02] Bootstrap tree #53, logLikelihood: -3624.873904
+[00:06:06] Bootstrap tree #54, logLikelihood: -3675.344869
+[00:06:09] Bootstrap tree #55, logLikelihood: -3323.175714
+[00:06:12] Bootstrap tree #56, logLikelihood: -3784.391241
+[00:06:16] Bootstrap tree #57, logLikelihood: -3649.868087
+[00:06:20] Bootstrap tree #58, logLikelihood: -3622.140898
+[00:06:24] Bootstrap tree #59, logLikelihood: -3425.195376
+[00:06:27] Bootstrap tree #60, logLikelihood: -3427.612164
+[00:06:33] Bootstrap tree #61, logLikelihood: -3733.113195
+[00:06:36] Bootstrap tree #62, logLikelihood: -3921.213779
+[00:06:39] Bootstrap tree #63, logLikelihood: -3333.562608
+[00:06:43] Bootstrap tree #64, logLikelihood: -3210.159763
+[00:06:47] Bootstrap tree #65, logLikelihood: -3444.305853
+[00:06:52] Bootstrap tree #66, logLikelihood: -3720.010427
+[00:06:56] Bootstrap tree #67, logLikelihood: -3774.036867
+[00:07:00] Bootstrap tree #68, logLikelihood: -3530.891442
+[00:07:04] Bootstrap tree #69, logLikelihood: -3678.383702
+[00:07:07] Bootstrap tree #70, logLikelihood: -3764.458125
+[00:07:11] Bootstrap tree #71, logLikelihood: -3636.147560
+[00:07:15] Bootstrap tree #72, logLikelihood: -3647.901853
+[00:07:19] Bootstrap tree #73, logLikelihood: -3813.721009
+[00:07:24] Bootstrap tree #74, logLikelihood: -3476.669136
+[00:07:28] Bootstrap tree #75, logLikelihood: -3218.807056
+[00:07:31] Bootstrap tree #76, logLikelihood: -3431.903292
+[00:07:35] Bootstrap tree #77, logLikelihood: -3619.294136
+[00:07:39] Bootstrap tree #78, logLikelihood: -3600.263261
+[00:07:42] Bootstrap tree #79, logLikelihood: -3491.759268
+[00:07:45] Bootstrap tree #80, logLikelihood: -3356.588766
+[00:07:50] Bootstrap tree #81, logLikelihood: -3826.850509
+[00:07:54] Bootstrap tree #82, logLikelihood: -3585.078873
+[00:07:58] Bootstrap tree #83, logLikelihood: -3676.346126
+[00:08:01] Bootstrap tree #84, logLikelihood: -3688.231052
+[00:08:05] Bootstrap tree #85, logLikelihood: -4193.411776
+[00:08:09] Bootstrap tree #86, logLikelihood: -3613.553143
+[00:08:12] Bootstrap tree #87, logLikelihood: -3961.001251
+[00:08:18] Bootstrap tree #88, logLikelihood: -3679.178933
+[00:08:22] Bootstrap tree #89, logLikelihood: -3818.460482
+[00:08:26] Bootstrap tree #90, logLikelihood: -3740.164095
+[00:08:29] Bootstrap tree #91, logLikelihood: -3403.410553
+[00:08:32] Bootstrap tree #92, logLikelihood: -3640.226901
+[00:08:36] Bootstrap tree #93, logLikelihood: -3535.924856
+[00:08:40] Bootstrap tree #94, logLikelihood: -3341.975045
+[00:08:44] Bootstrap tree #95, logLikelihood: -3587.769411
+[00:08:48] Bootstrap tree #96, logLikelihood: -3691.686332
+[00:08:51] Bootstrap tree #97, logLikelihood: -3580.228093
+[00:08:54] Bootstrap tree #98, logLikelihood: -3271.962877
+[00:08:58] Bootstrap tree #99, logLikelihood: -3530.664694
+[00:09:02] Bootstrap tree #100, logLikelihood: -3370.716769
+[00:09:09] Bootstrap tree #101, logLikelihood: -3901.372079
+[00:09:13] Bootstrap tree #102, logLikelihood: -3458.338997
+[00:09:17] Bootstrap tree #103, logLikelihood: -3810.318746
+[00:09:21] Bootstrap tree #104, logLikelihood: -3359.663358
+[00:09:25] Bootstrap tree #105, logLikelihood: -3256.984205
+[00:09:29] Bootstrap tree #106, logLikelihood: -3926.970987
+[00:09:32] Bootstrap tree #107, logLikelihood: -3813.559057
+[00:09:36] Bootstrap tree #108, logLikelihood: -3543.165716
+[00:09:40] Bootstrap tree #109, logLikelihood: -3688.332096
+[00:09:45] Bootstrap tree #110, logLikelihood: -3633.316673
+[00:09:48] Bootstrap tree #111, logLikelihood: -3479.467036
+[00:09:52] Bootstrap tree #112, logLikelihood: -3522.514944
+[00:09:57] Bootstrap tree #113, logLikelihood: -3873.503784
+[00:10:00] Bootstrap tree #114, logLikelihood: -3455.181299
+[00:10:04] Bootstrap tree #115, logLikelihood: -3428.787851
+[00:10:07] Bootstrap tree #116, logLikelihood: -3699.123447
+[00:10:10] Bootstrap tree #117, logLikelihood: -3435.089164
+[00:10:14] Bootstrap tree #118, logLikelihood: -3679.684295
+[00:10:18] Bootstrap tree #119, logLikelihood: -3514.227085
+[00:10:23] Bootstrap tree #120, logLikelihood: -4104.936331
+[00:10:26] Bootstrap tree #121, logLikelihood: -3540.025333
+[00:10:29] Bootstrap tree #122, logLikelihood: -3694.681340
+[00:10:32] Bootstrap tree #123, logLikelihood: -3784.325498
+[00:10:35] Bootstrap tree #124, logLikelihood: -3905.717545
+[00:10:39] Bootstrap tree #125, logLikelihood: -3698.987367
+[00:10:42] Bootstrap tree #126, logLikelihood: -3296.625641
+[00:10:46] Bootstrap tree #127, logLikelihood: -3697.963628
+[00:10:50] Bootstrap tree #128, logLikelihood: -3650.864247
+[00:10:54] Bootstrap tree #129, logLikelihood: -3373.476484
+[00:10:57] Bootstrap tree #130, logLikelihood: -3331.725483
+[00:11:00] Bootstrap tree #131, logLikelihood: -3192.873605
+[00:11:04] Bootstrap tree #132, logLikelihood: -3237.777058
+[00:11:08] Bootstrap tree #133, logLikelihood: -3761.493258
+[00:11:12] Bootstrap tree #134, logLikelihood: -3676.634899
+[00:11:16] Bootstrap tree #135, logLikelihood: -3576.283202
+[00:11:19] Bootstrap tree #136, logLikelihood: -3642.110155
+[00:11:23] Bootstrap tree #137, logLikelihood: -3712.569669
+[00:11:26] Bootstrap tree #138, logLikelihood: -3621.284821
+[00:11:31] Bootstrap tree #139, logLikelihood: -3422.483079
+[00:11:35] Bootstrap tree #140, logLikelihood: -3716.266541
+[00:11:39] Bootstrap tree #141, logLikelihood: -3731.551566
+[00:11:43] Bootstrap tree #142, logLikelihood: -3510.584760
+[00:11:46] Bootstrap tree #143, logLikelihood: -3955.978111
+[00:11:50] Bootstrap tree #144, logLikelihood: -3281.494793
+[00:11:54] Bootstrap tree #145, logLikelihood: -3906.899598
+[00:11:57] Bootstrap tree #146, logLikelihood: -3678.284918
+[00:12:01] Bootstrap tree #147, logLikelihood: -3270.152633
+[00:12:05] Bootstrap tree #148, logLikelihood: -3538.894443
+[00:12:08] Bootstrap tree #149, logLikelihood: -3613.730666
+[00:12:12] Bootstrap tree #150, logLikelihood: -3466.137202
+[00:12:23] Bootstrap tree #151, logLikelihood: -3695.241249
+[00:12:26] Bootstrap tree #152, logLikelihood: -3814.211624
+[00:12:30] Bootstrap tree #153, logLikelihood: -3370.351681
+[00:12:34] Bootstrap tree #154, logLikelihood: -3669.039765
+[00:12:39] Bootstrap tree #155, logLikelihood: -3359.717169
+[00:12:42] Bootstrap tree #156, logLikelihood: -3735.037463
+[00:12:46] Bootstrap tree #157, logLikelihood: -3455.209847
+[00:12:50] Bootstrap tree #158, logLikelihood: -3324.874834
+[00:12:53] Bootstrap tree #159, logLikelihood: -3223.003506
+[00:12:57] Bootstrap tree #160, logLikelihood: -3389.786873
+[00:13:01] Bootstrap tree #161, logLikelihood: -3621.867802
+[00:13:05] Bootstrap tree #162, logLikelihood: -3632.205410
+[00:13:09] Bootstrap tree #163, logLikelihood: -3736.723660
+[00:13:13] Bootstrap tree #164, logLikelihood: -3694.687267
+[00:13:17] Bootstrap tree #165, logLikelihood: -3685.090699
+[00:13:21] Bootstrap tree #166, logLikelihood: -3738.444495
+[00:13:25] Bootstrap tree #167, logLikelihood: -3612.156082
+[00:13:28] Bootstrap tree #168, logLikelihood: -3201.525909
+[00:13:32] Bootstrap tree #169, logLikelihood: -3615.440455
+[00:13:35] Bootstrap tree #170, logLikelihood: -3510.571252
+[00:13:39] Bootstrap tree #171, logLikelihood: -3480.204530
+[00:13:42] Bootstrap tree #172, logLikelihood: -3694.439698
+[00:13:46] Bootstrap tree #173, logLikelihood: -3388.581807
+[00:13:51] Bootstrap tree #174, logLikelihood: -3642.561528
+[00:13:55] Bootstrap tree #175, logLikelihood: -3745.890610
+[00:13:59] Bootstrap tree #176, logLikelihood: -3528.758886
+[00:14:03] Bootstrap tree #177, logLikelihood: -4156.666216
+[00:14:06] Bootstrap tree #178, logLikelihood: -3259.437104
+[00:14:09] Bootstrap tree #179, logLikelihood: -3389.823595
+[00:14:14] Bootstrap tree #180, logLikelihood: -3549.575074
+[00:14:18] Bootstrap tree #181, logLikelihood: -3795.308604
+[00:14:21] Bootstrap tree #182, logLikelihood: -3991.987998
+[00:14:25] Bootstrap tree #183, logLikelihood: -3613.836519
+[00:14:27] Bootstrap tree #184, logLikelihood: -3172.380047
+[00:14:30] Bootstrap tree #185, logLikelihood: -3275.004981
+[00:14:34] Bootstrap tree #186, logLikelihood: -3716.245974
+[00:14:38] Bootstrap tree #187, logLikelihood: -3560.076683
+[00:14:42] Bootstrap tree #188, logLikelihood: -3624.508308
+[00:14:46] Bootstrap tree #189, logLikelihood: -3658.542838
+[00:14:50] Bootstrap tree #190, logLikelihood: -3718.718231
+[00:14:54] Bootstrap tree #191, logLikelihood: -3597.157999
+[00:14:57] Bootstrap tree #192, logLikelihood: -3831.741848
+[00:15:01] Bootstrap tree #193, logLikelihood: -3259.086629
+[00:15:04] Bootstrap tree #194, logLikelihood: -3397.746697
+[00:15:09] Bootstrap tree #195, logLikelihood: -3836.077184
+[00:15:13] Bootstrap tree #196, logLikelihood: -3672.537473
+[00:15:18] Bootstrap tree #197, logLikelihood: -3609.682627
+[00:15:22] Bootstrap tree #198, logLikelihood: -3511.115228
+[00:15:26] Bootstrap tree #199, logLikelihood: -3588.389222
+[00:15:30] Bootstrap tree #200, logLikelihood: -3491.327885
+[00:15:42] Bootstrap tree #201, logLikelihood: -3431.398475
+[00:15:46] Bootstrap tree #202, logLikelihood: -3521.918808
+[00:15:49] Bootstrap tree #203, logLikelihood: -3462.211774
+[00:15:53] Bootstrap tree #204, logLikelihood: -3958.837850
+[00:15:57] Bootstrap tree #205, logLikelihood: -3542.407855
+[00:16:01] Bootstrap tree #206, logLikelihood: -3942.395547
+[00:16:04] Bootstrap tree #207, logLikelihood: -3967.549856
+[00:16:07] Bootstrap tree #208, logLikelihood: -3361.015078
+[00:16:10] Bootstrap tree #209, logLikelihood: -3731.919105
+[00:16:14] Bootstrap tree #210, logLikelihood: -3741.036151
+[00:16:18] Bootstrap tree #211, logLikelihood: -3792.416079
+[00:16:21] Bootstrap tree #212, logLikelihood: -3261.909764
+[00:16:25] Bootstrap tree #213, logLikelihood: -3460.889968
+[00:16:29] Bootstrap tree #214, logLikelihood: -3195.902296
+[00:16:33] Bootstrap tree #215, logLikelihood: -3446.599791
+[00:16:37] Bootstrap tree #216, logLikelihood: -3760.710877
+[00:16:41] Bootstrap tree #217, logLikelihood: -3709.068748
+[00:16:44] Bootstrap tree #218, logLikelihood: -3301.726449
+[00:16:48] Bootstrap tree #219, logLikelihood: -3546.353555
+[00:16:51] Bootstrap tree #220, logLikelihood: -3432.152809
+[00:16:56] Bootstrap tree #221, logLikelihood: -3805.798603
+[00:17:00] Bootstrap tree #222, logLikelihood: -3695.414390
+[00:17:03] Bootstrap tree #223, logLikelihood: -3691.259144
+[00:17:07] Bootstrap tree #224, logLikelihood: -3824.063122
+[00:17:12] Bootstrap tree #225, logLikelihood: -3946.114467
+[00:17:17] Bootstrap tree #226, logLikelihood: -3904.335725
+[00:17:20] Bootstrap tree #227, logLikelihood: -3640.337893
+[00:17:23] Bootstrap tree #228, logLikelihood: -3516.082801
+[00:17:27] Bootstrap tree #229, logLikelihood: -4057.678427
+[00:17:30] Bootstrap tree #230, logLikelihood: -3550.415784
+[00:17:34] Bootstrap tree #231, logLikelihood: -3482.431208
+[00:17:37] Bootstrap tree #232, logLikelihood: -3791.139180
+[00:17:41] Bootstrap tree #233, logLikelihood: -3647.843573
+[00:17:43] Bootstrap tree #234, logLikelihood: -3243.320372
+[00:17:47] Bootstrap tree #235, logLikelihood: -3727.622598
+[00:17:51] Bootstrap tree #236, logLikelihood: -3356.655218
+[00:17:55] Bootstrap tree #237, logLikelihood: -4104.287964
+[00:17:58] Bootstrap tree #238, logLikelihood: -3832.747527
+[00:18:02] Bootstrap tree #239, logLikelihood: -3531.566099
+[00:18:06] Bootstrap tree #240, logLikelihood: -3641.759485
+[00:18:11] Bootstrap tree #241, logLikelihood: -3519.217231
+[00:18:14] Bootstrap tree #242, logLikelihood: -3636.014471
+[00:18:20] Bootstrap tree #243, logLikelihood: -3766.439351
+[00:18:24] Bootstrap tree #244, logLikelihood: -3882.746318
+[00:18:27] Bootstrap tree #245, logLikelihood: -3424.999699
+[00:18:30] Bootstrap tree #246, logLikelihood: -3619.495077
+[00:18:35] Bootstrap tree #247, logLikelihood: -3671.706152
+[00:18:40] Bootstrap tree #248, logLikelihood: -3651.527782
+[00:18:44] Bootstrap tree #249, logLikelihood: -3498.166061
+[00:18:47] Bootstrap tree #250, logLikelihood: -3339.159370
+[00:19:02] Bootstrap tree #251, logLikelihood: -3750.462209
+[00:19:06] Bootstrap tree #252, logLikelihood: -3650.202714
+[00:19:10] Bootstrap tree #253, logLikelihood: -3981.788905
+[00:19:14] Bootstrap tree #254, logLikelihood: -3734.809631
+[00:19:18] Bootstrap tree #255, logLikelihood: -3536.500959
+[00:19:21] Bootstrap tree #256, logLikelihood: -3569.167773
+[00:19:24] Bootstrap tree #257, logLikelihood: -3994.976592
+[00:19:28] Bootstrap tree #258, logLikelihood: -3599.006235
+[00:19:32] Bootstrap tree #259, logLikelihood: -3405.663285
+[00:19:36] Bootstrap tree #260, logLikelihood: -3780.479001
+[00:19:40] Bootstrap tree #261, logLikelihood: -3745.901079
+[00:19:43] Bootstrap tree #262, logLikelihood: -3349.634300
+[00:19:47] Bootstrap tree #263, logLikelihood: -3567.405043
+[00:19:51] Bootstrap tree #264, logLikelihood: -3483.390357
+[00:19:54] Bootstrap tree #265, logLikelihood: -3678.015931
+[00:19:57] Bootstrap tree #266, logLikelihood: -3701.870704
+[00:20:00] Bootstrap tree #267, logLikelihood: -3407.435917
+[00:20:03] Bootstrap tree #268, logLikelihood: -3876.595171
+[00:20:07] Bootstrap tree #269, logLikelihood: -3853.715608
+[00:20:11] Bootstrap tree #270, logLikelihood: -3588.004568
+[00:20:16] Bootstrap tree #271, logLikelihood: -3907.710202
+[00:20:20] Bootstrap tree #272, logLikelihood: -3572.112624
+[00:20:24] Bootstrap tree #273, logLikelihood: -3978.206796
+[00:20:28] Bootstrap tree #274, logLikelihood: -3557.088202
+[00:20:32] Bootstrap tree #275, logLikelihood: -3585.396059
+[00:20:36] Bootstrap tree #276, logLikelihood: -3794.501104
+[00:20:40] Bootstrap tree #277, logLikelihood: -3062.183105
+[00:20:44] Bootstrap tree #278, logLikelihood: -3373.441869
+[00:20:48] Bootstrap tree #279, logLikelihood: -3750.438990
+[00:20:52] Bootstrap tree #280, logLikelihood: -3847.766694
+[00:20:55] Bootstrap tree #281, logLikelihood: -3646.606580
+[00:20:59] Bootstrap tree #282, logLikelihood: -3417.145973
+[00:21:04] Bootstrap tree #283, logLikelihood: -3715.153744
+[00:21:08] Bootstrap tree #284, logLikelihood: -3773.423229
+[00:21:12] Bootstrap tree #285, logLikelihood: -3389.832021
+[00:21:16] Bootstrap tree #286, logLikelihood: -3586.242697
+[00:21:19] Bootstrap tree #287, logLikelihood: -3406.400980
+[00:21:24] Bootstrap tree #288, logLikelihood: -3426.054987
+[00:21:28] Bootstrap tree #289, logLikelihood: -3434.557641
+[00:21:32] Bootstrap tree #290, logLikelihood: -3543.287584
+[00:21:37] Bootstrap tree #291, logLikelihood: -3669.353911
+[00:21:41] Bootstrap tree #292, logLikelihood: -3876.117166
+[00:21:46] Bootstrap tree #293, logLikelihood: -3934.821046
+[00:21:50] Bootstrap tree #294, logLikelihood: -3944.762439
+[00:21:53] Bootstrap tree #295, logLikelihood: -3829.186813
+[00:21:57] Bootstrap tree #296, logLikelihood: -3602.982430
+[00:22:01] Bootstrap tree #297, logLikelihood: -3471.244935
+[00:22:06] Bootstrap tree #298, logLikelihood: -4062.901196
+[00:22:10] Bootstrap tree #299, logLikelihood: -3283.406390
+[00:22:13] Bootstrap tree #300, logLikelihood: -3187.356417
+[00:22:32] Bootstrap tree #301, logLikelihood: -3531.874244
+[00:22:36] Bootstrap tree #302, logLikelihood: -3630.064887
+[00:22:40] Bootstrap tree #303, logLikelihood: -3521.893522
+[00:22:44] Bootstrap tree #304, logLikelihood: -3227.610117
+[00:22:48] Bootstrap tree #305, logLikelihood: -3859.637150
+[00:22:51] Bootstrap tree #306, logLikelihood: -3414.183558
+[00:22:54] Bootstrap tree #307, logLikelihood: -3720.414192
+[00:22:58] Bootstrap tree #308, logLikelihood: -3160.713844
+[00:23:03] Bootstrap tree #309, logLikelihood: -3460.872123
+[00:23:06] Bootstrap tree #310, logLikelihood: -3855.757749
+[00:23:10] Bootstrap tree #311, logLikelihood: -3789.314918
+[00:23:15] Bootstrap tree #312, logLikelihood: -3945.311215
+[00:23:19] Bootstrap tree #313, logLikelihood: -3701.921075
+[00:23:24] Bootstrap tree #314, logLikelihood: -3461.832907
+[00:23:27] Bootstrap tree #315, logLikelihood: -3346.610385
+[00:23:32] Bootstrap tree #316, logLikelihood: -3344.656839
+[00:23:35] Bootstrap tree #317, logLikelihood: -3825.474794
+[00:23:39] Bootstrap tree #318, logLikelihood: -3833.262155
+[00:23:44] Bootstrap tree #319, logLikelihood: -3843.662927
+[00:23:48] Bootstrap tree #320, logLikelihood: -3676.755279
+[00:23:53] Bootstrap tree #321, logLikelihood: -3611.437403
+[00:23:56] Bootstrap tree #322, logLikelihood: -3641.766033
+[00:24:00] Bootstrap tree #323, logLikelihood: -3770.211766
+[00:24:03] Bootstrap tree #324, logLikelihood: -3773.089842
+[00:24:06] Bootstrap tree #325, logLikelihood: -3347.278123
+[00:24:10] Bootstrap tree #326, logLikelihood: -3564.212333
+[00:24:13] Bootstrap tree #327, logLikelihood: -3190.498023
+[00:24:17] Bootstrap tree #328, logLikelihood: -3595.744940
+[00:24:21] Bootstrap tree #329, logLikelihood: -3634.508730
+[00:24:24] Bootstrap tree #330, logLikelihood: -3268.596158
+[00:24:28] Bootstrap tree #331, logLikelihood: -3477.845555
+[00:24:33] Bootstrap tree #332, logLikelihood: -3895.702173
+[00:24:36] Bootstrap tree #333, logLikelihood: -3825.991564
+[00:24:40] Bootstrap tree #334, logLikelihood: -3892.290032
+[00:24:45] Bootstrap tree #335, logLikelihood: -3503.848778
+[00:24:48] Bootstrap tree #336, logLikelihood: -3770.780416
+[00:24:51] Bootstrap tree #337, logLikelihood: -3326.260422
+[00:24:55] Bootstrap tree #338, logLikelihood: -3529.898493
+[00:24:58] Bootstrap tree #339, logLikelihood: -3547.867825
+[00:25:02] Bootstrap tree #340, logLikelihood: -3350.620481
+[00:25:05] Bootstrap tree #341, logLikelihood: -3464.416228
+[00:25:10] Bootstrap tree #342, logLikelihood: -3469.245079
+[00:25:14] Bootstrap tree #343, logLikelihood: -3336.319520
+[00:25:18] Bootstrap tree #344, logLikelihood: -3445.622978
+[00:25:21] Bootstrap tree #345, logLikelihood: -3703.720848
+[00:25:26] Bootstrap tree #346, logLikelihood: -3681.290759
+[00:25:29] Bootstrap tree #347, logLikelihood: -3820.724353
+[00:25:32] Bootstrap tree #348, logLikelihood: -3510.172763
+[00:25:36] Bootstrap tree #349, logLikelihood: -3679.467550
+[00:25:41] Bootstrap tree #350, logLikelihood: -3510.930749
+[00:26:02] Bootstrap tree #351, logLikelihood: -3538.097381
+[00:26:06] Bootstrap tree #352, logLikelihood: -3825.533103
+[00:26:09] Bootstrap tree #353, logLikelihood: -3494.747132
+[00:26:12] Bootstrap tree #354, logLikelihood: -3003.689931
+[00:26:16] Bootstrap tree #355, logLikelihood: -3655.440800
+[00:26:19] Bootstrap tree #356, logLikelihood: -3300.777807
+[00:26:23] Bootstrap tree #357, logLikelihood: -3691.895868
+[00:26:26] Bootstrap tree #358, logLikelihood: -3636.476408
+[00:26:30] Bootstrap tree #359, logLikelihood: -3787.839056
+[00:26:34] Bootstrap tree #360, logLikelihood: -3147.825870
+[00:26:37] Bootstrap tree #361, logLikelihood: -3321.238773
+[00:26:41] Bootstrap tree #362, logLikelihood: -3806.055483
+[00:26:46] Bootstrap tree #363, logLikelihood: -3617.266366
+[00:26:50] Bootstrap tree #364, logLikelihood: -3803.432791
+[00:26:54] Bootstrap tree #365, logLikelihood: -3298.833680
+[00:27:00] Bootstrap tree #366, logLikelihood: -3832.219283
+[00:27:04] Bootstrap tree #367, logLikelihood: -3540.712491
+[00:27:08] Bootstrap tree #368, logLikelihood: -3324.929046
+[00:27:11] Bootstrap tree #369, logLikelihood: -3796.646559
+[00:27:15] Bootstrap tree #370, logLikelihood: -3677.137162
+[00:27:19] Bootstrap tree #371, logLikelihood: -3475.520201
+[00:27:23] Bootstrap tree #372, logLikelihood: -3148.261613
+[00:27:27] Bootstrap tree #373, logLikelihood: -3481.303763
+[00:27:30] Bootstrap tree #374, logLikelihood: -3712.728316
+[00:27:36] Bootstrap tree #375, logLikelihood: -3692.073652
+[00:27:40] Bootstrap tree #376, logLikelihood: -3224.572460
+[00:27:44] Bootstrap tree #377, logLikelihood: -4007.441161
+[00:27:47] Bootstrap tree #378, logLikelihood: -3286.400893
+[00:27:52] Bootstrap tree #379, logLikelihood: -4010.580361
+[00:27:58] Bootstrap tree #380, logLikelihood: -3648.984645
+[00:28:02] Bootstrap tree #381, logLikelihood: -3748.008163
+[00:28:05] Bootstrap tree #382, logLikelihood: -3552.061877
+[00:28:08] Bootstrap tree #383, logLikelihood: -3573.481885
+[00:28:12] Bootstrap tree #384, logLikelihood: -3306.780981
+[00:28:16] Bootstrap tree #385, logLikelihood: -3826.541433
+[00:28:20] Bootstrap tree #386, logLikelihood: -3613.885895
+[00:28:24] Bootstrap tree #387, logLikelihood: -3302.757865
+[00:28:28] Bootstrap tree #388, logLikelihood: -3599.964728
+[00:28:32] Bootstrap tree #389, logLikelihood: -3332.410694
+[00:28:38] Bootstrap tree #390, logLikelihood: -3944.036484
+[00:28:42] Bootstrap tree #391, logLikelihood: -3538.691266
+[00:28:45] Bootstrap tree #392, logLikelihood: -3752.092884
+[00:28:49] Bootstrap tree #393, logLikelihood: -3514.985660
+[00:28:53] Bootstrap tree #394, logLikelihood: -3370.627754
+[00:28:57] Bootstrap tree #395, logLikelihood: -3711.151114
+[00:29:00] Bootstrap tree #396, logLikelihood: -3329.912579
+[00:29:04] Bootstrap tree #397, logLikelihood: -3734.431372
+[00:29:08] Bootstrap tree #398, logLikelihood: -3621.755316
+[00:29:11] Bootstrap tree #399, logLikelihood: -3574.250018
+[00:29:15] Bootstrap tree #400, logLikelihood: -3508.405526
+[00:29:39] Bootstrapping converged after 400 replicates.
+
+Optimized model parameters:
+
+   Partition 0: noname
+   Rate heterogeneity: GAMMA (4 cats, mean),  alpha: 0.804310 (ML),  weights&rates: (0.250000,0.096476) (0.250000,0.408864) (0.250000,0.958142) (0.250000,2.536519) 
+   P-inv (ML): 0.393944
+   Base frequencies (ML): 0.352069 0.109775 0.125864 0.412293 
+   Substitution rates (ML): 2.759313 7.299787 11.738904 3.385270 39.749100 1.000000 
+
+
+Final LogLikelihood: -3705.929620
+
+AIC score: 8085.859241 / AICc score: 235897.859241 / BIC score: 9372.225701
+Free parameters (model + branch lengths): 337
+
+WARNING: Number of free parameters (K=337) is larger than alignment size (n=336).
+         This might lead to overfitting and compromise tree inference results!
+
+
+WARNING: Best ML tree contains 100 near-zero branches!
+
+Best ML tree with collapsed near-zero branches saved to: /Users/carabrook/Developer/Mada-Ectoparasites/Phylogeny/phylo-trimmed/T3.raxml.bestTreeCollapsed
+Best ML tree saved to: /Users/carabrook/Developer/Mada-Ectoparasites/Phylogeny/phylo-trimmed/T3.raxml.bestTree
+All ML trees saved to: /Users/carabrook/Developer/Mada-Ectoparasites/Phylogeny/phylo-trimmed/T3.raxml.mlTrees
+Best ML tree with Felsenstein bootstrap (FBP) support values saved to: /Users/carabrook/Developer/Mada-Ectoparasites/Phylogeny/phylo-trimmed/T3.raxml.supportFBP
+Best ML tree with Transfer bootstrap (TBE) support values saved to: /Users/carabrook/Developer/Mada-Ectoparasites/Phylogeny/phylo-trimmed/T3.raxml.supportTBE
+Optimized model saved to: /Users/carabrook/Developer/Mada-Ectoparasites/Phylogeny/phylo-trimmed/T3.raxml.bestModel
+Bootstrap trees saved to: /Users/carabrook/Developer/Mada-Ectoparasites/Phylogeny/phylo-trimmed/T3.raxml.bootstraps
+
+Execution log saved to: /Users/carabrook/Developer/Mada-Ectoparasites/Phylogeny/phylo-trimmed/T3.raxml.log
+
+Analysis started: 01-Nov-2023 16:10:48 / finished: 01-Nov-2023 16:40:28
+
+Elapsed time: 1779.677 seconds
+
