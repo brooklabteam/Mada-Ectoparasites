@@ -13,7 +13,8 @@ homewd="/Users/carabrook/Developer/Mada-Ectoparasites/"
 
 #load the tree -- here the trimmed version
 tree <- read.tree(file = paste0(homewd, "/Phylogeny/phylo-trimmed/T3.raxml.supportFBP"))
-
+#and angelo's version
+tree <- read.tree(file = paste0(homewd, "Phylogeny/phylo-trimmed/T3.raxml.supportFBP.angelo.supportFBP"))
 #root it on drosophila
 rooted.tree <- root(tree, which(tree$tip.label == "NC_001709_1_Drosophila_melanogaster_mitochondrion__complete_genome_extraction"))
 #take a quick look in base R
@@ -81,7 +82,7 @@ p1
 
 
 
-ggsave(file = paste0(homewd, "/Phylogeny/Fig4.png"),
+ggsave(file = paste0(homewd, "/Phylogeny/Fig4-angelo.png"),
        plot = p1,
        units="mm",  
        width=110, 
