@@ -8,7 +8,7 @@ library(ape)
 library(ggnewscale)
 
 
-
+# angelo, add a line where you define 'homewd' as the wd on your own computer
 homewd="/Users/carabrook/Developer/Mada-Ectoparasites/"
 
 #load the tree -- here the trimmed version
