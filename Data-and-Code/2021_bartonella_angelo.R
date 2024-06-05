@@ -3,11 +3,11 @@
 rm(list=ls())
 
 #Set working directory - add your working directory here
-homewd= "/Users/theresalaverty/Documents/R/R_repositories"
+homewd= "/Users/carabrook/Developer/Mada-Ectoparasites"
 #Angelo-- add your working directory here and add a "#" before my working directory above
 
 #Place individual log files within this folder
-setwd(paste0(homewd,"/Mada-Ectoparasites/Data-and-Code/"))
+setwd(homewd)
 
 # Packages to use 
 library(dplyr)  
@@ -17,7 +17,7 @@ library(ggplot2)
 library(lubridate)
 
 # Data importation
-data1<-read.csv("Angelo_catch_dat_bart_age_2_13_2021.csv",header = T,sep = ",")
+data1<-read.csv(paste0(homewd,"/Data-and-Code/Angelo_catch_dat_bart_age_2_13_2021.csv"),header = T,sep = ",")
 names(data1)[names(data1)=="collection_date"] <- "processing_date"
 
 
@@ -61,7 +61,7 @@ eid_bart_dat<-subset(eid_bart_dat,bat_age_class!="J")
 unique(eid_bart_dat$bat_species)
 str(eid_bart_dat$yday)
 
-View(eid_bart_dat)
+head(eid_bart_dat)
 
 
 plot(eid_bart_dat$yday,eid_bart_dat$bartonella_precense_absence)
@@ -69,7 +69,7 @@ plot(eid_bart_dat$yday,eid_bart_dat$bartonella_precense_absence)
 eid_bart_dat$bartonella_precense_absence<-as.numeric(eid_bart_dat$bartonella_precense_absence)
 
 
-p4<-ggplot(eid_bart_dat,aes(as.factor(bartonella_precense_absence),bat_forearm_mm,fill=bartonella_precense_absence))+
+p4<-ggplot(eid_bart_dat,aes(as.factor(bartonella_precense_absence),bat_forearm_mm,fill=as.factor(bartonella_precense_absence)))+
   geom_violin()+
   geom_point()+
   theme_bw()
@@ -106,12 +106,6 @@ p2 <- ggplot(data=eid_bart_dat) +
   geom_ribbon(aes(x=bat_forearm_mm, ymin=predicted_count_lci, ymax=predicted_count_uci), fill="green", size=1, alpha=.3)
 print(p2)
 
-ggsave(path= "Figures", file = "RM inf forearm bart.png",
-       units="mm",  
-       width=60, 
-       height=40, 
-       scale=3, 
-       dpi=300)
 
 
 ##############################################
