@@ -143,7 +143,7 @@ p2a <- ggplot(data=comp.df.RM) + #facet_grid(~species) +
         #strip.background = element_blank(),
         #strip.text = element_text(face="italic", size=16, hjust=-.01),
         #plot.title = element_text(face = "italic"),
-        plot.margin = unit(c(.4,.1,0,0), "cm"),
+        plot.margin = unit(c(.4,.1,.1,0), "cm"),
         axis.text.x = element_text(size=14),
         #plot.title.position = "panel",
         #plot.tag.position = "topleft",
@@ -163,7 +163,7 @@ p2b <- ggplot(data=comp.df.RM) + facet_grid(species~., switch = "y") +
                      strip.background = element_blank(),# element_rect(fill="white"),
                      strip.text = element_text(face="italic", size=16),
                      plot.background = element_blank(),
-                     plot.margin = unit(c(.7,.2,3.4,0), "cm"),
+                     plot.margin = unit(c(.8,.2,2.8,0), "cm"),
                      #plot.margin = unit(c(1.8,0,2.1,0), "cm"),
                      plot.title = element_text(hjust=0.5, face = "bold", vjust=9),
                      panel.border = element_blank())+labs(title="delta\nAICc") + scale_y_reverse()
@@ -177,7 +177,7 @@ p2c <- ggplot(data=comp.df.RM) +
         panel.background = element_blank(),
         plot.background = element_blank(),
         #plot.margin = unit(c(2.3,0,2.5,0), "cm"),
-        plot.margin = unit(c(1.2,0,3.4,0), "cm"),
+        plot.margin = unit(c(1.2,0,2.6,0), "cm"),
         plot.title = element_text(hjust=0.5, face = "bold", vjust=10),
         panel.border = element_blank()) +labs(title="R-sq.") + scale_y_reverse()
 p2c
@@ -186,7 +186,7 @@ p2c
 p2all <- cowplot::plot_grid(p2b, p2c, p2a, rel_widths = c(.15,.15, 1), ncol = 3, nrow = 1)
 Fig4A <- p2all + theme(#panel.border = element_rect(color="white", fill=NA), 
                        panel.background = element_rect(fill="white", colour = "white"),  
-                       plot.margin = unit(c(.2,.1,.9,.1), "cm")) ;Fig4A
+                       plot.margin = unit(c(.2,.1,.6,.1), "cm")) ;Fig4A
 
 
 
@@ -249,7 +249,7 @@ Fig4B<-ggplot(data=topfitRM1_est)+
         axis.text.y = element_text(size=14,hjust = .5),
         axis.text.x = element_text(size = 14),
         legend.position = "none",
-        plot.margin = unit(c(.6,.2,2.7,.2), "cm"));Fig4B
+        plot.margin = unit(c(.6,.2,.6,.2), "cm"));Fig4B
 
 
 topfitRM1_pred<-data.frame(get_model_data(topfitRM1,type="pred", terms = c("mean_precLag[0,.1,.2,.3,.5,.6]")))
@@ -302,7 +302,7 @@ Fig4C<-ggplot(data=topfitRM1_pred) +
         strip.background = element_blank(),
         axis.title.y = element_text(size = 18),
         axis.title.x = element_blank(), axis.text = element_text(size = 14),
-        plot.margin = unit(c(.6,.2,2.2,.2), "cm"));Fig4C
+        plot.margin = unit(c(.6,.2,.1,.2), "cm"));Fig4C
 
 
 
@@ -417,6 +417,8 @@ p1a <- ggplot(data=comp.df) + #facet_grid(~species) +
         #axis.text.y = element_text(size=12),
         plot.margin = unit(c(.4,.1,0,0), "cm"),
         plot.title = element_text(face = "italic"),
+        legend.text = element_text(size=11),
+        legend.title = element_text(size=13),
         axis.text.y = element_blank(),
         axis.ticks.y = element_blank()) + 
   #ggtitle("Cyclopodia dubia")+
@@ -565,16 +567,16 @@ FigS2c<-ggplot(data=topfitED1_pred) +
         plot.margin = unit(c(.4,.2,2.2,.2), "cm"));FigS2c
 
 # And combine into Figure 3
-Fig3bottom <- cowplot::plot_grid(FigS2a, FigS2b,FigS2c, ncol = 3, nrow = 1, labels=c("D", "E", "F"), label_size = 26, rel_widths = c(1.17,.95,1.5), align = "v", axis = "tb")
+Fig3bottom <- cowplot::plot_grid(FigS2a, FigS2b,FigS2c, ncol = 3, nrow = 1, labels=c("D", "E", "F"), label_size = 26, rel_widths = c(1.19,.95,1.5), align = "v", axis = "tb")
 
-Fig3All <- cowplot::plot_grid(Fig3top, Fig3bottom, ncol=1, nrow=2, align = "v", axis = "l") + theme(panel.background = element_rect(fill="white"))
+Fig3All <- cowplot::plot_grid(Fig3top, Fig3bottom, ncol=1, nrow=2, align = "v", axis = "l", rel_heights = c(1,1.1)) + theme(panel.background = element_rect(fill="white"))
 
 ggsave(file = paste0(homewd, "/final-figures/Fig3.png"),
        plot = Fig3All,
        units="mm",  
        width=220, 
        height=110, 
-       scale=3, 
+       scale=2.8, 
        dpi=300)
 
 
