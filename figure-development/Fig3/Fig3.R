@@ -129,7 +129,7 @@ comp.df.RM$species <- "Eucampsipoda madagascariensis"
 head(comp.df.RM)
 #the main body of the plot
 p2a <- ggplot(data=comp.df.RM) + #facet_grid(~species) +
-  geom_tile(aes(x=predictor, y=model_num, fill=lmg_percent), color="gray", linewidth=1) +
+  geom_tile(aes(x=predictor, y=model_num, fill=lmg_percent), color="gray", linewidth=1, show.legend = F) +
   #ggtitle("Eucampsipoda madagascariensis")+
   scale_fill_viridis_c(direction=-1,limits=c(0,1)) + 
   scale_y_reverse() + 
