@@ -139,7 +139,7 @@ p1 <- ggtree(rooted.tree) %<+% tree.merge +
 p1
 
 #save the plots (this could go to the supplementary information)
-ggsave(file = paste0(homewd, "/final-figures/FigS2.png"),
+ggsave(file = paste0(homewd, "/final-figures/FigS3.png"),
        plot = p1,
        units="mm",  
        width=110, 

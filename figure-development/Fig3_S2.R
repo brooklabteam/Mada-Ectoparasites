@@ -408,14 +408,14 @@ BM.Ed<-ggplot(dat.lag) +
                                               axis.text = element_text(size=14));BM.Ed
 
 
-# FIGS1-Plot side by side the lag between the climate variable and the abundance of ectoparasites (CROSS CORRELATION)
+# FIGS2-Plot side by side the lag between the climate variable and the abundance of ectoparasites (CROSS CORRELATION)
 ggdraw()+
   draw_plot(BM.Miz,x=0,y=0,width = .5,height = 1)+
   draw_plot(BM.Ed,x=0.5,y=0,width = .5,height = 1)
 
 
 
-ggsave(file = paste0(homewd, "/final-figures/FigS1.png"),
+ggsave(file = paste0(homewd, "/final-figures/FigS2.png"),
        units="mm",  
        width=90, 
        height=80, 
