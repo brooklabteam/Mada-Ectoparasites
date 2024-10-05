@@ -566,7 +566,7 @@ Fig4F<-ggplot(data=topfitED1_pred) +
         axis.title.x = element_blank(), axis.text = element_text(size = 14),
         plot.margin = unit(c(.4,.2,2.2,.2), "cm"));Fig4F
 
-# And combine into Figure 3
+# And combine into Figure 4
 Fig4bottom <- cowplot::plot_grid(Fig4D, Fig4E,Fig4F, ncol = 3, nrow = 1, labels=c("D", "E", "F"), label_size = 26, rel_widths = c(1.19,.95,1.5), align = "v", axis = "tb")
 
 Fig4All <- cowplot::plot_grid(Fig4top, Fig4bottom, ncol=1, nrow=2, align = "v", axis = "l", rel_heights = c(1,1.1)) + theme(panel.background = element_rect(fill="white"))
