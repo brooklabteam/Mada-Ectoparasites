@@ -50,6 +50,10 @@ head(tree.dat)
 dat <- read.csv(file=paste0(homewd,"/data/phylo/ecto_metadata_combined_update_2024ValBIO.csv"), header = T, stringsAsFactors = F)
 head(dat)
 names(dat)
+
+#how many individual bats?
+dat$bat_sampleid <- sapply(strsplit(dat$Accession_Number_Old, "_"), '[',1)
+
 #check subgroup names
 unique(dat$Genus)
 unique(dat$Accession_Number)
@@ -87,7 +91,25 @@ colz = c("Basilia"="darkgoldenrod1", "Brachytarsina" = "mediumseagreen", "Cyclop
 #pick order for the labels
 tree.merge$Genus <- factor(tree.merge$Genus, levels = sort(unique(tree.merge$Genus)))   
 head(tree.merge)
-#tree.merge[31,]
+
+length(unique(tree.merge$bat_sampleid[tree.merge$Type==1])) #32
+#how many of each?
+length(unique(tree.merge$bat_sampleid[tree.merge$Type==1 & tree.merge$Genus=="Eucampsipoda"])) #30 unique bats
+length(unique(tree.merge$bat_sampleid[tree.merge$Type==1 & tree.merge$Genus=="Megastrebla"])) #2 unique bats
+length(unique(tree.merge$bat_sampleid[tree.merge$Type==1 & tree.merge$Genus=="Cyclopodia"])) #2 unique bats
+length(tree.merge$bat_sampleid[tree.merge$Type==1 & tree.merge$Genus=="Cyclopodia"]) #2
+length(tree.merge$bat_sampleid[tree.merge$Type==1 & tree.merge$Genus=="Megastrebla"]) #3... 2 from the same bat
+length(tree.merge$bat_sampleid[tree.merge$Type==1 & tree.merge$Genus=="Eucampsipoda"]) #38
+
+#make summary table of the unique bats by species and the ectos sampled from each
+
+TableS2 <- subset(tree.merge, Type==1)
+TableS2 <- dplyr::select(TableS2, Host_Binomial, bat_sampleid, Binomial, Accession_Number)
+TableS2 <- arrange(TableS2, Host_Binomial, Binomial, bat_sampleid, Accession_Number)
+write.csv(TableS2 , file = paste0(homewd, "/final-tables/tableS2.csv"), row.names = F)
+# 2 Cyclopodia sequenced from 2 Eidolon.
+# 38 Eucampsipoda sequenced from 30 Rousettus
+# 3 Megastrebla sequenced from 2 Rousettus (both of the Rousettus also provided a single Eucampsipoda sequence)
 
 
 #and  category
@@ -105,6 +127,8 @@ tree.merge$new_label <- paste0(tree.merge$Accession_Number, " | ", tree.merge$Bi
 
 head(rooted.tree)
 head(tree.merge)
+
+length(tree.merge$b) tree.merge$Type
 
 shapez = c("New this study" =  24, "Reference sequence" = 16)
 colz2 = c('1' =  "yellow", '0' = "white")

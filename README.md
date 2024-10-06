@@ -7,7 +7,7 @@ Climate and vegetation greenness data was downloaded from NASA Earthdata using t
 
 # Building a Maximum Likelihood Tree For Ectoparasite Sequences
 
-All scripts and files associated with this process (to produce Figure S2 and Figure 5 in the final paper) are found in the 'phylogeny' subfolder, embedder within the 'prep-files' subfolder within the 'figure-development' main folder.
+All scripts and files associated with this process (to produce Figure S3 and Figure 5 in the final paper) are found in the 'phylogeny' subfolder, embedded within the 'prep-files' subfolder within the 'figure-development' main folder.
 
 To prep the ML tree, we first made a list of background sequences to pull from GenBank, with representatives from each Genus in the ectoparasite tree. We compiled this list of sequences from the published literature, chiefly [Attaullah et al. 2023](https://link.springer.com/article/10.1007/s00436-023-07909-0), [Tortosa et al. 2013](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0075215), and [Poon et al. 2023](https://parasitesandvectors.biomedcentral.com/articles/10.1186/s13071-023-05663-x).  Here is the command you need to copy into the web browser to download these sequences (also found in the 'background_sequence.txt' file):
 

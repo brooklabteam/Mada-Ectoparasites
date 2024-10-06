@@ -1,0 +1,100 @@
+sampleid,roost_site,latitude_s,longitude_e,researchers_present,sampling_session,processing_date,processing_time_start,processing_time_end,bat_species,recap,bat_sex,bat_age_class,young_of_year,pupmom_pair,pup_or_mom,sampleid_pupmom_pair,bat_weight_g,bat_forearm_mm,bat_flies,meglastreblidae,fleas,mites,ticks,t_star,total_ectos
+CAT005,Ankarana_Cathedral_Edup,-12.952901,49.046885,"SG, AA",80,9/28/19,NA,NA,Eidolon dupreanum,no,male,A,no,no,NA,NA,312,129.1,0,0,0,7,0,NA,7
+CAT018,Ankarana_Cathedral_Edup,-12.952901,49.046885,"SG, AA",84,11/4/19,NA,NA,Eidolon dupreanum,no,female,NL,no,no,NA,NA,303,131.1,0,0,0,1,0,NA,1
+KEL186,Angavokely_Edup,-18.9327,47.7578,"CR, AFA, AR",42,4/10/18,NA,NA,Eidolon dupreanum,no,female,NL,no,no,NA,NA,265,131.1,5,NA,1,6,0,NA,12
+KEL187,Angavokely_Edup,-18.9327,47.7578,"CR, AFA, AR",42,4/10/18,NA,NA,Eidolon dupreanum,yes,female,NL,no,no,NA,NA,320,131.6,3,NA,0,7,0,NA,10
+KEL188,Angavokely_Edup,-18.9327,47.7578,"CR, AFA, AR",42,4/10/18,NA,NA,Eidolon dupreanum,no,female,NL,no,no,NA,NA,330,128.1,3,NA,12,0,0,NA,15
+KEL189,Angavokely_Edup,-18.9327,47.7578,"CR, AFA, AR",42,4/10/18,NA,NA,Eidolon dupreanum,yes,female,NL,no,no,NA,NA,320,128.9,3,NA,0,7,0,NA,10
+KEL190,Angavokely_Edup,-18.9327,47.7578,"CR, AFA, AR",42,4/10/18,NA,NA,Eidolon dupreanum,no,female,NL,no,no,NA,NA,310,129.6,1,NA,2,2,0,NA,5
+KEL191,Angavokely_Edup,-18.9327,47.7578,"CR, AFA, AR",42,4/10/18,NA,NA,Eidolon dupreanum,no,female,NL,no,no,NA,NA,325,134,1,NA,1,8,0,NA,10
+KEL215,Angavokely_Edup,-18.9327,47.7578,"CR, AFA, AR, Noe",46,7/27/18,NA,NA,Eidolon dupreanum,no,female,J,yes,no,NA,NA,200,120.2,3,NA,0,2,0,NA,5
+KEL216,Angavokely_Edup,-18.9327,47.7578,"CR, AFA, AR, Noe",46,7/27/18,NA,NA,Eidolon dupreanum,no,female,NL,no,no,NA,NA,330,128.3,25,NA,0,1,0,NA,26
+KEL217,Angavokely_Edup,-18.9327,47.7578,"CR, AFA, AR, Noe",46,7/27/18,NA,NA,Eidolon dupreanum,yes,male,A,no,no,NA,NA,320,124.1,11,NA,2,1,0,NA,14
+KEL218,Angavokely_Edup,-18.9327,47.7578,"CR, AFA, AR, Noe",46,7/27/18,NA,NA,Eidolon dupreanum,no,female,NL,no,no,NA,NA,300,127.2,2,NA,0,0,0,NA,2
+KEL219,Angavokely_Edup,-18.9327,47.7578,"CR, AFA, AR, Noe",46,7/27/18,NA,NA,Eidolon dupreanum,no,male,A,no,no,NA,NA,340,131.7,4,NA,0,1,0,NA,5
+KEL220,Angavokely_Edup,-18.9327,47.7578,"CR, AFA, AR, Noe",46,7/27/18,NA,NA,Eidolon dupreanum,no,male,A,no,no,NA,NA,300,123.4,6,NA,0,1,0,NA,7
+KEL221,Angavokely_Edup,-18.9327,47.7578,"CR, AFA, AR, Noe",46,7/27/18,NA,NA,Eidolon dupreanum,no,male,J,yes,no,NA,NA,240,122.5,8,NA,0,0,0,NA,8
+KEL222,Angavokely_Edup,-18.9327,47.7578,"CR, AFA, AR, Noe",46,7/27/18,NA,NA,Eidolon dupreanum,no,female,NL,no,no,NA,NA,300,131.7,1,NA,0,0,0,NA,1
+KEL223,Angavokely_Edup,-18.9327,47.7578,"CR, AFA, AR, Noe",46,7/27/18,NA,NA,Eidolon dupreanum,no,male,A,no,no,NA,NA,350,133.9,2,NA,0,0,0,NA,2
+KEL224,Angavokely_Edup,-18.9327,47.7578,"CR, AFA, AR, Noe",46,7/27/18,NA,NA,Eidolon dupreanum,yes,male,A,no,no,NA,NA,370,131.4,2,NA,0,2,0,NA,4
+KEL225,Angavokely_Edup,-18.9327,47.7578,"CR, AFA, AR, Noe",46,7/27/18,NA,NA,Eidolon dupreanum,yes,male,A,no,no,NA,NA,320,124.8,3,NA,0,1,0,NA,4
+KEL226,Angavokely_Edup,-18.9327,47.7578,"CR, AFA, AR, Noe",46,7/27/18,NA,NA,Eidolon dupreanum,yes,male,A,no,no,NA,NA,340,115.9,2,NA,10,0,0,NA,12
+KEL227,Angavokely_Edup,-18.9327,47.7578,"CR, AFA, AR, Noe",46,7/27/18,NA,NA,Eidolon dupreanum,no,female,NL,no,no,NA,NA,330,127.6,4,NA,0,0,0,NA,4
+KEL237,Angavokely_Edup,-18.9327,47.7578,"CR, AFA, AR, Noe",46,7/27/18,NA,NA,Eidolon dupreanum,yes,male,A,no,no,NA,NA,310,125.4,0,NA,0,1,0,NA,1
+KEL238,Angavokely_Edup,-18.9327,47.7578,"CR, AFA, AR, Noe",46,7/27/18,NA,NA,Eidolon dupreanum,no,female,NL,no,no,NA,NA,340,129.1,8,NA,0,1,0,NA,9
+KEL266,Angavokely_Edup,-18.9327,47.7578,"CB, SG, MA",56,1/7/19,NA,NA,Eidolon dupreanum,no,female,NL,no,no,NA,NA,360,137.9,2,NA,NA,NA,NA,NA,2
+KEL267,Angavokely_Edup,-18.9327,47.7578,"CB, SG, MA",56,1/7/19,NA,NA,Eidolon dupreanum,yes,male,A,no,no,NA,NA,162,124.4,NA,NA,NA,1,NA,NA,1
+KEL269,Angavokely_Edup,-18.9327,47.7578,"CB, SG, MA",56,1/7/19,NA,NA,Eidolon dupreanum,yes,male,A,no,no,NA,NA,245,130.8,1,NA,NA,1,NA,NA,2
+KEL277,Angavokely_Edup,-18.9327,47.7578,"CB, AA, FR, AG, KR",60,2/5/19,NA,NA,Eidolon dupreanum,no,male,A,no,no,NA,NA,355,125.2,5,0,5,4,NA,NA,14
+KEL290B,Angavokely_Edup,-18.9327,47.7578,"KR, AG, AA, FR, CR",63,3/15/19,NA,NA,Eidolon dupreanum,no,female,NL,no,no,NA,NA,290,130.2,1,NA,NA,3,NA,NA,4
+KEL291B,Angavokely_Edup,-18.9327,47.7578,"KR, AG, AA, FR, CR",63,3/15/19,NA,NA,Eidolon dupreanum,no,female,NL,no,no,NA,NA,280,125.3,NA,NA,1,3,NA,NA,4
+KEL292B,Angavokely_Edup,-18.9327,47.7578,"KR, AG, AA, FR, CR",63,3/15/19,NA,NA,Eidolon dupreanum,no,female,NL,no,no,NA,NA,295,133.1,1,NA,NA,1,NA,NA,2
+KEL297B,Angavokely_Edup,-18.9327,47.7578,"KR, AG, AA, FR, CR",63,3/15/19,NA,NA,Eidolon dupreanum,no,female,NL,no,no,NA,NA,300,128.5,NA,NA,NA,6,NA,NA,6
+KEL319,Angavokely_Edup,-18.9327,47.7578,"KR, AG, AA, FR, CR",66,4/23/19,NA,NA,Eidolon dupreanum,no,female,NL,no,no,NA,NA,260,127.9,0,0,0,1,0,NA,1
+KEL331,Angavokely_Edup,-18.9327,47.7578,"KR, AG, AA, FR, CR",66,4/23/19,NA,NA,Eidolon dupreanum,no,female,NL,no,no,NA,NA,345,134.9,0,0,0,3,0,NA,3
+KEL389,Angavokely_Edup,-18.9327,47.7578,"AG, FR, SA, SK, KF, AA, SG",78,9/20/19,NA,NA,Eidolon dupreanum,no,male,A,no,no,NA,NA,292,130,0,0,0,1,0,NA,1
+MIZ153,Maromizaha_Rmad,-18.9623,48.4525,"CB, CR, AR, AFA",39,2/19/18,NA,NA,Rousettus madagascariensis,no,male,J,yes,yes,pup,MIZ154,30,35.8,16,NA,6,30,0,NA,52
+MIZ236,Maromizaha_Rmad,-18.9623,48.4525,"CB, CR, AFA, AR",50,9/11/18,NA,NA,Rousettus madagascariensis,no,female,NL,no,no,NA,NA,55,70.2,4,NA,0,6,0,NA,10
+MIZ257,Maromizaha_Rmad,-18.9623,48.4525,"CB, SG, MA, Vero",53,12/20/18,NA,NA,Rousettus madagascariensis,no,female,J,yes,yes,pup,MIZ247,9,34.5,0,NA,0,4,0,NA,4
+MIZ277,Maromizaha_Rmad,-18.9623,48.4525,"CB, SG, MA, Vero",55,1/3/19,NA,NA,Rousettus madagascariensis,yes,male,A,no,no,NA,NA,43,65.5,6,NA,2,12,0,NA,20
+MIZ286,Maromizaha_Rmad,-18.9623,48.4525,"CB, SG, MA, Vero",55,1/3/19,NA,NA,Rousettus madagascariensis,no,male,J,yes,yes,pup,MIZ285,20,42.1,0,NA,2,5,0,NA,7
+MIZ287,Maromizaha_Rmad,-18.9623,48.4525,"CB, SG, MA, Vero",55,1/3/19,NA,NA,Rousettus madagascariensis,no,male,J,yes,yes,pup,MIZ278,22,46.4,0,NA,2,0,0,NA,2
+MIZ288,Maromizaha_Rmad,-18.9623,48.4525,"CB, SG, MA, Vero",55,1/3/19,NA,NA,Rousettus madagascariensis,no,female,J,yes,yes,pup,MIZ279,24,42.8,3,NA,1,5,0,NA,9
+MIZ291,Maromizaha_Rmad,-18.9623,48.4525,"CB, SG, AA, Vero",55,1/4/19,NA,NA,Rousettus madagascariensis,no,female,NL,no,no,NA,NA,52,71.2,2,NA,0,5,0,NA,7
+MIZ327,Maromizaha_Rmad,-18.9623,48.4525,"AA, Tiana, MA, Vero",58,1/9/19,NA,NA,Rousettus madagascariensis,no,male,J,yes,yes,pup,MIZ321,4,27.6,0,0,0,0,1,NA,1
+MIZ370,Maromizaha_Rmad,-18.9623,48.4525,"CB, AG, KR, AA, FR, Vero",59,2/1/19,NA,NA,Rousettus madagascariensis,no,male,J,yes,yes,pup,MIz362,10,43.3,3,0,1,3,0,NA,7
+MIZ371,Maromizaha_Rmad,-18.9623,48.4525,"CB, AG, KR, AA, FR, Vero",59,2/1/19,NA,NA,Rousettus madagascariensis,no,male,J,yes,yes,pup,MIZ369,20,56.4,6,0,0,0,0,NA,6
+MIZ403,Maromizaha_Rmad,-18.9623,48.4525,"FR, KR, CR, AG",65,4/9/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,75,74,19,1,0,2,0,NA,22
+MIZ404,Maromizaha_Rmad,-18.9623,48.4525,"FR, KR, CR, AG",65,4/9/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,75,72.3,12,0,0,1,0,NA,13
+MIZ405,Maromizaha_Rmad,-18.9623,48.4525,"FR, KR, CR, AG",65,4/9/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,70,68.5,14,0,0,0,0,NA,14
+MIZ406,Maromizaha_Rmad,-18.9623,48.4525,"FR, KR, CR, AG",65,4/9/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,65,75.1,6,1,0,1,0,NA,8
+MIZ407,Maromizaha_Rmad,-18.9623,48.4525,"FR, KR, CR, AG",65,4/9/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,60,68.9,10,0,0,5,0,NA,15
+MIZ408,Maromizaha_Rmad,-18.9623,48.4525,"FR, KR, CR, AG",65,4/9/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,75,75,20,0,0,5,0,NA,25
+MIZ409,Maromizaha_Rmad,-18.9623,48.4525,"KR, AG, AA, FR",65,4/11/19,NA,NA,Rousettus madagascariensis,no,female,NL,no,no,NA,NA,55,71.4,1,0,3,23,3,NA,30
+MIZ410,Maromizaha_Rmad,-18.9623,48.4525,"FR, KR, CR, AG",65,4/9/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,69,75.1,6,0,0,8,0,NA,14
+MIZ411,Maromizaha_Rmad,-18.9623,48.4525,"FR, KR, CR, AG",65,4/9/19,NA,NA,Rousettus madagascariensis,no,female,NL,no,no,NA,NA,50,73.2,10,0,0,1,0,NA,11
+MIZ412,Maromizaha_Rmad,-18.9623,48.4525,"FR, KR, CR, AG",65,4/9/19,NA,NA,Rousettus madagascariensis,no,female,NL,no,no,NA,NA,55,73.1,4,0,0,3,0,NA,7
+MIZ413,Maromizaha_Rmad,-18.9623,48.4525,"FR, KR, CR, AG",65,4/9/19,NA,NA,Rousettus madagascariensis,no,female,NL,no,no,NA,NA,55,69.6,7,0,0,8,0,NA,15
+MIZ414,Maromizaha_Rmad,-18.9623,48.4525,"FR, KR, CR, AG",65,4/9/19,NA,NA,Rousettus madagascariensis,no,unknown,J,no,no,NA,NA,37,61.2,2,0,1,4,0,NA,7
+MIZ415,Maromizaha_Rmad,-18.9623,48.4525,"FR, KR, CR, AG",65,4/9/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,73,76.5,16,0,0,4,0,NA,20
+MIZ416,Maromizaha_Rmad,-18.9623,48.4525,"FR, KR, CR, AG",65,4/9/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,67,71,1,0,35,5,0,NA,41
+MIZ417,Maromizaha_Rmad,-18.9623,48.4525,"FR, KR, CR, AG",65,4/10/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,80,73.36,19,0,0,3,0,NA,22
+MIZ418,Maromizaha_Rmad,-18.9623,48.4525,"FR, KR, CR, AG",65,4/10/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,85,73.8,16,0,0,2,0,NA,18
+MIZ419,Maromizaha_Rmad,-18.9623,48.4525,"FR, KR, CR, AG",65,4/10/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,60,70,11,0,0,4,0,NA,15
+MIZ420,Maromizaha_Rmad,-18.9623,48.4525,"FR, KR, CR, AG",65,4/10/19,NA,NA,Rousettus madagascariensis,no,female,NL,no,no,NA,NA,50,68.3,7,0,0,2,18,NA,27
+MIZ421,Maromizaha_Rmad,-18.9623,48.4525,"FR, KR, CR, AG",65,4/10/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,40,67.2,9,0,0,2,0,NA,11
+MIZ422,Maromizaha_Rmad,-18.9623,48.4525,"FR, KR, CR, AG",65,4/10/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,70,72,11,0,0,3,0,NA,14
+MIZ423,Maromizaha_Rmad,-18.9623,48.4525,"FR, KR, CR, AG",65,4/10/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,55,69.2,14,1,0,5,0,NA,20
+MIZ424,Maromizaha_Rmad,-18.9623,48.4525,"FR, KR, CR, AG",65,4/10/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,65,72.4,17,0,0,26,0,NA,43
+MIZ425,Maromizaha_Rmad,-18.9623,48.4525,"FR, KR, CR, AG",65,4/10/19,NA,NA,Rousettus madagascariensis,no,female,NL,no,no,NA,NA,55,73,29,0,0,4,0,NA,33
+MIZ426,Maromizaha_Rmad,-18.9623,48.4525,"FR, KR, CR, AG",65,4/10/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,65,72,14,0,0,5,0,NA,19
+MIZ427,Maromizaha_Rmad,-18.9623,48.4525,"FR, KR, CR, AG",65,4/10/19,NA,NA,Rousettus madagascariensis,no,male,J,no,no,NA,NA,35,60,3,0,0,0,0,NA,3
+MIZ544,Maromizaha_Rmad,-18.9623,48.4525,"AA, AS, FR",85,11/13/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,120,73.1,1,0,0,2,1,NA,4
+MIZ550,Maromizaha_Rmad,-18.9623,48.4525,"AA, AS, FR",85,11/13/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,79.5,70.7,4,0,0,4,0,NA,8
+MIZ551,Maromizaha_Rmad,-18.9623,48.4525,"AA, AS, FR",85,11/13/19,NA,NA,Rousettus madagascariensis,yes,male,A,no,no,NA,NA,65,69.9,1,0,0,12,0,NA,13
+MIZ552,Maromizaha_Rmad,-18.9623,48.4525,"AA, AS, FR",85,11/13/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,61,73.6,6,0,0,16,0,NA,22
+MIZ553,Maromizaha_Rmad,-18.9623,48.4525,"AA, AS, FR",85,11/13/19,NA,NA,Rousettus madagascariensis,yes,male,A,no,no,NA,NA,67,68.3,13,0,0,16,0,NA,29
+MIZ554,Maromizaha_Rmad,-18.9623,48.4525,"AA, AS, FR",85,11/13/19,NA,NA,Rousettus madagascariensis,no,female,P,no,no,NA,NA,67,70.7,9,0,4,25,0,NA,38
+MIZ555,Maromizaha_Rmad,-18.9623,48.4525,"AA, AS, FR",85,11/13/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,62,70.8,3,1,0,10,0,NA,14
+MIZ556,Maromizaha_Rmad,-18.9623,48.4525,"AA, AS, FR",85,11/13/19,NA,NA,Rousettus madagascariensis,yes,male,A,no,no,NA,NA,70,72.4,6,0,0,22,0,NA,28
+MIZ557,Maromizaha_Rmad,-18.9623,48.4525,"AA, AS, FR",85,11/13/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,67,75.7,9,0,1,3,0,NA,13
+MIZ558,Maromizaha_Rmad,-18.9623,48.4525,"AA, AS, FR",85,11/13/19,NA,NA,Rousettus madagascariensis,yes,male,A,no,no,NA,NA,66,75.9,2,1,0,16,0,NA,19
+MIZ559,Maromizaha_Rmad,-18.9623,48.4525,"AA, AS, FR",85,11/13/19,NA,NA,Rousettus madagascariensis,yes,male,A,no,no,NA,NA,65,69.8,2,3,0,21,0,NA,26
+MIZ560,Maromizaha_Rmad,-18.9623,48.4525,"AA, AS, FR",85,11/14/19,NA,NA,Rousettus madagascariensis,yes,male,A,no,no,NA,NA,65,70.3,17,1,0,10,0,NA,28
+MIZ561,Maromizaha_Rmad,-18.9623,48.4525,"AA, AS, FR",85,11/14/19,NA,NA,Rousettus madagascariensis,yes,male,A,no,no,NA,NA,74.5,71.2,7,0,0,5,0,NA,12
+MIZ562,Maromizaha_Rmad,-18.9623,48.4525,"AA, AS, FR",85,11/14/19,NA,NA,Rousettus madagascariensis,yes,male,A,no,no,NA,NA,70,66.6,5,4,0,8,0,NA,17
+MIZ563,Maromizaha_Rmad,-18.9623,48.4525,"AA, AS, FR",85,11/14/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,74.5,70.6,5,2,0,6,0,NA,13
+MIZ565,Maromizaha_Rmad,-18.9623,48.4525,"AA, AS, FR",85,11/14/19,NA,NA,Rousettus madagascariensis,yes,female,P,no,no,NA,NA,60,66.6,3,0,0,7,0,NA,10
+MIZ566,Maromizaha_Rmad,-18.9623,48.4525,"AA, AS, FR",85,11/14/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,64,73.8,9,1,0,11,0,NA,21
+MIZ567,Maromizaha_Rmad,-18.9623,48.4525,"AA, AS, FR",85,11/14/19,NA,NA,Rousettus madagascariensis,yes,male,A,no,no,NA,NA,66,75,8,3,0,20,0,NA,31
+MIZ568,Maromizaha_Rmad,-18.9623,48.4525,"AA, AS, FR",85,11/14/19,NA,NA,Rousettus madagascariensis,yes,male,A,no,no,NA,NA,67,74.4,3,2,0,55,0,NA,60
+MIZ569,Maromizaha_Rmad,-18.9623,48.4525,"AA, AS, FR",85,11/14/19,NA,NA,Rousettus madagascariensis,yes,male,A,no,no,NA,NA,65,72.9,1,0,0,9,0,NA,10
+RTC001,Ankarana_Cathedral_Rmad,-12.952901,49.046885,"SG, AA",80,9/28/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,60,72.7,7,0,0,0,6,NA,13
+RTC002,Ankarana_Cathedral_Rmad,-12.952901,49.046885,"SG, AA",80,9/28/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,47,68.2,3,0,0,8,0,NA,11
+RTC006,Ankarana_Cathedral_Rmad,-12.952901,49.046885,"SG, AA",84,11/4/19,NA,NA,Rousettus madagascariensis,no,female,P,no,no,NA,NA,52,70.1,6,1,0,2,3,NA,12
+RTC007,Ankarana_Cathedral_Rmad,-12.952901,49.046885,"SG, AA",84,11/4/19,NA,NA,Rousettus madagascariensis,no,male,J,yes,no,NA,NA,40,64.8,2,0,0,2,9,NA,13
+RTC008,Ankarana_Cathedral_Rmad,-12.952901,49.046885,"SG, AA",84,11/4/19,NA,NA,Rousettus madagascariensis,no,female,P,no,no,NA,NA,52,69,1,0,0,2,3,NA,6
+RTC009,Ankarana_Cathedral_Rmad,-12.952901,49.046885,"SG, AA",84,11/4/19,NA,NA,Rousettus madagascariensis,no,male,J,yes,no,NA,NA,41,66.5,2,0,1,0,0,NA,3
+RTC010,Ankarana_Cathedral_Rmad,-12.952901,49.046885,"SG, AA",84,11/4/19,NA,NA,Rousettus madagascariensis,no,male,A,no,no,NA,NA,47,71,7,1,0,2,0,NA,10
+RTC011,Ankarana_Cathedral_Rmad,-12.952901,49.046885,"SG, AA",84,11/4/19,NA,NA,Rousettus madagascariensis,no,female,P,no,no,NA,NA,55,72.8,5,0,0,5,7,NA,17
+RTC012,Ankarana_Cathedral_Rmad,-12.952901,49.046885,"SG, AA",84,11/5/19,NA,NA,Rousettus madagascariensis,no,female,J,yes,no,NA,NA,39,62.6,2,0,0,14,5,NA,21

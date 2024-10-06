@@ -20,10 +20,12 @@ names(cap)
 # Data CHOICE
 # Count is the number of Cyclopodia male+female
 # Male and Female= numbers of the cyclopodia Male and Female
-data1 <- dplyr::select(cap, roost_site, processing_date, #collection_date,
+data1 <- dplyr::select(cap, roost_site, processing_date, sampling_session,#collection_date,
+                       latitude_s,           
+                       longitude_e,
                        bat_species, bat_sex,sampleid, 
                        bat_age_class, bat_weight_g,
-                       body_length_cm, bat_sex,bat_age_class,
+                       bat_sex,bat_age_class,
                        bat_forearm_mm, mass_forearm_residual, #bat_tibia_mm,
                        #ear_length_mm, gonad_length_mm, 
                        #gonad_width_mm,
@@ -48,10 +50,16 @@ head(data1,2)
 tail(data1)
 str(data1)
 
+#summarise bat captures by sampling sesson
+tables1 <- ddply(data1,.(bat_species, sampling_session, bat_sex, roost_site, latitude_s, longitude_e), summarise, sampling_start_date = min(processing_date), N_captured = length(sampleid))
+tables1$roost_site <- sapply(strsplit(tables1$roost_site, "_"), "[", 1)
+unique(tables1$roost_site)
+unique(tables1$bat_species)
+write.csv(tables1, paste0(homewd, "/final-tables/tableS1.csv"), row.names = F)
 
 # Now I change the class of each variable
 data1$ bat_weight_g<-as.numeric(data1$ bat_weight_g)
-data1$ body_length_cm<-as.numeric(data1$ body_length_cm)
+#data1$ body_length_cm<-as.numeric(data1$ body_length_cm)
 #data1$ ear_length_mm<-as.numeric(data1$ ear_length_mm)
 #data1$ gonad_length_mm<-as.numeric(data1$ gonad_length_mm)
 #data1$ gonad_width_mm<-as.numeric(data1$ gonad_width_mm)
