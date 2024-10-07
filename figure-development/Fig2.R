@@ -93,9 +93,9 @@ unique(EID$roost_site)
 # EID$roost_site[EID$roost_site%in%c("AngavoBe","AngavoKely","Lakato")]<-"east"
 # EID$roost_site[EID$roost_site%in%c("Ankarana_Cathedral","Ankarana_Canyon" )]<-"north"
 
-EID$roost_site[EID$roost_site%in%c("Angavokely_Edup","Angavobe_Edup","Lakato_Edup")]<-"east"
+EID$roost_site[EID$roost_site%in%c("Angavokely_Edup","Angavobe_Edup")]<-"east"
 EID$roost_site[EID$roost_site%in%c("Ankarana_Cathedral_Edup","Ankarana_Canyon_Edup", "Ankarana_Chauves_Souris_Edup" )]<-"north"
-EID$roost_site[EID$roost_site%in%c("Mahabo_Edup" )]<-"west"
+#EID$roost_site[EID$roost_site%in%c("Mahabo_Edup" )]<-"west"
 unique(EID$roost_site)
 # 
 # 
@@ -113,42 +113,67 @@ EID.east = subset(EID, roost_site=="east")
 #compare seasonality by sex, and lumped together. also include predictors of mass:forearm residual
 
 #here by sex
-gamEID1 <- gam(bat_flies~ s(yday, by=bat_sex, k=7, bs = "cc") + s(mass_forearm_residual, bs="tp") + s(bat_sex, bs="re"), data = EID.east)
+#gamEID1 <- gam(bat_flies~ s(yday, by=bat_sex, k=7, bs = "cc") + s(mass_forearm_residual, bs="tp") + s(bat_sex, bs="re"), data = EID.east)
+#summary(gamEID1)
+gamEID1 <- gam(bat_flies~ mass_forearm_residual + bat_sex +s(yday, by=bat_sex, k=7, bs = "cc") +s(year, bs="re"), data = EID.east, family = poisson)
 summary(gamEID1)
+
 #here lumped
-gamEID2 <- gam(bat_flies~ s(yday, k=7, bs = "cc") + s(mass_forearm_residual, bs="tp") + s(bat_sex, bs="re"), data = EID.east)
+#gamEID2 <- gam(bat_flies~ s(yday, k=7, bs = "cc") + s(mass_forearm_residual, bs="tp") + s(bat_sex, bs="re"), data = EID.east)
+#summary(gamEID2)
+
+gamEID2 <- gam(bat_flies~ mass_forearm_residual + bat_sex + s(yday, k=7, bs = "cc")+s(year, bs="re"), data = EID.east, family = poisson)
 summary(gamEID2)
+
+
 #here without MFR
-gamEID3 <- gam(bat_flies~ s(yday, by=bat_sex, k=7, bs = "cc")  + s(bat_sex, bs="re"), data = EID.east)
+#gamEID3 <- gam(bat_flies~ s(yday, by=bat_sex, k=7, bs = "cc")  + s(bat_sex, bs="re"), data = EID.east)
+#summary(gamEID3)
+
+gamEID3 <- gam(bat_flies~ bat_sex + s(yday, by=bat_sex, k=7, bs = "cc")+s(year, bs="re")  , data = EID.east, family = poisson)
 summary(gamEID3)
+
 #here lumped
-gamEID4 <- gam(bat_flies~ s(yday, k=7, bs = "cc") + s(bat_sex, bs="re"), data = EID.east)
+#gamEID4 <- gam(bat_flies~ s(yday, k=7, bs = "cc") + s(bat_sex, bs="re"), data = EID.east)
+#summary(gamEID4)
+
+gamEID4 <- gam(bat_flies~ bat_sex + s(yday, k=7, bs = "cc")+s(year, bs="re"), data = EID.east, family = poisson)
 summary(gamEID4)
+
 #here without sex as RE
-gamEID5 <- gam(bat_flies~ s(yday, by=bat_sex, k=7, bs = "cc") + s(mass_forearm_residual, bs="tp"), data = EID.east)
+#gamEID5 <- gam(bat_flies~ s(yday, by=bat_sex, k=7, bs = "cc") + s(mass_forearm_residual, bs="tp"), data = EID.east)
+#summary(gamEID5)
+
+gamEID5 <-  gam(bat_flies~ mass_forearm_residual + s(yday, by=bat_sex, k=7, bs = "cc")+s(year, bs="re"), data = EID.east, family = poisson)
 summary(gamEID5)
+
 #here lumped
-gamEID6 <- gam(bat_flies~ s(yday, k=7, bs = "cc") + s(mass_forearm_residual, bs="tp"), data = EID.east)
+#gamEID6 <- gam(bat_flies~ s(yday, k=7, bs = "cc") + s(mass_forearm_residual, bs="tp"), data = EID.east)
+#summary(gamEID6)
+
+gamEID6 <- gam(bat_flies~ mass_forearm_residual + s(yday, k=7, bs = "cc")+s(year, bs="re"), data = EID.east, family = poisson)
 summary(gamEID6)
+
 
 #model comparison
 AIC(gamEID1, gamEID2, gamEID3, gamEID4, gamEID5, gamEID6)
-#model 1 and model 5 are the best - 5 has fewer variables so we'll go with that. includes MFR as predictor (though not a significant one) and also includes seasonality by sex
+#model 1 is the best
 
 
 #look at the seasonality by sex now
 #first just a glance
 par(mfrow=c(3,1))
-plot(gamEID5)
+plot(gamEID1)
 
 
 #and now the actual plot
 
 
 EID.east.sub <- cbind.data.frame(yday=rep(1:365, 2), bat_sex = rep(c("female", "male"), each=365))
+EID.east.sub$year = 2019
 EID.east.sub$mass_forearm_residual = 0
-EID.east.sub$predicted_count <- predict.gam(gamEID5,type="response", newdata = EID.east.sub, exclude=c("mass_forearm_residual"))
-EID.east.sub$predicted_count_SE <- predict.gam(gamEID5,type="response", newdata = EID.east.sub, exclude=c("mass_forearm_residual"), se.fit = T)$se.fit
+EID.east.sub$predicted_count <- predict.gam(gamEID1,type="response", newdata = EID.east.sub, exclude=c("mass_forearm_residual", "year"))
+EID.east.sub$predicted_count_SE <- predict.gam(gamEID1,type="response", newdata = EID.east.sub, exclude=c("mass_forearm_residual", "year"), se.fit = T)$se.fit
 EID.east.sub$predicted_count_lci <- EID.east.sub$predicted_count -1.96*EID.east.sub$predicted_count_SE
 EID.east.sub$predicted_count_uci <- EID.east.sub$predicted_count +1.96*EID.east.sub$predicted_count_SE
 EID.east.sub$predicted_count_lci[EID.east.sub$predicted_count_lci<0] <- 0#now add the predictions to each dataframe
@@ -210,36 +235,63 @@ unique(ROU$roost_site)
 
 ROU$roost_site[ROU$roost_site=="Maromizaha_Rmad"] <- "east"
 ROU$roost_site[ROU$roost_site%in%c("Ankarana_Cathedral_Rmad","Ankarana_Canyon_Rmad" )]<-"north"
-ROU$roost_site[ROU$roost_site=="Makira_Rmad"] <- "far_east"
+#ROU$roost_site[ROU$roost_site=="Makira_Rmad"] <- "far_east"
 
 ROU.east = subset(ROU, roost_site=="east")
+
 ### GAMS
 
 
 #compare seasonality by sex, and lumped together. also include predictors of mass:forearm residual
 
 #here by sex
-gamROU1 <- gam(bat_flies~ s(yday, by=bat_sex, k=7, bs = "cc") + s(mass_forearm_residual, bs="tp") + s(bat_sex, bs="re"), data = ROU.east)
+#gamROU1 <- gam(bat_flies~ s(yday, by=bat_sex, k=7, bs = "cc") + s(mass_forearm_residual, bs="tp") + s(bat_sex, bs="re"), data = ROU.east)
+#summary(gamROU1)
+
+gamROU1 <- gam(bat_flies~ mass_forearm_residual + bat_sex + s(yday, by=bat_sex, k=7, bs = "cc")+s(year, bs="re"), data = ROU.east, family = poisson)
 summary(gamROU1)
+
+
 #here lumped
-gamROU2 <- gam(bat_flies~ s(yday, k=7, bs = "cc") + s(mass_forearm_residual, bs="tp") + s(bat_sex, bs="re"), data = ROU.east)
+#gamROU2 <- gam(bat_flies~ s(yday, k=7, bs = "cc") + s(mass_forearm_residual, bs="tp") + s(bat_sex, bs="re"), data = ROU.east)
+#summary(gamROU2)
+
+gamROU2 <- gam(bat_flies~ mass_forearm_residual + bat_sex + s(yday, k=7, bs = "cc")+s(year, bs="re"), data = ROU.east, family = poisson)
 summary(gamROU2)
+
 #here without MFR
-gamROU3 <- gam(bat_flies~ s(yday, by=bat_sex, k=7, bs = "cc")  + s(bat_sex, bs="re"), data = ROU.east)
+#gamROU3 <- gam(bat_flies~ s(yday, by=bat_sex, k=7, bs = "cc")  + s(bat_sex, bs="re"), data = ROU.east)
+#summary(gamROU3)
+
+gamROU3 <- gam(bat_flies~ bat_sex + s(yday, by=bat_sex, k=7, bs = "cc")+s(year, bs="re"), data = ROU.east, family = poisson)
 summary(gamROU3)
+
 #here lumped
-gamROU4 <- gam(bat_flies~ s(yday, k=7, bs = "cc") + s(bat_sex, bs="re"), data = ROU.east)
+#gamROU4 <- gam(bat_flies~ s(yday, k=7, bs = "cc") + s(bat_sex, bs="re"), data = ROU.east)
+#summary(gamROU4)
+
+gamROU4 <- gam(bat_flies~ bat_sex + s(yday, k=7, bs = "cc")+s(year, bs="re"), data = ROU.east, family = poisson)
 summary(gamROU4)
+
+
 #here without sex as RE
-gamROU5 <- gam(bat_flies~ s(yday, by=bat_sex, k=7, bs = "cc") + s(mass_forearm_residual, bs="tp"), data = ROU.east)
+#gamROU5 <- gam(bat_flies~ s(yday, by=bat_sex, k=7, bs = "cc") + s(mass_forearm_residual, bs="tp"), data = ROU.east)
+#summary(gamROU5)
+
+gamROU5 <- gam(bat_flies~ mass_forearm_residual + s(yday, by=bat_sex, k=7, bs = "cc") +s(year, bs="re"), data = ROU.east, family = poisson)
 summary(gamROU5)
+
 #here lumped
-gamROU6 <- gam(bat_flies~ s(yday, k=7, bs = "cc") + s(mass_forearm_residual, bs="tp"), data = ROU.east)
+#gamROU6 <- gam(bat_flies~ s(yday, k=7, bs = "cc") + s(mass_forearm_residual, bs="tp"), data = ROU.east)
+#summary(gamROU6)
+
+gamROU6 <- gam(bat_flies~ mass_forearm_residual + s(yday, k=7, bs = "cc") +s(year, bs="re"), data = ROU.east, family = poisson)
 summary(gamROU6)
 
 #model comparison
 AIC(gamROU1, gamROU2, gamROU3, gamROU4, gamROU5, gamROU6)
-#model 1,2, and model 5 are the best but  1 is the best. includes random effect of bat sex in addition to the factors in the eidolon plot
+#model 1 is best. 
+#includes negative association with males and insig. relationship with MFR
 
 
 
@@ -248,9 +300,10 @@ par(mfrow=c(4,1))
 plot(gamROU1)
 
 ROU.east.sub <- cbind.data.frame(yday=rep(1:365, 2), bat_sex = rep(c("female", "male"), each=365))
+ROU.east.sub$year = 2019
 ROU.east.sub$mass_forearm_residual = 0
-ROU.east.sub$predicted_count <- predict.gam(gamROU1,type="response", newdata = ROU.east.sub, exclude = c("mass_forearm_residual"))
-ROU.east.sub$predicted_count_SE <- predict.gam(gamROU1,type="response", newdata = ROU.east.sub, exclude = c("mass_forearm_residual"), se.fit = T)$se.fit
+ROU.east.sub$predicted_count <- predict.gam(gamROU1,type="response", newdata = ROU.east.sub, exclude = c("mass_forearm_residual", "year"))
+ROU.east.sub$predicted_count_SE <- predict.gam(gamROU1,type="response", newdata = ROU.east.sub, exclude = c("mass_forearm_residual", "year"), se.fit = T)$se.fit
 ROU.east.sub$predicted_count_lci <- ROU.east.sub$predicted_count -1.96*ROU.east.sub$predicted_count_SE 
 ROU.east.sub$predicted_count_uci <- ROU.east.sub$predicted_count +1.96*ROU.east.sub$predicted_count_SE 
 ROU.east.sub$predicted_count_lci[ROU.east.sub$predicted_count_lci<0] <- 0
@@ -296,6 +349,31 @@ Rall<-ggplot(data = ROU.east) + facet_grid(~bat_sex) +
         axis.title.x = element_blank()) +
   scale_x_continuous(breaks=c(60,152,244,335), labels=c("Mar", "Jun", "Sep", "Dec"));Rall
 
+
+
+#the plot then will just have the top two panels
+pFig2 <- cowplot::plot_grid(Eall, Rall, ncol=1, nrow = 2, labels=c("A","B"), label_size = 22,label_y = c(1,1.07))
+ggsave(file =  paste0(homewd,"/final-figures/Fig2.png"),
+       plot = pFig2,
+       units="mm",  
+       width=90, 
+       height=75, 
+       scale=3, 
+       dpi=300)
+
+
+
+
+
+
+
+
+
+
+
+#partial effects will just be presented as stats tables, not as plots, so we are done now.
+
+#playing with megastrebla but don't use it:
 
 ######MEGASTREBLIDAE #######
 ##### GAM 
@@ -371,16 +449,3 @@ Rallmeg<-ggplot(data = ROU.east) + facet_grid(~bat_sex) +
         axis.title.y = element_text(size = 16),
         axis.title.x = element_blank());Rallmeg
 
-
-#the plot then will just have the top two panels
-pFig2 <- cowplot::plot_grid(Eall, Rall, ncol=1, nrow = 2, labels=c("A","B"), label_size = 22,label_y = c(1,1.07))
-ggsave(file =  paste0(homewd,"/final-figures/Fig2.png"),
-       plot = pFig2,
-       units="mm",  
-       width=90, 
-       height=75, 
-       scale=3, 
-       dpi=300)
-
-
-#partial effects will just be presented as stats tables, not as plots, so we are done now.

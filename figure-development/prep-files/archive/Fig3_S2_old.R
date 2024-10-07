@@ -26,7 +26,6 @@ names(dat)
 data1 <- dplyr::select(dat, roost_site, processing_date,
                        bat_species, bat_sex, 
                        bat_age_class, bat_weight_g,
-                       body_length_cm, 
                        bat_forearm_mm, 
                        meglastreblidae,bat_flies,mass_forearm_residual)
 
@@ -37,9 +36,9 @@ data1$processing_date <- as.Date(data1$processing_date, format = "%m/%d/%y")
 nrow(data1[is.na(data1$collection_date),]) #0
 nrow(data1[is.na(data1$bat_forearm_mm),]) #8
 nrow(data1[is.na(data1$bat_weight_g),]) #16
-nrow(data1[is.na(data1$bat_tibia_mm),]) #0
-nrow(data1[is.na(data1$ear_length_mm),]) #0
-nrow(data1[is.na(data1$meglastreblidae),]) #1018
+# nrow(data1[is.na(data1$bat_tibia_mm),]) #0
+# nrow(data1[is.na(data1$ear_length_mm),]) #0
+nrow(data1[is.na(data1$meglastreblidae),]) #972
 nrow(data1[is.na(data1$bat_flies),]) #131
 # Make numeric
 data1$meglastreblidae<-as.numeric(data1$meglastreblidae)
@@ -63,23 +62,30 @@ Rou$bat_sex[Rou$bat_sex=="unknown"]<- "female"
 Rou$bat_sex[Rou$bat_sex==""]<- NA
 Rou$bat_sex[is.na(Rou$bat_sex)]<-"female" 
 
-#### Mean and Error standard of the ectoparasites
+#### Mean and Error standard of the ectoparasites - by month and year
+head(Rou)
 names(Rou)
 
-Rou1<-aggregate(Rou$bat_flies, list(Rou$month), FUN=mean)
-Rou2<-aggregate(Rou$bat_flies, list(Rou$month), FUN=sd)
+Rou$year <- year(Rou$processing_date)
+Rou$month <- as.character(Rou$month)
+Rou$month[Rou$month=="1" | Rou$month=="2" | Rou$month=="3"| Rou$month=="4"| Rou$month=="5" | Rou$month=="6"| Rou$month=="7"| Rou$month=="8"| Rou$month=="9"] <- paste0("0", Rou$month[Rou$month=="1" | Rou$month=="2" | Rou$month=="3"| Rou$month=="4"| Rou$month=="5" | Rou$month=="6"| Rou$month=="7"| Rou$month=="8"| Rou$month=="9"])
+Rou$month_year <- as.Date(paste0(Rou$year, "-", Rou$month, "-01"))
+Rou$month <- as.numeric(Rou$month)
 
-colnames(Rou1)<-c("month","mean");colnames(Rou2)<-c("month","sd")
-Rou1<-merge(Rou1,Rou2,by="month")
+Rou1<-aggregate(Rou$bat_flies, list(Rou$month_year), FUN=mean)
+Rou2<-aggregate(Rou$bat_flies, list(Rou$month_year), FUN=sd)
 
-Rou<-merge(Rou,Rou1,by="month")
+colnames(Rou1)<-c("month_year","mean");colnames(Rou2)<-c("month_year","sd")
+Rou1<-merge(Rou1,Rou2,by="month_year")
+
+Rou<-merge(Rou,Rou1,by="month_year")
 length(Rou$month)
 
 se_Rou<-c()
 
-for (i in unique(Rou$month)) {
+for (i in unique(Rou$month_year)) {
   if(i== i){
-    se_Rou<-c(se_Rou,Rou$sd[Rou$month==i]/sqrt(length(Rou$month[Rou$month==i])))
+    se_Rou<-c(se_Rou,Rou$sd[Rou$month_year==i]/sqrt(length(Rou$month_year[Rou$month_year==i])))
   }
   
 }
@@ -112,20 +118,28 @@ Eid$bat_sex[is.na(Eid$bat_sex)]<-"female"
 
 # Calculate the Mean and standard deviation of the ectoparasites for each month
 names(Eid)
-Eid1<-aggregate(Eid$bat_flies, list(Eid$month), FUN=mean) #mean
-Eid2<-aggregate(Eid$bat_flies, list(Eid$month), FUN=sd) #standard deviation
+Eid$year <- year(Eid$processing_date)
+Eid$month <- as.character(Eid$month)
+Eid$month[Eid$month=="1" | Eid$month=="2" | Eid$month=="3"| Eid$month=="4"| Eid$month=="5" | Eid$month=="6"| Eid$month=="7"| Eid$month=="8"| Eid$month=="9"] <- paste0("0", Eid$month[Eid$month=="1" | Eid$month=="2" | Eid$month=="3"| Eid$month=="4"| Eid$month=="5" | Eid$month=="6"| Eid$month=="7"| Eid$month=="8"| Eid$month=="9"])
+Eid$month_year <- as.Date(paste0(Eid$year, "-", Eid$month, "-01"))
+Eid$month <- as.numeric(Eid$month)
 
-colnames(Eid1)<-c("month","mean");colnames(Eid2)<-c("month","sd")
-Eid1<-merge(Eid1,Eid2,by="month")
-Eid<-merge(Eid,Eid1,by="month")
-length(Eid$month)
 
+
+Eid1<-aggregate(Eid$bat_flies, list(Eid$month_year), FUN=mean) #mean
+Eid2<-aggregate(Eid$bat_flies, list(Eid$month_year), FUN=sd) #standard deviation
+
+colnames(Eid1)<-c("month_year","mean");colnames(Eid2)<-c("month_year","sd")
+Eid1<-merge(Eid1,Eid2,by="month_year")
+Eid<-merge(Eid,Eid1,by="month_year")
+length(Eid$month_year)
+head(Eid)
 # Calculate the Standard error 
 se_Eid<-c()
 
-for (i in unique(Eid$month)) {
+for (i in unique(Eid$month_year)) {
   if(i== i){
-    se_Eid<-c(se_Eid,Eid$sd[Eid$month==i]/sqrt(length(Eid$month[Eid$month==i])))
+    se_Eid<-c(se_Eid,Eid$sd[Eid$month_year==i]/sqrt(length(Eid$month_year[Eid$month_year==i])))
   }
   
 }
@@ -144,6 +158,15 @@ Eid$er_uci <- Eid$mean +1.96*Eid$se_Eid # Uper CI
 clim.dat<-read.csv(paste0(homewd,"/data/climate/Climate_tables/data_climate_giov.csv"))
 head(clim.dat)
 
+#add month_year column
+clim.dat$month <- month(clim.dat$date)
+clim.dat$year <- year(clim.dat$date)
+clim.dat$month <- as.character(clim.dat$month)
+clim.dat$month[clim.dat$month=="1" | clim.dat$month=="2" | clim.dat$month=="3"| clim.dat$month=="4"| clim.dat$month=="5" | clim.dat$month=="6"| clim.dat$month=="7"| clim.dat$month=="8"| clim.dat$month=="9"] <- paste0("0", clim.dat$month[clim.dat$month=="1" | clim.dat$month=="2" | clim.dat$month=="3"| clim.dat$month=="4"| clim.dat$month=="5" | clim.dat$month=="6"| clim.dat$month=="7"| clim.dat$month=="8"| clim.dat$month=="9"])
+clim.dat$month_year <- as.Date(paste0(clim.dat$year, "-", clim.dat$month, "-01"))
+clim.dat$month <- as.numeric(clim.dat$month)
+
+
 clim.dat$daty<-ymd(clim.dat$date)
 clim.dat$volana<-month(clim.dat$daty)
 
@@ -154,7 +177,7 @@ miz.clim<-subset(clim.dat,sites=="Maromizaha")
 head(miz.clim)
 #calculer l'humidite moyenne au cours des annees
 
-miz.clim <- ddply(miz.clim, .(volana), summarise,
+miz.clim <- ddply(miz.clim, .(month_year), summarise,
                   mean_Hday = mean(humidity_day), 
                   mean_Hnight=mean(Humidity.nigth), 
                   mean_Temp = mean(temperature),
@@ -163,17 +186,15 @@ miz.clim <- ddply(miz.clim, .(volana), summarise,
 
 
 
-
-
 #now merge with your case data
-merge.dat.miz <- merge(Rou, miz.clim, by.x = "month",by.y = "volana")
+merge.dat.miz <- merge(Rou, miz.clim, by = "month_year")
 
 attach(merge.dat.miz)
 names(merge.dat.miz)
-merge.dat.miz<-unique(data.frame(month,mean,sd,mean_Hday,mean_Hnight,mean_Temp,mean_NDVI,mean_prec))
+merge.dat.miz<-unique(data.frame(month_year,mean,sd,mean_Hday,mean_Hnight,mean_Temp,mean_NDVI,mean_prec))
 detach(merge.dat.miz)
 
-merge.melt.miz <- melt(merge.dat.miz, id.vars = c("month"))
+merge.melt.miz <- melt(merge.dat.miz, id.vars = c("month_year"))
 
 head (merge.melt.miz)
 
@@ -278,7 +299,7 @@ kel.clim<-subset(clim.dat,sites=="AngavoKely")
 
 #calculate the mean of the Humidity for each month since 2013
 
-kel.clim <- ddply(kel.clim, .(volana), summarise,
+kel.clim <- ddply(kel.clim, .(month_year), summarise,
                   mean_Hday = mean(humidity_day), 
                   mean_Hnight=mean(Humidity.nigth), 
                   mean_Temp = mean(temperature),
@@ -288,22 +309,22 @@ kel.clim <- ddply(kel.clim, .(volana), summarise,
 
 
 
-
-#Now merge with our field data
-#there is no month = 5 for Eid field data, so add as a dummy
-dummy.eid <- Eid[1,]
-dummy.eid$month <- 5
-dummy.eid$processing_date <- NA
-dummy.eid[,5:ncol(dummy.eid)] <- NA
-merge.dat <- merge(Eid, kel.clim, by.x = "month",by.y = "volana", all.y = T)
+# 
+# #Now merge with our field data
+# #there is no month = 5 for Eid field data, so add as a dummy
+# dummy.eid <- Eid[1,]
+# dummy.eid$month <- 5
+# dummy.eid$processing_date <- NA
+# dummy.eid[,5:ncol(dummy.eid)] <- NA
+merge.dat <- merge(Eid, kel.clim, by = "month_year",all.y = T)
 
 attach(merge.dat)
 names(merge.dat)
-merge.dat<-unique(data.frame(month,mean,sd,mean_Hday,mean_Hnight,mean_Temp,mean_NDVI,mean_prec))
+merge.dat<-unique(data.frame(month_year,mean,sd,mean_Hday,mean_Hnight,mean_Temp,mean_NDVI,mean_prec))
 detach(merge.dat)
 
 #Melt the new merged data
-merge.melt <- melt(merge.dat, id.vars = c("month"))
+merge.melt <- melt(merge.dat, id.vars = c("month_year"))
 head (merge.melt)
 
 #Arrange and edit the new melted data
@@ -425,10 +446,522 @@ ggsave(file = paste0(homewd, "/final-figures/FigS2.png"),
 
 
 
+#make a new dataset with the lagged versions of these climate variables
+# we can't start cases at timestep 1 because they are only predicted by all three variables starting
+merge.dat # this is currently eidolon
+
+#Rousettus first - precipitation should be lagged by 2 months, temperature by 1 month
+
+#Precipitation first (at timestep 3, because lag is 2 months)
+merge.shift <- merge.dat.miz
+merge.shift$mean_precLag <- NA
+for (i in 1:2){
+  merge.shift$mean_precLag[merge.shift$month==i] <- merge.shift$mean_prec[merge.shift$month==12-i]   
+}
+
+for (i in 3:12){
+  #  print(i)
+  # print(i-3)
+  merge.shift$mean_precLag[merge.shift$month==i] <- merge.shift$mean_prec[merge.shift$month==i-2]   
+}
+
+
+#and lag the temp by one month
+merge.shift$mean_tempLag <- NA
+merge.shift$mean_tempLag[merge.shift$month==1] <- merge.shift$mean_Temp[merge.shift$month==12]   
+
+for (i in 2:12){
+  merge.shift$mean_tempLag[merge.shift$month==i] <- merge.shift$mean_Temp[merge.shift$month==i-1]   
+}
+
+
+#and merge with the old data
+
+new_Rou<-merge(merge.shift,Rou,by="month")
+
+#save new lagged data as a csv file
+write.csv(new_Rou, file = paste0(homewd, "/data/Rousettus_lagged_data.csv"), row.names = F)
+
+#and do Eidolon
+#precip by 4 months, temp by 3
+merge.shift <- merge.dat
+
+merge.shift$mean_precLag <- NA
+for (i in 1:4){
+  merge.shift$mean_precLag[merge.shift$month==i] <- merge.shift$mean_prec[merge.shift$month==10-i]   
+}
+
+for (i in 5:12){
+  #  print(i)
+  # print(i-3)
+  merge.shift$mean_precLag[merge.shift$month==i] <- merge.shift$mean_prec[merge.shift$month==i-4]   
+}
+
+
+#and lag the temp by three months
+merge.shift$mean_tempLag <- NA
+for (i in 1:3){
+  merge.shift$mean_tempLag[merge.shift$month==i] <- merge.shift$mean_Temp[merge.shift$month==11-i]   
+}
+
+
+for (i in 4:12){
+  merge.shift$mean_tempLag[merge.shift$month==i] <- merge.shift$mean_Temp[merge.shift$month==i-3]   
+}
+
+
+#and merge with the old data
+new_ED<-merge(merge.shift,Eid,by="month")
+
+
+head(new_ED)
+
+nrow(new_ED[is.na(new_ED$mass_forearm_residual),]) #52
+nrow(new_ED[is.na(new_ED$mean_Hday),])
+nrow(new_ED[is.na(new_ED$mean_precLag),])
+
+#save new lagged data
+write.csv(new_ED, file = paste0(homewd, "/data/Eidolon_lagged_data.csv"), row.names = F)
+
+
+
+
+
+
+
+
 ### FIG2-Plot the cross correlation between the abundance of ectoparasite and the climate #
+#summarize across the whole time series by month instead of month-year
+
+rm(list=ls())
+
+homewd="/Users/carabrook/Developer/Mada-Ectoparasites"
+
+# create the working directory
+setwd(paste0(homewd))
+
+# call the Ectoparasite data from the working directory
+dat<-read.csv(paste0(homewd,"/data/ecto_dat_long.csv"))
+head(dat)
+names(dat)
+data1 <- dplyr::select(dat, roost_site, processing_date,
+                       bat_species, bat_sex, 
+                       bat_age_class, bat_weight_g,
+                       bat_forearm_mm, 
+                       meglastreblidae,bat_flies,mass_forearm_residual)
+
+
+data1$processing_date <- as.Date(data1$processing_date, format = "%m/%d/%y")
+
+#check for NAs in dataset
+nrow(data1[is.na(data1$collection_date),]) #0
+nrow(data1[is.na(data1$bat_forearm_mm),]) #8
+nrow(data1[is.na(data1$bat_weight_g),]) #16
+# nrow(data1[is.na(data1$bat_tibia_mm),]) #0
+# nrow(data1[is.na(data1$ear_length_mm),]) #0
+nrow(data1[is.na(data1$meglastreblidae),]) #972
+nrow(data1[is.na(data1$bat_flies),]) #131
+# Make numeric
+data1$meglastreblidae<-as.numeric(data1$meglastreblidae)
+data1$bat_flies<-as.numeric(data1$bat_flies)
+data1$bat_weight_g<-as.numeric(data1$ bat_weight_g)
+#change the date formaat
+data1$dmy<-ymd(data1$processing_date)
+data1$month<-month(data1$dmy)
+
+
+####### ROUSETTUS MAROMIZAHA #############################################
+Rou<-subset(data1, bat_species=="Rousettus madagascariensis"&roost_site=="Maromizaha_Rmad")
+head(Rou)
+unique(data1$roost_site)
+
+# change the NA to 0 (zero)
+
+Rou$bat_flies[is.na(Rou$bat_flies)]<-0 
+unique(Rou$bat_sex)
+Rou$bat_sex[Rou$bat_sex=="unknown"]<- "female"
+Rou$bat_sex[Rou$bat_sex==""]<- NA
+Rou$bat_sex[is.na(Rou$bat_sex)]<-"female" 
+
+#### Mean and Error standard of the ectoparasites - by month and year
+head(Rou)
+names(Rou)
+
+Rou$year <- year(Rou$processing_date)
+#Rou$month <- as.character(Rou$month)
+#Rou$month[Rou$month=="1" | Rou$month=="2" | Rou$month=="3"| Rou$month=="4"| Rou$month=="5" | Rou$month=="6"| Rou$month=="7"| Rou$month=="8"| Rou$month=="9"] <- paste0("0", Rou$month[Rou$month=="1" | Rou$month=="2" | Rou$month=="3"| Rou$month=="4"| Rou$month=="5" | Rou$month=="6"| Rou$month=="7"| Rou$month=="8"| Rou$month=="9"])
+#Rou$month_year <- as.Date(paste0(Rou$year, "-", Rou$month, "-01"))
+#Rou$month <- as.numeric(Rou$month)
+
+Rou1<-aggregate(Rou$bat_flies, list(Rou$month), FUN=mean)
+Rou2<-aggregate(Rou$bat_flies, list(Rou$month), FUN=sd)
+
+colnames(Rou1)<-c("month","mean");colnames(Rou2)<-c("month","sd")
+Rou1<-merge(Rou1,Rou2,by="month")
+
+Rou<-merge(Rou,Rou1,by="month")
+length(Rou$month)
+
+se_Rou<-c()
+
+for (i in unique(Rou$month)) {
+  if(i== i){
+    se_Rou<-c(se_Rou,Rou$sd[Rou$month==i]/sqrt(length(Rou$month[Rou$month==i])))
+  }
+  
+}
+se_Rou
+
+Rou$se<-se_Rou
+## Calculation of the intervale of confidents
+Rou$er_lci <- Rou$mean -1.96*Rou$se
+Rou$er_uci <- Rou$mean +1.96*Rou$se
+
+
+###DATA PREPARATION FOR EIDOLON AND IT'S ECTOPARASITES #######
+
+# Make a subset of the data for Eidolon dupreanum  from AngavoKely
+Eid<-subset(data1, bat_species=="Eidolon dupreanum"&roost_site=="Angavokely_Edup")
+head(Eid)
+unique(data1$roost_site)
+
+# change the NA to 0 (zero)
+# here NA means we did not get any ectoparasites 
+Eid$bat_flies[is.na(Eid$bat_flies)]<-0 
+
+# Check the doublon 
+unique(Eid$bat_sex)
+
+#change the miss speling names
+Eid$bat_sex[Eid$bat_sex=="unknown"]<- "female"
+Eid$bat_sex[Eid$bat_sex==""]<- NA
+Eid$bat_sex[is.na(Eid$bat_sex)]<-"female" 
+
+# Calculate the Mean and standard deviation of the ectoparasites for each month
+names(Eid)
+Eid$year <- year(Eid$processing_date)
+#Eid$month <- as.character(Eid$month)
+# Eid$month[Eid$month=="1" | Eid$month=="2" | Eid$month=="3"| Eid$month=="4"| Eid$month=="5" | Eid$month=="6"| Eid$month=="7"| Eid$month=="8"| Eid$month=="9"] <- paste0("0", Eid$month[Eid$month=="1" | Eid$month=="2" | Eid$month=="3"| Eid$month=="4"| Eid$month=="5" | Eid$month=="6"| Eid$month=="7"| Eid$month=="8"| Eid$month=="9"])
+# Eid$month_year <- as.Date(paste0(Eid$year, "-", Eid$month, "-01"))
+# Eid$month <- as.numeric(Eid$month)
+
+
+
+Eid1<-aggregate(Eid$bat_flies, list(Eid$month), FUN=mean) #mean
+Eid2<-aggregate(Eid$bat_flies, list(Eid$month), FUN=sd) #standard deviation
+
+colnames(Eid1)<-c("month","mean");colnames(Eid2)<-c("month","sd")
+Eid1<-merge(Eid1,Eid2,by="month")
+Eid<-merge(Eid,Eid1,by="month")
+length(Eid$month)
+head(Eid)
+# Calculate the Standard error 
+se_Eid<-c()
+
+for (i in unique(Eid$month)) {
+  if(i== i){
+    se_Eid<-c(se_Eid,Eid$sd[Eid$month==i]/sqrt(length(Eid$month[Eid$month==i])))
+  }
+  
+}
+se_Eid
+
+Eid$se_Eid<-se_Eid
+
+## Calculate the Confident Intervales
+Eid$er_lci <- Eid$mean -1.96*Eid$se_Eid #lower CI
+Eid$er_uci <- Eid$mean +1.96*Eid$se_Eid # Uper CI
+
+
+#### IMPORTATION OF CLIMATIC DATA ###########################################
+
+
+clim.dat<-read.csv(paste0(homewd,"/data/climate/Climate_tables/data_climate_giov.csv"))
+head(clim.dat)
+
+#add month_year column
+clim.dat$month <- month(clim.dat$date)
+clim.dat$year <- year(clim.dat$date)
+# clim.dat$month <- as.character(clim.dat$month)
+# clim.dat$month[clim.dat$month=="1" | clim.dat$month=="2" | clim.dat$month=="3"| clim.dat$month=="4"| clim.dat$month=="5" | clim.dat$month=="6"| clim.dat$month=="7"| clim.dat$month=="8"| clim.dat$month=="9"] <- paste0("0", clim.dat$month[clim.dat$month=="1" | clim.dat$month=="2" | clim.dat$month=="3"| clim.dat$month=="4"| clim.dat$month=="5" | clim.dat$month=="6"| clim.dat$month=="7"| clim.dat$month=="8"| clim.dat$month=="9"])
+# clim.dat$month_year <- as.Date(paste0(clim.dat$year, "-", clim.dat$month, "-01"))
+# clim.dat$month <- as.numeric(clim.dat$month)
+
+
+clim.dat$daty<-ymd(clim.dat$date)
+clim.dat$volana<-month(clim.dat$daty)
+
+
+## CLIMATIC DATA and CROSS CORRELATION FOR MAROMIZAHA ####
+
+miz.clim<-subset(clim.dat,sites=="Maromizaha")
+head(miz.clim)
+#calculer l'humidite moyenne au cours des annees
+
+miz.clim <- ddply(miz.clim, .(month), summarise,
+                  mean_Hday = mean(humidity_day), 
+                  mean_Hnight=mean(Humidity.nigth), 
+                  mean_Temp = mean(temperature),
+                  mean_prec=mean(precipitation),
+                  mean_NDVI = mean(NDVI))
+
+
+
+
+
+#now merge with your case data
+merge.dat.miz <- merge(Rou, miz.clim, by = "month")
+
+attach(merge.dat.miz)
+names(merge.dat.miz)
+merge.dat.miz<-unique(data.frame(month,mean,sd,mean_Hday,mean_Hnight,mean_Temp,mean_NDVI,mean_prec))
+detach(merge.dat.miz)
+
+merge.melt.miz <- melt(merge.dat.miz, id.vars = c("month"))
+
+head (merge.melt.miz)
+
+# and plot these together - temp and cases
+Ar.dat.miz1 = subset(merge.melt.miz, variable=="mean")
+Ar.dat.miz1$variable <- "mean_Hday"
+Ar.dat.miz2 = subset(merge.melt.miz, variable=="mean")
+Ar.dat.miz2$variable <- "mean_Hnight"
+Ar.dat.miz3 = subset(merge.melt.miz, variable=="mean")
+Ar.dat.miz3$variable <- "mean_Temp"
+Ar.dat.miz4 = subset(merge.melt.miz, variable=="mean")
+Ar.dat.miz4$variable <- "mean_NDVI"
+Ar.dat.miz5 = subset(merge.melt.miz, variable=="mean")
+Ar.dat.miz5$variable <- "mean_prec"
+
+Ar.dat.miz <- rbind(Ar.dat.miz1, Ar.dat.miz3,Ar.dat.miz5)
+head(Ar.dat.miz)
+unique(Ar.dat.miz$variable)
+
+
+
+#save as data
+lag.miz1 <- cbind.data.frame(lag = print(ccf(merge.dat.miz$mean_Hday, merge.dat.miz$mean))$lag, acf=print(ccf(merge.dat.miz$mean_Hday, merge.dat.miz$mean))$acf)
+lag.miz1$variable <- "mean humidity"
+#determine the optimal lag (here=0)
+lag.miz1$lag[lag.miz1$acf==max(lag.miz1$acf)]
+#plot
+print(ccf(merge.dat.miz$mean_Hday, merge.dat.miz$mean))
+
+# Lag_temperture
+lag.miz2 = cbind.data.frame(lag = print(ccf(merge.dat.miz$mean_Temp, merge.dat.miz$mean))$lag, acf=print(ccf(merge.dat.miz$mean_Temp, merge.dat.miz$mean))$acf)
+lag.miz2$variable <- "mean temperature"
+lag.miz2$lag[lag.miz2$acf==max(lag.miz2$acf)]
+# -1 is maximized cross correlation
+# pred follow temp by 1
+# 95% CI at 0.09
+
+
+#and humidity
+lag.miz3 = cbind.data.frame(lag = print(ccf(merge.dat.miz$mean_Hnight, merge.dat.miz$mean))$lag,
+                            acf=print(ccf(merge.dat.miz$mean_Hnight, merge.dat.miz$mean))$acf)
+lag.miz3$variable <- "mean_Hnight"
+lag.miz3$lag[lag.miz3$acf==max(lag.miz3$acf)]
+# 1 only
+# cases follow mean H2M by 1 week
+# 95% CI at 0.09
+#and humidity
+lag.miz4 = cbind.data.frame(lag = print(ccf(merge.dat.miz$mean_NDVI, merge.dat.miz$mean))$lag,
+                            acf=print(ccf(merge.dat.miz$mean_NDVI, merge.dat.miz$mean))$acf)
+lag.miz4$variable <- "mean_NDVI"
+lag.miz4$lag[lag.miz4$acf==max(lag.miz4$acf)]
+#and precipitation
+lag.miz5 = cbind.data.frame(lag = print(ccf(merge.dat.miz$mean_prec, merge.dat.miz$mean))$lag,
+                            acf=print(ccf(merge.dat.miz$mean_prec, merge.dat.miz$mean))$acf)
+lag.miz5$variable <- "mean precipitation"
+lag.miz5$lag[lag.miz5$acf==max(lag.miz5$acf)]
+
+#save together
+dat.lag.miz <- rbind(lag.miz1,lag.miz2, lag.miz5)
+
+#write.csv(dat.lag.miz, file=paste0(homewd, "/data/lag_output_rou.csv"), row.names = F)
+andrana<-dat.lag.miz
+head(andrana)
+
+#include the optimal lag on plot
+max.lag <- dlply(dat.lag.miz, .(variable))
+get.lag <- function(df){
+  lag = df$lag[df$acf==max(df$acf)]
+  df.out = cbind.data.frame(variable=unique(df$variable), lag=lag)
+  return(df.out)
+} 
+max.lag <- data.table::rbindlist(lapply(max.lag, get.lag))
+max.lag$label = paste0("lag=", max.lag$lag, " month")
+
+dat.lag.miz$variable[dat.lag.miz$variable=="mean_prec"]<-"mean precipitation"
+dat.lag.miz$variable[dat.lag.miz$variable=="mean_Hday"]<-"mean humidity"
+dat.lag.miz$variable[dat.lag.miz$variable=="mean temperature"]<-"mean temperature"
+
+unique(dat.lag.miz$variable)
+
+BM.Miz<-ggplot(dat.lag.miz) + 
+  geom_label(data=max.lag, aes(x=6,y=.4, label=label), label.size = 0) +
+  geom_bar(aes(x=lag, y=acf), stat = "identity") + 
+  geom_hline(aes(yintercept=0.09), color="blue", linetype=2) +
+  geom_hline(aes(yintercept=-0.09), color="blue", linetype=2) +
+  ggtitle("Eucampsipoda madagascariensis")+
+  facet_grid(variable~.) + theme_bw() + theme(legend.position = c(.2,1), panel.grid = element_blank(),
+                                              legend.title = element_blank(),
+                                              axis.title = element_text(size=16),
+                                              plot.title = element_text(face="italic"),
+                                              strip.background = element_rect(fill="white"),
+                                              strip.text = element_text(size=14,angle = -90),
+                                              legend.text = element_text(size=12),
+                                              plot.margin = unit(c(.2,.1,.1,1.1), "lines"),
+                                              axis.text = element_text(size=14));BM.Miz
+
+
+
+
+## CLIMATIC DATA and CROSS CORRELATION FOR ANGAVOKELY####
+
+kel.clim<-subset(clim.dat,sites=="AngavoKely")
+
+#calculate the mean of the Humidity for each month since 2013
+
+kel.clim <- ddply(kel.clim, .(month), summarise,
+                  mean_Hday = mean(humidity_day), 
+                  mean_Hnight=mean(Humidity.nigth), 
+                  mean_Temp = mean(temperature),
+                  mean_prec=mean(precipitation),
+                  mean_NDVI = mean(NDVI))
+
+
+
+
+# 
+# #Now merge with our field data
+# #there is no month = 5 for Eid field data, so add as a dummy
+# dummy.eid <- Eid[1,]
+# dummy.eid$month <- 5
+# dummy.eid$processing_date <- NA
+# dummy.eid[,5:ncol(dummy.eid)] <- NA
+merge.dat <- merge(Eid, kel.clim, by = "month",all.y = T)
+
+attach(merge.dat)
+names(merge.dat)
+merge.dat<-unique(data.frame(month,mean,sd,mean_Hday,mean_Hnight,mean_Temp,mean_NDVI,mean_prec))
+detach(merge.dat)
+
+#Melt the new merged data
+merge.melt <- melt(merge.dat, id.vars = c("month"))
+head (merge.melt)
+
+#Arrange and edit the new melted data
+Ar.dat1 = subset(merge.melt, variable=="mean")
+Ar.dat1$variable <- "mean_Hday"
+Ar.dat2 = subset(merge.melt, variable=="mean")
+Ar.dat2$variable <- "mean_Hnight"
+Ar.dat3 = subset(merge.melt, variable=="mean")
+Ar.dat3$variable <- "mean temperature"
+Ar.dat4 = subset(merge.melt, variable=="mean")
+Ar.dat4$variable <- "mean_NDVI"
+Ar.dat5 = subset(merge.melt, variable=="mean")
+Ar.dat5$variable <- "mean_prec"
+
+Ar.dat <- rbind(Ar.dat1, Ar.dat3,Ar.dat5)
+head(Ar.dat)
+unique(Ar.dat$variable)
+
+# check the lag between the mean abundance of ectoparasite and the climate variable and save as data
+
+#Lag_humidity_day
+lag1 <- cbind.data.frame(lag = print(ccf(merge.dat$mean_Hday, merge.dat$mean, na.action = na.pass))$lag, acf=print(ccf(merge.dat$mean_Hday, merge.dat$mean, na.action = na.pass))$acf)
+lag1$variable <- "mean humidity"
+#determine the optimal lag (here=0)
+lag1$lag[lag1$acf==max(lag1$acf)]
+#plot
+print(ccf(merge.dat$mean_Hday, merge.dat$mean, na.action = na.pass))
+
+# Lag_temperture
+lag2 = cbind.data.frame(lag = print(ccf(merge.dat$mean_Temp, merge.dat$mean, na.action = na.pass))$lag, acf=print(ccf(merge.dat$mean_Temp, merge.dat$mean, na.action = na.pass))$acf)
+lag2$variable <- "mean temperature"
+lag2$lag[lag2$acf==max(lag2$acf)]
+# -1 is maximized cross correlation
+# pred follow temp by 1
+# 95% CI at 0.09
+
+
+#Humidity_Nigth
+lag3 = cbind.data.frame(lag = print(ccf(merge.dat$mean_Hnight, merge.dat$mean, na.action = na.pass))$lag,
+                        acf=print(ccf(merge.dat$mean_Hnight, merge.dat$mean, na.action = na.pass))$acf)
+lag3$variable <- "mean_Hnight"
+lag3$lag[lag3$acf==max(lag3$acf)]
+# 1 only
+
+#and Mean_NDVI
+lag4 = cbind.data.frame(lag = print(ccf(merge.dat$mean_NDVI, merge.dat$mean, na.action = na.pass))$lag,
+                        acf=print(ccf(merge.dat$mean_NDVI, merge.dat$mean, na.action = na.pass))$acf)
+lag4$variable <- "mean_NDVI"
+lag4$lag[lag4$acf==max(lag4$acf)]
+
+#and Precipitation
+lag5 = cbind.data.frame(lag = print(ccf(merge.dat$mean_prec, merge.dat$mean, na.action = na.pass))$lag,
+                        acf=print(ccf(merge.dat$mean_prec, merge.dat$mean, na.action = na.pass))$acf)
+lag5$variable <- "mean precipitation"
+lag5$lag[lag5$acf==max(lag5$acf)]
+
+#Put all of them together
+dat.lag <- rbind(lag1,lag2, lag5) # here we only use the hDay, Temp, Precipitation
+
+# # Save the new data as CSV
+# write.csv(dat.lag, file=paste0(homewd, "/data/lag_output_eidolon.csv"), row.names = F)
+
+# now lets import the new data 
+andrana<-dat.lag 
+head(andrana)
+
+#include the optimal lag on plot
+max.lag <- dlply(dat.lag, .(variable))
+get.lag <- function(df){
+  lag = df$lag[df$acf==max(df$acf)]
+  df.out = cbind.data.frame(variable=unique(df$variable), lag=lag)
+  return(df.out)
+} 
+
+max.lag.Eid <- data.table::rbindlist(lapply(max.lag, get.lag))
+max.lag.Eid$label = paste0("lag=", max.lag.Eid$lag, " month")
+
+dat.lag$variable[dat.lag$variable=="mean_prec"]<-"mean precipitation"
+dat.lag$variable[dat.lag$variable=="mean_Hday"]<-"mean humidity"
+dat.lag$variable[dat.lag$variable=="mean temperature"]<-"mean temperature"
+
+unique(dat.lag$variable)
+
+#Plot the lagged data
+
+BM.Ed<-ggplot(dat.lag) + 
+  geom_label(data=max.lag.Eid, aes(x=6,y=.6, label=label), label.size = 0) +
+  geom_bar(aes(x=lag, y=acf), stat = "identity") +
+  ggtitle("Cyclopodia dubia")+
+  geom_hline(aes(yintercept=0.09), color="blue", linetype=2) +
+  geom_hline(aes(yintercept=-0.09), color="blue", linetype=2) +
+  ylim(c(-.9,.9))+
+  facet_grid(variable~.) + theme_bw() + theme(legend.position = c(.4,.9), panel.grid = element_blank(),
+                                              legend.title = element_blank(),
+                                              plot.title = element_text(face="italic"),
+                                              axis.title.x = element_text(size=16),
+                                              axis.title.y = element_blank(),
+                                              strip.background = element_rect(fill="white"),
+                                              strip.text = element_text(size=14,angle = -90),
+                                              legend.text = element_text(size=12),
+                                              plot.margin = unit(c(.2,.1,.1,1.1), "lines"),
+                                              axis.text = element_text(size=14));BM.Ed
+
+
+
+
+
+
+
 
 #plot all of Rousettus 
 dat_temp.miz<-subset(merge.melt.miz,variable%in%c("mean_Temp","mean"))
+
 
 temp.miz<-ggplot()+
   geom_line(aes(x=month,y=value,color=variable),color="grey50",linewidth=1,data = subset(dat_temp.miz,variable=="mean"))+
@@ -639,87 +1172,6 @@ ggsave(file = paste0(homewd, "/final-figures/Fig3.png"),
        height=80, 
        scale=3, 
        dpi=300)
-
-
-
-
-
-#make a new dataset with the lagged versions of these climate variables
-# we can't start cases at timestep 1 because they are only predicted by all three variables starting
-merge.dat # this is currently eidolon
-
-#Rousettus first - precipitation should be lagged by 2 months, temperature by 1 month
-
-#Precipitation first (at timestep 3, because lag is 2 months)
-merge.shift <- merge.dat.miz
-merge.shift$mean_precLag <- NA
-for (i in 1:2){
-  merge.shift$mean_precLag[merge.shift$month==i] <- merge.shift$mean_prec[merge.shift$month==12-i]   
-}
-
-for (i in 3:12){
-#  print(i)
- # print(i-3)
-  merge.shift$mean_precLag[merge.shift$month==i] <- merge.shift$mean_prec[merge.shift$month==i-2]   
-}
-
-
-#and lag the temp by one month
-merge.shift$mean_tempLag <- NA
-merge.shift$mean_tempLag[merge.shift$month==1] <- merge.shift$mean_Temp[merge.shift$month==12]   
-
-for (i in 2:12){
-  merge.shift$mean_tempLag[merge.shift$month==i] <- merge.shift$mean_Temp[merge.shift$month==i-1]   
-}
-
-
-#and merge with the old data
-
-new_Rou<-merge(merge.shift,Rou,by="month")
-
-#save new lagged data as a csv file
-write.csv(new_Rou, file = paste0(homewd, "/data/Rousettus_lagged_data.csv"), row.names = F)
-
-#and do Eidolon
-#precip by 4 months, temp by 3
-merge.shift <- merge.dat
-
-merge.shift$mean_precLag <- NA
-for (i in 1:4){
-  merge.shift$mean_precLag[merge.shift$month==i] <- merge.shift$mean_prec[merge.shift$month==10-i]   
-}
-
-for (i in 5:12){
-  #  print(i)
-  # print(i-3)
-  merge.shift$mean_precLag[merge.shift$month==i] <- merge.shift$mean_prec[merge.shift$month==i-4]   
-}
-
-
-#and lag the temp by three months
-merge.shift$mean_tempLag <- NA
-for (i in 1:3){
-  merge.shift$mean_tempLag[merge.shift$month==i] <- merge.shift$mean_Temp[merge.shift$month==11-i]   
-}
-
-
-for (i in 4:12){
-  merge.shift$mean_tempLag[merge.shift$month==i] <- merge.shift$mean_Temp[merge.shift$month==i-3]   
-}
-
-
-#and merge with the old data
-new_ED<-merge(merge.shift,Eid,by="month")
-
-
-head(new_ED)
-
-nrow(new_ED[is.na(new_ED$mass_forearm_residual),]) #52
-nrow(new_ED[is.na(new_ED$mean_Hday),])
-nrow(new_ED[is.na(new_ED$mean_precLag),])
-
-#save new lagged data
-write.csv(new_ED, file = paste0(homewd, "/data/Eidolon_lagged_data.csv"), row.names = F)
 
 
 

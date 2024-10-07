@@ -5,17 +5,14 @@ library(ggplot2)
 homewd= "/Users/carabrook/Developer/Mada-Ectoparasites"
 
 
-#load the two loagged datasets for Rousettus and Eidolon
+#load the two logged datasets for Rousettus and Eidolon - 
+#these are just the moramanga sites and just adults
 
 new_Rou <- read.csv(file = paste0(homewd, "/data/Rousettus_lagged_data.csv"))
 new_ED <- read.csv(file = paste0(homewd, "/data/Eidolon_lagged_data.csv"))
 
-#just do adults
-
-
-
-new_Rou1 = subset(new_Rou, roost_site=="Maromizaha_Rmad" & bat_age_class!="J")
-unique(new_Rou1$roost_site)
+head(new_Rou)
+head(new_ED)
 
 #first, load functions
 calc.one.poisson <- function(mod, dat, delta_AICc, model_num){
@@ -71,24 +68,27 @@ calc.one.poisson <- function(mod, dat, delta_AICc, model_num){
 specify_decimal <- function(x, k) trimws(format(round(x, k), nsmall=k))
 
 
-data_Rou<-dplyr::select(new_Rou1,bat_flies,mean_Hday,mean_tempLag,mean_precLag,mass_forearm_residual,bat_weight_g,bat_forearm_mm,bat_sex)
-names(new_Rou1)
+data_Rou<-dplyr::select(new_Rou,sampleid, processing_date,bat_flies,mean_Hday,lag_temp,lag_precip,mass_forearm_residual,bat_sex)
+names(new_Rou)
 head(data_Rou)
 nrow(data_Rou[is.na(data_Rou$mass_forearm_residual),]) #18
 nrow(data_Rou[is.na(data_Rou$mean_Hday),])
-nrow(data_Rou[is.na(data_Rou$mean_precLag),])
+nrow(data_Rou[is.na(data_Rou$lag_prec),])
+
+#2020 data is missing the climate data
+subset(data_Rou, is.na(mean_Hday))
 
 
 str(data_Rou)
 
-data_Rou<-na.omit(data_Rou)
-#Model d
+data_Rou<-na.omit(data_Rou) #some of the data are missing climate variables
+
 # so it drops any columns with any NA values
 #dat.sub = dat[complete.cases(dat),]
 
 
-globalRM1 <- glm(bat_flies ~ mean_Hday + mean_tempLag + 
-                   mean_precLag + mass_forearm_residual + bat_sex, 
+globalRM1 <- glm(bat_flies ~ mean_Hday + lag_temp + 
+                 lag_precip + mass_forearm_residual + bat_sex, 
                  data = data_Rou, family="poisson", na.action = na.fail)
 
 
@@ -122,19 +122,19 @@ comp.df.RM <- data.table::rbindlist(rel.comps.RM)
 #NA predictors are random intercepts, so rename these
 comp.df.RM$predictor[is.na(comp.df.RM$predictor)] <- "random\nintercept"
 unique(comp.df.RM$predictor)
-comp.df.RM$predictor <- factor(comp.df.RM$predictor,levels = c("bat_sex", "mass_forearm_residual", "mean_Hday", "mean_precLag", "mean_tempLag"))
+comp.df.RM$predictor <- factor(comp.df.RM$predictor,levels = c("bat_sex", "mass_forearm_residual", "mean_Hday", "lag_precip", "lag_temp"))
                                #levels = c("bat_sex", "bat_age_class","bat_forearm_mm","bat_weight_g",  "mean_Temp", "mean_Hday", "mean_precLag" ))
 
 comp.df.RM$species <- "Eucampsipoda madagascariensis"
 head(comp.df.RM)
 #the main body of the plot
 p2a <- ggplot(data=comp.df.RM) + #facet_grid(~species) +
-  geom_tile(aes(x=predictor, y=model_num, fill=lmg_percent), color="gray", linewidth=1, show.legend = F) +
+  geom_tile(aes(x=predictor, y=model_num, fill=lmg_percent), color="gray", linewidth=1) +
   #ggtitle("Eucampsipoda madagascariensis")+
   scale_fill_viridis_c(direction=-1,limits=c(0,1)) + 
   scale_y_reverse() + 
   theme_bw() + 
-  scale_x_discrete(breaks = c("bat_sex", "mass_forearm_residual", "mean_Hday", "mean_precLag", "mean_tempLag"),
+  scale_x_discrete(breaks = c("bat_sex", "mass_forearm_residual", "mean_Hday", "lag_precip", "lag_temp"),
                    labels = c("Sex", "Mass : Forearm\nResidual","Mean\nHumidity", "Lagged\nPrecipitation", "Lagged\nTemperature"))+
   theme(panel.grid = element_blank(), 
         axis.title.x = element_blank(),
@@ -143,12 +143,12 @@ p2a <- ggplot(data=comp.df.RM) + #facet_grid(~species) +
         #strip.background = element_blank(),
         #strip.text = element_text(face="italic", size=16, hjust=-.01),
         #plot.title = element_text(face = "italic"),
-        plot.margin = unit(c(.4,.1,.1,0), "cm"),
+        #plot.margin = unit(c(.4,.1,.1,0), "cm"),
         axis.text.x = element_text(size=14),
-        #plot.title.position = "panel",
-        #plot.tag.position = "topleft",
-        #plot.tag.location = "panel",
-        #axis.text.y = element_text(size=12)
+        plot.margin = unit(c(.4,.1,0,0), "cm"),
+        plot.title = element_text(face = "italic"),
+        legend.text = element_text(size=11),
+        legend.title = element_text(size=13),
         axis.text.y = element_blank(),
         axis.ticks.y = element_blank()) + 
   labs(fill="Relative contribution to standardized\nCragg and Uhler's pseudo R-sq.") ;p2a
@@ -161,9 +161,10 @@ p2b <- ggplot(data=comp.df.RM) + facet_grid(species~., switch = "y") +
                      axis.text = element_blank(), axis.ticks=element_blank(),
                      panel.background = element_blank(),
                      strip.background = element_blank(),# element_rect(fill="white"),
-                     strip.text = element_text(face="italic", size=16),
+                     strip.text = element_text(face="italic", size=14),
                      plot.background = element_blank(),
-                     plot.margin = unit(c(.8,.2,2.8,0), "cm"),
+                     #plot.margin = unit(c(.8,.2,2.8,0), "cm"),
+                     plot.margin = unit(c(.8,.2,3.9,0), "cm"),
                      #plot.margin = unit(c(1.8,0,2.1,0), "cm"),
                      plot.title = element_text(hjust=0.5, face = "bold", vjust=9),
                      panel.border = element_blank())+labs(title="delta\nAICc") + scale_y_reverse()
@@ -177,7 +178,8 @@ p2c <- ggplot(data=comp.df.RM) +
         panel.background = element_blank(),
         plot.background = element_blank(),
         #plot.margin = unit(c(2.3,0,2.5,0), "cm"),
-        plot.margin = unit(c(1.2,0,2.6,0), "cm"),
+        #plot.margin = unit(c(1.2,0,2.6,0), "cm"),
+        plot.margin = unit(c(1.3,0,3.9,0), "cm"),
         plot.title = element_text(hjust=0.5, face = "bold", vjust=10),
         panel.border = element_blank()) +labs(title="R-sq.") + scale_y_reverse()
 p2c
@@ -200,7 +202,7 @@ library(ggeffects)
 AIC.mod1<-dredgeRM2$AICc[1]
 
 #Extract the best fit model
-topfitRM1<-get.models(dredgeRM2,subset =AICc==AIC.mod1)[["26"]]
+topfitRM1<-get.models(dredgeRM2,subset =AICc==AIC.mod1)[["24"]]
 summary(topfitRM1)
 
 #plot(topfitRM1)
@@ -216,14 +218,14 @@ head(topfitRM1_est)
 unique(topfitRM1_est$term)
 
 topfitRM1_est$term <- as.character(topfitRM1_est$term)
-#topfitRM1_est$term[topfitRM1_est$term=="mean_Hday"] <- "Mean\nHumidity"
-topfitRM1_est$term[topfitRM1_est$term=="mean_precLag"] <- "Lagged\nPrecipitation"
+topfitRM1_est$term[topfitRM1_est$term=="mean_Hday"] <- "Mean\nHumidity"
+topfitRM1_est$term[topfitRM1_est$term=="lag_precip"] <- "Lagged\nPrecipitation"
 topfitRM1_est$term[topfitRM1_est$term=="bat_sexmale"] <- "Male Sex"
-topfitRM1_est$term[topfitRM1_est$term=="mean_tempLag"] <- "Lagged\nTemperature"
+topfitRM1_est$term[topfitRM1_est$term=="lag_temp"] <- "Lagged\nTemperature"
 #topfitRM1_est$term[topfitRM1_est$term=="bat_age_classJ"] <- "Juvenile\nAge"
 #topfitRM1_est$term[topfitRM1_est$term=="bat_forearm_mm"] <- "Forearm\nLength (mm)"
 #topfitRM1_est$term[topfitRM1_est$term=="bat_weight_g"] <- "Mass (g)"
-topfitRM1_est$term <- factor(topfitRM1_est$term, levels=rev(c("Male Sex","Lagged\nPrecipitation",  "Lagged\nTemperature")))
+topfitRM1_est$term <- factor(topfitRM1_est$term, levels=rev(c("Male Sex", "Mean\nHumidity", "Lagged\nPrecipitation",  "Lagged\nTemperature")))
 
 topfitRM1_est$group[topfitRM1_est$p.value>=0.5]<-"notsig"
 topfitRM1_est$p.stars[topfitRM1_est$p.stars==""] <- "."
@@ -235,10 +237,10 @@ head(topfitRM1_est)
 Fig4B<-ggplot(data=topfitRM1_est)+
   geom_point(aes(x=estimate,y=term,colour=group),size=3)+
   geom_errorbar(aes(y=term,xmin=conf.low,xmax=conf.high,colour=group),width=.05,linewidth=1)+
-  geom_label(aes(y=term, x=1.4, label=p.stars), label.size = 0, size=8) +
+  geom_label(aes(y=term, x=2, label=p.stars), label.size = 0, size=8) +
   geom_vline(aes(xintercept=1), linetype=2)+
   scale_color_manual(values = colz)+
-  coord_cartesian(xlim=c(.75,1.45)) +
+  coord_cartesian(xlim=c(.75,2.2)) +
   #scale_x_continuous(breaks = c(0,log10(2),log10(4)), labels = c(1,2,4)) +
   ylab("Term")+
   #xlab("log10(estimate)")+
@@ -249,80 +251,71 @@ Fig4B<-ggplot(data=topfitRM1_est)+
         axis.text.y = element_text(size=14,hjust = .5),
         axis.text.x = element_text(size = 14),
         legend.position = "none",
-        plot.margin = unit(c(.6,.2,.6,.2), "cm"));Fig4B
+        plot.margin = unit(c(.4,.2,2.7,.2), "cm"));Fig4B
 
 
-topfitRM1_pred<-data.frame(get_model_data(topfitRM1,type="pred", terms = c("mean_precLag[0,.1,.2,.3,.5,.6]")))
-topfitRM1_pred$group_col <- "mean_precLag"
-topfitRM1_pred2<-data.frame(get_model_data(topfitRM1,type="pred", terms = c("mean_tempLag[14,16,18,20,22,24]")))
-topfitRM1_pred2$group_col <- "mean_tempLag"
-topfitRM1_pred <- rbind(topfitRM1_pred, topfitRM1_pred2)
-                                                                           
-#d<-fortify(topfitRM1_pred$mean_Temp)
-#e<-fortify(topfitRM1_pred$mean_Hday)
-#f<-fortify(topfitRM1_pred$mean_precLag)
-#g<-fortify(topfitRM1_pred$mass_forearm_residual)
-#topfitRM1_pred<-rbind(d,e,f,g)
-#topfitRM1_pred<- data.table::rbindlist(topfitRM1_pred)
-
-topfitRM1_pred$posneg <- "pos"
-unique(topfitRM1_pred$group_col)
-
-#topfitRM1_pred$posneg[topfitRM1_pred$group_col=="bat_sex"] <- "neg"
-#topfitRM1_pred$posneg[topfitRM1_pred$group_col=="mean_Hday"] <- "pos"
-topfitRM1_pred$posneg[topfitRM1_pred$group_col=="mean_precLag"] <- "pos"
-topfitRM1_pred$posneg[topfitRM1_pred$group_col=="mean_tempLag"] <- "pos"
-#topfitRM1_pred$posneg[topfitRM1_pred$group_col=="bat_forearm_mm"] <- "pos"
-#topfitRM1_pred$posneg[topfitRM1_pred$group_col=="mass_forearm_residual"] <- "notsig"
-
-topfitRM1_pred$group_col <- as.character(topfitRM1_pred$group_col)
-#topfitRM1_pred$group_col[topfitRM1_pred$group_col=="mean_Hday"] <- "atop('mean humidity','(%)')"
-
-
-topfitRM1_pred$group_col[topfitRM1_pred$group_col=="mean_precLag"] <- "plain('Lagged Precipitation (mm)')"
-topfitRM1_pred$group_col[topfitRM1_pred$group_col=="mean_tempLag"] <- "paste('Lagged Temperature ', '('^0~'C)')"
-
-topfitRM1_pred$group_col <- factor(topfitRM1_pred$group_col, levels=c("plain('Lagged Precipitation (mm)')","paste('Lagged Temperature ', '('^0~'C)')"))
-
-
-#topfitRM1_pred$group_col[topfitRM1_pred$group_col=="mean_precLag"] <- "atop('Lagged Precipitation','(mm)')"
-#topfitRM1_pred$group_col[topfitRM1_pred$group_col=="mean_tempLag"] <- "atop('Lagged Temperature', '('^0~'C)')"
-
-topfitRM1_est$p.stars[topfitRM1_est$p.stars==""] <- "."
-
-unique(topfitRM1_pred$group_col)
-Fig4C<-ggplot(data=topfitRM1_pred) + 
-  facet_grid(~group_col,scales = "free_x", labeller = label_parsed, switch = "x") +
-  geom_line(aes(x=x, y=predicted, color=posneg), size=1, show.legend = F) + ylab(bquote('predicted abundance')) +
-  geom_ribbon(aes(x=x, ymin=conf.low, ymax=conf.high, fill=posneg), alpha=.3, show.legend = F) + theme_bw() +
-  scale_color_manual(values=colz) + scale_fill_manual(values=colz) +
-  theme(panel.grid = element_blank(), 
-        strip.text = element_text(size=16),
-        strip.placement = "outside",
-        strip.background = element_blank(),
-        axis.title.y = element_text(size = 18),
-        axis.title.x = element_blank(), axis.text = element_text(size = 14),
-        plot.margin = unit(c(.6,.2,.1,.2), "cm"));Fig4C
-
-
+# topfitRM1_pred<-data.frame(get_model_data(topfitRM1,type="pred", terms = c("lag_precip[0,.1,.2,.3,.5,.6]")))
+# topfitRM1_pred$group_col <- "lag_precip"
+# topfitRM1_pred2<-data.frame(get_model_data(topfitRM1,type="pred", terms = c("lag_temp[14,16,18,20,22,24]")))
+# topfitRM1_pred2$group_col <- "lag_temp"
+# 
+# #topfitRM1_pred2<-data.frame(get_model_data(topfitRM1,type="pred", terms = c("lag_temp[14,16,18,20,22,24]")))
+# #topfitRM1_pred2$group_col <- "lag_temp"
+# 
+# 
+# topfitRM1_pred <- rbind(topfitRM1_pred, topfitRM1_pred2)
+#                                                                            
+# #d<-fortify(topfitRM1_pred$mean_Temp)
+# #e<-fortify(topfitRM1_pred$mean_Hday)
+# #f<-fortify(topfitRM1_pred$mean_precLag)
+# #g<-fortify(topfitRM1_pred$mass_forearm_residual)
+# #topfitRM1_pred<-rbind(d,e,f,g)
+# #topfitRM1_pred<- data.table::rbindlist(topfitRM1_pred)
+# 
+# topfitRM1_pred$posneg <- "pos"
+# unique(topfitRM1_pred$group_col)
+# 
+# #topfitRM1_pred$posneg[topfitRM1_pred$group_col=="bat_sex"] <- "neg"
+# #topfitRM1_pred$posneg[topfitRM1_pred$group_col=="mean_Hday"] <- "pos"
+# topfitRM1_pred$posneg[topfitRM1_pred$group_col=="lag_precip"] <- "pos"
+# topfitRM1_pred$posneg[topfitRM1_pred$group_col=="lage_temp"] <- "pos"
+# #topfitRM1_pred$posneg[topfitRM1_pred$group_col=="bat_forearm_mm"] <- "pos"
+# #topfitRM1_pred$posneg[topfitRM1_pred$group_col=="mass_forearm_residual"] <- "notsig"
+# 
+# topfitRM1_pred$group_col <- as.character(topfitRM1_pred$group_col)
+# #topfitRM1_pred$group_col[topfitRM1_pred$group_col=="mean_Hday"] <- "atop('mean humidity','(%)')"
+# 
+# 
+# topfitRM1_pred$group_col[topfitRM1_pred$group_col=="lag_precip"] <- "plain('Lagged Precipitation (mm)')"
+# topfitRM1_pred$group_col[topfitRM1_pred$group_col=="lag_temp"] <- "paste('Lagged Temperature ', '('^0~'C)')"
+# 
+# topfitRM1_pred$group_col <- factor(topfitRM1_pred$group_col, levels=c("plain('Lagged Precipitation (mm)')","paste('Lagged Temperature ', '('^0~'C)')"))
+# 
+# 
+# #topfitRM1_pred$group_col[topfitRM1_pred$group_col=="mean_precLag"] <- "atop('Lagged Precipitation','(mm)')"
+# #topfitRM1_pred$group_col[topfitRM1_pred$group_col=="mean_tempLag"] <- "atop('Lagged Temperature', '('^0~'C)')"
+# 
+# topfitRM1_est$p.stars[topfitRM1_est$p.stars==""] <- "."
+# 
+# unique(topfitRM1_pred$group_col)
+# Fig4C<-ggplot(data=topfitRM1_pred) + 
+#   facet_grid(~group_col,scales = "free_x", labeller = label_parsed, switch = "x") +
+#   geom_line(aes(x=x, y=predicted, color=posneg), size=1, show.legend = F) + ylab(bquote('predicted abundance')) +
+#   geom_ribbon(aes(x=x, ymin=conf.low, ymax=conf.high, fill=posneg), alpha=.3, show.legend = F) + theme_bw() +
+#   scale_color_manual(values=colz) + scale_fill_manual(values=colz) +
+#   theme(panel.grid = element_blank(), 
+#         strip.text = element_text(size=16),
+#         strip.placement = "outside",
+#         strip.background = element_blank(),
+#         axis.title.y = element_text(size = 18),
+#         axis.title.x = element_blank(), axis.text = element_text(size = 14),
+#         plot.margin = unit(c(.6,.2,.1,.2), "cm"));Fig4C
+# 
+# 
 
 # And combine into Figure 3
-Fig4top <- cowplot::plot_grid(Fig4A, Fig4B, Fig4C, ncol = 3, nrow = 1, labels=c("A", "B", "C"), align = "v", axis = "tb",
-                              label_size = 26, rel_widths = c(1.2,.9,1.5))
-Fig4top
-# 
-# 
-# Fig3Top <- cowplot::plot_grid(Fig4AB, Fig4C, ncol = 1, nrow = 2, labels = c("", "C"), label_size = 22, rel_heights = c(1,.9)) + theme(plot.background = element_rect(fill="white"))
-# print(Fig3)
-# 
-# ggsave(file = paste0(homewd, "/final-figures/Fig3.png"),
-#        plot = Fig3,
-#        units="mm",  
-#        width=110, 
-#        height=90, 
-#        scale=3, 
-#        dpi=300)
-
+Fig4bottom <- cowplot::plot_grid(Fig4A, Fig4B, ncol = 2, nrow = 1, labels=c("C", "D"), #align = "h", axis = "tb",
+                              label_size = 26, rel_widths = c(1.2,.9))
 
 
 
@@ -334,13 +327,13 @@ Fig4top
 
 
 # FIGS2 Wfor eidolun
-new_ED = subset(new_ED, bat_age_class!="J")
-data_Eid<-dplyr::select(new_ED,bat_age_class,bat_flies,mean_Hday,mean_tempLag,mean_precLag,bat_weight_g,bat_forearm_mm,mass_forearm_residual,bat_sex)
-names(data_Eid)
-nrow(data_Eid[is.na(data_Eid$mass_forearm_residual),]) #52
+#new_ED = subset(new_ED, bat_age_class!="J")
+data_Eid<-dplyr::select(new_ED,bat_age_class,bat_flies,mean_Hday,lag_temp,lag_precip,mass_forearm_residual,bat_sex)
+head(data_Eid)
+nrow(data_Eid[is.na(data_Eid$mass_forearm_residual),]) #6
 data_Eid$mass_forearm_residual[is.na(data_Eid$mass_forearm_residual)]<-0
-nrow(data_Eid[is.na(data_Eid$mean_Hday),])
-nrow(data_Eid[is.na(data_Eid$mean_precLag),])
+nrow(data_Eid[is.na(data_Eid$mean_Hday),])#42
+nrow(data_Eid[is.na(data_Eid$lag_precip),])#42 - these are 2020
 unique(data_Eid$bat_age_class)
 
 #change the age class by adulte(A) and Juvenille (J)
@@ -354,8 +347,8 @@ str(data_Eid)
 data_Eid<-na.omit(data_Eid)
 
 
-globalED1 <- glm(bat_flies ~ mean_Hday + mean_tempLag + 
-                   mean_precLag + mass_forearm_residual + bat_sex, 
+globalED1 <- glm(bat_flies ~ mean_Hday + lag_temp + 
+                   lag_precip + mass_forearm_residual + bat_sex, 
                  data = data_Eid, family="poisson", na.action = na.fail)
 
 summary(globalED1)
@@ -398,15 +391,15 @@ comp.df <- data.table::rbindlist(rel.comps)
 #NA predictors are random intercepts, so rename these
 comp.df$predictor[is.na(comp.df$predictor)] <- "random\nintercept"
 unique(comp.df$predictor)
-comp.df$predictor <- factor(comp.df$predictor, levels = c("bat_sex", "mass_forearm_residual", "mean_Hday","mean_precLag", "mean_tempLag"))
+comp.df$predictor <- factor(comp.df$predictor, levels = c("bat_sex", "mass_forearm_residual", "mean_Hday","lag_precip", "lag_temp"))
 comp.df$species <- "Cyclopodia dubia"
 
 
 #the main body of the plot
 p1a <- ggplot(data=comp.df) + #facet_grid(~species) +
-  geom_tile(aes(x=predictor, y=model_num, fill=lmg_percent), color="gray", linewidth=1) +
+  geom_tile(aes(x=predictor, y=model_num, fill=lmg_percent), color="gray", linewidth=1, show.legend = F) +
   scale_fill_viridis_c(direction=-1,limits=c(0,1)) + scale_y_reverse() + theme_bw() + 
-  scale_x_discrete(breaks = c("bat_sex", "mass_forearm_residual", "mean_Hday", "mean_precLag", "mean_tempLag"),
+  scale_x_discrete(breaks = c("bat_sex", "mass_forearm_residual", "mean_Hday","lag_precip", "lag_temp"),
                    labels = c("Sex", "Mass : Forearm\nResidual","Mean\nHumidity", "Lagged\nPrecipitation", "Lagged\nTemperature"))+
   #facet_grid(variable~DENV.serotype) +
   theme(panel.grid = element_blank(), axis.title.x = element_blank(),axis.title.y = element_blank(), #axis.title.y = element_text(size=14), 
@@ -417,8 +410,8 @@ p1a <- ggplot(data=comp.df) + #facet_grid(~species) +
         #axis.text.y = element_text(size=12),
         plot.margin = unit(c(.4,.1,0,0), "cm"),
         plot.title = element_text(face = "italic"),
-        legend.text = element_text(size=11),
-        legend.title = element_text(size=13),
+        #legend.text = element_text(size=11),
+        #legend.title = element_text(size=13),
         axis.text.y = element_blank(),
         axis.ticks.y = element_blank()) + 
   #ggtitle("Cyclopodia dubia")+
@@ -433,8 +426,9 @@ p1b <- ggplot(data=comp.df) + facet_grid(species~., switch = "y") +
                      panel.background = element_blank(),
                      plot.background = element_blank(),
                      strip.background = element_blank(),# element_rect(fill="white"),
-                     strip.text = element_text(face="italic", size=16),
-                     plot.margin = unit(c(.7,.2,3.4,0), "cm"),
+                     strip.text = element_text(face="italic", size=14),
+                     #plot.margin = unit(c(.7,.2,3.4,0), "cm"),
+                     plot.margin = unit(c(.9,.2,2.9,0), "cm"),
                      plot.title = element_text(hjust=0.5, face = "bold", vjust=9),
                      panel.border = element_blank())+labs(title="delta\nAICc") + scale_y_reverse()
 
@@ -448,22 +442,23 @@ p1c <- ggplot(data=comp.df) + geom_label(aes(x=0, y=model_num, label=specify_dec
                      axis.text = element_blank(), axis.ticks=element_blank(),
                      panel.background = element_blank(),
                      plot.background = element_blank(),
-                     plot.margin = unit(c(1.2,0,3.4,0), "cm"),
+                     #plot.margin = unit(c(1.2,0,3.4,0), "cm"),
+                     plot.margin = unit(c(1.3,0,2.8,0), "cm"),
                      plot.title = element_text(hjust=0.5, face = "bold", vjust=10),
                      panel.border = element_blank()) +labs(title="R-sq.") + scale_y_reverse()
 
 #and combine
 #p1all <- cowplot::plot_grid(p1a, p1b, p1c, rel_widths = c(1,.1,.1), ncol = 3, nrow = 1)
 p1all <- cowplot::plot_grid(p1b, p1c, p1a, rel_widths = c(.15,.15, 1), ncol = 3, nrow = 1)
-Fig4D <- p1all + theme( panel.background = element_rect(fill="white", colour = "white"),  
-                        plot.margin = unit(c(0.1,.1,.9,.1), "cm")) ;Fig4D
+Fig4C <- p1all + theme( panel.background = element_rect(fill="white", colour = "white"),  
+                        plot.margin = unit(c(0.1,.1,.9,.1), "cm")) ;Fig4C
 
 # and save as desired.
 
 AIC.mod<-dredgeED1$AICc[1]
 
 #Extract the best fit model
-topfitED1<-get.models(dredgeED1,subset =AICc==AIC.mod)[["28"]]
+topfitED1<-get.models(dredgeED1,subset =AICc==AIC.mod)[["19"]]
 summary(topfitED1)
 plot_model(topfitED1,type = "pred")
 
@@ -474,16 +469,17 @@ head(topfitED1_est)
 unique(topfitED1_est$term)
 
 topfitED1_est$term <- as.character(topfitED1_est$term)
-#topfitED1_est$term[topfitED1_est$term=="mean_Hday"] <- "Mean\nHumidity"
-topfitED1_est$term[topfitED1_est$term=="mean_precLag"] <- "Lagged\nPrecipitation"
-topfitED1_est$term[topfitED1_est$term=="bat_sexmale"] <- "Male Sex"
-topfitED1_est$term[topfitED1_est$term=="mean_tempLag"] <- "Lagged\nTemperature"
+topfitED1_est$term[topfitED1_est$term=="mean_Hday"] <- "Mean\nHumidity"
+topfitED1_est$term[topfitED1_est$term=="lag_precip"] <- "Lagged\nPrecipitation"
+#topfitED1_est$term[topfitED1_est$term=="bat_sexmale"] <- "Male Sex"
+#topfitED1_est$term[topfitED1_est$term=="mean_tempLag"] <- "Lagged\nTemperature"
 #topfitED1_est$term[topfitED1_est$term=="bat_age_classJ"] <- "Juvenile\nAge"
 #topfitED1_est$term[topfitED1_est$term=="bat_weight_g"] <- "Mass (g)"
 #topfitED1_est$term[topfitED1_est$term=="bat_forearm_mm"] <- "Forearm\nLength (mm)"
-topfitED1_est$term[topfitED1_est$term=="mass_forearm_residual"] <- "Mass : Forearm\nResidual"
-topfitED1_est$term <- factor(topfitED1_est$term, levels=rev(c("Male Sex",  "Mass : Forearm\nResidual", "Lagged\nPrecipitation",
-                                                              "Lagged\nTemperature")))
+#topfitED1_est$term[topfitED1_est$term=="mass_forearm_residual"] <- "Mass : Forearm\nResidual"
+topfitED1_est$term <- factor(topfitED1_est$term, levels=rev(c("Mean\nHumidity","Lagged\nPrecipitation")))
+  #"Male Sex",  "Mass : Forearm\nResidual", "Lagged\nPrecipitation","Lagged\nTemperature")))
+
 topfitED1_est$p.stars[topfitED1_est$p.stars==""] <- "."
 topfitED1_est$group[topfitED1_est$p.value>=0.05]<-"notsig"
 
@@ -491,14 +487,14 @@ colz <- c('pos' = "red3", 'neg'="cornflowerblue", 'notsig'="gray50")
 
 head(topfitED1_est)
 
-Fig4E<-ggplot(data=topfitED1_est)+
+Fig4D<-ggplot(data=topfitED1_est)+
   geom_point(aes(x=estimate,y=term,colour=group),size=3)+
   geom_errorbar(aes(y=term,xmin=conf.low,xmax=conf.high,colour=group),width=.05,linewidth=1)+
-  geom_label(aes(y=term, x=10, label=p.stars), label.size = 0, size=8) +
+  geom_label(aes(y=term, x=8, label=p.stars), label.size = 0, size=8) +
   geom_vline(aes(xintercept=1), linetype=2)+
   scale_color_manual(values = colz)+
   ylab("Term")+xlab("Incidence Rate Ratio")+
-  coord_cartesian(xlim =c(0.5,11)) +
+  coord_cartesian(xlim =c(0.5,9)) +
   theme_bw()+
   #scale_x_log10(aes(x=estimate))+
   theme(axis.title.y = element_blank(),
@@ -506,77 +502,80 @@ Fig4E<-ggplot(data=topfitED1_est)+
         axis.text.y = element_text(size=14,hjust = .5),
         axis.text.x = element_text(size = 14),
         legend.position = "none",
-        plot.margin = unit(c(.4,.2,2.7,.2), "cm"));Fig4E
+        plot.margin = unit(c(.6,.2,.6,.2), "cm"));Fig4D
+        
 
 
 
 
 
-#FigS2ab <- cowplot::plot_grid(FigS2a, FigS2b, ncol = 2, nrow = 1, labels=c("C", "D"), label_size = 20, rel_widths = c(1,.63))
-#FigS2ab
+# #FigS2ab <- cowplot::plot_grid(FigS2a, FigS2b, ncol = 2, nrow = 1, labels=c("C", "D"), label_size = 20, rel_widths = c(1,.63))
+# #FigS2ab
+# 
+# 
+# 
+# topfitED1_pred<-data.frame(get_model_data(topfitED1,type="pred", terms = c("lag_precip[0,.1,.2,.3,.5,.6]")))
+# topfitED1_pred$group_col <- "lag_precip"
+# 
+# topfitED1_pred2<-data.frame(get_model_data(topfitED1,type="pred", terms = c("mean_Hday[55,60,65,70,75.80]")))
+# topfitED1_pred2$group_col <- "mean_Hday"
+# topfitED1_pred <- rbind(topfitED1_pred, topfitED1_pred2)
+# 
+# 
+# topfitED1_pred$posneg <- "pos"
+# unique(topfitED1_pred$group_col)
+# 
+# #topfitED1_pred$posneg[topfitED1_pred$group=="bat_sex"] <- "notsig"
+# topfitED1_pred$posneg[topfitED1_pred$group=="mean_Hday"] <- "pos"
+# topfitED1_pred$posneg[topfitED1_pred$group=="lag_precip"] <- "pos"
+# #topfitED1_pred$posneg[topfitED1_pred$group=="mean_tempLag"] <- "pos"
+# #topfitED1_pred$posneg[topfitED1_pred$group=="mass_forearm_residual"] <- "neg"
+# #topfitED1_pred$posneg[topfitED1_pred$group=="bat_weight_g"] <- "notsig"
+# 
+# topfitED1_pred$group_col <- as.character(topfitED1_pred$group_col)
+# 
+# 
+# topfitED1_pred$group_col[topfitED1_pred$group_col=="lag_precip"] <- "plain('Lagged Precipitation (mm)')"
+# topfitED1_pred$group_col[topfitED1_pred$group_col=="mean_Hday"] <- "paste('Current Humidity', '(%)')"
+# 
+# topfitED1_pred$group_col <- factor(topfitED1_pred$group_col, levels = c("plain('Lagged Precipitation (mm)')",
+#                                                                         "paste('Current Humidity', '(%)')"))
+# 
+# # #topfitED1_pred$group_col[topfitED1_pred$group_col=="mean_Hday"] <- "atop('mean humidity','(%)')"
+# # topfitED1_pred$group_col[topfitED1_pred$group_col=="mean_precLag"] <- "atop('Lagged Precipitation','(mm)')"
+# # topfitED1_pred$group_col[topfitED1_pred$group_col=="mean_tempLag"] <- "atop('Lagged Temperature', '('^0~'C)')"
+# 
+# 
+# unique(topfitRM1_pred$group)
+# head(topfitED1_pred)
+# 
+# 
+# Fig4F<-ggplot(data=topfitED1_pred) + 
+#   facet_grid(~group_col,scales = "free_x", labeller = label_parsed, switch = "x") +
+#   geom_line(aes(x=x, y=predicted, color=posneg), size=1, show.legend = F) + ylab(bquote('predicted abundance')) +
+#   geom_ribbon(aes(x=x, ymin=conf.low, ymax=conf.high, fill=posneg), alpha=.3, show.legend = F) + theme_bw() +
+#   scale_color_manual(values=colz) + scale_fill_manual(values=colz) +
+#   theme(panel.grid = element_blank(), #strip.text = element_text(size=18),
+#         strip.text = element_text(size=16),
+#         strip.placement = "outside",
+#         strip.background = element_blank(),
+#         #strip.background = element_rect(fill="white"),
+#         axis.title.y = element_text(size = 18),
+#         axis.title.x = element_blank(), axis.text = element_text(size = 14),
+#         plot.margin = unit(c(.4,.2,2.2,.2), "cm"));Fig4F
+# 
+# # And combine into Figure 4
+Fig4top <- cowplot::plot_grid(Fig4C, Fig4D,ncol = 2, nrow = 1, labels=c("A", "B"), label_size = 26, rel_widths = c(1.19,.9))#, align = "v", axis = "tb")
 
+Fig4All <- cowplot::plot_grid(Fig4top, Fig4bottom, ncol=1, nrow=2,  rel_heights = c(1,1.2)) + theme(panel.background = element_rect(fill="white"))
 
-
-topfitED1_pred<-data.frame(get_model_data(topfitED1,type="pred", terms = c("mean_precLag[0,.1,.2,.3,.5,.6]")))
-topfitED1_pred$group_col <- "mean_precLag"
-topfitED1_pred2<-data.frame(get_model_data(topfitED1,type="pred", terms = c("mean_tempLag[14,16,18,20,22,24]")))
-topfitED1_pred2$group_col <- "mean_tempLag"
-topfitED1_pred <- rbind(topfitED1_pred, topfitED1_pred2)
-
-
-topfitED1_pred$posneg <- "pos"
-unique(topfitED1_pred$group_col)
-
-#topfitED1_pred$posneg[topfitED1_pred$group=="bat_sex"] <- "notsig"
-#topfitED1_pred$posneg[topfitED1_pred$group=="mean_Hday"] <- "neg"
-topfitED1_pred$posneg[topfitED1_pred$group=="mean_precLag"] <- "pos"
-topfitED1_pred$posneg[topfitED1_pred$group=="mean_tempLag"] <- "pos"
-#topfitED1_pred$posneg[topfitED1_pred$group=="mass_forearm_residual"] <- "neg"
-#topfitED1_pred$posneg[topfitED1_pred$group=="bat_weight_g"] <- "notsig"
-
-topfitED1_pred$group_col <- as.character(topfitED1_pred$group_col)
-
-
-topfitED1_pred$group_col[topfitED1_pred$group_col=="mean_precLag"] <- "plain('Lagged Precipitation (mm)')"
-topfitED1_pred$group_col[topfitED1_pred$group_col=="mean_tempLag"] <- "paste('Lagged Temperature ', '('^0~'C)')"
-
-topfitED1_pred$group_col <- factor(topfitED1_pred$group_col, levels = c("plain('Lagged Precipitation (mm)')",
-                                                                        "paste('Lagged Temperature ', '('^0~'C)')"))
-
-# #topfitED1_pred$group_col[topfitED1_pred$group_col=="mean_Hday"] <- "atop('mean humidity','(%)')"
-# topfitED1_pred$group_col[topfitED1_pred$group_col=="mean_precLag"] <- "atop('Lagged Precipitation','(mm)')"
-# topfitED1_pred$group_col[topfitED1_pred$group_col=="mean_tempLag"] <- "atop('Lagged Temperature', '('^0~'C)')"
-
-
-unique(topfitRM1_pred$group)
-head(topfitED1_pred)
-
-
-Fig4F<-ggplot(data=topfitED1_pred) + 
-  facet_grid(~group_col,scales = "free_x", labeller = label_parsed, switch = "x") +
-  geom_line(aes(x=x, y=predicted, color=posneg), size=1, show.legend = F) + ylab(bquote('predicted abundance')) +
-  geom_ribbon(aes(x=x, ymin=conf.low, ymax=conf.high, fill=posneg), alpha=.3, show.legend = F) + theme_bw() +
-  scale_color_manual(values=colz) + scale_fill_manual(values=colz) +
-  theme(panel.grid = element_blank(), #strip.text = element_text(size=18),
-        strip.text = element_text(size=16),
-        strip.placement = "outside",
-        strip.background = element_blank(),
-        #strip.background = element_rect(fill="white"),
-        axis.title.y = element_text(size = 18),
-        axis.title.x = element_blank(), axis.text = element_text(size = 14),
-        plot.margin = unit(c(.4,.2,2.2,.2), "cm"));Fig4F
-
-# And combine into Figure 4
-Fig4bottom <- cowplot::plot_grid(Fig4D, Fig4E,Fig4F, ncol = 3, nrow = 1, labels=c("D", "E", "F"), label_size = 26, rel_widths = c(1.19,.95,1.5), align = "v", axis = "tb")
-
-Fig4All <- cowplot::plot_grid(Fig4top, Fig4bottom, ncol=1, nrow=2, align = "v", axis = "l", rel_heights = c(1,1.1)) + theme(panel.background = element_rect(fill="white"))
 
 ggsave(file = paste0(homewd, "/final-figures/Fig4.png"),
        plot = Fig4All,
        units="mm",  
-       width=220, 
-       height=110, 
-       scale=2.8, 
+       width=126, 
+       height=100, 
+       scale=3, 
        dpi=300)
 
 
