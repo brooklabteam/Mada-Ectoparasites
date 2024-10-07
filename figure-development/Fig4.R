@@ -458,7 +458,7 @@ Fig4C <- p1all + theme( panel.background = element_rect(fill="white", colour = "
 AIC.mod<-dredgeED1$AICc[1]
 
 #Extract the best fit model
-topfitED1<-get.models(dredgeED1,subset =AICc==AIC.mod)[["19"]]
+topfitED1<-get.models(dredgeED1,subset =AICc==AIC.mod)[["32"]]
 summary(topfitED1)
 plot_model(topfitED1,type = "pred")
 
@@ -469,16 +469,15 @@ head(topfitED1_est)
 unique(topfitED1_est$term)
 
 topfitED1_est$term <- as.character(topfitED1_est$term)
-topfitED1_est$term[topfitED1_est$term=="mean_Hday"] <- "Mean\nHumidity"
+topfitED1_est$term[topfitED1_est$term=="mean_Hday"] <- "Lagged/Mean\nHumidity"
 topfitED1_est$term[topfitED1_est$term=="lag_precip"] <- "Lagged\nPrecipitation"
-#topfitED1_est$term[topfitED1_est$term=="bat_sexmale"] <- "Male Sex"
-#topfitED1_est$term[topfitED1_est$term=="mean_tempLag"] <- "Lagged\nTemperature"
+topfitED1_est$term[topfitED1_est$term=="bat_sexmale"] <- "Male Sex"
+topfitED1_est$term[topfitED1_est$term=="lag_temp"] <- "Lagged\nTemperature"
 #topfitED1_est$term[topfitED1_est$term=="bat_age_classJ"] <- "Juvenile\nAge"
 #topfitED1_est$term[topfitED1_est$term=="bat_weight_g"] <- "Mass (g)"
 #topfitED1_est$term[topfitED1_est$term=="bat_forearm_mm"] <- "Forearm\nLength (mm)"
-#topfitED1_est$term[topfitED1_est$term=="mass_forearm_residual"] <- "Mass : Forearm\nResidual"
-topfitED1_est$term <- factor(topfitED1_est$term, levels=rev(c("Mean\nHumidity","Lagged\nPrecipitation")))
-  #"Male Sex",  "Mass : Forearm\nResidual", "Lagged\nPrecipitation","Lagged\nTemperature")))
+topfitED1_est$term[topfitED1_est$term=="mass_forearm_residual"] <- "Mass : Forearm\nResidual"
+topfitED1_est$term <- factor(topfitED1_est$term, levels=rev(c("Male Sex",  "Mass : Forearm\nResidual","Lagged/Mean\nHumidity", "Lagged\nPrecipitation","Lagged\nTemperature")))
 
 topfitED1_est$p.stars[topfitED1_est$p.stars==""] <- "."
 topfitED1_est$group[topfitED1_est$p.value>=0.05]<-"notsig"
@@ -494,7 +493,7 @@ Fig4D<-ggplot(data=topfitED1_est)+
   geom_vline(aes(xintercept=1), linetype=2)+
   scale_color_manual(values = colz)+
   ylab("Term")+xlab("Incidence Rate Ratio")+
-  coord_cartesian(xlim =c(0.5,9)) +
+  coord_cartesian(xlim =c(0.3,9)) +
   theme_bw()+
   #scale_x_log10(aes(x=estimate))+
   theme(axis.title.y = element_blank(),
@@ -565,7 +564,7 @@ Fig4D<-ggplot(data=topfitED1_est)+
 #         plot.margin = unit(c(.4,.2,2.2,.2), "cm"));Fig4F
 # 
 # # And combine into Figure 4
-Fig4top <- cowplot::plot_grid(Fig4C, Fig4D,ncol = 2, nrow = 1, labels=c("A", "B"), label_size = 26, rel_widths = c(1.19,.9))#, align = "v", axis = "tb")
+Fig4top <- cowplot::plot_grid(Fig4C, Fig4D,ncol = 2, nrow = 1, labels=c("A", "B"), label_size = 26, rel_widths = c(1.25,1))#, align = "v", axis = "tb")
 
 Fig4All <- cowplot::plot_grid(Fig4top, Fig4bottom, ncol=1, nrow=2,  rel_heights = c(1,1.2)) + theme(panel.background = element_rect(fill="white"))
 
