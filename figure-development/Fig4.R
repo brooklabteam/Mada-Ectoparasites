@@ -400,7 +400,7 @@ p1a <- ggplot(data=comp.df) + #facet_grid(~species) +
   geom_tile(aes(x=predictor, y=model_num, fill=lmg_percent), color="gray", linewidth=1, show.legend = F) +
   scale_fill_viridis_c(direction=-1,limits=c(0,1)) + scale_y_reverse() + theme_bw() + 
   scale_x_discrete(breaks = c("bat_sex", "mass_forearm_residual", "mean_Hday","lag_precip", "lag_temp"),
-                   labels = c("Sex", "Mass : Forearm\nResidual","Mean\nHumidity", "Lagged\nPrecipitation", "Lagged\nTemperature"))+
+                   labels = c("Sex", "Mass : Forearm\nResidual","Lagged/\nMean Humidity", "Lagged\nPrecipitation", "Lagged\nTemperature"))+
   #facet_grid(variable~DENV.serotype) +
   theme(panel.grid = element_blank(), axis.title.x = element_blank(),axis.title.y = element_blank(), #axis.title.y = element_text(size=14), 
         legend.position = "bottom",
