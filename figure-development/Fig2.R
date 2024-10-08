@@ -52,11 +52,20 @@ head(data1,2)
 tail(data1)
 str(data1)
 
+data1=subset(data1, !is.na(bat_sex) & bat_sex!="unknown")
 #summarise bat captures by sampling sesson
 tables1 <- ddply(data1,.(bat_species, sampling_session, bat_sex, roost_site, latitude_s, longitude_e), summarise, sampling_start_date = min(processing_date), N_captured = length(sampleid))
 tables1$roost_site <- sapply(strsplit(tables1$roost_site, "_"), "[", 1)
 unique(tables1$roost_site)
 unique(tables1$bat_species)
+sum(tables1$N_captured[tables1$bat_species=="Eidolon dupreanum"])#873 for which sex is recorded
+sum(tables1$N_captured[tables1$bat_species=="Eidolon dupreanum"&tables1$bat_sex=="male"])#408
+sum(tables1$N_captured[tables1$bat_species=="Eidolon dupreanum"&tables1$bat_sex=="female"]) #465
+
+sum(tables1$N_captured[tables1$bat_species=="Rousettus madagascariensis"])#862
+sum(tables1$N_captured[tables1$bat_species=="Rousettus madagascariensis" & tables1$bat_sex=="male"])#457
+sum(tables1$N_captured[tables1$bat_species=="Rousettus madagascariensis" &tables1$bat_sex=="female"])#405
+
 write.csv(tables1, paste0(homewd, "/final-tables/tableS1.csv"), row.names = F)
 
 # Now I change the class of each variable
@@ -74,10 +83,20 @@ data1$day<-as.numeric(data1$day)
 
 data1$bat_flies<-as.numeric(data1$bat_flies)
 data1$meglastreblidae<-as.numeric(data1$meglastreblidae)
+data1$mites<-as.numeric(data1$mites)
+data1$ticks<-as.numeric(data1$ticks)
+data1$fleas<-as.numeric(data1$fleas)
 data1$meglastreblidae[is.na(data1$meglastreblidae)]<-0
 data1$bat_flies[is.na(data1$bat_flies)]<-0
 
-
+#now, get total ectoparasites collected 
+data1$total_ectoparasites = rowSums(cbind(data1$bat_flies, data1$meglastreblidae, data1$mites, data1$fleas, data1$ticks),na.rm = T)
+length(data1$sampleid[data1$total_ectoparasites>0 & data1$bat_species=="Eidolon dupreanum"]) #628
+length(data1$sampleid[data1$total_ectoparasites>0 & data1$bat_species=="Eidolon dupreanum"& data1$bat_sex=="male"]) #290
+length(data1$sampleid[data1$total_ectoparasites>0 & data1$bat_species=="Eidolon dupreanum"& data1$bat_sex=="female"]) #338
+length(data1$sampleid[data1$total_ectoparasites>0 & data1$bat_species=="Rousettus madagascariensis"]) #831
+length(data1$sampleid[data1$total_ectoparasites>0 & data1$bat_species=="Rousettus madagascariensis" & data1$bat_sex=="male"]) #438
+length(data1$sampleid[data1$total_ectoparasites>0 & data1$bat_species=="Rousettus madagascariensis" & data1$bat_sex=="female"]) #393
 
 ############################EIDOLON DUPREANUM##########################################
 # Now i Am working on EIdolon only

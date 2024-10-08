@@ -401,6 +401,8 @@ dat.lag.miz$variable[dat.lag.miz$variable=="mean temperature"]<-"mean temperatur
 
 unique(dat.lag.miz$variable)
 
+dat.lag.miz$facet = "male / female"
+max.lag$facet = "male / female"
 
 BM.Miz<-ggplot(subset(dat.lag.miz, bat_sex=="composite")) + 
   geom_label(data=max.lag, aes(x=-9.5,y=.47, label=label), label.size = 0) +
@@ -408,12 +410,13 @@ BM.Miz<-ggplot(subset(dat.lag.miz, bat_sex=="composite")) +
   geom_hline(aes(yintercept=0.09), color="blue", linetype=2) +
   geom_hline(aes(yintercept=-0.09), color="blue", linetype=2) +
   ggtitle("Eucampsipoda madagascariensis")+ xlab("lag (months)") + ylab("ccf") +
-  facet_grid(variable~.) + theme_bw() + theme(legend.position = c(.2,1), panel.grid = element_blank(),
+  facet_grid(variable~facet) + theme_bw() + theme(legend.position = c(.2,1), panel.grid = element_blank(),
                                               legend.title = element_blank(),
                                               axis.title = element_text(size=16),
                                               plot.title = element_text(face="italic"),
                                               strip.background = element_rect(fill="white"),
-                                              strip.text = element_text(size=14,angle = -90),
+                                              strip.text.y = element_text(size=14,angle = -90),
+                                              strip.text.x = element_text(size=14),
                                               legend.text = element_text(size=12),
                                               plot.margin = unit(c(.2,.1,.1,1.1), "lines"),
                                               axis.text = element_text(size=14));BM.Miz
@@ -617,15 +620,21 @@ andrana<-read.csv(paste0(homewd, "/data/lag_output_eidolon.csv"))
 head(andrana)
 
 #include the optimal lag on plot
-max.lag <- dlply(subset(dat.lag.kel, bat_sex=="composite"), .(variable))
+max.lag.M <- dlply(subset(dat.lag.kel, bat_sex=="male"), .(variable))
+max.lag.F <- dlply(subset(dat.lag.kel, bat_sex=="female"), .(variable))
 get.lag <- function(df){
   lag = df$lag[df$ccf==max(df$ccf)]
   df.out = cbind.data.frame(variable=unique(df$variable), lag=lag)
   return(df.out)
 } 
 
-max.lag.Eid <- data.table::rbindlist(lapply(max.lag, get.lag))
-max.lag.Eid$label = paste0("lag=", max.lag.Eid$lag, " month")
+max.lag.Eid.M <- data.table::rbindlist(lapply(max.lag.M, get.lag))
+max.lag.Eid.F <- data.table::rbindlist(lapply(max.lag.F, get.lag))
+max.lag.Eid.M$label = paste0("lag=", max.lag.Eid.M$lag, " month")
+max.lag.Eid.F$label = paste0("lag=", max.lag.Eid.F$lag, " month")
+max.lag.Eid.F$bat_sex = "female"
+max.lag.Eid.M$bat_sex = "male"
+max.lag.Eid <- rbind(max.lag.Eid.M, max.lag.Eid.F)
 
 dat.lag.kel$variable[dat.lag.kel$variable=="mean_prec"]<-"mean precipitation"
 dat.lag.kel$variable[dat.lag.kel$variable=="mean_Hday"]<-"mean humidity"
@@ -634,36 +643,39 @@ dat.lag.kel$variable[dat.lag.kel$variable=="mean temperature"]<-"mean temperatur
 unique(dat.lag.kel$variable)
 
 #Plot the lagged data
+dat.lag.kel$bat_sex <- factor(dat.lag.kel$bat_sex, levels=c("composite", "male", "female"))
+max.lag.Eid$bat_sex <- factor(max.lag.Eid$bat_sex, levels=c("male", "female"))
 
-BM.Ed<-ggplot(dat.lag.kel) + 
+BM.Ed<-ggplot(subset(dat.lag.kel, bat_sex!="composite")) + 
   geom_label(data=max.lag.Eid, aes(x=-9.5,y=.47, label=label), label.size = 0) + theme_bw() +
   geom_bar(aes(x=lag, y=ccf), stat = "identity") +
   ggtitle("Cyclopodia dubia")+
   geom_hline(aes(yintercept=0.09), color="blue", linetype=2) +
   geom_hline(aes(yintercept=-0.09), color="blue", linetype=2) +
-  facet_grid(variable~.)  + xlab("lag (months)") + ylab("ccf") +
+  facet_grid(variable~bat_sex)  + xlab("lag (months)") + ylab("ccf") +
   scale_y_continuous(limits = c(-.5,.5), breaks=c(-.5,-.25,0,.25,.5), labels = c("-0.50", "-0.25", "0.00","0.25", "0.50")) +
     theme(legend.position = c(.4,.9), panel.grid = element_blank(),
                                               legend.title = element_blank(),
                                               plot.title = element_text(face="italic"),
                                               axis.title = element_text(size=16),
                                               strip.background = element_rect(fill="white"),
-                                              strip.text = element_text(size=14,angle = -90),
+                                              strip.text.y = element_text(size=14,angle = -90),
+                                              strip.text.x = element_text(size=14),
                                               legend.text = element_text(size=12),
                                               plot.margin = unit(c(.2,.1,.1,1.1), "lines"),
                                               axis.text = element_text(size=14));BM.Ed
 
 
 # FIGS2-Plot side by side the lag between the climate variable and the abundance of ectoparasites (CROSS CORRELATION)
-ggdraw()+
-  draw_plot(BM.Ed,x=0,y=0,width = .5,height = 1)+
-  draw_plot(BM.Miz,x=0.5,y=0,width = .5,height = 1)
+
+FigS3 <- cowplot::plot_grid(BM.Ed, BM.Miz, ncol = 2, nrow = 1, rel_widths = c(1.75,1), labels = c("A", "B"), label_size = 22)
 
 
 
-ggsave(file = paste0(homewd, "/final-figures/FigS2.png"),
+ggsave(file = paste0(homewd, "/final-figures/FigS3.png"),
+       plot = FigS3,
        units="mm",  
-       width=90, 
+       width=110, 
        height=80, 
        scale=3, 
        dpi=300)

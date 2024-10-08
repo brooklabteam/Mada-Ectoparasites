@@ -400,7 +400,7 @@ plot_Eid<-cowplot::plot_grid(hday.kel, prec.kel, temp.kel, ncol=1, nrow=3, align
 
 
 #Fig.miz_male <- cowplot::plot_grid(m, BM, rel_widths = c(1,1.1), nrow = 1, ncol = 2, labels = c("A", "B"), label_size = 22);Fig.miz_male
-FIG3<-cowplot::plot_grid(plot_Eid, plot_Rou, ncol=2, nrow = 1,align = "h", axis="tb");FIG3
+FIG3<-cowplot::plot_grid(plot_Eid, plot_Rou, ncol=2, nrow = 1,align = "h", axis="tb", labels = c("A", "B"), label_size = 22);FIG3
 
 
 ggsave(file = paste0(homewd, "/final-figures/Fig3.png"),

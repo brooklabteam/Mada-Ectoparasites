@@ -70,6 +70,8 @@ afa<-merge(ectos, cap, by = "sampleid",all=T)
 
 head(afa)
 names(afa)
+
+afa = subset(afa, !is.na(bat_sex) & bat_sex!="unknown")
 # 
 # #what is the date range of those that were looked at under the scope?
 # unique(afa$Ecto_type)
@@ -134,6 +136,39 @@ data1$day<-as.numeric(data1$day)
 data1$Count<-as.numeric(data1$Count)
 data1$bat_flies<-as.numeric(data1$bat_flies)
 unique(data1$Ecto_species)
+
+length(unique(data1$sampleid[!is.na(data1$Ecto_type) & data1$bat_species=="Eidolon dupreanum"]))#351
+length(unique(data1$sampleid[!is.na(data1$Ecto_type) & data1$bat_species=="Eidolon dupreanum" & data1$bat_sex=="male"]))#137
+length(unique(data1$sampleid[!is.na(data1$Ecto_type) & data1$bat_species=="Eidolon dupreanum" & data1$bat_sex=="female"]))#214
+
+length(unique(data1$sampleid[!is.na(data1$Ecto_type) & data1$bat_species=="Rousettus madagascariensis"]))#467
+length(unique(data1$sampleid[!is.na(data1$Ecto_type) & data1$bat_species=="Rousettus madagascariensis" & data1$bat_sex=="male"]))#241
+length(unique(data1$sampleid[!is.na(data1$Ecto_type) & data1$bat_species=="Rousettus madagascariensis" & data1$bat_sex=="female"]))#232
+
+#how many coinfected?
+data2 =  dplyr::select(data1, sampleid, bat_species, bat_flies, meglastreblidae, fleas, mites, ticks)
+data2[is.na(data2)] <- 0
+library(reshape2)
+data2 <- melt(data2)
+head(data2)
+
+data2 <- data2[!duplicated(data2),]
+data2 = subset(data2, sampleid!="MIZ549") #repeat
+data.split <- dlply(data2,.(sampleid))
+
+get.coinf <- function(df){
+  df1 <- dplyr::select(df[1,], sampleid, bat_species)
+  df1$N_type <- length(df$sampleid[df$value>0])
+  return(df1)
+  
+}
+
+data2.df <- data.table::rbindlist(lapply(data.split, get.coinf))
+
+out <- ddply(data2.df, .(bat_species), summarise, N= mean(N_type), sd=sd(N_type), sample = length(unique(sampleid)))
+out$se <- out$sd/sqrt(out$sample)
+out$lci = out$N-1.96*out$se
+out$uci = out$N+1.96*out$se
 
 ECD<-data1%>%
   filter(bat_species=="Eidolon dupreanum",
