@@ -188,7 +188,7 @@ Eall<-ggplot(data = EID.east) + facet_grid(~bat_sex) +
         strip.text.y = element_text(face="italic"),
         panel.grid = element_blank(),
         strip.text = element_text(size=16),
-        plot.margin = unit(c(.3,.2,.6,.6), "cm"),
+        plot.margin = unit(c(.3,.2,.6,.7), "cm"),
         axis.text = element_text(size = 14),
         axis.title.y = element_text(size = 16),
         axis.title.x = element_blank())+
@@ -307,7 +307,7 @@ library(dplyr)
 MFR.dat <- get_partial_effects_continuous(gamFit = gamEID5, var="mass_forearm_residual")
 EidB <- plot.partial.cont(df = MFR.dat, log=F, var="mass_forearm_residual", response_var = "count", alt_var = "mass: forearm residual", legend.on = F)
 
-pEid <- cowplot::plot_grid(Eall, EidB, ncol = 2, nrow=1, labels = c("A", "B"), label_size = 22, rel_widths = c(2,1), label_x = c(-.013,0));pEid
+pEid <- cowplot::plot_grid(Eall, EidB, ncol = 2, nrow=1, labels = c("A", "B"), label_size = 22, rel_widths = c(2,1), label_x = c(-.010,0));pEid
 
 
 
@@ -425,7 +425,7 @@ Rall<-ggplot(data = ROU.east) + facet_grid(~bat_sex) +
         strip.text.y = element_text(face="italic"),
         panel.grid = element_blank(),
         strip.text = element_text(size=16),
-        plot.margin = unit(c(.2,.2,.6,.6), "cm"),
+        plot.margin = unit(c(.2,.2,.6,.7), "cm"),
         axis.text = element_text(size = 14),
         axis.title.y = element_text(size = 16),
         axis.title.x = element_blank()) +
@@ -441,7 +441,7 @@ add$IsSignificant <- "No"
 MFR.dat.Rou$effects <- rbind(MFR.dat.Rou$effects, add)
 
 RouB <- plot.partial.cont(df = MFR.dat.Rou, log=F, var="mass_forearm_residual", response_var = "count", alt_var = "mass: forearm residual", legend.on = T)
-pRou <- cowplot::plot_grid(Rall, RouB, ncol = 2, nrow=1, labels = c("C", "D"), label_size = 22, rel_widths = c(2,1), label_x = c(-.013,0), label_y = c(1.02,1.02));pRou
+pRou <- cowplot::plot_grid(Rall, RouB, ncol = 2, nrow=1, labels = c("C", "D"), label_size = 22, rel_widths = c(2,1), label_x = c(-.010,0), label_y = c(1.04,1.04));pRou
 
 pFig2 <- cowplot::plot_grid(pEid, pRou, ncol = 1, nrow = 2);pFig2
 
