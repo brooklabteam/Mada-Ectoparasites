@@ -116,8 +116,9 @@ gamEdup1 <- gam(count~s(bat_sex, bs="re") +
                  s(fly_sex, bs="re") + 
                  s(mass_forearm_residual, bs="tp")+
                  s(doy, bs="cc", k=5, by=bat_sex) + s(year, bs="re"), 
-               data = subset(afa, bat_species == "Eidolon dupreanum"))
+               data = subset(afa, bat_species == "Eidolon dupreanum"), family=poisson)
 summary(gamEdup1)
+
 #plot(gamEdup1)
 #only seasonality of bat sex significant
 
@@ -272,7 +273,7 @@ gamRmad1 <- gam(count~s(bat_sex, bs="re") +
                   s(fly_sex, bs="re") + 
                   s(mass_forearm_residual, bs="tp")+
                   s(doy, bs="cc", k=7, by=bat_sex) + s(year, bs="re"), 
-                data = subset(afa, bat_species == "Rousettus madagascariensis"))
+                data = subset(afa, bat_species == "Rousettus madagascariensis"), family = poisson)
 summary(gamRmad1)
 #only seasonality of bat sex significant
 
@@ -327,11 +328,14 @@ Eall<-ggplot(data = subset(afa, bat_species == "Eidolon dupreanum")) + facet_gri
         strip.text.y = element_text(face="italic"),
         panel.grid = element_blank(),
         strip.text = element_text(size=16),
-        plot.margin = unit(c(.3,.2,.6,.6), "cm"),
+        plot.margin = unit(c(.2,.2,.6,.6), "cm"),
         axis.text = element_text(size = 14),
         axis.title.y = element_text(size = 16),
         axis.title.x = element_blank())+
   scale_x_continuous(breaks=c(60,152,244,335), labels=c("Mar", "Jun", "Sep", "Dec"));Eall
+
+
+pEid <- cowplot::plot_grid(Eall, FigS3D, ncol=2, nrow=1, labels = c("A", "B"), label_size = 22, label_x = c(-0.01,0), rel_widths = c(2,1))
 
 
 #and Rousettus
@@ -375,20 +379,22 @@ Rall<-ggplot(data = subset(afa, bat_species == "Rousettus madagascariensis")) + 
         strip.text.y = element_text(face="italic"),
         panel.grid = element_blank(),
         strip.text = element_text(size=16),
-        plot.margin = unit(c(.3,.2,.6,.6), "cm"),
+        plot.margin = unit(c(.2,.2,.6,.6), "cm"),
         axis.text = element_text(size = 14),
         axis.title.y = element_text(size = 16),
         axis.title.x = element_blank())+
   scale_x_continuous(breaks=c(60,152,244,335), labels=c("Mar", "Jun", "Sep", "Dec"));Rall
 
 
+pRou <- cowplot::plot_grid(Rall, FigS3H,ncol=2, nrow=1, labels = c("C", "D"), label_size = 22, label_x = c(-0.01,0), label_y = c(1,03,1.03), rel_widths = c(2,1))
+
 #and just A and B
-pFigS2 <- cowplot::plot_grid(Eall, Rall, ncol=1, nrow = 2, labels = c("A", "B"), label_size = 22, label_x = c(-0.01,-0.01), label_y = c(1,1.03))
+pFigS2 <- cowplot::plot_grid(pEid, pRou, ncol=1, nrow = 2)
 
 ggsave(file =  paste0(homewd,"/final-figures/FigS2.png"),
        plot = pFigS2,
        units="mm",  
-       width=90, 
+       width=110, 
        height=75, 
        scale=3, 
        dpi=300)
