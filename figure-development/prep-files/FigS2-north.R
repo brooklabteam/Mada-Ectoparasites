@@ -74,12 +74,24 @@ afa<-merge(bf, cap, by = "sampleid",all=T)
 head(afa)
 afa$processing_date <- as.Date(afa$processing_date, format = "%m/%d/%y")
 afa = subset(afa, !is.na(processing_date))
-afa = subset(afa, roost_site=="Angavobe_Edup" | roost_site=="Angavokely_Edup" | roost_site =="Maromizaha_Rmad")
+afa = subset(afa, roost_site=="Ankarana_Canyon_Rmad" | roost_site=="Ankarana_Cathedral_Rmad" | roost_site =="Ankarana_Chauves_Souris_Edup")
+afa$month <- month(afa$processing_date)
+
 
 afa <- dplyr::select(afa, sampleid, bat_species, bat_sex, bat_age_class, processing_date, mass_forearm_residual, Male, Female)
 
 head(afa)
 afa <- afa[complete.cases(afa),]
+
+length(unique(afa$sampleid[afa$bat_species=="Eidolon dupreanum"])) #54
+length(unique(afa$sampleid[afa$bat_species=="Rousettus madagascariensis"])) #85
+min(afa$processing_date[afa$bat_species=="Rousettus madagascariensis"]) #"2019-08-08"
+max(afa$processing_date[afa$bat_species=="Rousettus madagascariensis"]) #"2019-11-30"
+
+min(afa$processing_date[afa$bat_species=="Eidolon dupreanum"]) #"2019-10-01"
+max(afa$processing_date[afa$bat_species=="Eidolon dupreanum"]) #"2019-11-29"
+
+
 
 #and melt the data
 afa.M <- dplyr::select(afa, names(afa)[1:7])
@@ -114,8 +126,8 @@ afa = subset(afa, bat_age_class!="J")
 
 gamEdup1 <- gam(count~s(bat_sex, bs="re") + 
                  s(fly_sex, bs="re") + 
-                 s(mass_forearm_residual, bs="tp")+
-                 s(doy, bs="cc", k=5, by=bat_sex) + s(year, bs="re"), 
+                 s(mass_forearm_residual, bs="tp"),#+
+                 #s(doy, bs="cc", k=4, by=bat_sex),# + s(year, bs="re"), 
                data = subset(afa, bat_species == "Eidolon dupreanum"), family=poisson)
 summary(gamEdup1)
 
@@ -271,8 +283,8 @@ FigS3D <- plot.partial.cont(df = MFR.dat, log=F, var="mass_forearm_residual", re
 
 gamRmad1 <- gam(count~s(bat_sex, bs="re") + 
                   s(fly_sex, bs="re") + 
-                  s(mass_forearm_residual, bs="tp")+
-                  s(doy, bs="cc", k=7, by=bat_sex) + s(year, bs="re"), 
+                  s(mass_forearm_residual, bs="tp"),#+
+                  #s(doy, bs="cc", k=4, by=bat_sex), #+ s(year, bs="re"), 
                 data = subset(afa, bat_species == "Rousettus madagascariensis"), family = poisson)
 summary(gamRmad1)
 #only seasonality of bat sex significant
@@ -284,118 +296,3 @@ MFR.datR <- get_partial_effects_continuous(gamFit = gamRmad1, var="mass_forearm_
 FigS2F <- plot.partial(fly.sexR, var = "fly_sex", response_var = "count")
 FigS2G <- plot.partial(bat.sexR, var = "bat_sex", response_var = "count")
 FigS3H <- plot.partial.cont(df = MFR.datR, log=F, var="mass_forearm_residual", response_var = "count", alt_var = "mass: forearm residual", legend.on = F)
-
-# and the seasonal plots
-
-
-#and now the actual plot for the main text
-EID.east.sub <- cbind.data.frame(doy=rep(1:365, 2), bat_sex = rep(c("female", "male"), each=365))
-EID.east.sub$year = 2019
-EID.east.sub$mass_forearm_residual = 0
-EID.east.sub$fly_sex = "male"
-EID.east.sub$predicted_count <- predict.gam(gamEdup1,type="response", newdata = EID.east.sub, exclude=c("mass_forearm_residual", "year", "bat_sex", "fly_sex"))
-EID.east.sub$predicted_count_SE <- predict.gam(gamEdup1,type="response", newdata = EID.east.sub, exclude=c("mass_forearm_residual", "year", "bat_sex", "fly_sex"), se.fit = T)$se.fit
-EID.east.sub$predicted_count_lci <- EID.east.sub$predicted_count -1.96*EID.east.sub$predicted_count_SE
-EID.east.sub$predicted_count_uci <- EID.east.sub$predicted_count +1.96*EID.east.sub$predicted_count_SE
-EID.east.sub$predicted_count_lci[EID.east.sub$predicted_count_lci<0] <- 0#now add the predictions to each dataframe
-EID.east.sub$predicted_count[EID.east.sub$predicted_count<0] <- 0
-
-seas.dat = cbind.data.frame(x=c(111, 304), xlab=rep("M", 2))
-seas.dat$bat_sex="male"
-preg.dat <- cbind.data.frame(x = c(yday("2014-07-07"), yday("2019-11-16")))
-preg.dat$xlab = "F"
-preg.dat$bat_sex="female"
-seas.dat <- rbind(seas.dat, preg.dat)
-seas.dat$fly_sex = "male"
-seas.dat2 <- seas.dat
-seas.dat2$fly_sex = "female"
-seas.dat <- rbind(seas.dat, seas.dat2)
-
-Eall<-ggplot(data = subset(afa, bat_species == "Eidolon dupreanum")) + facet_grid(~bat_sex) +
-  geom_ribbon(data = seas.dat, aes(x=x, ymin=-Inf, ymax=Inf, fill=bat_sex),alpha=0.3, show.legend = F)+
-  geom_point(aes(x= as.numeric(doy), y=count, color=fly_sex), alpha=.3, show.legend = F)+
-  scale_fill_manual(values=c("pink", "cornflowerblue")) +
-  #scale_color_manual(values=ColM)+ 
-  #scale_fill_manual(values=ColM)+ 
-  #geom_hline(aes(yintercept=0), color="gray50") +
-  #xlab ("Day of the Year")+ 
-  ylab(bquote('count of'~italic('Cyclopodia dubia')))+
-  #ggtitle("host male")+ 
-  geom_ribbon(data = EID.east.sub, aes(x=doy, ymin=predicted_count_lci , ymax=predicted_count_uci ), fill="black",alpha=.3 ) +
-  geom_line(data = EID.east.sub, aes(x=doy, y=predicted_count),color="red", size=1, show.legend = F)+ 
-  theme_bw()+
-  theme(strip.background= element_rect(fill="white"), 
-        strip.text.y = element_text(face="italic"),
-        panel.grid = element_blank(),
-        strip.text = element_text(size=16),
-        plot.margin = unit(c(.2,.2,.6,.6), "cm"),
-        axis.text = element_text(size = 14),
-        axis.title.y = element_text(size = 16),
-        axis.title.x = element_blank())+
-  scale_x_continuous(breaks=c(60,152,244,335), labels=c("Mar", "Jun", "Sep", "Dec"));Eall
-
-
-pEid <- cowplot::plot_grid(Eall, FigS3D, ncol=2, nrow=1, labels = c("A", "B"), label_size = 22, label_x = c(-0.01,0), rel_widths = c(2,1))
-
-
-#and Rousettus
-ROU.east.sub <- cbind.data.frame(doy=rep(1:365, 2), bat_sex = rep(c("female", "male"), each=365))
-ROU.east.sub$year = 2019
-ROU.east.sub$mass_forearm_residual = 0
-ROU.east.sub$fly_sex = "male"
-ROU.east.sub$predicted_count <- predict.gam(gamRmad1,type="response", newdata = ROU.east.sub, exclude=c("mass_forearm_residual", "year", "bat_sex", "fly_sex"))
-ROU.east.sub$predicted_count_SE <- predict.gam(gamRmad1,type="response", newdata = ROU.east.sub, exclude=c("mass_forearm_residual", "year", "bat_sex", "fly_sex"), se.fit = T)$se.fit
-ROU.east.sub$predicted_count_lci <- ROU.east.sub$predicted_count -1.96*ROU.east.sub$predicted_count_SE
-ROU.east.sub$predicted_count_uci <- ROU.east.sub$predicted_count +1.96*ROU.east.sub$predicted_count_SE
-ROU.east.sub$predicted_count_lci[ROU.east.sub$predicted_count_lci<0] <- 0#now add the predictions to each dataframe
-ROU.east.sub$predicted_count[ROU.east.sub$predicted_count<0] <- 0
-
-seas.dat = cbind.data.frame(x=c(111, 304), xlab=rep("M", 2))
-seas.dat$bat_sex="male"
-preg.dat <- cbind.data.frame(x = c(yday("2014-09-11"), yday("2019-12-12")))
-preg.dat$xlab = "F"
-preg.dat$bat_sex="female"
-seas.dat <- rbind(seas.dat, preg.dat)
-seas.dat$fly_sex = "male"
-seas.dat2 <- seas.dat
-seas.dat2$fly_sex = "female"
-seas.dat <- rbind(seas.dat, seas.dat2)
-
-
-Rall<-ggplot(data = subset(afa, bat_species == "Rousettus madagascariensis")) + facet_grid(~bat_sex) +
-  geom_ribbon(data = seas.dat, aes(x=x, ymin=-Inf, ymax=Inf, fill=bat_sex),alpha=0.3, show.legend = F)+
-  geom_point(aes(x= as.numeric(doy), y=count, color=fly_sex), alpha=.3, show.legend = F)+
-  scale_fill_manual(values=c("pink", "cornflowerblue")) +
-  #scale_color_manual(values=ColM)+ 
-  #scale_fill_manual(values=ColM)+ 
-  #geom_hline(aes(yintercept=0), color="gray50") +
-  #xlab ("Day of the Year")+ 
-  ylab(bquote('count of'~italic('Eucampsipoda madagascariensis')))+
-  #ggtitle("host male")+ 
-  geom_ribbon(data = ROU.east.sub, aes(x=doy, ymin=predicted_count_lci , ymax=predicted_count_uci ), fill="black",alpha=.3 ) +
-  geom_line(data = ROU.east.sub, aes(x=doy, y=predicted_count),color="red", size=1, show.legend = F)+ 
-  theme_bw()+
-  theme(strip.background= element_rect(fill="white"), 
-        strip.text.y = element_text(face="italic"),
-        panel.grid = element_blank(),
-        strip.text = element_text(size=16),
-        plot.margin = unit(c(.2,.2,.6,.6), "cm"),
-        axis.text = element_text(size = 14),
-        axis.title.y = element_text(size = 16),
-        axis.title.x = element_blank())+
-  scale_x_continuous(breaks=c(60,152,244,335), labels=c("Mar", "Jun", "Sep", "Dec"));Rall
-
-
-pRou <- cowplot::plot_grid(Rall, FigS3H,ncol=2, nrow=1, labels = c("C", "D"), label_size = 22, label_x = c(-0.01,0), label_y = c(1,03,1.03), rel_widths = c(2,1))
-
-#and just A and B
-pFigS2 <- cowplot::plot_grid(pEid, pRou, ncol=1, nrow = 2)
-
-ggsave(file =  paste0(homewd,"/final-figures/FigS2.png"),
-       plot = pFigS2,
-       units="mm",  
-       width=110, 
-       height=75, 
-       scale=3, 
-       dpi=300)
-

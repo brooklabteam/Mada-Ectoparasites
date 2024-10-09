@@ -668,12 +668,12 @@ BM.Ed<-ggplot(subset(dat.lag.kel, bat_sex!="composite")) +
 
 # FIGS2-Plot side by side the lag between the climate variable and the abundance of ectoparasites (CROSS CORRELATION)
 
-FigS3 <- cowplot::plot_grid(BM.Ed, BM.Miz, ncol = 2, nrow = 1, rel_widths = c(1.75,1), labels = c("A", "B"), label_size = 22)
+FigS5 <- cowplot::plot_grid(BM.Ed, BM.Miz, ncol = 2, nrow = 1, rel_widths = c(1.75,1), labels = c("A", "B"), label_size = 22)
 
 
 
-ggsave(file = paste0(homewd, "/final-figures/FigS3.png"),
-       plot = FigS3,
+ggsave(file = paste0(homewd, "/final-figures/FigS5.png"),
+       plot = FigS5,
        units="mm",  
        width=110, 
        height=80, 
