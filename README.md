@@ -110,7 +110,7 @@ Now that we understood the appropriate model for our data, we next tested that i
 
 
 ```
-/Applications/raxml-ng/raxml-ng --check --msa 18Salign_trim.fasta --model GTR+I+G4 --prefix T1
+/Applications/raxml-ng/raxml-ng --check --msa 18Salign_trim.fasta --model TPM2uf+I+G4 --prefix T1
 ```
 
 Here, "/Applications/raxml-ng/raxml-ng" should be replaced with whatever command runs the program based on the location of your installation.
@@ -118,7 +118,7 @@ Here, "/Applications/raxml-ng/raxml-ng" should be replaced with whatever command
 Next, we parsed the parsing the alignment to find the appropriate number of threads (1) with which to run RAxML (either locally or on a server):
 
 ```
-/Applications/raxml-ng/raxml-ng --check --msa 18Salign_trim.fasta --model GTR+I+G4 --prefix T2
+/Applications/raxml-ng/raxml-ng --parse --msa 18Salign_trim.fasta --model GTR+I+G4 --prefix T2
 ```
 Finally, we kicked off RAxML (including bootstraps) with the following script:
 
