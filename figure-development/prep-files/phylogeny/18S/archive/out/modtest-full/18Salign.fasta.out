@@ -1,0 +1,180 @@
+--------------------------------------------------------------------------------
+ModelTest-NG v0.1.7
+
+Input data:
+  MSA:        /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta
+  Tree:       Maximum likelihood
+    file:           -
+  #taxa:            93
+  #sites:           12404
+  #patterns:        1153
+  Max. thread mem:  52 MB
+
+Output:
+  Log:           /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta.log
+  Starting tree: /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta.tree
+  Results:       /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta.out
+
+Selection options:
+  # dna schemes:      11
+  # dna models:       88
+  include model parameters:
+    Uniform:         true
+    p-inv (+I):      true
+    gamma (+G):      true
+    both (+I+G):     true
+    free rates (+R): false
+    fixed freqs:     true
+    estimated freqs: true
+    #categories:     4
+  gamma rates mode:   mean
+  asc bias:           none
+  epsilon (opt):      0.01
+  epsilon (par):      0.05
+  keep branches:      false
+
+Additional options:
+  verbosity:        very low
+  threads:          8/14
+  RNG seed:         12345
+  subtree repeats:  enabled
+--------------------------------------------------------------------------------
+
+BIC       model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  HKY+G4             5    -24739.8714     51251.7883         0.0000    0.2409
+       2  TrN+G4             6    -24735.2426     51251.9566         0.1682    0.2215
+       3  TIM2+G4            7    -24730.9824     51252.8620         1.0736    0.1408
+       4  TPM2uf+G4          6    -24735.9433     51253.3580         1.5697    0.1099
+       5  TPM2uf+I+G4        7    -24731.4035     51253.7042         1.9159    0.0924
+       6  TIM2+I+G4          8    -24726.7832     51253.8893         2.1010    0.0843
+       7  HKY+I+G4           6    -24736.5319     51254.5351         2.7467    0.0610
+       8  TrN+I+G4           7    -24732.2957     51255.4885         3.7002    0.0379
+       9  TPM3uf+G4          6    -24739.7476     51260.9665         9.1782    0.0024
+      10  TPM1uf+G4          6    -24739.7834     51261.0382         9.2498    0.0024
+--------------------------------------------------------------------------------
+Best model according to BIC
+---------------------------
+Model:              HKY+G4
+lnL:                -24739.8714
+Frequencies:        0.3339 0.1513 0.1915 0.3234
+Subst. Rates:       1.0000 3.1969 1.0000 1.0000 3.1969 1.0000 
+Inv. sites prop:    -
+Gamma shape:        0.2875
+Score:              51251.7883
+Weight:             0.2409
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              0.0000
+Gamma:              0.7222
+Gamma-Inv:          0.2778
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              0.4960
+Alpha:              0.2939
+Alpha-P.Inv:        0.4282
+P.Inv-Alpha:        0.2043
+Frequencies:        0.3339 0.1504 0.1932 0.3225 
+
+Commands:
+  > phyml  -i /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta -m 010010 -f m -v 0 -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta -m GTRGAMMAX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta --model HKY+G4
+  > paup -s /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta
+  > iqtree -s /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta -m HKY+G4
+
+AIC       model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  TIM2+I+G4          8    -24726.7832     49835.5664         0.0000    0.7624
+       2  GTR+I+G4          10    -24726.3973     49838.7946         3.2281    0.1518
+       3  TIM2+G4            7    -24730.9824     49841.9649         6.3984    0.0311
+       4  TPM2uf+I+G4        7    -24731.4035     49842.8071         7.2406    0.0204
+       5  GTR+G4             9    -24730.0082     49844.0163         8.4499    0.0112
+       6  TrN+I+G4           7    -24732.2957     49844.5914         9.0250    0.0084
+       7  TVM+I+G4           9    -24730.9266     49845.8532        10.2867    0.0045
+       8  TIM1+I+G4          8    -24732.1815     49846.3630        10.7966    0.0034
+       9  TIM3+I+G4          8    -24732.2333     49846.4666        10.9001    0.0033
+      10  TrN+G4             6    -24735.2426     49848.4852        12.9188    0.0012
+--------------------------------------------------------------------------------
+Best model according to AIC
+---------------------------
+Model:              TIM2+I+G4
+lnL:                -24726.7832
+Frequencies:        0.3335 0.1496 0.1954 0.3216
+Subst. Rates:       1.4284 3.4894 1.4284 1.0000 4.7096 1.0000 
+Inv. sites prop:    0.1981
+Gamma shape:        0.4209
+Score:              49835.5664
+Weight:             0.7624
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              0.0000
+Gamma:              0.0451
+Gamma-Inv:          0.9549
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              0.4960
+Alpha:              0.3022
+Alpha-P.Inv:        0.4214
+P.Inv-Alpha:        0.1985
+Frequencies:        0.3335 0.1497 0.1953 0.3216 
+
+Commands:
+  > phyml  -i /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta -m 010232 -f m -v e -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta -m GTRGAMMAIX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta --model TIM2+I+G4
+  > paup -s /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta
+  > iqtree -s /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta -m TIM2+I+G4
+
+AICc      model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  TIM2+I+G4          8    -24726.7832     49841.5664         0.0000    0.7324
+       2  GTR+I+G4          10    -24726.3973     49844.7946         3.2281    0.1458
+       3  TIM2+G4            7    -24730.9824     49846.9649         5.3984    0.0493
+       4  TPM2uf+I+G4        7    -24731.4035     49847.8071         6.2406    0.0323
+       5  TrN+I+G4           7    -24732.2957     49849.5914         8.0250    0.0132
+       6  GTR+G4             9    -24730.0082     49850.0163         8.4499    0.0107
+       7  TVM+I+G4           9    -24730.9266     49851.8532        10.2867    0.0043
+       8  TIM1+I+G4          8    -24732.1815     49852.3630        10.7966    0.0033
+       9  TIM3+I+G4          8    -24732.2333     49852.4666        10.9001    0.0031
+      10  TrN+G4             6    -24735.2426     49853.4852        11.9188    0.0019
+--------------------------------------------------------------------------------
+Best model according to AICc
+---------------------------
+Model:              TIM2+I+G4
+lnL:                -24726.7832
+Frequencies:        0.3335 0.1496 0.1954 0.3216
+Subst. Rates:       1.4284 3.4894 1.4284 1.0000 4.7096 1.0000 
+Inv. sites prop:    0.1981
+Gamma shape:        0.4209
+Score:              49841.5664
+Weight:             0.7324
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              0.0000
+Gamma:              0.0645
+Gamma-Inv:          0.9355
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              0.4960
+Alpha:              0.3032
+Alpha-P.Inv:        0.4215
+P.Inv-Alpha:        0.1986
+Frequencies:        0.3335 0.1497 0.1952 0.3216 
+
+Commands:
+  > phyml  -i /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta -m 010232 -f m -v e -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta -m GTRGAMMAIX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta --model TIM2+I+G4
+  > paup -s /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta
+  > iqtree -s /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta -m TIM2+I+G4
+Done

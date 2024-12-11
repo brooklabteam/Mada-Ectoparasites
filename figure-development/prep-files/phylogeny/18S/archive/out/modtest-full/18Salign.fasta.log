@@ -1,0 +1,277 @@
+Physical cores: 14
+Logical cores:  28
+Memory:         54.4GB
+Extensions:     AVX
+
+WARNING: Partition DATA: There are undetermined columns in the alignment (only gaps)
+WARNING: Partition DATA: There are undetermined columns in the alignment (only gaps)
+WARNING: MSA has not enough sites to infer reliable results
+Creating new checkpoint file: /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta.ckp
+--------------------------------------------------------------------------------
+ModelTest-NG v0.1.7
+
+Input data:
+  MSA:        /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta
+  Tree:       Maximum likelihood
+    file:           -
+  #taxa:            93
+  #sites:           12404
+  #patterns:        1153
+  Max. thread mem:  52 MB
+
+Output:
+  Log:           /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta.log
+  Starting tree: /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta.tree
+  Results:       /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta.out
+
+Selection options:
+  # dna schemes:      11
+  # dna models:       88
+  include model parameters:
+    Uniform:         true
+    p-inv (+I):      true
+    gamma (+G):      true
+    both (+I+G):     true
+    free rates (+R): false
+    fixed freqs:     true
+    estimated freqs: true
+    #categories:     4
+  gamma rates mode:   mean
+  asc bias:           none
+  epsilon (opt):      0.01
+  epsilon (par):      0.05
+  keep branches:      false
+
+Additional options:
+  verbosity:        very low
+  threads:          8/14
+  RNG seed:         12345
+  subtree repeats:  enabled
+--------------------------------------------------------------------------------
+modeltest-ng was called as follows: 
+>> /home/cbrook/modeltest-ng/modeltest-ng-static -i /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta -d nt -t ml -p 8 
+
+
+Partition 1/1
+
+ ----ID---  ----MODEL---- ---Time--- -Elapsed--- -------LnL------- -Alpha- -P-inv-
+
+Computation of likelihood scores completed. It took 0h:02:07
+
+BIC       model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  HKY+G4             5    -24739.8714     51251.7883         0.0000    0.2409
+       2  TrN+G4             6    -24735.2426     51251.9566         0.1682    0.2215
+       3  TIM2+G4            7    -24730.9824     51252.8620         1.0736    0.1408
+       4  TPM2uf+G4          6    -24735.9433     51253.3580         1.5697    0.1099
+       5  TPM2uf+I+G4        7    -24731.4035     51253.7042         1.9159    0.0924
+       6  TIM2+I+G4          8    -24726.7832     51253.8893         2.1010    0.0843
+       7  HKY+I+G4           6    -24736.5319     51254.5351         2.7467    0.0610
+       8  TrN+I+G4           7    -24732.2957     51255.4885         3.7002    0.0379
+       9  TPM3uf+G4          6    -24739.7476     51260.9665         9.1782    0.0024
+      10  TPM1uf+G4          6    -24739.7834     51261.0382         9.2498    0.0024
+--------------------------------------------------------------------------------
+Best model according to BIC
+---------------------------
+Model:              HKY+G4
+lnL:                -24739.8714
+Frequencies:        0.3339 0.1513 0.1915 0.3234
+Subst. Rates:       1.0000 3.1969 1.0000 1.0000 3.1969 1.0000 
+Inv. sites prop:    -
+Gamma shape:        0.2875
+Score:              51251.7883
+Weight:             0.2409
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              0.0000
+Gamma:              0.7222
+Gamma-Inv:          0.2778
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              0.4960
+Alpha:              0.2939
+Alpha-P.Inv:        0.4282
+P.Inv-Alpha:        0.2043
+Frequencies:        0.3339 0.1504 0.1932 0.3225 
+
+Commands:
+  > phyml  -i /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta -m 010010 -f m -v 0 -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta -m GTRGAMMAX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta --model HKY+G4
+  > paup -s /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta
+  > iqtree -s /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta -m HKY+G4
+
+AIC       model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  TIM2+I+G4          8    -24726.7832     49835.5664         0.0000    0.7624
+       2  GTR+I+G4          10    -24726.3973     49838.7946         3.2281    0.1518
+       3  TIM2+G4            7    -24730.9824     49841.9649         6.3984    0.0311
+       4  TPM2uf+I+G4        7    -24731.4035     49842.8071         7.2406    0.0204
+       5  GTR+G4             9    -24730.0082     49844.0163         8.4499    0.0112
+       6  TrN+I+G4           7    -24732.2957     49844.5914         9.0250    0.0084
+       7  TVM+I+G4           9    -24730.9266     49845.8532        10.2867    0.0045
+       8  TIM1+I+G4          8    -24732.1815     49846.3630        10.7966    0.0034
+       9  TIM3+I+G4          8    -24732.2333     49846.4666        10.9001    0.0033
+      10  TrN+G4             6    -24735.2426     49848.4852        12.9188    0.0012
+--------------------------------------------------------------------------------
+Best model according to AIC
+---------------------------
+Model:              TIM2+I+G4
+lnL:                -24726.7832
+Frequencies:        0.3335 0.1496 0.1954 0.3216
+Subst. Rates:       1.4284 3.4894 1.4284 1.0000 4.7096 1.0000 
+Inv. sites prop:    0.1981
+Gamma shape:        0.4209
+Score:              49835.5664
+Weight:             0.7624
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              0.0000
+Gamma:              0.0451
+Gamma-Inv:          0.9549
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              0.4960
+Alpha:              0.3022
+Alpha-P.Inv:        0.4214
+P.Inv-Alpha:        0.1985
+Frequencies:        0.3335 0.1497 0.1953 0.3216 
+
+Commands:
+  > phyml  -i /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta -m 010232 -f m -v e -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta -m GTRGAMMAIX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta --model TIM2+I+G4
+  > paup -s /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta
+  > iqtree -s /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta -m TIM2+I+G4
+
+AICc      model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  TIM2+I+G4          8    -24726.7832     49841.5664         0.0000    0.7324
+       2  GTR+I+G4          10    -24726.3973     49844.7946         3.2281    0.1458
+       3  TIM2+G4            7    -24730.9824     49846.9649         5.3984    0.0493
+       4  TPM2uf+I+G4        7    -24731.4035     49847.8071         6.2406    0.0323
+       5  TrN+I+G4           7    -24732.2957     49849.5914         8.0250    0.0132
+       6  GTR+G4             9    -24730.0082     49850.0163         8.4499    0.0107
+       7  TVM+I+G4           9    -24730.9266     49851.8532        10.2867    0.0043
+       8  TIM1+I+G4          8    -24732.1815     49852.3630        10.7966    0.0033
+       9  TIM3+I+G4          8    -24732.2333     49852.4666        10.9001    0.0031
+      10  TrN+G4             6    -24735.2426     49853.4852        11.9188    0.0019
+--------------------------------------------------------------------------------
+Best model according to AICc
+---------------------------
+Model:              TIM2+I+G4
+lnL:                -24726.7832
+Frequencies:        0.3335 0.1496 0.1954 0.3216
+Subst. Rates:       1.4284 3.4894 1.4284 1.0000 4.7096 1.0000 
+Inv. sites prop:    0.1981
+Gamma shape:        0.4209
+Score:              49841.5664
+Weight:             0.7324
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              0.0000
+Gamma:              0.0645
+Gamma-Inv:          0.9355
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              0.4960
+Alpha:              0.3032
+Alpha-P.Inv:        0.4215
+P.Inv-Alpha:        0.1986
+Frequencies:        0.3335 0.1497 0.1952 0.3216 
+
+Commands:
+  > phyml  -i /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta -m 010232 -f m -v e -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta -m GTRGAMMAIX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta --model TIM2+I+G4
+  > paup -s /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta
+  > iqtree -s /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta -m TIM2+I+G4
+
+There are 59 different topologies
+Topologies written to /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta.topos
+
+topo_id   models_count   bic_support   aic_support   aicc_support
+-----------------------------------------------------------------
+     23              1       0.24090       0.00003       0.00005
+     21              1       0.22146       0.00119       0.00189
+     18              1       0.14083       0.03110       0.04926
+     20              2       0.11234       0.00061       0.00096
+      2              2       0.09244       0.02486       0.03660
+      1              3       0.08463       0.91751       0.88131
+      6              2       0.06163       0.00047       0.00074
+      5              1       0.03787       0.00836       0.01325
+     19              2       0.00451       0.00049       0.00077
+     17              1       0.00206       0.00046       0.00072
+      4              1       0.00090       0.00020       0.00031
+      3              1       0.00038       0.00345       0.00331
+     15              1       0.00003       0.01115       0.01071
+     16              1       0.00001       0.00012       0.00011
+     38              2       0.00000       0.00000       0.00000
+     35              1       0.00000       0.00000       0.00000
+     41              1       0.00000       0.00000       0.00000
+     33              1       0.00000       0.00000       0.00000
+     37              1       0.00000       0.00000       0.00000
+     36              1       0.00000       0.00000       0.00000
+     32              1       0.00000       0.00000       0.00000
+     34              2       0.00000       0.00000       0.00000
+     27              1       0.00000       0.00000       0.00000
+     11              1       0.00000       0.00000       0.00000
+     45              1       0.00000       0.00000       0.00000
+     49              2       0.00000       0.00000       0.00000
+     54              1       0.00000       0.00000       0.00000
+     50              2       0.00000       0.00000       0.00000
+     52              1       0.00000       0.00000       0.00000
+     51              2       0.00000       0.00000       0.00000
+     53              2       0.00000       0.00000       0.00000
+     57              5       0.00000       0.00000       0.00000
+     22              2       0.00000       0.00000       0.00000
+      7              2       0.00000       0.00000       0.00000
+     29              1       0.00000       0.00000       0.00000
+     12              1       0.00000       0.00000       0.00000
+     24              1       0.00000       0.00000       0.00000
+      8              1       0.00000       0.00000       0.00000
+     28              1       0.00000       0.00000       0.00000
+     10              2       0.00000       0.00000       0.00000
+     26              1       0.00000       0.00000       0.00000
+     25              2       0.00000       0.00000       0.00000
+     30              2       0.00000       0.00000       0.00000
+      9              2       0.00000       0.00000       0.00000
+     13              2       0.00000       0.00000       0.00000
+     44              2       0.00000       0.00000       0.00000
+     43              2       0.00000       0.00000       0.00000
+     46              1       0.00000       0.00000       0.00000
+     47              2       0.00000       0.00000       0.00000
+     48              1       0.00000       0.00000       0.00000
+     42              1       0.00000       0.00000       0.00000
+     40              1       0.00000       0.00000       0.00000
+     39              1       0.00000       0.00000       0.00000
+     31              1       0.00000       0.00000       0.00000
+     14              1       0.00000       0.00000       0.00000
+     55              3       0.00000       0.00000       0.00000
+     56              1       0.00000       0.00000       0.00000
+     58              2       0.00000       0.00000       0.00000
+     59              1       0.00000       0.00000       0.00000
+
+extended majority-rule consensus: ((DQ133068_1_Eucampsipoda_penthetoris_18S_ribosomal_RNA_gene__partial_sequence,DQ133076_1_Eucampsipoda_inermis_18S_ribosomal_RNA_gene__partial_sequence)[1.00000],(KF156670_1_Eucampsipoda_africana_isolate_N5_18S_ribosomal_RNA_gene__partial_sequence,((KF156673_1_Eucampsipoda_madagascarensis_isolate_J43_18S_ribosomal_RNA_gene__partial_sequence,(MIZ481_em_b_consensus_sequence Alignment of 2 sequences: 20B04_R1R_MIZ481_em_b.ab1 Copy (reversed), 20E02_R1F_MIZ481_em_b.ab1 Copy,(ROU132_em_b,(MIZ466_em_m28b,(ROU192_em_m28,(KF156674_1_Eucampsipoda_madagascarensis_isolate_J48_18S_ribosomal_RNA_gene__partial_sequence,MIZ466_em_f27a)[0.72215])[0.72212])[0.58129])[0.58129])[0.72215])[1.00000],(((KF156679_1_Eucampsipoda_theodori_isolate_16D_18S_ribosomal_RNA_gene__partial_sequence,KF156676_1_Eucampsipoda_theodori_isolate_29B_18S_ribosomal_RNA_gene__partial_sequence)[1.00000],(KF156681_1_Eucampsipoda_theodori_isolate_24A_18S_ribosomal_RNA_gene__partial_sequence,(KF156675_1_Eucampsipoda_theodori_isolate_28B_18S_ribosomal_RNA_gene__partial_sequence,(KF156680_1_Eucampsipoda_theodori_isolate_18C_18S_ribosomal_RNA_gene__partial_sequence,(KF156677_1_Eucampsipoda_theodori_isolate_31A_18S_ribosomal_RNA_gene__partial_sequence,KF156678_1_Eucampsipoda_theodori_isolate_31B_18S_ribosomal_RNA_gene__partial_sequence)[1.00000])[1.00000])[1.00000])[1.00000])[1.00000],(DQ133073_1_Dipseliopoda_biannulata_18S_ribosomal_RNA_gene__partial_sequence,((KEL239_cd_3mc,(KEL282_cd_1fc,(KEL280B_cd,KEL272_cd_5mb)[1.00000])[0.99506])[1.00000],(((M21017_1_D_melanogaster_18S__5_8S_2S_and_28S_rRNA_genes__complete__and_18S_rRNA_gene__5__end__clone_pDm238,(((DQ133077_1_Ascodipteron_phyllorhinae_18S_ribosomal_RNA_gene__partial_sequence,DQ133083_1_Ascodipteron_sp__Di137_18S_ribosomal_RNA_gene__partial_sequence)[1.00000],((DQ133070_1_Trichobius_intermedius_18S_ribosomal_RNA_gene__partial_sequence,(DQ133069_1_Trichobius_dugesii_18S_ribosomal_RNA_gene__partial_sequence,(DQ133063_1_Trichobius_caecus_18S_ribosomal_RNA_gene__partial_sequence,(DQ133086_1_Trichobius_yunkeri__2__Di152_18S_ribosomal_RNA_gene__partial_sequence,DQ133065_1_Trichobius_yunkeri__1__Di151_18S_ribosomal_RNA_gene__partial_sequence)[1.00000])[1.00000])[1.00000])[1.00000],(((DQ133053_1_Trichobius_hirsutulus_18S_ribosomal_RNA_gene__partial_sequence,(DQ133088_1_Trichobius_longipes_18S_ribosomal_RNA_gene__partial_sequence,(DQ133087_1_Trichobius_parasiticus_18S_ribosomal_RNA_gene__partial_sequence,DQ133061_1_Trichobius_diaemi_18S_ribosomal_RNA_gene__partial_sequence)[1.00000])[1.00000])[1.00000],(DQ133079_1_Trichobius_corynorhini_18S_ribosomal_RNA_gene__partial_sequence,(DQ133081_1_Trichobius_major__2__Di149_18S_ribosomal_RNA_gene__partial_sequence,DQ133084_1_Trichobius_major__1__Di148_18S_ribosomal_RNA_gene__partial_sequence)[1.00000])[1.00000])[1.00000],(DQ133082_1_Strebla_mirabilis_18S_ribosomal_RNA_gene__partial_sequence,DQ133080_1_Strebla_guajiro_18S_ribosomal_RNA_gene__partial_sequence)[1.00000])[1.00000])[1.00000])[1.00000],(AF322431_1_Glossina_palpalis_18S_ribosomal_RNA_gene__partial_sequence,(AF322421_1_Ornithomyia_avicularia_18S_ribosomal_RNA_gene__partial_sequence,(AF073888_1_Ornithoica_vicina_18S_ribosomal_RNA_gene__complete_sequence,(MIZ485_w_1,DQ133078_1_Lipoptena_cervi_18S_ribosomal_RNA_gene__partial_sequence)[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000],((DQ133072_1_Raymondia_huberi_18S_ribosomal_RNA_gene__partial_sequence,(DQ133060_1_Brachyotheca_lobulata__1__Di142_18S_ribosomal_RNA_gene__partial_sequence,(DQ133062_1_Brachyotheca_lobulata__2__Di143_18S_ribosomal_RNA_gene__partial_sequence,(DQ133056_1_Brachyotheca_lobulata__4__Di150_18S_ribosomal_RNA_gene__partial_sequence,DQ133054_1_Brachyotheca_lobulata__3__Di144_18S_ribosomal_RNA_gene__partial_sequence)[1.00000])[1.00000])[1.00000])[1.00000],((DQ133066_1_Megastrebla_nigriceps__2__Di139_18S_ribosomal_RNA_gene__partial_sequence,(DQ133055_1_Megastrebla_parvior_parvior_18S_ribosomal_RNA_gene__partial_sequence,DQ133085_1_Megastrebla_nigriceps__1__Di138_18S_ribosomal_RNA_gene__partial_sequence)[1.00000])[1.00000],(MIZ485_w_b,(MIZ492_w_7_B,MIZ492_w_7_A)[1.00000])[1.00000])[1.00000])[1.00000])[1.00000],(((DQ133071_1_Basilia_coronata_indivisa_18S_ribosomal_RNA_gene__partial_sequence,((KF156682_1_Nycteribia_parvula_isolate_N16_18S_ribosomal_RNA_gene__partial_sequence,DQ133058_1_Phtiridium_fraterna_18S_ribosomal_RNA_gene__partial_sequence)[1.00000],((KF156686_1_Nycteribia_schmidlii_isolate_N3_18S_ribosomal_RNA_gene__partial_sequence,(KF156685_1_Nycteribia_schmidlii_isolate_N2_18S_ribosomal_RNA_gene__partial_sequence,(KF156684_1_Nycteribia_schmidlii_isolate_N22_18S_ribosomal_RNA_gene__partial_sequence,KF156683_1_Nycteribia_schmidlii_isolate_N21_18S_ribosomal_RNA_gene__partial_sequence)[0.09244])[0.48049])[1.00000],(KF156696_1_Nycteribia_stylidiopsis_isolate_B_18S_ribosomal_RNA_gene__partial_sequence,((KF156689_1_Nycteribia_stylidiopsis_isolate_GR2_18S_ribosomal_RNA_gene__partial_sequence,KF156690_1_Nycteribia_stylidiopsis_isolate_GR1_18S_ribosomal_RNA_gene__partial_sequence)[1.00000],(KF156694_1_Nycteribia_stylidiopsis_isolate_J54_18S_ribosomal_RNA_gene__partial_sequence,(KF156695_1_Nycteribia_stylidiopsis_isolate_J32_18S_ribosomal_RNA_gene__partial_sequence,(KF156687_1_Nycteribia_stylidiopsis_isolate_33A_18S_ribosomal_RNA_gene__partial_sequence,(KF156688_1_Nycteribia_stylidiopsis_isolate_GR12_18S_ribosomal_RNA_gene__partial_sequence,(KF156693_1_Nycteribia_stylidiopsis_isolate_GR9_18S_ribosomal_RNA_gene__partial_sequence,(KF156691_1_Nycteribia_stylidiopsis_isolate_GR11_18S_ribosomal_RNA_gene__partial_sequence,KF156692_1_Nycteribia_stylidiopsis_isolate_GR15_18S_ribosomal_RNA_gene__partial_sequence)[0.90756])[0.72305])[0.90756])[0.90756])[0.90756])[0.90756])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000],((KF156703_1_Penicillidia_leptothrinax_isolate_J70_18S_ribosomal_RNA_gene__partial_sequence,(KF156698_1_Penicillidia_fulvida_isolate_GR21_18S_ribosomal_RNA_gene__partial_sequence,KF156697_1_Penicillidia_fulvida_isolate_J68_18S_ribosomal_RNA_gene__partial_sequence)[1.00000])[1.00000],(KF156712_1_Penicillidia_leptothrinax_isolate_J72_18S_ribosomal_RNA_gene__partial_sequence,(KF156713_1_Penicillidia_leptothrinax_isolate_J73_18S_ribosomal_RNA_gene__partial_sequence,(KF156708_1_Penicillidia_leptothrinax_isolate_J66_18S_ribosomal_RNA_gene__partial_sequence,((KF156706_1_Penicillidia_leptothrinax_isolate_J64_18S_ribosomal_RNA_gene__partial_sequence,KF156707_1_Penicillidia_leptothrinax_isolate_J65_18S_ribosomal_RNA_gene__partial_sequence)[1.00000],(KF156714_1_Penicillidia_leptothrinax_isolate_J67_18S_ribosomal_RNA_gene__partial_sequence,(KF156710_1_Penicillidia_leptothrinax_isolate_J71_18S_ribosomal_RNA_gene__partial_sequence,(KF156705_1_Penicillidia_leptothrinax_isolate_J63_18S_ribosomal_RNA_gene__partial_sequence,(KF156704_1_Penicillidia_leptothrinax_isolate_J34_18S_ribosomal_RNA_gene__partial_sequence,(KF156702_1_Penicillidia_leptothrinax_isolate_35B_18S_ribosomal_RNA_gene__partial_sequence,(KF156701_1_Penicillidia_leptothrinax_isolate_J62_18S_ribosomal_RNA_gene__partial_sequence,(KF156711_1_Penicillidia_leptothrinax_isolate_GR20_18S_ribosomal_RNA_gene__partial_sequence,(KF156709_1_Penicillidia_leptothrinax_isolate_GR18_18S_ribosomal_RNA_gene__partial_sequence,KF156700_1_Penicillidia_leptothrinax_isolate_GR7_18S_ribosomal_RNA_gene__partial_sequence)[0.90755])[0.90755])[0.90755])[0.90755])[0.90756])[0.90756])[0.90666])[0.90756])[1.00000])[0.72252])[0.81459])[1.00000])[1.00000])[1.00000],(DQ133064_1_Basilia_forcipata_18S_ribosomal_RNA_gene__partial_sequence,DQ133057_1_Basilia_corynorhini_18S_ribosomal_RNA_gene__partial_sequence)[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000],(KF156672_1_Eucampsipoda_inermis_isolate_N9_18S_ribosomal_RNA_gene__partial_sequence,KF156671_1_Eucampsipoda_inermis_isolate_N8_18S_ribosomal_RNA_gene__partial_sequence)[1.00000]);
+strict consensus: ((DQ133068_1_Eucampsipoda_penthetoris_18S_ribosomal_RNA_gene__partial_sequence,DQ133076_1_Eucampsipoda_inermis_18S_ribosomal_RNA_gene__partial_sequence)[1.00000],(KF156670_1_Eucampsipoda_africana_isolate_N5_18S_ribosomal_RNA_gene__partial_sequence,((KF156674_1_Eucampsipoda_madagascarensis_isolate_J48_18S_ribosomal_RNA_gene__partial_sequence,KF156673_1_Eucampsipoda_madagascarensis_isolate_J43_18S_ribosomal_RNA_gene__partial_sequence,ROU132_em_b,ROU192_em_m28,MIZ481_em_b_consensus_sequence Alignment of 2 sequences: 20B04_R1R_MIZ481_em_b.ab1 Copy (reversed), 20E02_R1F_MIZ481_em_b.ab1 Copy,MIZ466_em_m28b,MIZ466_em_f27a)[1.00000],(((KF156679_1_Eucampsipoda_theodori_isolate_16D_18S_ribosomal_RNA_gene__partial_sequence,KF156676_1_Eucampsipoda_theodori_isolate_29B_18S_ribosomal_RNA_gene__partial_sequence)[1.00000],(KF156681_1_Eucampsipoda_theodori_isolate_24A_18S_ribosomal_RNA_gene__partial_sequence,(KF156675_1_Eucampsipoda_theodori_isolate_28B_18S_ribosomal_RNA_gene__partial_sequence,(KF156680_1_Eucampsipoda_theodori_isolate_18C_18S_ribosomal_RNA_gene__partial_sequence,(KF156677_1_Eucampsipoda_theodori_isolate_31A_18S_ribosomal_RNA_gene__partial_sequence,KF156678_1_Eucampsipoda_theodori_isolate_31B_18S_ribosomal_RNA_gene__partial_sequence)[1.00000])[1.00000])[1.00000])[1.00000])[1.00000],(DQ133073_1_Dipseliopoda_biannulata_18S_ribosomal_RNA_gene__partial_sequence,((KEL282_cd_1fc,KEL239_cd_3mc,(KEL280B_cd,KEL272_cd_5mb)[1.00000])[1.00000],(((M21017_1_D_melanogaster_18S__5_8S_2S_and_28S_rRNA_genes__complete__and_18S_rRNA_gene__5__end__clone_pDm238,(((DQ133077_1_Ascodipteron_phyllorhinae_18S_ribosomal_RNA_gene__partial_sequence,DQ133083_1_Ascodipteron_sp__Di137_18S_ribosomal_RNA_gene__partial_sequence)[1.00000],((DQ133070_1_Trichobius_intermedius_18S_ribosomal_RNA_gene__partial_sequence,(DQ133069_1_Trichobius_dugesii_18S_ribosomal_RNA_gene__partial_sequence,(DQ133063_1_Trichobius_caecus_18S_ribosomal_RNA_gene__partial_sequence,(DQ133086_1_Trichobius_yunkeri__2__Di152_18S_ribosomal_RNA_gene__partial_sequence,DQ133065_1_Trichobius_yunkeri__1__Di151_18S_ribosomal_RNA_gene__partial_sequence)[1.00000])[1.00000])[1.00000])[1.00000],(((DQ133053_1_Trichobius_hirsutulus_18S_ribosomal_RNA_gene__partial_sequence,(DQ133088_1_Trichobius_longipes_18S_ribosomal_RNA_gene__partial_sequence,(DQ133087_1_Trichobius_parasiticus_18S_ribosomal_RNA_gene__partial_sequence,DQ133061_1_Trichobius_diaemi_18S_ribosomal_RNA_gene__partial_sequence)[1.00000])[1.00000])[1.00000],(DQ133079_1_Trichobius_corynorhini_18S_ribosomal_RNA_gene__partial_sequence,(DQ133081_1_Trichobius_major__2__Di149_18S_ribosomal_RNA_gene__partial_sequence,DQ133084_1_Trichobius_major__1__Di148_18S_ribosomal_RNA_gene__partial_sequence)[1.00000])[1.00000])[1.00000],(DQ133082_1_Strebla_mirabilis_18S_ribosomal_RNA_gene__partial_sequence,DQ133080_1_Strebla_guajiro_18S_ribosomal_RNA_gene__partial_sequence)[1.00000])[1.00000])[1.00000])[1.00000],(AF322431_1_Glossina_palpalis_18S_ribosomal_RNA_gene__partial_sequence,(AF322421_1_Ornithomyia_avicularia_18S_ribosomal_RNA_gene__partial_sequence,(AF073888_1_Ornithoica_vicina_18S_ribosomal_RNA_gene__complete_sequence,(MIZ485_w_1,DQ133078_1_Lipoptena_cervi_18S_ribosomal_RNA_gene__partial_sequence)[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000],((DQ133072_1_Raymondia_huberi_18S_ribosomal_RNA_gene__partial_sequence,(DQ133060_1_Brachyotheca_lobulata__1__Di142_18S_ribosomal_RNA_gene__partial_sequence,(DQ133062_1_Brachyotheca_lobulata__2__Di143_18S_ribosomal_RNA_gene__partial_sequence,(DQ133056_1_Brachyotheca_lobulata__4__Di150_18S_ribosomal_RNA_gene__partial_sequence,DQ133054_1_Brachyotheca_lobulata__3__Di144_18S_ribosomal_RNA_gene__partial_sequence)[1.00000])[1.00000])[1.00000])[1.00000],((DQ133066_1_Megastrebla_nigriceps__2__Di139_18S_ribosomal_RNA_gene__partial_sequence,(DQ133055_1_Megastrebla_parvior_parvior_18S_ribosomal_RNA_gene__partial_sequence,DQ133085_1_Megastrebla_nigriceps__1__Di138_18S_ribosomal_RNA_gene__partial_sequence)[1.00000])[1.00000],(MIZ485_w_b,(MIZ492_w_7_B,MIZ492_w_7_A)[1.00000])[1.00000])[1.00000])[1.00000])[1.00000],(((DQ133071_1_Basilia_coronata_indivisa_18S_ribosomal_RNA_gene__partial_sequence,((KF156682_1_Nycteribia_parvula_isolate_N16_18S_ribosomal_RNA_gene__partial_sequence,DQ133058_1_Phtiridium_fraterna_18S_ribosomal_RNA_gene__partial_sequence)[1.00000],((KF156686_1_Nycteribia_schmidlii_isolate_N3_18S_ribosomal_RNA_gene__partial_sequence,KF156685_1_Nycteribia_schmidlii_isolate_N2_18S_ribosomal_RNA_gene__partial_sequence,KF156684_1_Nycteribia_schmidlii_isolate_N22_18S_ribosomal_RNA_gene__partial_sequence,KF156683_1_Nycteribia_schmidlii_isolate_N21_18S_ribosomal_RNA_gene__partial_sequence)[1.00000],(KF156696_1_Nycteribia_stylidiopsis_isolate_B_18S_ribosomal_RNA_gene__partial_sequence,(KF156688_1_Nycteribia_stylidiopsis_isolate_GR12_18S_ribosomal_RNA_gene__partial_sequence,KF156691_1_Nycteribia_stylidiopsis_isolate_GR11_18S_ribosomal_RNA_gene__partial_sequence,KF156692_1_Nycteribia_stylidiopsis_isolate_GR15_18S_ribosomal_RNA_gene__partial_sequence,KF156694_1_Nycteribia_stylidiopsis_isolate_J54_18S_ribosomal_RNA_gene__partial_sequence,KF156695_1_Nycteribia_stylidiopsis_isolate_J32_18S_ribosomal_RNA_gene__partial_sequence,KF156693_1_Nycteribia_stylidiopsis_isolate_GR9_18S_ribosomal_RNA_gene__partial_sequence,KF156687_1_Nycteribia_stylidiopsis_isolate_33A_18S_ribosomal_RNA_gene__partial_sequence,(KF156689_1_Nycteribia_stylidiopsis_isolate_GR2_18S_ribosomal_RNA_gene__partial_sequence,KF156690_1_Nycteribia_stylidiopsis_isolate_GR1_18S_ribosomal_RNA_gene__partial_sequence)[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000],((KF156703_1_Penicillidia_leptothrinax_isolate_J70_18S_ribosomal_RNA_gene__partial_sequence,(KF156698_1_Penicillidia_fulvida_isolate_GR21_18S_ribosomal_RNA_gene__partial_sequence,KF156697_1_Penicillidia_fulvida_isolate_J68_18S_ribosomal_RNA_gene__partial_sequence)[1.00000])[1.00000],(KF156712_1_Penicillidia_leptothrinax_isolate_J72_18S_ribosomal_RNA_gene__partial_sequence,KF156708_1_Penicillidia_leptothrinax_isolate_J66_18S_ribosomal_RNA_gene__partial_sequence,KF156713_1_Penicillidia_leptothrinax_isolate_J73_18S_ribosomal_RNA_gene__partial_sequence,(KF156710_1_Penicillidia_leptothrinax_isolate_J71_18S_ribosomal_RNA_gene__partial_sequence,KF156714_1_Penicillidia_leptothrinax_isolate_J67_18S_ribosomal_RNA_gene__partial_sequence,KF156709_1_Penicillidia_leptothrinax_isolate_GR18_18S_ribosomal_RNA_gene__partial_sequence,KF156701_1_Penicillidia_leptothrinax_isolate_J62_18S_ribosomal_RNA_gene__partial_sequence,KF156702_1_Penicillidia_leptothrinax_isolate_35B_18S_ribosomal_RNA_gene__partial_sequence,KF156704_1_Penicillidia_leptothrinax_isolate_J34_18S_ribosomal_RNA_gene__partial_sequence,KF156700_1_Penicillidia_leptothrinax_isolate_GR7_18S_ribosomal_RNA_gene__partial_sequence,KF156705_1_Penicillidia_leptothrinax_isolate_J63_18S_ribosomal_RNA_gene__partial_sequence,KF156711_1_Penicillidia_leptothrinax_isolate_GR20_18S_ribosomal_RNA_gene__partial_sequence,(KF156706_1_Penicillidia_leptothrinax_isolate_J64_18S_ribosomal_RNA_gene__partial_sequence,KF156707_1_Penicillidia_leptothrinax_isolate_J65_18S_ribosomal_RNA_gene__partial_sequence)[1.00000])[1.00000])[1.00000])[1.00000])[1.00000],(DQ133064_1_Basilia_forcipata_18S_ribosomal_RNA_gene__partial_sequence,DQ133057_1_Basilia_corynorhini_18S_ribosomal_RNA_gene__partial_sequence)[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000])[1.00000],(KF156672_1_Eucampsipoda_inermis_isolate_N9_18S_ribosomal_RNA_gene__partial_sequence,KF156671_1_Eucampsipoda_inermis_isolate_N8_18S_ribosomal_RNA_gene__partial_sequence)[1.00000]);
+
+Summary:
+
+Partition 1/1:
+                         Model         Score        Weight
+----------------------------------------------------------
+       BIC              HKY+G4    51251.7883        0.2409
+       AIC           TIM2+I+G4    49835.5664        0.7624
+      AICc           TIM2+I+G4    49841.5664        0.7324
+
+Execution results written to /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta.out
+Starting tree written to /home/cbrook/scratch-midway2/modtest-full/18Salign.fasta.tree
