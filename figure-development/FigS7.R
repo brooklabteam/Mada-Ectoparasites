@@ -114,7 +114,7 @@ TableS3 <- subset(tree.merge, Type==1)
 TableS3$bat_sampleid <- sapply(strsplit(TableS3$Accession_Plus_Name,"_"),"[",1)
 TableS3 <- dplyr::select(TableS3, Host_Binomial, bat_sampleid, Binomial, Accession_Number)
 TableS3 <- arrange(TableS3, Host_Binomial, Binomial, bat_sampleid, Accession_Number)
-write.csv(TableS3 , file = paste0(homewd, "/final-tables/tableS3.csv"), row.names = F)
+write.csv(TableS3 , file = paste0(homewd, "/final-tables/tableS2b.csv"), row.names = F)
 # 4 Cyclopodia sequenced from 4 Eidolon.
 # 5 Eucampsipoda sequenced from 4 Rousettus
 # 3 Megastrebla sequenced from 2 Rousettus 
