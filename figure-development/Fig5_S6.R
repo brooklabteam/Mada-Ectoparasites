@@ -118,6 +118,10 @@ tree.merge$Type <- as.character(tree.merge$Type)
 tree.merge$Type[tree.merge$Type=="0"] <- "Reference sequence"
 tree.merge$Type[tree.merge$Type=="1"] <- "New this study"
 tree.merge$Type <- as.factor(tree.merge$Type)
+tree.merge$Binomial <- gsub(pattern = "_", replacement = " ", x = tree.merge$Binomial)
+tree.merge$Host_Binomial <- gsub(pattern = "_", replacement = " ", x = tree.merge$Host_Binomial)
+tree.merge$Country_of_Collection <- gsub(pattern = "_", replacement = " ", x = tree.merge$Country_of_Collection)
+
 tree.merge$new_label <- paste0(tree.merge$Accession_Number, " | ", tree.merge$Binomial, " | ", tree.merge$Host_Binomial, " | ", tree.merge$Year_Sample_Collected, " | ", tree.merge$Country_of_Collection)
 
 tree.merge <- dplyr::select(tree.merge, new_label, names(tree.merge)[1:11])
@@ -128,38 +132,54 @@ tree.merge$new_label <- paste0(tree.merge$Accession_Number, " | ", tree.merge$Bi
 head(rooted.tree)
 head(tree.merge)
 
-length(tree.merge$b) tree.merge$Type
+#length(tree.merge$b) tree.merge$Type
 
 shapez = c("New this study" =  24, "Reference sequence" = 16)
 colz2 = c('1' =  "yellow", '0' = "white")
 
-rooted.tree$node.label <- as.numeric(rooted.tree$node.label)
-rooted.tree$node.label[rooted.tree$node.label<50] <- NA
+#add node shapes to represent bootstrap values
+p0<-ggtree(rooted.tree)
+p0.dat <- p0$data
+p0.dat$Bootstrap <- NA
+Bootstrap<-p0.dat$Bootstrap[(length(tree.dat$tip_label)+1):length(p0.dat$label)] <- as.numeric(p0.dat$label[(length(tree.dat$tip_label)+1):length(p0.dat$label)])#fill with label
+#p0.dat$Bootstrap[is.na(p0.dat$Bootstrap) & p0.dat$label==""] <- 100 
+
+
+#rooted.tree$node.label <- as.numeric(rooted.tree$node.label)
+#rooted.tree$node.label[rooted.tree$node.label<50] <- NA
 
 #edit a few that are funky:
-tree.merge$new_label[tree.merge$new_label=="OM327588 | Brachytarsina_kanoi |  | 2022 | Pakistan"] <- "OM327588 | Brachytarsina_kanoi | 2022 | Pakistan"
-tree.merge$new_label[tree.merge$new_label=="OM327589 | Brachytarsina_kanoi |  | 2022 | Pakistan"] <- "OM327589 | Brachytarsina_kanoi | 2022 | Pakistan"
-tree.merge$new_label[tree.merge$new_label=="MH282032 | Basilia_tiptoni | NA | 2013 | Panama"] <- "MH282032 | Basilia_tiptoni | 2013 | Panama"
-tree.merge$new_label[tree.merge$new_label=="NC_001709 | Drosophila_melanogaster | NA | 1999 | USA" ] <- "NC_001709 | Drosophila_melanogaster | 1999 | USA"
+tree.merge$new_label[tree.merge$new_label=="OM327588 | Brachytarsina kanoi |  | 2022 | Pakistan"] <- "OM327588 | Brachytarsina kanoi | 2022 | Pakistan"
+tree.merge$new_label[tree.merge$new_label=="OM327589 | Brachytarsina kanoi |  | 2022 | Pakistan"] <- "OM327589 | Brachytarsina kanoi | 2022 | Pakistan"
+tree.merge$new_label[tree.merge$new_label=="MH282032 | Basilia tiptoni | NA | 2013 | Panama"] <- "MH282032 | Basilia tiptoni | 2013 | Panama"
+tree.merge$new_label[tree.merge$new_label=="NC_001709 | Drosophila melanogaster | NA | 1999 | USA" ] <- "NC_001709 | Drosophila melanogaster | 1999 | USA"
 
-rooted.tree$tip.label[rooted.tree$tip.label=="OM327588 | Brachytarsina_kanoi |  | 2022 | Pakistan"]  <- "OM327588 | Brachytarsina_kanoi | 2022 | Pakistan"
-rooted.tree$tip.label[rooted.tree$tip.label=="OM327589 | Brachytarsina_kanoi |  | 2022 | Pakistan"] <- "OM327589 | Brachytarsina_kanoi | 2022 | Pakistan"
-rooted.tree$tip.label[rooted.tree$tip.label=="MH282032 | Basilia_tiptoni | NA | 2013 | Panama"] <- "MH282032 | Basilia_tiptoni | 2013 | Panama"
-rooted.tree$tip.label[rooted.tree$tip.label=="NC_001709 | Drosophila_melanogaster | NA | 1999 | USA"] <- "NC_001709 | Drosophila_melanogaster | 1999 | USA"
+rooted.tree$tip.label[rooted.tree$tip.label=="OM327588 | Brachytarsina kanoi |  | 2022 | Pakistan"]  <- "OM327588 | Brachytarsina kanoi | 2022 | Pakistan"
+rooted.tree$tip.label[rooted.tree$tip.label=="OM327589 | Brachytarsina kanoi |  | 2022 | Pakistan"] <- "OM327589 | Brachytarsina kanoi | 2022 | Pakistan"
+rooted.tree$tip.label[rooted.tree$tip.label=="MH282032 | Basilia tiptoni | NA | 2013 | Panama"] <- "MH282032 | Basilia tiptoni | 2013 | Panama"
+rooted.tree$tip.label[rooted.tree$tip.label=="NC_001709 | Drosophila melanogaster | NA | 1999 | USA"] <- "NC_001709 | Drosophila melanogaster | 1999 | USA"
 
-#Get the clad numbers to known the clads that we are going  collapse
+#Get the clade numbers to known the clades that we are going  collapse
 
 p1 <- ggtree(rooted.tree) %<+% tree.merge + 
-  geom_nodelab(size=1.5,nudge_x = -.01, nudge_y = .7) +
+  #geom_nodelab(size=1.5,nudge_x = -.01, nudge_y = .7) +
   geom_tippoint(aes(fill=Genus, color=Genus, shape=Type)) +
   geom_tiplab(size = 1.5)+
   scale_fill_manual(values=colz) + 
   scale_color_manual(values=colz) + 
   scale_shape_manual(values=shapez) + 
-  geom_treescale(x=.05,y=35)+
+  geom_treescale(x=.033,y=94, fontsize = 3.5)+
+  ggnewscale::new_scale_fill() +
+  geom_nodepoint(aes(fill=Bootstrap, show.legend = T), shape=21, stroke=.2, size=1, color="black")+
+  scale_fill_continuous(low="white", high="black", limits=c(0,100))+
   #theme_bw()+
-  theme(legend.position = c(.15,.75))+ 
-  xlim(c(0,.49)) #+ ylim(c(0,160))
+  theme(legend.position = "inside",
+        legend.position.inside  = c(.25,.85),
+        legend.box = "horizontal",
+        legend.text = element_text(size=8),
+        legend.title = element_text(size=9),
+        legend.key.height = unit(.8,"lines"))+ 
+  xlim(c(0,.4)) #+ ylim(c(0,160))
 p1
 
 #save the plots (this could go to the supplementary information)
@@ -180,40 +200,43 @@ ggsave(file = paste0(homewd, "/final-figures/FigS6.png"),
 rooted.tree$tip.label
 
 # Now lets try to find the common ancestor for each clade and stor it one object
-eucampsMad_Roumad <- MRCA(rooted.tree, which(rooted.tree$tip.label == "OR732293 | Eucampsipoda_madagascariensis | Rousettus_madagascariensis | 2019 | Madagascar"),which(rooted.tree$tip.label == "OR732245 | Eucampsipoda_madagascariensis | Rousettus_madagascariensis | 2019 | Madagascar"),method="phylo")
-eucampsAfr_Rouaeg <- MRCA(rooted.tree, which(rooted.tree$tip.label == "MH151066 | Eucampsipoda_africana | Rousettus_aegyptiacus | 2018 | Nigeria" ),which(rooted.tree$tip.label == "MH151063 | Eucampsipoda_africana | Rousettus_aegyptiacus | 2018 | Nigeria"),method="phylo")
-eucampsThe_Rouobl <- MRCA(rooted.tree, which(rooted.tree$tip.label == "KF021498 | Eucampsipoda_theodori | Rousettus_obliviosus | 2010 | Comoros" ),which(rooted.tree$tip.label == "KF021500 | Eucampsipoda_theodori | Rousettus_obliviosus | 2010 | Comoros"),method="phylo")
-eucampsAfr_Roules <- MRCA(rooted.tree, which(rooted.tree$tip.label == "OM283590 | Eucampsipoda_africana | Rousettus_leschenaultii | 2019 | Pakistan"),which(rooted.tree$tip.label =="OM283592 | Eucampsipoda_africana | Rousettus_leschenaultii | 2019 | Pakistan"),method="phylo")
-cyclopDub_Eidup   <- MRCA(rooted.tree, which(rooted.tree$tip.label == "OR732304 | Cyclopodia_dubia | Eidolon_dupreanum | 2019 | Madagascar"),which(rooted.tree$tip.label == "MF462043 | Cyclopodia_dubia | Eidolon_dupreanum | 2017 | Madagascar"),method="phylo")
-cycloPhors_Ptesp   <- MRCA(rooted.tree, which(rooted.tree$tip.label == "KF273770 | Cyclopodia_horsefieldi | Pteropus_hypomelanus | 2006 | Malaysia" ),which(rooted.tree$tip.label == "KF273782 | Cyclopodia_horsefieldi | Pteropus_vampyrus | 2004 | Malaysia" ),method="phylo")
-streb_Hyp   <- MRCA(rooted.tree, which(rooted.tree$tip.label == "MW792204 | Streblidae_spp | Hipposideros_ruber | 2017 | Uganda"),which(rooted.tree$tip.label == "MW792205 | Streblidae_spp | Hipposideros_ruber | 2017 | Uganda"  ),method="phylo")
-megaWenz_Roumad   <- MRCA(rooted.tree, which(rooted.tree$tip.label == "OR732258 | Megastrebla_wenzeli | Rousettus_madagascariensis | 2019 | Madagascar"),which(rooted.tree$tip.label == "OR732302 | Megastrebla_wenzeli | Rousettus_madagascariensis | 2019 | Madagascar"))
-brachy_kanoi      <- MRCA(rooted.tree,which(rooted.tree$tip.label=="OM327589 | Brachytarsina_kanoi | 2022 | Pakistan"), which(rooted.tree$tip.label=="MT362949 | Brachytarsina_spp | bat | 2020 | South_Korea"))
-peni_ful   <- MRCA(rooted.tree,which(rooted.tree$tip.label== "ON704710 | Penicillidia_fulvida | Miniopterus_spp | 2015 | Kenya"), which(rooted.tree$tip.label=="ON704664 | Penicillidia_fulvida | Rhinolophus_fumigatus | 2015 | Kenya" ))
-peni_mono  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "AB632567 | Penicillidia_monoceros | Myotis_daubentonii | 2011 | Japan"), which(rooted.tree$tip.label=="MW590972 | Penicillidia_monoceros | bird | 2021 | Finland"))
-peni_dufo  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "MK140181 | Penicillidia_dufourii | Myotis_myotis | 2018 | Romania" ), which(rooted.tree$tip.label=="MK140183 | Penicillidia_dufourii | Myotis_blythii | 2018 | Hungary"))
-peni_cons  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "MK140180 | Penicillidia_conspicua | Miniopterus_schreibersii | 2018 | Romania"), which(rooted.tree$tip.label=="MK140180 | Penicillidia_conspicua | Miniopterus_schreibersii | 2018 | Romania"))
-peni_other  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "KF021518 | Penicillidia_fulvida | Miniopterus_gleni | 2012 | Madagascar"), which(rooted.tree$tip.label=="KF021535 | Penicillidia_oceania | Miniopterus_schreibersi | 2006 | Philippines"))
-pthrid  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "MT362948 | Phthiridium_spp | bat | 2020 | South_Korea"), which(rooted.tree$tip.label=="MK140116 | Phthiridium_spp | Rhinolophus_mehelyi | 2018 | Romania"))
-nycterib  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "KF021501 | Nycteribia_parvula | Miniopterus_schreibersii | 2006 | Philippines" ), which(rooted.tree$tip.label=="KF021492 | Nycteribia_africana | Rousettus_aegyptiacus | 2006 | Kenya"))
-basil  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "MH282032 | Basilia_tiptoni | 2013 | Panama" ), which(rooted.tree$tip.label=="OL847632 | Basilia_lindolphoi | Myotis_nigricans | 2021 | Brasil"))
-basil2  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "MK140104 | Basilia_nana | Myotis_myotis | 2018 | Hungary" ), which(rooted.tree$tip.label=="AB632538 | Basilia_rybini | Myotis_daubentonii | 2011 | Japan"))
+eucampsMad_Roumad <- MRCA(rooted.tree, which(rooted.tree$tip.label == "OR732293 | Eucampsipoda madagascariensis | Rousettus madagascariensis | 2019 | Madagascar"),which(rooted.tree$tip.label == "OR732245 | Eucampsipoda madagascariensis | Rousettus madagascariensis | 2019 | Madagascar"),method="phylo")
+eucampsAfr_Rouaeg <- MRCA(rooted.tree, which(rooted.tree$tip.label == "MH151066 | Eucampsipoda africana | Rousettus aegyptiacus | 2018 | Nigeria" ),which(rooted.tree$tip.label == "MH151063 | Eucampsipoda africana | Rousettus aegyptiacus | 2018 | Nigeria"),method="phylo")
+eucampsThe_Rouobl <- MRCA(rooted.tree, which(rooted.tree$tip.label == "KF021498 | Eucampsipoda theodori | Rousettus obliviosus | 2010 | Comoros" ),which(rooted.tree$tip.label == "KF021500 | Eucampsipoda theodori | Rousettus obliviosus | 2010 | Comoros"),method="phylo")
+eucampsAfr_Roules <- MRCA(rooted.tree, which(rooted.tree$tip.label == "OM283590 | Eucampsipoda africana | Rousettus leschenaultii | 2019 | Pakistan"),which(rooted.tree$tip.label =="OM283592 | Eucampsipoda africana | Rousettus leschenaultii | 2019 | Pakistan"),method="phylo")
+cyclopDub_Eidup   <- MRCA(rooted.tree, which(rooted.tree$tip.label == "OR732304 | Cyclopodia dubia | Eidolon dupreanum | 2019 | Madagascar"),which(rooted.tree$tip.label == "MF462043 | Cyclopodia dubia | Eidolon dupreanum | 2017 | Madagascar"),method="phylo")
+cycloPhors_Ptesp   <- MRCA(rooted.tree, which(rooted.tree$tip.label == "KF273770 | Cyclopodia horsefieldi | Pteropus hypomelanus | 2006 | Malaysia" ),which(rooted.tree$tip.label == "KF273782 | Cyclopodia horsefieldi | Pteropus vampyrus | 2004 | Malaysia" ),method="phylo")
+streb_Hyp   <- MRCA(rooted.tree, which(rooted.tree$tip.label == "MW792204 | Streblidae spp | Hipposideros ruber | 2017 | Uganda"),which(rooted.tree$tip.label == "MW792205 | Streblidae spp | Hipposideros ruber | 2017 | Uganda"  ),method="phylo")
+megaWenz_Roumad   <- MRCA(rooted.tree, which(rooted.tree$tip.label == "OR732258 | Megastrebla wenzeli | Rousettus madagascariensis | 2019 | Madagascar"),which(rooted.tree$tip.label == "OR732302 | Megastrebla wenzeli | Rousettus madagascariensis | 2019 | Madagascar"))
+brachy_kanoi      <- MRCA(rooted.tree,which(rooted.tree$tip.label=="OM327589 | Brachytarsina kanoi | 2022 | Pakistan"), which(rooted.tree$tip.label=="MT362949 | Brachytarsina spp | bat | 2020 | South Korea"))
+peni_ful   <- MRCA(rooted.tree,which(rooted.tree$tip.label== "ON704710 | Penicillidia fulvida | Miniopterus spp | 2015 | Kenya"), which(rooted.tree$tip.label=="ON704664 | Penicillidia fulvida | Rhinolophus fumigatus | 2015 | Kenya" ))
+peni_mono  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "AB632567 | Penicillidia monoceros | Myotis daubentonii | 2011 | Japan"), which(rooted.tree$tip.label=="MW590972 | Penicillidia monoceros | bird | 2021 | Finland"))
+peni_dufo  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "MK140181 | Penicillidia dufourii | Myotis myotis | 2018 | Romania" ), which(rooted.tree$tip.label=="MK140183 | Penicillidia dufourii | Myotis blythii | 2018 | Hungary"))
+peni_cons  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "MK140180 | Penicillidia conspicua | Miniopterus schreibersii | 2018 | Romania"), which(rooted.tree$tip.label=="MK140180 | Penicillidia conspicua | Miniopterus schreibersii | 2018 | Romania"))
+peni_other  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "KF021518 | Penicillidia fulvida | Miniopterus gleni | 2012 | Madagascar"), which(rooted.tree$tip.label=="KF021535 | Penicillidia oceania | Miniopterus schreibersi | 2006 | Philippines"))
+pthrid  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "MT362948 | Phthiridium spp | bat | 2020 | South Korea"), which(rooted.tree$tip.label=="MK140116 | Phthiridium spp | Rhinolophus mehelyi | 2018 | Romania"))
+nycterib  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "KF021501 | Nycteribia parvula | Miniopterus schreibersii | 2006 | Philippines" ), which(rooted.tree$tip.label=="KF021492 | Nycteribia africana | Rousettus aegyptiacus | 2006 | Kenya"))
+basil  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "MH282032 | Basilia tiptoni | 2013 | Panama" ), which(rooted.tree$tip.label=="OL847632 | Basilia lindolphoi | Myotis nigricans | 2021 | Brasil"))
+basil2  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "MK140104 | Basilia nana | Myotis myotis | 2018 | Hungary" ), which(rooted.tree$tip.label=="AB632538 | Basilia rybini | Myotis daubentonii | 2011 | Japan"))
 
   
  
 
 pa<- 
   ggtree(rooted.tree) %<+% tree.merge + 
-  geom_nodelab(size=3,nudge_x = -.005, nudge_y = .7) +
-  geom_tippoint(aes(fill=Genus),size=2, color="black", show.legend = F, shape=21) +
+  #geom_nodelab(size=3,nudge_x = -.005, nudge_y = .7) +
+  geom_tippoint(aes(fill=Genus),size=2, color="black", show.legend = T, shape=21) +
   geom_tiplab(size = 3, hjust=-.01)+
   scale_fill_manual(values=colz) + 
   #scale_color_manual(values=colz) + 
   #scale_shape_manual(values=shapez) + 
-  geom_treescale(x=.06,y=45)+
+  geom_treescale(x=.03,y=55)+
   #theme_bw()+
-  theme(legend.position = c(.1,.35))+ 
+  theme(legend.position = c(.15,.75))+ 
   xlim(c(0,.49)) +
+  ggnewscale::new_scale_fill() +
+  geom_nodepoint(aes(fill=Bootstrap, show.legend = T), shape=21, stroke=.2, size=2, color="black")+
+  scale_fill_continuous(low="white", high="black", limits=c(0,100))+
   geom_cladelabel(node = eucampsMad_Roumad,label = "Eucampsipoda madagascariensis | Rousettus madagascariensis (collapsed)",offset=0, fontsize = 3,  fill="yellow", geom="label", alpha=.3) +
   geom_cladelabel(node = eucampsAfr_Rouaeg, label = "Eucampsipoda africana | Rousettus aegyptiacus (collapsed)",offset=0, fontsize = 3, color="black")+
   geom_cladelabel(node = eucampsThe_Rouobl, label = "Eucampsipoda theodori | Rousettus obliviosus (collapsed)",offset=0, fontsize = 3, color="black")+
