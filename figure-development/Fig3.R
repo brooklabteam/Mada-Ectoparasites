@@ -18,7 +18,7 @@ homewd="/Users/carabrook/Developer/Mada-Ectoparasites"
 
 # create the working directory
 setwd(paste0(homewd))
-
+ 
 # call the Ectoparasite data from the working directory
 dat<-read.csv(paste0(homewd,"/data/ecto_dat_long.csv"))
 head(dat)
@@ -96,7 +96,7 @@ Rou1$er_lci <- Rou1$mean -1.96*Rou1$se
 Rou1$er_uci <- Rou1$mean +1.96*Rou1$se
 
 
-###DATA PREPARATION FOR EIDOLON AND IT'S ECTOPARASITES #######
+###DATA PREPARATION FOR EIDOLON AND ITS ECTOPARASITES #######
 
 # Make a subset of the data for Eidolon dupreanum  from AngavoKely
 Eid<-subset(data1, bat_species=="Eidolon dupreanum"&roost_site=="Angavokely_Edup" &bat_age_class!="J"| bat_species=="Eidolon dupreanum"&roost_site=="Angavobe_Edup" &bat_age_class!="J")
@@ -285,7 +285,7 @@ prec.miz<-ggplot(miz.clim)+
   geom_line(aes(x=month,y=mean_prec*10),color="red",linewidth=1)+
   geom_point(aes(x=month,y=mean_prec*10),color="red",size=3)+
   geom_errorbar(aes(x= month,ymin=prec_lci*10, ymax=prec_uci*10), color="red",alpha=.5,width=.1 )+
-  scale_y_continuous(limits = c(0,15),"mean ectoparasites", sec.axis = sec_axis(~ ./10, name="mean precipitation rate"))+
+  scale_y_continuous(limits = c(0,15),"mean ectoparasites", sec.axis = sec_axis(~ ./10, name="mean total precipitation"))+
   theme_bw() + theme(legend.position = "none", 
                      legend.text = element_blank(),
                      panel.grid = element_blank(),
@@ -375,7 +375,7 @@ prec.kel<-ggplot(kel.clim)+
   geom_line(aes(x=month,y=mean_prec*10),color="red",linewidth=1)+
   geom_point(aes(x=month,y=mean_prec*10),color="red",size=3)+
   geom_errorbar(aes(x= month,ymin=prec_lci*10, ymax=prec_uci*10), color="red",alpha=.5,width=.1 )+
-  scale_y_continuous(limits = c(0,15),"mean ectoparasites", sec.axis = sec_axis(~ ./10, name="mean precipitation rate"))+
+  scale_y_continuous(limits = c(0,15),"mean ectoparasites", sec.axis = sec_axis(~ ./10, name="mean total precipitation"))+
   theme_bw() + theme(legend.position = "none", 
                      legend.text = element_blank(),
                      panel.grid = element_blank(),

@@ -160,7 +160,7 @@ Bootstrap<-p0.dat$Bootstrap[(length(tree.dat$tip_label)+1):length(p0.dat$label)]
 
 #length(tree.merge$b) tree.merge$Type
 
-shapez = c("New this study" =  24, "Reference sequence" = 16)
+shapez = c("New this study" =  24, "Reference sequence" = 22)
 colz2 = c('1' =  "yellow", '0' = "white")
 
 
@@ -178,15 +178,15 @@ colz2 = c('1' =  "yellow", '0' = "white")
 
 
 p1 <- ggtree(rooted.tree) %<+% tree.merge + 
+  geom_treescale(x=.24,y=15, fontsize = 3) +
+  geom_nodepoint(aes(fill=Bootstrap, show.legend = T), shape=21, stroke=.2, size=1.5, color="black")+
+  scale_fill_continuous(low="white", high="black", limits=c(0,100))+
   #geom_nodelab(size=1,nudge_x = -.01, nudge_y = .7) +
+  ggnewscale::new_scale_fill() +
   geom_tippoint(aes(fill=Genus, color=Genus, shape=Type)) +
   geom_tiplab(size = 1.5)+
   scale_fill_manual(values=colz, guide = guide_legend(order = 1)) + 
   scale_color_manual(values=colz, guide = guide_legend(order = 1)) + 
-  ggnewscale::new_scale_fill() +
-  geom_treescale(x=.24,y=15, fontsize = 3) +
-  geom_nodepoint(aes(fill=Bootstrap, show.legend = T), shape=21, stroke=.2, size=1, color="black")+
-  scale_fill_continuous(low="white", high="black", limits=c(0,100))+
   scale_shape_manual(values=shapez, guide = guide_legend(order = 3)) + 
   #theme_bw()+
   theme(legend.position = "inside",

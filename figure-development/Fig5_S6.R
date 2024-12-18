@@ -134,7 +134,7 @@ head(tree.merge)
 
 #length(tree.merge$b) tree.merge$Type
 
-shapez = c("New this study" =  24, "Reference sequence" = 16)
+shapez = c("New this study" =  24, "Reference sequence" = 22)
 colz2 = c('1' =  "yellow", '0' = "white")
 
 #add node shapes to represent bootstrap values
@@ -163,15 +163,15 @@ rooted.tree$tip.label[rooted.tree$tip.label=="NC_001709 | Drosophila melanogaste
 
 p1 <- ggtree(rooted.tree) %<+% tree.merge + 
   #geom_nodelab(size=1.5,nudge_x = -.01, nudge_y = .7) +
+  geom_nodepoint(aes(fill=Bootstrap, show.legend = T), shape=21, stroke=.2, size=1.5, color="black")+
+  scale_fill_continuous(low="white", high="black", limits=c(0,100))+
+  geom_treescale(x=.033,y=94, fontsize = 3.5)+
+  ggnewscale::new_scale_fill() +
   geom_tippoint(aes(fill=Genus, color=Genus, shape=Type)) +
   geom_tiplab(size = 1.5)+
   scale_fill_manual(values=colz) + 
   scale_color_manual(values=colz) + 
   scale_shape_manual(values=shapez) + 
-  geom_treescale(x=.033,y=94, fontsize = 3.5)+
-  ggnewscale::new_scale_fill() +
-  geom_nodepoint(aes(fill=Bootstrap, show.legend = T), shape=21, stroke=.2, size=1, color="black")+
-  scale_fill_continuous(low="white", high="black", limits=c(0,100))+
   #theme_bw()+
   theme(legend.position = "inside",
         legend.position.inside  = c(.25,.85),
