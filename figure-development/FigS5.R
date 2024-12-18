@@ -39,8 +39,8 @@ nrow(data1[is.na(data1$bat_forearm_mm),]) #8
 nrow(data1[is.na(data1$bat_weight_g),]) #16
 # nrow(data1[is.na(data1$bat_tibia_mm),]) #0
 # nrow(data1[is.na(data1$ear_length_mm),]) #0
-nrow(data1[is.na(data1$meglastreblidae),]) #972
-nrow(data1[is.na(data1$bat_flies),]) #131
+nrow(data1[is.na(data1$meglastreblidae),]) #971
+nrow(data1[is.na(data1$bat_flies),]) #130
 # Make numeric
 data1$meglastreblidae<-as.numeric(data1$meglastreblidae)
 data1$bat_flies<-as.numeric(data1$bat_flies)
