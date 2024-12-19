@@ -170,9 +170,12 @@ EID.north.sub$predicted_count_uci <- EID.north.sub$predicted_count +1.96*EID.nor
 EID.north.sub$predicted_count_lci[EID.north.sub$predicted_count_lci<0] <- 0#now add the predictions to each dataframe
 EID.north.sub$predicted_count[EID.north.sub$predicted_count<0] <- 0
 
+#Eidolon birthday is #sept 26 for ankarana. Rousettus will be kept the same
+#dry season for moramanga is plotted as mid April - -end of Oct. 
+# fine to keep for ankarana
 seas.dat = cbind.data.frame(x=c(111, 304), xlab=rep("M", 2))
 seas.dat$bat_sex="male"
-preg.dat <- cbind.data.frame(x = c(yday("2014-07-07"), yday("2019-11-16")))
+preg.dat <- cbind.data.frame(x = c(yday("2014-05-17"), yday("2019-09-26")))
 preg.dat$xlab = "F"
 preg.dat$bat_sex="female"
 seas.dat <- rbind(seas.dat, preg.dat)
