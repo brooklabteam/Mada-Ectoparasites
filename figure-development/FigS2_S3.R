@@ -167,6 +167,7 @@ FigS3 <- ggplot(afa, aes(x=fly_sex, y=count)) + theme_bw() + facet_grid(bat_spec
   #scale_x_discrete(breaks=c(1:12), labels=   c("jan","feb", "mar","apr",  "may","jun",  "jul","aug", "sep","oct", "nov", "dec"))+
   geom_point(aes(color=month), position = position_jitterdodge(), size=.5) +
   geom_label(data=label.dat, aes(x=1.5,y=25, label=label), label.size = NA, size = 4) +
+  ylab("Count") +
   theme(panel.grid = element_blank(), #legend.position = "inside", legend.position.inside = c(.1,.75), 
         legend.background = element_rect(color="black"),
         strip.background = element_rect(fill="white"),
@@ -233,7 +234,7 @@ plot.partial <- function(df, var, response_var){
           axis.title.y = element_text(size=18, angle = 90),
           legend.text = element_text(size=10),
           plot.margin = unit(c(.1,.1,.5,1), "cm"))+
-    ylab(paste0("partial effect on ", response_var)) 
+    ylab(paste0("Partial effect on ", response_var)) 
   
   #print(p1)
   
@@ -273,7 +274,7 @@ plot.partial.cont <- function(df, log, var, response_var, alt_var, legend.on){
               #plot.margin = unit(c(.5,.1,.1,1), "cm"),
               plot.margin = unit(c(.2,.2,0,.1), "cm"),
               legend.position = c(.85,.15))+
-        ylab(paste0("partial effect on ", response_var)) + xlab(alt_var)
+        ylab(paste0("Partial effect on ", response_var)) + xlab(alt_var)
       
       
       
@@ -294,7 +295,7 @@ plot.partial.cont <- function(df, log, var, response_var, alt_var, legend.on){
               #axis.text.x = element_text(size=8, angle = 45),
               plot.margin = unit(c(.5,.1,.1,1), "cm"),
               legend.position = c(.85,.15))+
-        ylab(paste0("partial effect on ", response_var)) + xlab(alt_var)
+        ylab(paste0("Partial effect on ", response_var)) + xlab(alt_var)
     }}else{
       if(log==F){
         
@@ -314,7 +315,7 @@ plot.partial.cont <- function(df, log, var, response_var, alt_var, legend.on){
                 #plot.margin = unit(c(.5,.1,.1,1), "cm"),
                 plot.margin = unit(c(.2,.2,0,.1), "cm"),
                 legend.position = c(.15,.15))+
-          ylab(paste0("partial effect on ", response_var)) + xlab(alt_var)
+          ylab(paste0("Partial effect on ", response_var)) + xlab(alt_var)
         
         
         
@@ -335,7 +336,7 @@ plot.partial.cont <- function(df, log, var, response_var, alt_var, legend.on){
                 #axis.text.x = element_text(size=8, angle = 45),
                 plot.margin = unit(c(.5,.1,.1,1), "cm"), 
                 legend.position = c(.15,.15))+
-          ylab(paste0("partial effect on ", response_var)) + xlab(alt_var)
+          ylab(paste0("Partial effect on ", response_var)) + xlab(alt_var)
       }
     }
   
@@ -363,7 +364,7 @@ MFR.datR <- get_partial_effects_continuous(gamFit = gamRmad1, var="mass_forearm_
 FigS2F <- plot.partial(fly.sexR, var = "fly_sex", response_var = "count")
 FigS2G <- plot.partial(bat.sexR, var = "bat_sex", response_var = "count")
 FigS3H <- plot.partial.cont(df = MFR.datR, log=F, var="mass_forearm_residual", response_var = "count", alt_var = "mass: forearm residual", legend.on = F)
-
+FigS3Hb <- cowplot::plot_grid(FigS3H, labels = "D", label_size = 22, label_x = -.01, label_y=1)
 # and the seasonal plots
 
 
@@ -398,7 +399,7 @@ Eall<-ggplot(data = subset(afa, bat_species == "Eidolon dupreanum")) + facet_gri
   #scale_fill_manual(values=ColM)+ 
   #geom_hline(aes(yintercept=0), color="gray50") +
   #xlab ("Day of the Year")+ 
-  ylab(bquote('count of'~italic('Cyclopodia dubia')))+
+  ylab(bquote('Count of'~italic('Cyclopodia dubia')))+
   #ggtitle("host male")+ 
   geom_ribbon(data = EID.east.sub, aes(x=doy, ymin=predicted_count_lci , ymax=predicted_count_uci ), fill="black",alpha=.3 ) +
   geom_line(data = EID.east.sub, aes(x=doy, y=predicted_count),color="red", size=1, show.legend = F)+ 
@@ -449,7 +450,7 @@ Rall<-ggplot(data = subset(afa, bat_species == "Rousettus madagascariensis")) + 
   #scale_fill_manual(values=ColM)+ 
   #geom_hline(aes(yintercept=0), color="gray50") +
   #xlab ("Day of the Year")+ 
-  ylab(bquote('count of'~italic('Eucampsipoda madagascariensis')))+
+  ylab(bquote('Count of'~italic('Eucampsipoda madagascariensis')))+
   #ggtitle("host male")+ 
   geom_ribbon(data = ROU.east.sub, aes(x=doy, ymin=predicted_count_lci , ymax=predicted_count_uci ), fill="black",alpha=.3 ) +
   geom_line(data = ROU.east.sub, aes(x=doy, y=predicted_count),color="red", size=1, show.legend = F)+ 
@@ -465,7 +466,7 @@ Rall<-ggplot(data = subset(afa, bat_species == "Rousettus madagascariensis")) + 
   scale_x_continuous(breaks=c(60,152,244,335), labels=c("Mar", "Jun", "Sep", "Dec"));Rall
 
 
-pRou <- cowplot::plot_grid(Rall, FigS3H,ncol=2, nrow=1, labels = c("C", "D"), label_size = 22, label_x = c(-0.01,0), label_y = c(1,03,1.03), rel_widths = c(2,1))
+pRou <- cowplot::plot_grid(Rall, FigS3Hb,ncol=2, nrow=1, labels = c("C", "D"), label_size = 22, label_x = c(-0.01,-.01), label_y = c(1,03,1.03), rel_widths = c(2,1));pRou
 
 #and just A and B
 pFigS2 <- cowplot::plot_grid(pEid, pRou, ncol=1, nrow = 2)

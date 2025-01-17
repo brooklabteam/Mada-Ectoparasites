@@ -198,7 +198,7 @@ Eall<-ggplot(data = EID.east) + facet_grid(~bat_sex) +
   #scale_fill_manual(values=ColM)+ 
   #geom_hline(aes(yintercept=0), color="gray50") +
   #xlab ("Day of the Year")+ 
-  ylab(bquote('count of'~italic('Cyclopodia dubia')))+
+  ylab(bquote('Count of'~italic('Cyclopodia dubia')))+
   #ggtitle("host male")+ 
   geom_ribbon(data = EID.east.sub, aes(x= yday, ymin=predicted_count_lci , ymax=predicted_count_uci ), fill="black",alpha=.3 ) +
   geom_line(data = EID.east.sub, aes(x=yday, y=predicted_count),color="red", size=1, show.legend = F)+ 
@@ -251,7 +251,7 @@ plot.partial.cont <- function(df, log, var, response_var, alt_var, legend.on){
               #plot.margin = unit(c(.5,.1,.1,1), "cm"),
               plot.margin = unit(c(.2,.2,0,.1), "cm"),
               legend.position = c(.85,.15))+
-        ylab(paste0("partial effect on ", response_var)) + xlab(alt_var)
+        ylab(paste0("Partial effect on ", response_var)) + xlab(alt_var)
       
       
       
@@ -272,7 +272,7 @@ plot.partial.cont <- function(df, log, var, response_var, alt_var, legend.on){
               #axis.text.x = element_text(size=8, angle = 45),
               plot.margin = unit(c(.5,.1,.1,1), "cm"),
               legend.position = c(.85,.15))+
-        ylab(paste0("partial effect on ", response_var)) + xlab(alt_var)
+        ylab(paste0("Partial effect on ", response_var)) + xlab(alt_var)
     }}else{
       if(log==F){
         
@@ -292,7 +292,7 @@ plot.partial.cont <- function(df, log, var, response_var, alt_var, legend.on){
                 #plot.margin = unit(c(.5,.1,.1,1), "cm"),
                 plot.margin = unit(c(.2,.2,0,.1), "cm"),
                 legend.position = c(.15,.15))+
-          ylab(paste0("partial effect on ", response_var)) + xlab(alt_var)
+          ylab(paste0("Partial effect on ", response_var)) + xlab(alt_var)
         
         
         
@@ -313,7 +313,7 @@ plot.partial.cont <- function(df, log, var, response_var, alt_var, legend.on){
                 #axis.text.x = element_text(size=8, angle = 45),
                 plot.margin = unit(c(.5,.1,.1,1), "cm"), 
                 legend.position = c(.15,.15))+
-          ylab(paste0("partial effect on ", response_var)) + xlab(alt_var)
+          ylab(paste0("Partial effect on ", response_var)) + xlab(alt_var)
       }
     }
   
@@ -435,7 +435,7 @@ Rall<-ggplot(data = ROU.east) + facet_grid(~bat_sex) +
   #scale_fill_manual(values=ColM)+ 
   #geom_hline(aes(yintercept=0), color="gray50") +
   #xlab ("Day of the Year")+ 
-  ylab(bquote('count of'~italic('Eucampsipoda madagascariensis')))+
+  ylab(bquote('Count of'~italic('Eucampsipoda madagascariensis')))+
   #ggtitle("host male")+ 
   geom_ribbon(data = ROU.east.sub, aes(x= yday, ymin=predicted_count_lci , ymax=predicted_count_uci ), fill="black",alpha=.3 ) +
   geom_line(data = ROU.east.sub, aes(x=yday, y=predicted_count),color="red", size=1, show.legend = F)+ 

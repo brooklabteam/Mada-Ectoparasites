@@ -231,7 +231,7 @@ temp.miz<-ggplot(miz.clim)+
   geom_point(aes(x=month,y=mean_Temp/2),color="red",size=3)+
   geom_errorbar(aes(x= month,ymin=temp_lci/2, ymax=temp_uci/2), color="red",alpha=.5,width=.1 )+
   scale_color_manual(values = c("mean temperature"="red","mean"="black"))+
-  scale_y_continuous(name = "mean temperature",limits = c(0,15),breaks = seq(0,14,2), labels = seq(0,14,2)*2,position = "right",sec.axis = sec_axis(~ ., name = "mean ectoparasites"))+
+  scale_y_continuous(name = "Mean temperature",limits = c(0,15),breaks = seq(0,14,2), labels = seq(0,14,2)*2,position = "right",sec.axis = sec_axis(~ ., name = "Mean ectoparasites"))+
   theme_bw()+ theme(legend.position = 'none', panel.grid = element_blank(),
                     legend.title = element_blank(),
                     strip.text = element_text(size=14),
@@ -257,7 +257,7 @@ hday.miz<-ggplot(miz.clim)+
   geom_line(aes(x=month,y=mean_Hday/6),color="red",linewidth=1)+
   geom_point(aes(x=month,y=mean_Hday/6),color="red",size=3)+
   geom_errorbar(aes(x= month,ymin=Hday_lci/6, ymax=Hday_uci/6), color="red",alpha=.5,width=.1 )+
-  scale_y_continuous(limits = c(0,15),name = "mean ectoparasites",sec.axis = sec_axis(~ .*6,name = "mean humidity"))+
+  scale_y_continuous(limits = c(0,15),name = "Mean ectoparasites",sec.axis = sec_axis(~ .*6,name = "Mean humidity"))+
   theme_bw() + theme(legend.position = "none", 
                      panel.grid = element_blank(),
                      legend.title = element_blank(),
@@ -285,7 +285,7 @@ prec.miz<-ggplot(miz.clim)+
   geom_line(aes(x=month,y=mean_prec*10),color="red",linewidth=1)+
   geom_point(aes(x=month,y=mean_prec*10),color="red",size=3)+
   geom_errorbar(aes(x= month,ymin=prec_lci*10, ymax=prec_uci*10), color="red",alpha=.5,width=.1 )+
-  scale_y_continuous(limits = c(0,15),"mean ectoparasites", sec.axis = sec_axis(~ ./10, name="mean total precipitation"))+
+  scale_y_continuous(limits = c(0,15),"Mean ectoparasites", sec.axis = sec_axis(~ ./10, name="Mean total precipitation"))+
   theme_bw() + theme(legend.position = "none", 
                      legend.text = element_blank(),
                      panel.grid = element_blank(),
@@ -321,7 +321,7 @@ temp.kel<-ggplot(kel.clim)+
   geom_point(aes(x=month,y=mean_Temp/2),color="red",size=3)+
   geom_errorbar(aes(x= month,ymin=temp_lci/2, ymax=temp_uci/2), color="red",alpha=.5,width=.1 )+
   scale_color_manual(values = c("mean temperature"="red","mean"="black"))+
-  scale_y_continuous(name = "mean temperature",limits = c(0,15),breaks = seq(0,14,2), labels = seq(0,14,2)*2,position = "right",sec.axis = sec_axis(~ ., name = "mean ectoparasites"))+
+  scale_y_continuous(name = "Mean temperature",limits = c(0,15),breaks = seq(0,14,2), labels = seq(0,14,2)*2,position = "right",sec.axis = sec_axis(~ ., name = "Mean ectoparasites"))+
   theme_bw()+ theme(legend.position = 'none', panel.grid = element_blank(),
                     legend.title = element_blank(),
                     strip.text = element_text(size=14),
@@ -347,7 +347,7 @@ hday.kel<-ggplot(kel.clim)+
   geom_line(aes(x=month,y=mean_Hday/6),color="red",linewidth=1)+
   geom_point(aes(x=month,y=mean_Hday/6),color="red",size=3)+
   geom_errorbar(aes(x= month,ymin=Hday_lci/6, ymax=Hday_uci/6), color="red",alpha=.5,width=.1 )+
-  scale_y_continuous(limits = c(0,15),name = "mean ectoparasites",sec.axis = sec_axis(~ .*6,name = "mean humidity"))+
+  scale_y_continuous(limits = c(0,15),name = "Mean ectoparasites",sec.axis = sec_axis(~ .*6,name = "Mean humidity"))+
   theme_bw() + theme(legend.position = "none", 
                      panel.grid = element_blank(),
                      legend.title = element_blank(),
@@ -375,7 +375,7 @@ prec.kel<-ggplot(kel.clim)+
   geom_line(aes(x=month,y=mean_prec*10),color="red",linewidth=1)+
   geom_point(aes(x=month,y=mean_prec*10),color="red",size=3)+
   geom_errorbar(aes(x= month,ymin=prec_lci*10, ymax=prec_uci*10), color="red",alpha=.5,width=.1 )+
-  scale_y_continuous(limits = c(0,15),"mean ectoparasites", sec.axis = sec_axis(~ ./10, name="mean total precipitation"))+
+  scale_y_continuous(limits = c(0,15),"Mean ectoparasites", sec.axis = sec_axis(~ ./10, name="Mean total precipitation"))+
   theme_bw() + theme(legend.position = "none", 
                      legend.text = element_blank(),
                      panel.grid = element_blank(),
