@@ -2,6 +2,10 @@
 #Clear work environment
 rm(list=ls())
 
+library(plyr)
+library(dplyr)
+library(ggplot2)
+
 #Set working directory - add your working directory here
 homewd= "/Users/carabrook/Developer/Mada-Ectoparasites"
 #Angelo-- add your working directory here and add a "#" before my working directory above
@@ -214,6 +218,15 @@ p2 <- ggplot(data=subset(REM,Ecto_genus=="Eucampsipoda"))+
 FigS1 <- cowplot::plot_grid(p1,p2, labels = c("A", "B"), label_size = 22, ncol = 2, nrow = 1)
 
 ggsave(file = paste0(homewd, "/final-figures/FigS1.png"),
+       plot = FigS1,
+       units="mm",  
+       width=90, 
+       height=55, 
+       scale=2.5, 
+       dpi=300)
+
+
+ggsave(file = paste0(homewd, "/final-figures/FigS1.pdf"),
        plot = FigS1,
        units="mm",  
        width=90, 

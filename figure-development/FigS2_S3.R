@@ -185,6 +185,14 @@ ggsave(file =  paste0(homewd,"/final-figures/FigS3.png"),
        scale=3, 
        dpi=300)
 
+ggsave(file =  paste0(homewd,"/final-figures/FigS3.pdf"),
+       plot = FigS3,
+       units="mm",  
+       width=75, 
+       height=60, 
+       scale=3, 
+       dpi=300)
+
 
 #look at seasonality just in the central-east
 afa = subset(afa, roost_site=="central-east")
@@ -478,4 +486,14 @@ ggsave(file =  paste0(homewd,"/final-figures/FigS2.png"),
        height=75, 
        scale=3, 
        dpi=300)
+
+
+ggsave(file =  paste0(homewd,"/final-figures/FigS2.pdf"),
+       plot = pFigS2,
+       units="mm",  
+       width=110, 
+       height=75, 
+       scale=3, 
+       dpi=300)
+
 
