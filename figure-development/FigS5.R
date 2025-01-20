@@ -681,6 +681,15 @@ ggsave(file = paste0(homewd, "/final-figures/FigS5.png"),
        dpi=300)
 
 
+ggsave(file = paste0(homewd, "/final-figures/FigS5.pdf"),
+       plot = FigS5,
+       units="mm",  
+       width=110, 
+       height=80, 
+       scale=3, 
+       dpi=300)
+
+
 #and now shift the data by the appropriate lag
 head(kel.clim)
 head(miz.clim)

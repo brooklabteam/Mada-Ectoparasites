@@ -210,3 +210,14 @@ ggsave(file = paste0(homewd, "/final-figures/FigS7.png"),
        height=90, 
        scale=2, 
        dpi=300)
+
+#save the plots (this could go to the supplementary information)
+ggsave(file = paste0(homewd, "/final-figures/FigS7.pdf"),
+       plot = p1,
+       units="mm",  
+       width=110, 
+       height=90, 
+       scale=2, 
+       dpi=300)
+
+

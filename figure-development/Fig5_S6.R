@@ -191,6 +191,14 @@ ggsave(file = paste0(homewd, "/final-figures/FigS6.png"),
        scale=2.5, 
        dpi=300)
 
+ggsave(file = paste0(homewd, "/final-figures/FigS6.pdf"),
+       plot = p1,
+       units="mm",  
+       width=110, 
+       height=90, 
+       scale=2.5, 
+       dpi=300)
+
 #now collapse some nodes to make the main text figure more readable
 
 #find the nodes

@@ -508,6 +508,14 @@ ggsave(file =  paste0(homewd,"/final-figures/FigS4.png"),
        scale=3, 
        dpi=300)
 
+ggsave(file =  paste0(homewd,"/final-figures/FigS4.pdf"),
+       plot = pFigS4,
+       units="mm",  
+       width=120, 
+       height=75, 
+       scale=3, 
+       dpi=300)
+
 
 
 
