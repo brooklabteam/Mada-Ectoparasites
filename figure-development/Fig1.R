@@ -25,10 +25,15 @@ names(dat2)[names(dat2)=="Other.mites"] <- "Other Mites"
 
 #reorder columns and tweak text spacing for figure
 dat3 <- dat2[,c(8,2,1,3,4,5,7,6)]
-names(dat3)[names(dat3) == 'Thaumapsylla'] <- 'Thaumapsylla      '
-names(dat3)[names(dat3) == 'Echidnophaga'] <- '  Echidnophaga'
+names(dat3)[names(dat3) == 'Thaumapsylla'] <- 'Thaumapsylla sp.                  '
+names(dat3)[names(dat3) == 'Echidnophaga'] <- '  Echidnophaga sp.'
+names(dat3)[names(dat3) == 'Eucampsipoda'] <- 'Eucampsipoda\nmadagascariensis'
+names(dat3)[names(dat3) == 'Cyclopodia'] <- "Cyclopodia dubia"
+names(dat3)[names(dat3) == 'Megastrebla'] <- 'Megastrebla\nwenzeli'
+names(dat3)[names(dat3) == 'Meristapsis'] <- 'Meristapsis sp.'
+names(dat3)[names(dat3) == 'Ornithodoros'] <- 'Ornithodoros\nsp.'
 
-png(filename=paste0(homewd, "/final-figures/Fig1.png"),
+png(filename=paste0(homewd, "/final-development/prep-files/Fig1pre.png"),
     width = 120, 
     height = 50, 
     units = "cm", 
@@ -85,14 +90,14 @@ plotweb(t(dat3),
 path_ecto<-paste0(homewd,"/images/nowbg/")
 bat<-readPNG(paste0(path_ecto,"bats.png"));rasterImage(bat,-.07,.9, -.01,1.4) #up
 com<-readPNG(paste0(path_ecto,"community.png"));rasterImage(com,-.08,1.6,0,2)
-cp<-readPNG(paste0(path_ecto,"cp.png"));rasterImage(cp,0.11,-.03,.20,.33)
-eg<-readPNG(paste0(path_ecto,"eg.png"));rasterImage(eg,0.02,-.04,.10,.22)
+cp<-readPNG(paste0(path_ecto,"cp.png"));rasterImage(cp,0.09,-.15,.18,.15)
+eg<-readPNG(paste0(path_ecto,"eg.png"));rasterImage(eg,-0.01,.01,.07,.27)
 em<-readPNG(paste0(path_ecto,"em.png"));rasterImage(em,0.26,-.08,0.34,.31)
 ms<-readPNG(paste0(path_ecto,"ms.png"));rasterImage(ms,0.40,-.04,.50,.32) 
 me<-readPNG(paste0(path_ecto,"me.png"));rasterImage(me,0.58,-.04,.65,.32) 
 tk<-readPNG(paste0(path_ecto,"tk.png"));rasterImage(tk,0.99,-.04,1.06,.32) 
 om<-readPNG(paste0(path_ecto,"om.png"));rasterImage(om,0.83,-.04,.91,.32) 
-fl<-readPNG(paste0(path_ecto,"fl.png"));rasterImage(fl,-0.07,-.04,0.03,.32) 
+fl<-readPNG(paste0(path_ecto,"fl.png"));rasterImage(fl,-0.1,.05,0,.37) 
 dev.off()
 
-
+#now load in Affinity Designer or Preview and remove italics as needed
