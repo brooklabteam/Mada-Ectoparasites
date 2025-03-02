@@ -235,33 +235,32 @@ ggsave(file = paste0(homewd, "/final-figures/FigS6.pdf"),
 rooted.tree$tip.label
 
 # Now lets try to find the common ancestor for each clade and stor it one object
-eucampsMad_Roumad <- MRCA(rooted.tree, which(rooted.tree$tip.label == "OR732293 | Eucampsipoda madagascariensis | Rousettus madagascariensis | 2019 | Madagascar"),which(rooted.tree$tip.label == "OR732245 | Eucampsipoda madagascariensis | Rousettus madagascariensis | 2019 | Madagascar"),method="phylo")
-eucampsAfr_Rouaeg <- MRCA(rooted.tree, which(rooted.tree$tip.label == "MH151066 | Eucampsipoda africana | Rousettus aegyptiacus | 2018 | Nigeria" ),which(rooted.tree$tip.label == "MH151063 | Eucampsipoda africana | Rousettus aegyptiacus | 2018 | Nigeria"),method="phylo")
-eucampsThe_Rouobl <- MRCA(rooted.tree, which(rooted.tree$tip.label == "KF021498 | Eucampsipoda theodori | Rousettus obliviosus | 2010 | Comoros" ),which(rooted.tree$tip.label == "KF021500 | Eucampsipoda theodori | Rousettus obliviosus | 2010 | Comoros"),method="phylo")
-eucampsAfr_Roules <- MRCA(rooted.tree, which(rooted.tree$tip.label == "OM283590 | Eucampsipoda africana | Rousettus leschenaultii | 2019 | Pakistan"),which(rooted.tree$tip.label =="OM283592 | Eucampsipoda africana | Rousettus leschenaultii | 2019 | Pakistan"),method="phylo")
-cyclopDub_Eidup   <- MRCA(rooted.tree, which(rooted.tree$tip.label == "OR732304 | Cyclopodia dubia | Eidolon dupreanum | 2019 | Madagascar"),which(rooted.tree$tip.label == "MF462043 | Cyclopodia dubia | Eidolon dupreanum | 2017 | Madagascar"),method="phylo")
-cycloPhors_Ptesp   <- MRCA(rooted.tree, which(rooted.tree$tip.label == "KF273770 | Cyclopodia horsefieldi | Pteropus hypomelanus | 2006 | Malaysia" ),which(rooted.tree$tip.label == "KF273782 | Cyclopodia horsefieldi | Pteropus vampyrus | 2004 | Malaysia" ),method="phylo")
-streb_Hyp   <- MRCA(rooted.tree, which(rooted.tree$tip.label == "MW792204 | Streblidae spp | Hipposideros ruber | 2017 | Uganda"),which(rooted.tree$tip.label == "MW792205 | Streblidae spp | Hipposideros ruber | 2017 | Uganda"  ),method="phylo")
-megaWenz_Roumad   <- MRCA(rooted.tree, which(rooted.tree$tip.label == "OR732258 | Megastrebla wenzeli | Rousettus madagascariensis | 2019 | Madagascar"),which(rooted.tree$tip.label == "OR732302 | Megastrebla wenzeli | Rousettus madagascariensis | 2019 | Madagascar"))
-brachy_kanoi      <- MRCA(rooted.tree,which(rooted.tree$tip.label=="OM327589 | Brachytarsina kanoi | 2022 | Pakistan"), which(rooted.tree$tip.label=="MT362949 | Brachytarsina spp | bat | 2020 | South Korea"))
-peni_ful   <- MRCA(rooted.tree,which(rooted.tree$tip.label== "ON704710 | Penicillidia fulvida | Miniopterus spp | 2015 | Kenya"), which(rooted.tree$tip.label=="ON704664 | Penicillidia fulvida | Rhinolophus fumigatus | 2015 | Kenya" ))
-peni_mono  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "AB632567 | Penicillidia monoceros | Myotis daubentonii | 2011 | Japan"), which(rooted.tree$tip.label=="MW590972 | Penicillidia monoceros | bird | 2021 | Finland"))
-peni_dufo  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "MK140181 | Penicillidia dufourii | Myotis myotis | 2018 | Romania" ), which(rooted.tree$tip.label=="MK140183 | Penicillidia dufourii | Myotis blythii | 2018 | Hungary"))
-peni_cons  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "MK140180 | Penicillidia conspicua | Miniopterus schreibersii | 2018 | Romania"), which(rooted.tree$tip.label=="MK140180 | Penicillidia conspicua | Miniopterus schreibersii | 2018 | Romania"))
-peni_other  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "KF021518 | Penicillidia fulvida | Miniopterus gleni | 2012 | Madagascar"), which(rooted.tree$tip.label=="KF021535 | Penicillidia oceania | Miniopterus schreibersi | 2006 | Philippines"))
-pthrid  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "MT362948 | Phthiridium spp | bat | 2020 | South Korea"), which(rooted.tree$tip.label=="MK140116 | Phthiridium spp | Rhinolophus mehelyi | 2018 | Romania"))
-nycterib  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "KF021501 | Nycteribia parvula | Miniopterus schreibersii | 2006 | Philippines" ), which(rooted.tree$tip.label=="KF021492 | Nycteribia africana | Rousettus aegyptiacus | 2006 | Kenya"))
-basil  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "MH282032 | Basilia tiptoni | 2013 | Panama" ), which(rooted.tree$tip.label=="OL847632 | Basilia lindolphoi | Myotis nigricans | 2021 | Brasil"))
-basil2  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "MK140104 | Basilia nana | Myotis myotis | 2018 | Hungary" ), which(rooted.tree$tip.label=="AB632538 | Basilia rybini | Myotis daubentonii | 2011 | Japan"))
+eucampsMad_Roumad <- MRCA(rooted.tree, which(rooted.tree$tip.label == "OR732293~'|'~italic(Eucampsipoda~madagascariensis)~'|'~italic(Rousettus~madagascariensis)~'|'~2019~'|'~Madagascar"),which(rooted.tree$tip.label == "OR732245~'|'~italic(Eucampsipoda~madagascariensis)~'|'~italic(Rousettus~madagascariensis)~'|'~2019~'|'~Madagascar"),method="phylo")
+eucampsAfr_Rouaeg <- MRCA(rooted.tree, which(rooted.tree$tip.label == "MH151066~'|'~italic(Eucampsipoda~africana)~'|'~italic(Rousettus~aegyptiacus)~'|'~2018~'|'~Nigeria" ),which(rooted.tree$tip.label == "MH151063~'|'~italic(Eucampsipoda~africana)~'|'~italic(Rousettus~aegyptiacus)~'|'~2018~'|'~Nigeria"),method="phylo")
+eucampsThe_Rouobl <- MRCA(rooted.tree, which(rooted.tree$tip.label == "KF021498~'|'~italic(Eucampsipoda~theodori)~'|'~italic(Rousettus~obliviosus)~'|'~2010~'|'~Comoros" ),which(rooted.tree$tip.label == "KF021500~'|'~italic(Eucampsipoda~theodori)~'|'~italic(Rousettus~obliviosus)~'|'~2010~'|'~Comoros"),method="phylo")
+eucampsAfr_Roules <- MRCA(rooted.tree, which(rooted.tree$tip.label == "OM283590~'|'~italic(Eucampsipoda~africana)~'|'~italic(Rousettus~leschenaultii)~'|'~2019~'|'~Pakistan"),which(rooted.tree$tip.label =="OM283592~'|'~italic(Eucampsipoda~africana)~'|'~italic(Rousettus~leschenaultii)~'|'~2019~'|'~Pakistan"),method="phylo")
+cyclopDub_Eidup   <- MRCA(rooted.tree, which(rooted.tree$tip.label == "OR732304~'|'~italic(Cyclopodia~dubia)~'|'~italic(Eidolon~dupreanum)~'|'~2019~'|'~Madagascar"),which(rooted.tree$tip.label == "MF462043~'|'~italic(Cyclopodia~dubia)~'|'~italic(Eidolon~dupreanum)~'|'~2017~'|'~Madagascar"),method="phylo")
+cycloPhors_Ptesp   <- MRCA(rooted.tree, which(rooted.tree$tip.label == "KF273770~'|'~italic(Cyclopodia~horsefieldi)~'|'~italic(Pteropus~hypomelanus)~'|'~2006~'|'~Malaysia" ),which(rooted.tree$tip.label == "KF273782~'|'~italic(Cyclopodia~horsefieldi)~'|'~italic(Pteropus~vampyrus)~'|'~2004~'|'~Malaysia" ),method="phylo")
+streb_Hyp   <- MRCA(rooted.tree, which(rooted.tree$tip.label == "MW792204~'|'~italic(Streblidae~spp)~'|'~italic(Hipposideros~ruber)~'|'~2017~'|'~Uganda"),which(rooted.tree$tip.label == "MW792205~'|'~italic(Streblidae~spp)~'|'~italic(Hipposideros~ruber)~'|'~2017~'|'~Uganda"  ),method="phylo")
+megaWenz_Roumad   <- MRCA(rooted.tree, which(rooted.tree$tip.label == "OR732258~'|'~italic(Megastrebla~wenzeli)~'|'~italic(Rousettus~madagascariensis)~'|'~2019~'|'~Madagascar"),which(rooted.tree$tip.label == "OR732302~'|'~italic(Megastrebla~wenzeli)~'|'~italic(Rousettus~madagascariensis)~'|'~2019~'|'~Madagascar"))
+brachy_kanoi      <- MRCA(rooted.tree,which(rooted.tree$tip.label=="OM327589~'|'~italic(Brachytarsina~kanoi)~'|'~2022~'|'~Pakistan"), which(rooted.tree$tip.label=="MT362949~'|'~italic(Brachytarsina~spp)~'|'~italic(bat)~'|'~2020~'|'~South~Korea"))
+peni_ful   <- MRCA(rooted.tree,which(rooted.tree$tip.label== "ON704710~'|'~italic(Penicillidia~fulvida)~'|'~italic(Miniopterus~spp)~'|'~2015~'|'~Kenya"), which(rooted.tree$tip.label=="ON704664~'|'~italic(Penicillidia~fulvida)~'|'~italic(Rhinolophus~fumigatus)~'|'~2015~'|'~Kenya" ))
+peni_mono  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "AB632567~'|'~italic(Penicillidia~monoceros)~'|'~italic(Myotis~daubentonii)~'|'~2011~'|'~Japan"), which(rooted.tree$tip.label=="MW590972~'|'~italic(Penicillidia~monoceros)~'|'~italic(bird)~'|'~2021~'|'~Finland"))
+peni_dufo  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "MK140181~'|'~italic(Penicillidia~dufourii)~'|'~italic(Myotis~myotis)~'|'~2018~'|'~Romania" ), which(rooted.tree$tip.label=="MK140183~'|'~italic(Penicillidia~dufourii)~'|'~italic(Myotis~blythii)~'|'~2018~'|'~Hungary"))
+peni_cons  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "MK140180~'|'~italic(Penicillidia~conspicua)~'|'~italic(Miniopterus~schreibersii)~'|'~2018~'|'~Romania"), which(rooted.tree$tip.label=="MK140180~'|'~italic(Penicillidia~conspicua)~'|'~italic(Miniopterus~schreibersii)~'|'~2018~'|'~Romania"))
+peni_other  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "KF021518~'|'~italic(Penicillidia~fulvida)~'|'~italic(Miniopterus~gleni)~'|'~2012~'|'~Madagascar"), which(rooted.tree$tip.label=="KF021535~'|'~italic(Penicillidia~oceania)~'|'~italic(Miniopterus~schreibersi)~'|'~2006~'|'~Philippines"))
+pthrid  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "MT362948~'|'~italic(Phthiridium~spp)~'|'~italic(bat)~'|'~2020~'|'~South~Korea"), which(rooted.tree$tip.label=="MK140116~'|'~italic(Phthiridium~spp)~'|'~italic(Rhinolophus~mehelyi)~'|'~2018~'|'~Romania"))
+nycterib  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "KF021501~'|'~italic(Nycteribia~parvula)~'|'~italic(Miniopterus~schreibersii)~'|'~2006~'|'~Philippines" ), which(rooted.tree$tip.label=="KF021492~'|'~italic(Nycteribia~africana)~'|'~italic(Rousettus~aegyptiacus)~'|'~2006~'|'~Kenya"))
+basil  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "MH282032~'|'~italic(Basilia~tiptoni)~'|'~2013~'|'~Panama" ), which(rooted.tree$tip.label=="OL847632~'|'~italic(Basilia~lindolphoi)~'|'~italic(Myotis~nigricans)~'|'~2021~'|'~Brasil"))
+basil2  <- MRCA(rooted.tree,which(rooted.tree$tip.label== "MK140104~'|'~italic(Basilia~nana)~'|'~italic(Myotis~myotis)~'|'~2018~'|'~Hungary" ), which(rooted.tree$tip.label=="AB632538~'|'~italic(Basilia~rybini)~'|'~italic(Myotis~daubentonii)~'|'~2011~'|'~Japan"))
 
-  
- 
+
 
 pa<- 
   ggtree(rooted.tree) %<+% tree.merge + 
   #geom_nodelab(size=3,nudge_x = -.005, nudge_y = .7) +
   geom_tippoint(aes(fill=Genus),size=2, color="black", show.legend = T, shape=21) +
-  geom_tiplab(size = 3, hjust=-.01)+
+  geom_tiplab(size = 3, hjust=-.01, parse=T)+
   scale_fill_manual(values=colz) + 
   #scale_color_manual(values=colz) + 
   #scale_shape_manual(values=shapez) + 
@@ -272,23 +271,23 @@ pa<-
   ggnewscale::new_scale_fill() +
   geom_nodepoint(aes(fill=Bootstrap, show.legend = T), shape=21, stroke=.2, size=2, color="black")+
   scale_fill_continuous(low="white", high="black", limits=c(0,100))+
-  geom_cladelabel(node = eucampsMad_Roumad,label = "Eucampsipoda madagascariensis | Rousettus madagascariensis (collapsed)",offset=0, fontsize = 3,  fill="yellow", geom="label", alpha=.3) +
-  geom_cladelabel(node = eucampsAfr_Rouaeg, label = "Eucampsipoda africana | Rousettus aegyptiacus (collapsed)",offset=0, fontsize = 3, color="black")+
-  geom_cladelabel(node = eucampsThe_Rouobl, label = "Eucampsipoda theodori | Rousettus obliviosus (collapsed)",offset=0, fontsize = 3, color="black")+
-  geom_cladelabel(node = eucampsAfr_Roules, label = "Eucampsipoda africana | Rousettus leschenaultii (collapsed)",offset=0, fontsize = 3, color="black") +
-  geom_cladelabel(node = cyclopDub_Eidup, label = "Cyclopodia dubia | Eidolon dupreanum (collapsed)",offset=-0.005, fontsize =3,  fill="yellow", geom="label", alpha=.3)+
-  geom_cladelabel(node = cycloPhors_Ptesp, label = "Cyclopodia horsefieldi | Pteropus spp. (collapsed)",offset=0.002, fontsize =3, color="black")+
-  geom_cladelabel(node = megaWenz_Roumad, label = "Megastrebla wenzeli | Rousettus madagascariensis (collapsed)",offset=0, fontsize = 3,  fill="yellow", geom="label", alpha=.3)+
-  geom_cladelabel(node = brachy_kanoi, label = "Brachytarsina spp. (collapsed)",offset=0.039, fontsize = 3, color="black")+
-  geom_cladelabel(node = streb_Hyp, label = "Streblidae spp. | Hipposideros ruber (collapsed)",offset=.039, fontsize = 3, color="black")+
-  geom_cladelabel(node = peni_ful, label = "Penicillidia fulvida (collapsed)",offset=0, fontsize = 3, color="black")+
-  geom_cladelabel(node = peni_mono, label = "Penicillidia monoceros (collapsed)",offset=0, fontsize = 3, color="black")+
-  geom_cladelabel(node = peni_dufo, label = "Penicillidia dufourii (collapsed)",offset=0, fontsize = 3, color="black")+
-  geom_cladelabel(node = peni_other, label = "Other Penicillidia (collapsed)",offset=0.065, fontsize = 3, color="black")+
-  geom_cladelabel(node = nycterib, label = "All Nycteribia (collapsed)",offset=0.071, fontsize = 3, color="black")+
-  geom_cladelabel(node = basil, label = "Basilia (collapsed)",offset=0.075, fontsize = 3, color="black")+
-  geom_cladelabel(node = basil2, label = "Basilia (collapsed)",offset=0.045, fontsize = 3, color="black")+
-  geom_cladelabel(node = pthrid, label = "Phthiridium (collapsed)",offset=0.035, fontsize = 3, color="black")#+
+  geom_cladelabel(node = eucampsMad_Roumad,label = paste0("italic(Eucampsipoda~madagascariensis)","~'|'~","italic(Rousettus~madagascariensis)","~(collapsed)"),offset=0, fontsize = 3, parse=T, fill="yellow", geom="label", alpha=.3) +
+  geom_cladelabel(node = eucampsAfr_Rouaeg, label = paste0("italic(Eucampsipoda~africana)","~'|'~","italic(Rousettus~aegyptiacus)","~(collapsed)"), parse=T,offset=0, fontsize = 3, color="black")+
+  geom_cladelabel(node = eucampsThe_Rouobl, label = paste0("italic(Eucampsipoda~theodori)","~'|'~","italic(Rousettus~obliviosus)","~(collapsed)"),parse=T,offset=0, fontsize = 3, color="black")+
+  geom_cladelabel(node = eucampsAfr_Roules, label = paste0("italic(Eucampsipoda~africana)","~'|'~","italic(Rousettus~leschenaultii)","~(collapsed)"),parse=T,offset=0, fontsize = 3, color="black") +
+  geom_cladelabel(node = cyclopDub_Eidup, label = paste0("italic(Cyclopodia~dubia)","~'|'~","italic(Eidolon~dupreanum)","~(collapsed)"),offset=-0.005, parse=T,fontsize =3,  fill="yellow", geom="label", alpha=.3)+
+  geom_cladelabel(node = cycloPhors_Ptesp, label = paste0("italic(Cyclopodia~horsefieldi)","~'|'~","italic(Pteropus~spp.)","~(collapsed)"),parse=T,offset=0.002, fontsize =3, color="black")+
+  geom_cladelabel(node = megaWenz_Roumad, label = paste0("italic(Megastrebla~wenzeli)","~'|'~","italic(Rousettus~madagascariensis)","~(collapsed)"),parse=T,offset=0, fontsize = 3,  fill="yellow", geom="label", alpha=.3)+
+  geom_cladelabel(node = brachy_kanoi, label = paste0("italic(Brachytarsina)","~spp.~(collapsed)"),parse=T,offset=0.039, fontsize = 3, color="black")+
+  geom_cladelabel(node = streb_Hyp, label = paste0("italic(Streblidae)","~spp.~'|'~","italic(Hipposideros~ruber)","~(collapsed)"),parse=T,offset=.039, fontsize = 3, color="black")+
+  geom_cladelabel(node = peni_ful, label = paste0("italic(Penicillidia~fulvida)","~(collapsed)"),parse=T,offset=0, fontsize = 3, color="black")+
+  geom_cladelabel(node = peni_mono, label = paste0("italic(Penicillidia~monoceros)","~(collapsed)"),parse=T,offset=0, fontsize = 3, color="black")+
+  geom_cladelabel(node = peni_dufo, label = paste0("italic(Penicillidia~dufourii)","~(collapsed)"),parse=T,offset=0, fontsize = 3, color="black")+
+  geom_cladelabel(node = peni_other, label = paste0("Other~", "italic(Penicillidia)","~(collapsed)"),parse=T,offset=0.065, fontsize = 3, color="black")+
+  geom_cladelabel(node = nycterib, label = paste0("All~","italic(Nycteribia)","~(collapsed)"),parse=T,offset=0.071, fontsize = 3, color="black")+
+  geom_cladelabel(node = basil, label = paste0("italic(Basilia)","~(collapsed)"),parse=T,offset=0.075, fontsize = 3, color="black")+
+  geom_cladelabel(node = basil2, label = paste0("italic(Basilia)","~(collapsed)"),parse=T,offset=0.045, fontsize = 3, color="black")+
+  geom_cladelabel(node = pthrid, label = paste0("italic(Phthiridium)","~(collapsed)"),parse=T,offset=0.035, fontsize = 3, color="black")#+
   # #geom_text(aes(x=0.5,y=62), label="Eucampsipoda sundaica")+
   #xlim(c(0,2)) + ylim(c(0,115))
 pa
