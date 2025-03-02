@@ -151,6 +151,24 @@ rooted.tree$tip.label <- tree.merge$new_label
 head(rooted.tree)
 head(tree.merge)
 
+tree.merge$Binomial <- gsub(pattern = ".", replacement = "", tree.merge$Binomial, fixed = T)
+tree.merge$Binomial <- gsub(pattern = " ", replacement = "~", tree.merge$Binomial, fixed = T)
+tree.merge$Host_Binomial <- gsub(pattern = " ", replacement = "~", tree.merge$Host_Binomial, fixed = T)
+tree.merge$Country_of_Collection <- gsub(pattern = " ", replacement = "~", tree.merge$Country_of_Collection, fixed = T)
+
+alt.tip <- paste0(tree.merge$Accession_Number,"~'|'~" , "italic(", tree.merge$Binomial, ")", "~'|'~", "italic(", tree.merge$Host_Binomial, ")", "~'|'~",tree.merge$Year_Sample_Collected,"~'|'~", tree.merge$Country_of_Collection)
+alt.tip[alt.tip=="DQ133065~'|'~italic(Trichobius~yunkeri)~'|'~italic(NA)~'|'~2005~'|'~Mexico"  ] <- "DQ133065~'|'~italic(Trichobius~yunkeri)~'|'~2005~'|'~Mexico" 
+alt.tip[alt.tip=="DQ133086~'|'~italic(Trichobius~yunkeri)~'|'~italic(NA)~'|'~2005~'|'~Mexico"] <-  "DQ133086~'|'~italic(Trichobius~yunkeri)~'|'~2005~'|'~Mexico"
+alt.tip[alt.tip=="AF322421~'|'~italic(Ornithomyia~avicularia)~'|'~italic(NA)~'|'~2000~'|'~NA"] <- "AF322421~'|'~italic(Ornithomyia~avicularia)~'|'~2000"
+alt.tip[alt.tip=="AF322421~'|'~italic(Ornithomyia~avicularia)~'|'~italic(NA)~'|'~2000~'|'~NA"] <- "AF322421~'|'~italic(Ornithomyia~avicularia)~'|'~2000"
+alt.tip[alt.tip=="DQ133073~'|'~italic(Dipseliopoda~biannulata)~'|'~italic(NA)~'|'~2005~'|'~Africa"] <- "DQ133073~'|'~italic(Dipseliopoda~biannulata)~'|'~2005~'|'~Africa"
+alt.tip[alt.tip=="DQ133072~'|'~italic(Raymondia~huberi)~'|'~italic(NA)~'|'~2005~'|'~Ethopia"] <- "DQ133072~'|'~italic(Raymondia~huberi)~'|'~2005~'|'~Ethopia"
+alt.tip[alt.tip=="M21017~'|'~italic(Drosophila~melanogaster)~'|'~italic(NA)~'|'~1988~'|'~NA"] <- "M21017~'|'~italic(Drosophila~melanogaster)~'|'~1988"
+alt.tip[alt.tip=="DQ133082~'|'~italic(Strebla~mirabilis)~'|'~italic(NA)~'|'~2005~'|'~Venezuela"] <-   "DQ133082~'|'~italic(Strebla~mirabilis)~'|'~2005~'|'~Venezuela"
+
+rooted.tree$tip.label <- alt.tip
+tree.merge$new_label <- alt.tip
+
 #add node shapes to represent bootstrap values
 p0<-ggtree(rooted.tree)
 p0.dat <- p0$data
@@ -164,18 +182,6 @@ shapez = c("New this study" =  24, "Reference sequence" = 22)
 colz2 = c('1' =  "yellow", '0' = "white")
 
 
-#edit a few that are funky:
-# #tree.merge$new_label[tree.merge$new_label=="OM327588 | Brachytarsina_kanoi |  | 2022 | Pakistan"] <- "OM327588 | Brachytarsina_kanoi | 2022 | Pakistan"
-# tree.merge$new_label[tree.merge$new_label=="OM327589 | Brachytarsina_kanoi |  | 2022 | Pakistan"] <- "OM327589 | Brachytarsina_kanoi | 2022 | Pakistan"
-# tree.merge$new_label[tree.merge$new_label=="MH282032 | Basilia_tiptoni | NA | 2013 | Panama"] <- "MH282032 | Basilia_tiptoni | 2013 | Panama"
-# tree.merge$new_label[tree.merge$new_label=="NC_001709 | Drosophila_melanogaster | NA | 1999 | USA" ] <- "NC_001709 | Drosophila_melanogaster | 1999 | USA"
-# 
-# rooted.tree$tip.label[rooted.tree$tip.label=="OM327588 | Brachytarsina_kanoi |  | 2022 | Pakistan"]  <- "OM327588 | Brachytarsina_kanoi | 2022 | Pakistan"
-# rooted.tree$tip.label[rooted.tree$tip.label=="OM327589 | Brachytarsina_kanoi |  | 2022 | Pakistan"] <- "OM327589 | Brachytarsina_kanoi | 2022 | Pakistan"
-# rooted.tree$tip.label[rooted.tree$tip.label=="MH282032 | Basilia_tiptoni | NA | 2013 | Panama"] <- "MH282032 | Basilia_tiptoni | 2013 | Panama"
-# rooted.tree$tip.label[rooted.tree$tip.label=="NC_001709 | Drosophila_melanogaster | NA | 1999 | USA"] <- "NC_001709 | Drosophila_melanogaster | 1999 | USA"
-
-
 
 p1 <- ggtree(rooted.tree) %<+% tree.merge + 
   geom_treescale(x=.24,y=15, fontsize = 3) +
@@ -184,7 +190,7 @@ p1 <- ggtree(rooted.tree) %<+% tree.merge +
   #geom_nodelab(size=1,nudge_x = -.01, nudge_y = .7) +
   ggnewscale::new_scale_fill() +
   geom_tippoint(aes(fill=Genus, color=Genus, shape=Type)) +
-  geom_tiplab(size = 1.5)+
+  geom_tiplab(size = 1.5, parse=T)+
   scale_fill_manual(values=colz, guide = guide_legend(order = 1)) + 
   scale_color_manual(values=colz, guide = guide_legend(order = 1)) + 
   scale_shape_manual(values=shapez, guide = guide_legend(order = 3)) + 

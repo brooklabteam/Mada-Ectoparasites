@@ -122,27 +122,24 @@ tree.merge$Binomial <- gsub(pattern = "_", replacement = " ", x = tree.merge$Bin
 tree.merge$Host_Binomial <- gsub(pattern = "_", replacement = " ", x = tree.merge$Host_Binomial)
 tree.merge$Country_of_Collection <- gsub(pattern = "_", replacement = " ", x = tree.merge$Country_of_Collection)
 
+
 tree.merge$new_label <- paste0(tree.merge$Accession_Number, " | ", tree.merge$Binomial, " | ", tree.merge$Host_Binomial, " | ", tree.merge$Year_Sample_Collected, " | ", tree.merge$Country_of_Collection)
 
 tree.merge <- dplyr::select(tree.merge, new_label, names(tree.merge)[1:11])
 
 rooted.tree$tip.label <- tree.merge$new_label
-tree.merge$new_label <- paste0(tree.merge$Accession_Number, " | ", tree.merge$Binomial, " | ", tree.merge$Host_Binomial, " | ", tree.merge$Year_Sample_Collected, " | ", tree.merge$Country_of_Collection)
+
+
+tree.merge$new_label <- paste0(tree.merge$Accession_Number, " | '", tree.merge$Binomial, "' | ", tree.merge$Host_Binomial, " | ", tree.merge$Year_Sample_Collected, " | ", tree.merge$Country_of_Collection)
+
+
+
 
 head(rooted.tree)
 head(tree.merge)
 
 #length(tree.merge$b) tree.merge$Type
 
-shapez = c("New this study" =  24, "Reference sequence" = 22)
-colz2 = c('1' =  "yellow", '0' = "white")
-
-#add node shapes to represent bootstrap values
-p0<-ggtree(rooted.tree)
-p0.dat <- p0$data
-p0.dat$Bootstrap <- NA
-Bootstrap<-p0.dat$Bootstrap[(length(tree.dat$tip_label)+1):length(p0.dat$label)] <- as.numeric(p0.dat$label[(length(tree.dat$tip_label)+1):length(p0.dat$label)])#fill with label
-#p0.dat$Bootstrap[is.na(p0.dat$Bootstrap) & p0.dat$label==""] <- 100 
 
 
 #rooted.tree$node.label <- as.numeric(rooted.tree$node.label)
@@ -159,7 +156,37 @@ rooted.tree$tip.label[rooted.tree$tip.label=="OM327589 | Brachytarsina kanoi |  
 rooted.tree$tip.label[rooted.tree$tip.label=="MH282032 | Basilia tiptoni | NA | 2013 | Panama"] <- "MH282032 | Basilia tiptoni | 2013 | Panama"
 rooted.tree$tip.label[rooted.tree$tip.label=="NC_001709 | Drosophila melanogaster | NA | 1999 | USA"] <- "NC_001709 | Drosophila melanogaster | 1999 | USA"
 
+tree.merge$Binomial <- gsub(pattern = ".", replacement = "", tree.merge$Binomial, fixed = T)
+tree.merge$Binomial <- gsub(pattern = " ", replacement = "~", tree.merge$Binomial, fixed = T)
+tree.merge$Host_Binomial <- gsub(pattern = " ", replacement = "~", tree.merge$Host_Binomial, fixed = T)
+tree.merge$Country_of_Collection <- gsub(pattern = " ", replacement = "~", tree.merge$Country_of_Collection, fixed = T)
+alt.tip <- paste0(tree.merge$Accession_Number,"~'|'~" , "italic(", tree.merge$Binomial, ")", "~'|'~", "italic(", tree.merge$Host_Binomial, ")", "~'|'~",tree.merge$Year_Sample_Collected,"~'|'~", tree.merge$Country_of_Collection)
+alt.tip[alt.tip=="OM327589~'|'~italic(Brachytarsina~kanoi)~'|'~italic()~'|'~2022~'|'~Pakistan"] <- "OM327589~'|'~italic(Brachytarsina~kanoi)~'|'~2022~'|'~Pakistan"
+alt.tip[alt.tip=="OM327588~'|'~italic(Brachytarsina~kanoi)~'|'~italic()~'|'~2022~'|'~Pakistan"] <- "OM327588~'|'~italic(Brachytarsina~kanoi)~'|'~2022~'|'~Pakistan"
+alt.tip[alt.tip=="MH282032~'|'~italic(Basilia~tiptoni)~'|'~italic(NA)~'|'~2013~'|'~Panama"] <- "MH282032~'|'~italic(Basilia~tiptoni)~'|'~2013~'|'~Panama"
+alt.tip[alt.tip=="NC_001709~'|'~italic(Drosophila~melanogaster)~'|'~italic(NA)~'|'~1999~'|'~USA"] <- "NC_001709~'|'~italic(Drosophila~melanogaster)~'|'~1999~'|'~USA"
+
+
+rooted.tree$tip.label <- alt.tip
+tree.merge$new_label <- alt.tip
+
+shapez = c("New this study" =  24, "Reference sequence" = 22)
+colz2 = c('1' =  "yellow", '0' = "white")
+
+#add node shapes to represent bootstrap values
+p0<-ggtree(rooted.tree)
+p0.dat <- p0$data
+p0.dat$Bootstrap <- NA
+Bootstrap<-p0.dat$Bootstrap[(length(tree.dat$tip_label)+1):length(p0.dat$label)] <- as.numeric(p0.dat$label[(length(tree.dat$tip_label)+1):length(p0.dat$label)])#fill with label
+#p0.dat$Bootstrap[is.na(p0.dat$Bootstrap) & p0.dat$label==""] <- 100 
+
+
+
+ggtree(rooted.tree) %<+% tree.merge + 
+  geom_tippoint(aes(fill=Genus, color=Genus, shape=Type)) 
 #Get the clade numbers to known the clades that we are going  collapse
+
+#tree.merge$Genus <- as.character(tree.merge$Genus)
 
 p1 <- ggtree(rooted.tree) %<+% tree.merge + 
   #geom_nodelab(size=1.5,nudge_x = -.01, nudge_y = .7) +
@@ -168,7 +195,7 @@ p1 <- ggtree(rooted.tree) %<+% tree.merge +
   geom_treescale(x=.033,y=94, fontsize = 3.5)+
   ggnewscale::new_scale_fill() +
   geom_tippoint(aes(fill=Genus, color=Genus, shape=Type)) +
-  geom_tiplab(size = 1.5)+
+  geom_tiplab(size = 1.5, parse=T)+
   scale_fill_manual(values=colz) + 
   scale_color_manual(values=colz) + 
   scale_shape_manual(values=shapez) + 
