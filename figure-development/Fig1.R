@@ -90,14 +90,14 @@ plotweb(t(dat3),
 path_ecto<-paste0(homewd,"/images/nowbg/")
 bat<-readPNG(paste0(path_ecto,"bats.png"));rasterImage(bat,-.07,.9, -.01,1.4) #up
 com<-readPNG(paste0(path_ecto,"community.png"));rasterImage(com,-.08,1.6,0,2)
-cp<-readPNG(paste0(path_ecto,"cp.png"));rasterImage(cp,0.09,-.17,.18,.15)
-eg<-readPNG(paste0(path_ecto,"eg.png"));rasterImage(eg, 0.0,.00,.07,.28)
+cp<-readPNG(paste0(path_ecto,"cp.png"));rasterImage(cp,0.09,-.21,.18,.15)
+eg<-readPNG(paste0(path_ecto,"eg.png"));rasterImage(eg, -0.01,-.01,.07,.28)
 em<-readPNG(paste0(path_ecto,"em.png"));rasterImage(em,0.26,-.1,0.34,.31)
-ms<-readPNG(paste0(path_ecto,"ms.png"));rasterImage(ms,0.40,-.04,.50,.32) 
-me<-readPNG(paste0(path_ecto,"me.png"));rasterImage(me,0.58,-.04,.65,.32) 
+ms<-readPNG(paste0(path_ecto,"ms.png"));rasterImage(ms,0.41,-.06,.49,.32) 
+me<-readPNG(paste0(path_ecto,"me.png"));rasterImage(me,0.58,-.06,.65,.32) 
 tk<-readPNG(paste0(path_ecto,"tk.png"));rasterImage(tk,0.99,-.04,1.06,.32) 
-om<-readPNG(paste0(path_ecto,"om.png"));rasterImage(om,0.81,-.05,.94,.32) 
-fl<-readPNG(paste0(path_ecto,"fl.png"));rasterImage(fl,-0.1,.05,0,.4) 
+om<-readPNG(paste0(path_ecto,"om.png"));rasterImage(om,0.80,-.06,.94,.33) 
+fl<-readPNG(paste0(path_ecto,"fl.png"));rasterImage(fl,-0.1,.034,0,.36) 
 dev.off()
 
 #now load in Affinity Designer or Preview and remove italics as needed
